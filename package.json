@@ -1,0 +1,33 @@
+{
+  "name": "esri-leaflet-website",
+  "version": "1.0.0",
+  "description": "Esri Leaflet website",
+  "devDependencies": {
+    "assemble": "^0.4.37",
+    "grunt": "^0.4.2",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "^0.4.1",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-imagemin": "^0.7.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-gh-pages": "^0.8.1",
+    "grunt-newer": "^0.7.0",
+    "grunt-releaseable": "0.0.12",
+    "load-grunt-tasks": "^0.4.0"
+  },
+  "scripts": {
+    "prepublish": "node -e \"require('grunt').tasks(['prepublish']);\"",
+    "start": "node -e \"require('grunt').tasks(['default']);\"",
+    "test": "node -e \"require('grunt').tasks(['test']);\""
+  },
+  "author": "Patrick Arlt <parlt@esri.com> (http://patrickarlt.com)",
+  "contributors": [
+    "Patrick Arlt <parlt@esri.com> (http://patrickarlt.com)",
+    "John Gravois <jgravois@esri.com> (http://johngravois.com)"
+  ],
+  "license": "Apache",
+  "readmeFilename": "README.md"
+}
