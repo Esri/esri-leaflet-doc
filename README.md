@@ -1,18 +1,12 @@
-# Esri Leaflet
+# Esri Leaflet Documentation Site
 
-Leaflet plugins for [ArcGIS Services](http://developers.arcgis.com). Currently Esri Leaflet supports loading Esri [basemaps](http://esri.github.io/esri-leaflet/examples/switching-basemaps.html) and [feature services](http://esri.github.io/esri-leaflet/examples/simple-feature-layer.html), as well as [tiled](http://esri.github.io/esri-leaflet/examples/tile-layer-2.html), [dynamic](http://esri.github.io/esri-leaflet/examples/simple-dynamic-map-layer.html) and [image](http://esri.github.io/esri-leaflet/examples/simple-image-map-layer.html)  map services.
+> **This repository contains the sourcecode for the [Esri Leaflet](https://github.com/Esri/esri-leaflet) API Reference, sample code and tutorials found at http://esri.github.io/esri-leaflet.
 
-The goal of Esri Leaflet is **not** to replace the [ArcGIS API for JavaScript](https://developers.arcgis.com/en/javascript/), but rather to provide small components to allow developers to build mapping applications with Leaflet.
+### Instructions
 
-**This repo is *just* the website (API Reference, examples and downloads).**
-
-### Resources
-
-* [Importing Data Into Feature Services](https://developers.arcgis.com/tools/csv-to-feature-service/)
-* [ArcGIS for Developers](http://developers.arcgis.com)
-* [ArcGIS REST Services](http://resources.arcgis.com/en/help/arcgis-rest-api/)
-* [@Esri](http://twitter.com/esri)
-* [@EsriPDX](http://twitter.com/esripdx)
+1. clone this repository
+2. `npm install`
+3. `npm start`
 
 ### Issues
 

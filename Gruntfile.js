@@ -1,46 +1,54 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-  // Project configuration.
+  // Project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
     watch: {
       'docs-sass': {
-        files: ['site/source/scss/**/*.scss'],
+        files: ['src/scss/**/*.scss'],
         tasks: ['sass'],
         options: {
           nospawn: true
         }
       },
       'docs-js': {
-        files: ['site/source/**/*.js'],
-        tasks: ['concat', 'uglify', 'copy:assemble'],
+        files: ['src/**/*.js'],
+        tasks: ['copy:assemble'],
         options: {
           nospawn: true
         }
       },
       'docs-img': {
-        files: ['site/source/img/**/*'],
+        files: ['src/img/**/*'],
         tasks: ['newer:imagemin'],
         options: {
           nospawn: true
         }
       },
       'docs-assemble': {
-        files: ['site/source/**/*.md', 'site/source/**/*.hbs'],
+        files: ['src/**/*.md', 'src/**/*.hbs'],
         tasks: ['assemble:dev'],
         options: {
-          nospawn: true
+          nospawn: true,
+          livereload: true
         }
       }
     },
 
     connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: '.',
+          keepalive: true
+        }
+      },
       docs: {
         options: {
           port: 8001,
           hostname: '0.0.0.0',
-          base: './site/build/'
+          base: './built/'
         }
       }
     },
@@ -48,28 +56,30 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         layout: 'layout.hbs',
-        layoutdir: 'site/source/layouts/',
-        partials: 'site/source/partials/**/*.hbs',
-        helpers: ['site/source/helpers/**/*.js' ]
+        layoutdir: 'src/layouts/',
+        partials: 'src/partials/**/*.hbs',
+        helpers: ['src/helpers/**/*.js' ]
       },
       dev: {
         options: {
-          assets: 'site/build/'
+          data: ['data/*.json', 'package.json'],
+          assets: 'built/'
         },
         files: [{
-          cwd: 'site/source/pages',
-          dest: 'site/build',
+          cwd: 'src/pages',
+          dest: 'built',
           expand: true,
           src: ['**/*.hbs', '**/*.md']
         }]
       },
-      build: {
+      dist: {
         options: {
-          assets: 'esri-leaflet/'
+          data: ['package.json'],
+          assets: 'built/'
         },
         files: [{
-          cwd: 'site/source/pages',
-          dest: 'site/build',
+          cwd: 'src/pages',
+          dest: 'built',
           expand: true,
           src: ['**/*.hbs', '**/*.md']
         }]
@@ -79,7 +89,7 @@ module.exports = function(grunt) {
     copy: {
       assemble: {
         files: [
-          { src: 'site/source/js/script.js', dest: 'site/build/js/script.js'}
+          { src: 'src/js/script.js', dest: 'built/js/script.js'}
         ]
       }
     },
@@ -88,9 +98,9 @@ module.exports = function(grunt) {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'site/source/img',
+          cwd: 'src/img',
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'site/build/img'
+          dest: 'built/img'
         }]
       }
     },
@@ -98,28 +108,32 @@ module.exports = function(grunt) {
     sass: {
       site: {
         files: {
-          'site/build/css/style.css': 'site/source/scss/style.scss'
+          'built/css/style.css': 'src/scss/style.scss'
         }
       }
     },
 
     'gh-pages': {
       options: {
-        base: 'site/build',
-        repo: 'git@github.com:jgravois/esri-leaflet-website.git'
+        base: 'built',
+        repo: 'git@github.com:jgravois/esri-leaflet-documentation.git'
       },
       src: ['**']
     }
-
   });
 
-  // Documentation Site Tasks
-  grunt.registerTask('docs', ['assemble:dev', /*'concat', 'uglify', */'sass', 'copy', 'connect:docs', 'watch']);
+  // Development Tasks
+  grunt.registerTask('default', ['docs']);
 
   // Documentation Site Tasks
-  grunt.registerTask('docs:build', ['assemble:build', 'copy', 'imagemin','sass', 'gh-pages']);
+  grunt.registerTask('docs', ['newer:assemble:dev', 'sass', 'copy', 'imagemin', 'connect:docs', 'watch']);
+
+  // Documentation Site Tasks
+  grunt.registerTask('docs:build', ['newer:assemble:dist', 'sass', 'copy', 'imagemin', 'sass']);
+
+  // Documentation Site Tasks
+  grunt.registerTask('docs:deploy', ['docs:build', 'gh-pages']);
 
   // Require all grunt modules
   require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', 'assemble']});
-
 };

@@ -27,4 +27,4 @@ coverage
 working
 
 # Docs Build
-site/build
+built/
