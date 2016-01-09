@@ -116,7 +116,7 @@ module.exports = function (grunt) {
     'gh-pages': {
       options: {
         base: 'built',
-        repo: 'git@github.com:jgravois/esri-leaflet-documentation.git'
+        repo: 'git@github.com:Esri/esri-leaflet.git'
       },
       src: ['**']
     }
