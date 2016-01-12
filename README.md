@@ -10,19 +10,11 @@
 
 ### Issues
 
-Find a bug or want to request a new feature?  Please let us know by submitting an [issue](https://github.com/Esri/esri-leaflet/issues).
-
-Please take a look at [previous issues](https://github.com/Esri/esri-leaflet/issues?labels=FAQ&milestone=&page=1&state=closed) that resolve common problems.
-
-You can also post issues on [GIS Stackexchange](http://gis.stackexchange.com/questions/ask?tags=esri-leaflet,leaflet) an/or the [Esri Leaflet place](https://geonet.esri.com/discussion/create.jspa?sr=pmenu&containerID=1841&containerType=700&tags=esri-leaflet,leaflet) on GeoNet.
+Find a typo or other problem on the website?  Please let us know by submitting an [issue](https://github.com/Esri/esri-leaflet-doc/issues).
 
 ### Contributing
 
 Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/Esri/esri-leaflet/blob/master/CONTRIBUTING.md).
-
-### Credit
-
-`L.esri.Layers.DynamicMapLayer` originally used code from https://github.com/sanborn/leaflet-ags/blob/master/src/AGS.Layer.Dynamic.js
 
 ### Licensing
 Copyright 2015 Esri
