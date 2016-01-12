@@ -1,6 +1,6 @@
 # Esri Leaflet Documentation Site
 
-> **This repository contains the source code for the [Esri Leaflet](https://github.com/Esri/esri-leaflet) API Reference, sample code and tutorials found at http://esri.github.io/esri-leaflet.
+> This repository contains the source code for the [Esri Leaflet](https://github.com/Esri/esri-leaflet) API Reference, sample code and tutorials found at http://esri.github.io/esri-leaflet.
 
 ### Instructions
 
