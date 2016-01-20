@@ -40,6 +40,7 @@ Extends [`L.Control`](http://leafletjs.com/reference.html#control)
 | `providers` | `Array` | See description | An array of [providers](#Providers) to search. |
 | `placeholder` | `String` | 'Search for places or addresses' | Placeholder text for the search input. |
 | `title` | `String` | 'Location Search' | Title text for the search input. Shows as a tooltip on hover. |
+| `searchBounds` | `L.latLngBounds` | `null` | If set, the geocoder will filter results using the provided static bounding box regardless of the current zoom level of the map, overriding `useMapBounds` entirely.
 
 ### Events
 
