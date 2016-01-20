@@ -145,7 +145,7 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
             <td><code>query()</code></td>
             <td><code>this</code></td>
             <td>
-                Returns a new <a href=""><code>L.esri.services.Query</code></a> object that can be used to query this layer. Your callback function will be passed a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a> with the results or an error.
+                Returns a new <a href="../tasks/query.html"><code>L.esri.Query</code></a> object that can be used to query this layer. Your callback function will be passed a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a> with the results or an error.
 <pre class="js"><code>featureLayer.query()
             .within(latlngbounds)
             .where("Direction = 'WEST'")
