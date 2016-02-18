@@ -65,17 +65,17 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
         <tr>
             <td><code>fields</code></td>
             <td><code>Array</code></td>
-            <td>An array of metadata names to pull from the service. Includes all fields by default.</td>
+            <td>An array of fieldnames to pull from the service. Includes all fields by default. You should always specify the name of the unique id for the service. Usually either `'FID'` or `'OBJECTID'`.</td>
         </tr>
         <tr>
             <td><code>from</code></td>
             <td><code>Date</code></td>
-            <td>When paired with <code>to</code> defines the time range of features to display. Required the Feature Layer to be time enabled.</td>
+            <td>When paired with <code>to</code> defines the time range of features to display. Requires the Feature Layer to be time enabled.</td>
         </tr>
         <tr>
             <td><code>to</code></td>
             <td><code>Date</code></td>
-            <td>When paired with <code>from</code> defines the time range of features to display. Required the Feature Layer to be time enabled.</td>
+            <td>When paired with <code>from</code> defines the time range of features to display. Requires the Feature Layer to be time enabled.</td>
         </tr>
         <tr>
             <td><code>timeField</code></td>
@@ -84,8 +84,8 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
         </tr>
         <tr>
             <td><code>timeFilterMode</code></td>
-            <td><nobr><code>'client'</code> or <code>'server'</code></nobr></td>
-            <td>Determines where features are filtered by time. By default features will be filtered by the server. If set to <code>'client'</code> all features are loaded and filtered on the client before display.</td>
+            <td><code>'server'</code> (default) or <code>'client'</code></td>
+            <td>Determines where features are filtered by time. By default features will be filtered by the server. If set to <code>'client'</code> all features are requested and filtered by the app before display.</td>
         </tr>
         <tr>
             <td><code>simplifyFactor</code></td>

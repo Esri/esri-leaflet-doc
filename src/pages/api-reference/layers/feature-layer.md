@@ -76,7 +76,7 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         <tr>
             <td><code>where</code></td>
             <td><code>String</code></td>
-            <td>An optional expression to filter features server side. String values should be denoted using single quotes ie: `where: "FIELDNAME = 'field value'";` More information about valid SQL can be found <a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/SQL_reference_for_query_expressions_used_in_ArcGIS/00s500000033000000/">here</a>.</td>
+            <td>An optional expression to filter features server side. String values should be denoted using single quotes ie: `where: "FIELDNAME = 'field value'";` More information about valid SQL syntax can be found <a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/SQL_reference_for_query_expressions_used_in_ArcGIS/00s500000033000000/">here</a>.</td>
         </tr>
         <tr>
             <td><code>minZoom</code></td>
@@ -96,17 +96,17 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         <tr>
             <td><code>fields</code></td>
             <td><code>Array</code></td>
-            <td>An array of metadata names to pull from the service. Includes all fields by default. You should always specifcy the name of the unique id for the service. Usually either `'FID'` or `'OBJECTID'`.</td>
+            <td>An array of fieldnames to pull from the service. Includes all fields by default. You should always specify the name of the unique id for the service. Usually either `'FID'` or `'OBJECTID'`.</td>
         </tr>
         <tr>
             <td><code>from</code></td>
             <td><code>Date</code></td>
-            <td>When paired with <code>to</code> defines the time range of features to display. Required the Feature Layer to be time enabled.</td>
+            <td>When paired with <code>to</code> defines the time range of features to display. Requires the Feature Layer to be time enabled.</td>
         </tr>
         <tr>
             <td><code>to</code></td>
             <td><code>Date</code></td>
-            <td>When paired with <code>from</code> defines the time range of features to display. Required the Feature Layer to be time enabled.</td>
+            <td>When paired with <code>from</code> defines the time range of features to display. Requires the Feature Layer to be time enabled.</td>
         </tr>
         <tr>
             <td><code>timeField</code></td>
@@ -115,8 +115,8 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         </tr>
         <tr>
             <td><code>timeFilterMode</code></td>
-            <td><code>'client'</code> or </code>'server'</code></td>
-            <td>Determines where features are filtered by time. By default features will be filtered by the server. If set to <code>'client'</code> all features are loaded and filtered on the client before display.</td>
+            <td><code>'server'</code> (default) or <code>'client'</code></td>
+            <td>Determines where features are filtered by time. By default features will be filtered by the server. If set to <code>'client'</code> all features are requested and filtered by the app before display.</td>
         </tr>
         <tr>
             <td><code>simplifyFactor</code></td>
@@ -146,7 +146,7 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         <tr>
             <td><code>renderer</code></td>
             <td><code>L.svg</code> or <code>L.canvas</code></td>
-            <td>The vector renderer to use to draw the service. Usually `L.svg` but setting to `L.canvas` contains performance benefits for large polygon layers..</td>
+            <td>The vector renderer to use to draw the service. Usually `L.svg` but setting to `L.canvas` contains performance benefits for large polygon layers.</td>
         </tr>
         <tr>
             <td><code>pane</code></td>
