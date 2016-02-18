@@ -30,7 +30,7 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 <script src="https://cdn.jsdelivr.net/leaflet.esri.geocoder/2.0.2/esri-leaflet-geocoder.js"></script>
 
 <!-- Renderers Plugin -->
-<script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.0/esri-leaflet-renderers.js"></script>
+<script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.1/esri-leaflet-renderers.js"></script>
 
 <!-- Geoprocessing Plugin -->
 <script src="https://cdn.jsdelivr.net/leaflet.esri.gp/2.0.2/esri-leaflet-gp.js"></script>
