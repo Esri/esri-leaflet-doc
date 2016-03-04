@@ -172,7 +172,7 @@ dynamicMapLayer.bindPopup(
             <td>
                 Returns a new <a href="{{assets}}/api-reference/tasks/identify-features.html"><code>L.esri.services.IdentifyFeatures</code></a> object that can be used to identify features on this layer. Your callback function will be passed a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a> with the results or an error.
 <pre class="js"><code>dynamicMapLayer.identify()
-  .at(latlng, latlngbounds, 5)
+  .at(latlng)
   .run(function(error, featureCollection){
     console.log(featureCollection);
   });</code></pre>
