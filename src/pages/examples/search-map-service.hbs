@@ -4,15 +4,15 @@ description: Searches map services for matching text in addition to geocoding. T
 layout: example.hbs
 ---
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/leaflet.esri.geocoder/2.0.2/esri-leaflet-geocoder.css">
-<script src="//cdn.jsdelivr.net/leaflet.esri.geocoder/2.0.2/esri-leaflet-geocoder.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet.esri.geocoder/2.0.2/esri-leaflet-geocoder.css">
+<script src="https://cdn.jsdelivr.net/leaflet.esri.geocoder/2.0.2/esri-leaflet-geocoder.js"></script>
 
 <div id="map"></div>
 
 <script>
   var map = L.map('map').setView([40.91, -96.63], 4);
 
-  L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
@@ -23,7 +23,7 @@ layout: example.hbs
       arcgisOnline,
       new L.esri.Geocoding.MapServiceProvider({
         label: 'States and Counties',
-        url: '//sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer',
+        url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer',
         layers: [2, 3],
         searchFields: ['NAME', 'STATE_NAME']
       })

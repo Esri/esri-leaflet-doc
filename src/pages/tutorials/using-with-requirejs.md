@@ -1,6 +1,6 @@
 ---
-title: Esri Leaflet + Require JS
-description: How to use Esri Leaflet with Require JS.
+title: Esri Leaflet + RequireJS
+description: How to use Esri Leaflet with RequireJS.
 layout: tutorials.hbs
 ---
 

@@ -4,8 +4,8 @@ description: Geocode an address and then center the map on it automatically. Thi
 layout: example.hbs
 ---
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/leaflet.esri.geocoder/2.0.2/esri-leaflet-geocoder.css">
-<script src="//cdn.jsdelivr.net/leaflet.esri.geocoder/2.0.2/esri-leaflet-geocoder.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet.esri.geocoder/2.0.2/esri-leaflet-geocoder.css">
+<script src="https://cdn.jsdelivr.net/leaflet.esri.geocoder/2.0.2/esri-leaflet-geocoder.js"></script>
 
 <div id="map"></div>
 
@@ -14,7 +14,7 @@ layout: example.hbs
 
   var map = L.map('map');
 
-  L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="//osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
