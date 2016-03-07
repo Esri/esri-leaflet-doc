@@ -21,15 +21,15 @@ layout: example.hbs
 
 <div id="map"></div>
 <div id="selectedFeatures" class="leaflet-bar map-text">Click on a
-  <a href="https://www.arcgis.com/home/item.html?id=3fcf06963b134254b73dccfbc1546eb9">NOAA weather advisory</a>
+  <a href="https://tmservices1.esri.com/arcgis/rest/services/LiveFeeds/Earthquakes/MapServer">USGS</a> earthquake.
 </div>
 <script>
   var map = L.map('map').setView([38.5, -96.8], 4);
 
   L.esri.basemapLayer('Gray').addTo(map);
 
-  var weatherStations = L.esri.dynamicMapLayer({
-    url: '//maps1.arcgisonline.com/ArcGIS/rest/services/NWS_Weather_Stations/MapServer',
+  var earthquakes = L.esri.dynamicMapLayer({
+    url: 'https://tmservices1.esri.com/arcgis/rest/services/LiveFeeds/Earthquakes/MapServer',
     opacity: 0.5,
     useCors: false
   }).addTo(map);
@@ -42,11 +42,11 @@ layout: example.hbs
     if(identifiedFeature){
       map.removeLayer(identifiedFeature);
     }
-    weatherStations.identify().on(map).at(e.latlng).run(function(error, featureCollection){
+    earthquakes.identify().on(map).at(e.latlng).run(function(error, featureCollection){
       console.log(featureCollection.features[0]);
       if (featureCollection.features.length > 0) {
         identifiedFeature = L.geoJson(featureCollection.features[0]).addTo(map);
-        pane.innerHTML = featureCollection.features[0].properties.Station_Na;
+        pane.innerHTML = "magnitude: " + featureCollection.features[0].properties.MAGNITUDE;
       }
       else {
         pane.innerHTML = 'No features identified.';
