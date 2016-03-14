@@ -32,7 +32,7 @@ layout: example.hbs
 </div>
 
 <script>
-  var clientID = 'FxeCTSwkrA9yqVGS';
+  var clientID = 'uoiMRafhECiH5uNE';
   var accessToken;
   var callbacks = [];
   var protocol = window.location.protocol;
@@ -53,7 +53,7 @@ layout: example.hbs
 
   // this function will be called when the oauth process is complete
   window.oauthCallback = function(token) {
-    L.esri.get('//www.arcgis.com/sharing/rest/portals/self', {
+    L.esri.get('https://www.arcgis.com/sharing/rest/portals/self', {
       token: token
     }, function(error, response){
       authPane.innerHTML = '<label>Hi '+response.user.username+' your token is <input value="'+token+'"></label>';
