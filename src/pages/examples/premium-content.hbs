@@ -32,7 +32,7 @@ layout: example.hbs
 </div>
 
 <script>
-  var clientID = 'FxeCTSwkrA9yqVGS';
+  var clientID = 'uoiMRafhECiH5uNE';
   var accessToken;
   var callbacks = [];
   var protocol = window.location.protocol;
@@ -67,7 +67,7 @@ layout: example.hbs
   signInButton.addEventListener('click', function(e){
     oauth(function(token){
       trafficLayer = L.esri.dynamicMapLayer({
-        url: '//traffic.arcgis.com/arcgis/rest/services/World/Traffic/MapServer',
+        url: 'https://traffic.arcgis.com/arcgis/rest/services/World/Traffic/MapServer',
         token: token
       }).addTo(map);
       trafficLayer.on('authenticationrequired', function(e){
