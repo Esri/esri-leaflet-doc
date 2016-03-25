@@ -202,9 +202,14 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
 
 ### Example
 
+Live sample [here](http://esri.github.io/esri-leaflet/examples/visualize-points-as-a-heatmap.html).
+
+```xml
+<script src="./leaflet-heat.js"></script>
+<script src="./esri-leaflet-heatmap-feature-layer.js"></script>
+```
 ```js
 var map = new L.Map('map').setView([40.722868115037,-73.92142295837404], 14);
-
 L.esri.basemapLayer('Gray').addTo(map);
 
 var heatmap = L.esri.Heat.heatmapFeatureLayer({

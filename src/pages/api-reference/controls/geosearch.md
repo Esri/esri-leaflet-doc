@@ -35,7 +35,6 @@ Extends [`L.Control`](http://leafletjs.com/reference.html#control)
 | `useMapBounds` | `Boolean` or `Integer` | `12` | Determines if and when the geocoder should use the bounds of the map to filter search results. If `true` the geocoder will always return results in the current map bounds. If `false` it will always search the world. If an integer (like `11`) is passed, the geocoder will use the bounds of the map for searching only if the map is currently zoomed in far enough. |
 | `collapseAfterResult` | `Boolean` | `true` | Determines whether or not the geocoder should collapse after a result is found. |
 | `expanded` | `Boolean` | `false` | Determines whether or not the geocoder starts in an expanded state. |
-| `maxResults` | `Integer` | `25` | Determines how many results to request from geocoding services.  Hard limit for the [ArcGIS World Geocoding Service](https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm) is 50. |
 | `allowMultipleResults` | `Boolean` | `true` | If set to `true` and the user submits the form without a suggestion, the control will geocode the current text in the input. |
 | `providers` | `Array` | See description | An array of [providers](#Providers) to search. |
 | `placeholder` | `String` | 'Search for places or addresses' | Placeholder text for the search input. |
@@ -87,6 +86,11 @@ For reference here is the internal DOM structure of the geocoder
 
 The `Geosearch` control can also search for results from a variety of sources including Feature Layers and Map Services. This is done with plain text matching and is not "real" geocoding. But it allows you to mix custom results into a search box.
 
+```xml
+<link rel="stylesheet" href="./esri-leaflet-geocoder.css">
+<script src="./esri-leaflet-geocoder.js"></script>
+```
+
 ```js
 var arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider();
 var gisDay = L.esri.Geocoding.featureLayerProvider({
@@ -118,7 +122,7 @@ All providers share the following options:
 | Option | Type | Default | Description
 | --- | --- | --- | --- |
 | label | `String` | `'Provider Type'` | Text that will be used to group suggestions (when more than one provider is used).
-| maxResults | `Integer` | `5` | Maximum number of results to show for the provider.
+| maxResults | `Integer` | `5` | Maximum number of results to show for the provider.  Hard limit for the [ArcGIS World Geocoding Service](https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm) is 50.
 | attribution | `string` | `Varies by provider` | Adds attribution to the map to credit the source.
 
 ##### arcgisOnlineProvider

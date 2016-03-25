@@ -280,9 +280,17 @@ In additon to these events `L.esri.FeatureLayer` also fires the following [Mouse
 
 ### Example
 
+Live sample [here](http://esri.github.io/esri-leaflet/examples/clustering-feature-layers.html).
+
+```xml
+<link rel="stylesheet" type="text/css" href="./MarkerCluster.Default.css">
+<link rel="stylesheet" type="text/css" href="./MarkerCluster.css">
+<script src="./leaflet.markercluster.js"></script>
+<script>./esri-leaflet-clustered-feature-layer.js</script>
+```
+
 ```js
 var map = L.map('map').setView([45.53,-122.64], 16);
-
 L.esri.basemapLayer("Streets").addTo(map);
 
 var url = "http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0";

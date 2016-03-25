@@ -117,6 +117,11 @@ You can pass any options you can pass to [L.esri.Task](task.html). The `url` wil
 
 ### Examples
 
+```xml
+<link rel="stylesheet" href="./esri-leaflet-geocoder.css">
+<script src="./esri-leaflet-geocoder.js"></script>
+```
+
 ```js
 L.esri.Geocoding.geocode().text('380 New York St, Redlands, California, 92373').run(function(err, results, response){
   console.log(results);

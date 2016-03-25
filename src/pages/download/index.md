@@ -51,8 +51,15 @@ Esri Leaflet is [available on Bower](http://bower.io/search/?q=esri-leaflet) as 
 bower install esri-leaflet
 ```
 
+### Still using Leaflet `0.7.x`?
+
+Version `1.0.3` of esri-leaflet is the one for you.
+```xml
+<script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.3/esri-leaflet.js"></script>
+```
+
 ### Older Hosted Versions
-If you're looking for hosted copy of a legacy version of the API, they can be found on the Amazon Web Server below.
+Legacy versions of the API prior to `1.0.0-rc.6` can be found on the Amazon Web Server below.
 ```xml
 <!-- 1.0.0-rc.6 and prior -->
 <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.6/esri-leaflet.js"></script>

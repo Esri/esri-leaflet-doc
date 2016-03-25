@@ -74,6 +74,10 @@ You can pass any options you can pass to [L.esri.Task](task.html). The `url` wil
 </table>
 
 ### Examples
+```xml
+<link rel="stylesheet" href="./esri-leaflet-geocoder.css">
+<script src="./esri-leaflet-geocoder.js"></script>
+```
 
 ```js
 L.esri.Geocoding.suggest()
