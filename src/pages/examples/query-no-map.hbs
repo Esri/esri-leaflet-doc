@@ -14,6 +14,11 @@ layout: example.hbs
 <div id="invisibleMap"></div>
 
 <script>
+  // html5 geolocation requires a secure connection
+  if (window.location.host == 'esri.github.io' && window.location.protocol != "https:") {
+    window.location.protocol = "https";
+  }
+
   document.getElementById('map').style.height = '100px';
 
   // no need to display, but lets use a map to ask user for HTML5 location
