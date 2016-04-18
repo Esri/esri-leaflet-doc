@@ -4,7 +4,7 @@ description: This demo relies on the <a href="https://github.com/jgravois/esri-l
 layout: example.hbs
 ---
 
-<script src="//cdn.jsdelivr.net/leaflet.esri.gp/2.0.0/esri-leaflet-gp.js"></script>
+<script src="https://cdn.jsdelivr.net/leaflet.esri.gp/2.0.0/esri-leaflet-gp.js"></script>
 
 <style>
   #info-pane {
@@ -30,7 +30,7 @@ layout: example.hbs
   L.esri.basemapLayer('Gray').addTo(map);
 
   var gpService = L.esri.GP.service({
-    url: "//sampleserver1.arcgisonline.com/ArcGIS/rest/services/Network/ESRI_DriveTime_US/GPServer/CreateDriveTimePolygons",
+    url: "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Network/ESRI_DriveTime_US/GPServer/CreateDriveTimePolygons",
     useCors:false
   });
 

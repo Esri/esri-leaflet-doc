@@ -4,16 +4,19 @@ description: Using non mercator tiles with <code>L.esri.TiledMapLayer</code> wit
 layout: example.hbs
 ---
 
-<script src="//rawgit.com/proj4js/proj4js/2.3.12/dist/proj4-src.js"></script>
-<script src="//rawgit.com/kartena/Proj4Leaflet/1.0.0-beta.1/src/proj4leaflet.js"></script>
+<!-- Include Proj4JS via rawgit.com
+in production you'd be better off hosting these libraries yourself -->
+<script src="https://rawgit.com/proj4js/proj4js/2.3.12/dist/proj4-src.js"></script>
+<script src="https://rawgit.com/kartena/Proj4Leaflet/1.0.0-beta.1/src/proj4leaflet.js"></script>
 
 <div id="map"></div>
 
 <script>
-  // create new Proj4Leaflet CRS:
-  // 1. Proj4 and WKT definitions can be found at sites like http://epsg.io, http://spatialreference.org/ or by using gdalsrsinfo http://www.gdal.org/gdalsrsinfo.html
-  // 2. Appropriate values to supply to the resolution and origin constructor options can be found in the ArcGIS Server RESTful tile server endpoint (ex: http://mapserv.utah.gov/arcgis/rest/services/BaseMaps/Terrain/MapServer)
-  // 3. The numeric code within the first parameter (ex: `26912`) will be used to project the dynamic map layer on the fly
+  /* create new Proj4Leaflet CRS:
+  1. Proj4 and WKT definitions can be found at sites like http://epsg.io, http://spatialreference.org/ or by using gdalsrsinfo http://www.gdal.org/gdalsrsinfo.html
+  2. Appropriate values to supply to the resolution and origin constructor options can be found in the ArcGIS Server RESTful tile server endpoint (ex: http://mapserv.utah.gov/arcgis/rest/services/BaseMaps/Terrain/MapServer)
+  3. The numeric code within the first parameter (ex: `26912`) will be used to project the dynamic map layer on the fly
+  */
   var crs = new L.Proj.CRS('EPSG:26912', '+proj=utm +zone=12 +ellps=GRS80 +datum=NAD83 +units=m +no_defs', {
     origin: [-5120900, 9998100],
     resolutions: [
