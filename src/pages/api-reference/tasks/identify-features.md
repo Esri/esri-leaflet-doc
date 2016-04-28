@@ -68,7 +68,10 @@ layout: documentation.hbs
         <tr>
             <td><code>layers({{{param 'String' 'layers'}}})</code></td>
             <td><code>this</code></td>
-            <td>The string representing which layers should be identified.</td>
+            <td>
+              By default, only the topmost feature will be identified, but it is possible to specify both an alternative strategy and array of individual layers.  See the REST API [documentation](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Identify_Map_Service/02r300000113000000/) for more information about valid combinations.<br>
+              ex: `.layers('all:0')`.
+            </td>
         </tr>
         <tr>
             <td><code>precision({{{param 'Integer' 'precision'}}})</code></td>
