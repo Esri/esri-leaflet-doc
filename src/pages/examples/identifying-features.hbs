@@ -46,7 +46,9 @@ layout: example.hbs
       console.log(featureCollection.features[0]);
       if (featureCollection.features.length > 0) {
         identifiedFeature = L.geoJson(featureCollection.features[0]).addTo(map);
-        pane.innerHTML = "magnitude: " + featureCollection.features[0].properties.MAGNITUDE;
+        // string to number to string = trimmed zeros.  the wonders of JavaScript
+        var magTrimmed = parseFloat(featureCollection.features[0].properties.MAGNITUDE).toString();
+        pane.innerHTML = "magnitude: " + magTrimmed;
       }
       else {
         pane.innerHTML = 'No features identified.';
