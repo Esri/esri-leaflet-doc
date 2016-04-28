@@ -45,7 +45,6 @@ layout: example.hbs
   zipcodes.on('mouseover', function(e){
     oldId = e.layer.feature.id;
     document.getElementById('info-pane').innerHTML = e.layer.feature.properties.ZIP + ' ' + e.layer.feature.properties.PO_NAME;
-    e.layer.bringToFront();
     zipcodes.setFeatureStyle(e.layer.feature.id, {
       color: '#9D78D2',
       weight: 3,

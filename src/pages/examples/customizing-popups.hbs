@@ -8,11 +8,10 @@ layout: example.hbs
 
 <script>
   var map = L.map('map').setView([38.5, -96.8], 4);
-
   L.esri.basemapLayer('Gray').addTo(map);
 
   var wildfireRisk = L.esri.dynamicMapLayer({
-    url: '//maps7.arcgisonline.com/arcgis/rest/services/USDA_USFS_2014_Wildfire_Hazard_Potential/MapServer'
+    url: 'https://maps7.arcgisonline.com/arcgis/rest/services/USDA_USFS_2014_Wildfire_Hazard_Potential/MapServer'
   }).addTo(map);
 
   wildfireRisk.bindPopup(function (error, featureCollection) {
