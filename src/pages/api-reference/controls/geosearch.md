@@ -67,6 +67,20 @@ Events from each provider will match the events fired by [`L.esri.Service`](../s
             </td>
         </tr>
     </tbody>
+    <tbody>
+        <tr>
+            <td><code>disable()</code></td>
+            <td></td>
+            <td>grays out the input so that addresses cannot be searched.
+            </td>
+        </tr>
+        <tr>
+            <td><code>enable()</code></td>
+            <td></td>
+            <td>ungray the input so that addresses can once again be searched.
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 ### Styling

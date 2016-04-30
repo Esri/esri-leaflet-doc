@@ -39,6 +39,7 @@ These maps have worldwide coverage at a variety of zoom levels.
 * `Imagery`
 * `ShadedRelief`
 * `Terrain`
+* `USATopo` (added in 2.0.0)
 
 ##### Optional Labels
 
