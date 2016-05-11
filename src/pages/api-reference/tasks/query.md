@@ -173,7 +173,7 @@ var northEast = L.latLng(45.52, -122.64);
 var bounds = L.latLngBounds(southWest, northEast);
 
 var query = L.esri.query({
-    url:'http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
+    url:'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
 });
 
 query.within(bounds);
@@ -190,7 +190,7 @@ var map = L.map('map').setView([41.64, -53.70], 3);
 L.esri.basemapLayer('Gray').addTo(map);
 
 var query = L.esri.query({
-    url: 'http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
+    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
 });
 
 query.bounds(function(error, latLngBounds, response){
@@ -204,7 +204,7 @@ query.bounds(function(error, latLngBounds, response){
 var latlng = L.latLng(45.51, -122.70);
 
 var query = L.esri.query({
-    url:'http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
+    url:'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
 });
 
 query.nearby(latlng, 500);
@@ -220,7 +220,7 @@ query.run(function(error, featureCollection, response){
 var latlng = L.latLng(45.51, -122.70);
 
 var query = L.esri.query({
-    url: 'http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
+    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
 });
 
 query.nearby(latlng, 2000).where("direction='East'").orderBy('stop_id', 'ASC');
@@ -242,7 +242,7 @@ L.esri.basemapLayer('Gray').addTo(map);
 
 
 var query = L.esri.query({
-    url:'http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
+    url:'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
 });
 
 query.where("zone_id='B'").bounds(function(error, latLngBounds, response){

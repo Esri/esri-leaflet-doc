@@ -213,7 +213,7 @@ var map = new L.Map('map').setView([40.722868115037,-73.92142295837404], 14);
 L.esri.basemapLayer('Gray').addTo(map);
 
 var heatmap = L.esri.Heat.heatmapFeatureLayer({
-  url : "http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Graffiti_Locations3/FeatureServer/0",
+  url : "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Graffiti_Locations3/FeatureServer/0",
   radius: 12
 }).addTo(map);
 ```

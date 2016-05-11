@@ -112,7 +112,7 @@ Inherits from [`L.esri.Service`]({{assets}}api-reference/services/service.html)
 ##### Adding Features
 ```js
 var service = L.esri.featureLayerService({
-    url: 'http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
+    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
 });
 
 var feature = {
@@ -139,7 +139,7 @@ service.addFeature(feature, function(error, response){
 
 ```js
 var service = L.esri.featureLayerService({
-    url:'http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
+    url:'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
 });
 
 var feature = {
@@ -167,7 +167,7 @@ service.updateFeature(feature, function(error, response){
 
 ```js
 var service = L.esri.featureLayerService({
-    url: 'http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
+    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
 });
 
 service.deleteFeature(2, function(error, response){
@@ -183,7 +183,7 @@ service.deleteFeature(2, function(error, response){
 
 ```js
 var service = L.esri.featureLayerService({
-    url: 'http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
+    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
 });
 
 service.query().where("name='Hello World'").run(function(error, featureCollection, response){

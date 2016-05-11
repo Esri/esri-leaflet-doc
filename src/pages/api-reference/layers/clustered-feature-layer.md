@@ -293,7 +293,7 @@ Live sample [here](http://esri.github.io/esri-leaflet/examples/clustering-featur
 var map = L.map('map').setView([45.53,-122.64], 16);
 L.esri.basemapLayer("Streets").addTo(map);
 
-var url = "http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0";
+var url = "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0";
 
 var busStops = L.esri.Cluster.clusteredFeatureLayer({
   url: url,

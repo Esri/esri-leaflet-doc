@@ -12,13 +12,13 @@ Feature Layers are provided by Feature Services which can contain multiple layer
 Here is a sample Feature Service URL
 
 ```
-http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Neighborhoods_pdx/
+https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Neighborhoods_pdx/
 ```
 
 This particular service contains only one Feature Layer. Here is the Feature Layer URL
 
 ```
-http://services.arcgis.com/rOo16HdIMeOBI4Mb/ArcGIS/rest/services/Neighborhoods_pdx/FeatureServer/0
+https://services.arcgis.com/rOo16HdIMeOBI4Mb/ArcGIS/rest/services/Neighborhoods_pdx/FeatureServer/0
 ```
 
 Note that the Feature Layer URL ends in `/FeatureServer/{LAYER_ID}`.
@@ -341,6 +341,6 @@ var map = L.map('map').setView([45.53,-122.64], 14);
 L.esri.basemapLayer("Streets").addTo(map);
 
 var busStops = L.esri.featureLayer({
-  url: 'http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0/'
+  url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0/'
 }).addTo(map);
 ```

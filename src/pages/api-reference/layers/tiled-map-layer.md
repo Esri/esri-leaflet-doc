@@ -95,7 +95,7 @@ Is you have Feature Services published in ArcGIS Online you can create a static 
 var map = L.map('map').setView([37.7614, -122.3911], 12);
 
 L.esri.tiledMapLayer({
-  url: 'http://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer',
+  url: 'https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer',
   maxZoom: 15
 }).addTo(map);
 ```

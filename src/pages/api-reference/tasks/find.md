@@ -129,7 +129,7 @@ layout: documentation.hbs
 ##### Finding features
 
 ```js
-var find = L.esri.find('http://services.nationalmap.gov/arcgis/rest/services/govunits/MapServer');
+var find = L.esri.find('https://services.nationalmap.gov/arcgis/rest/services/govunits/MapServer');
 
 find.layers('18')
     .text('Colorado');
@@ -143,7 +143,7 @@ find.run(function(error, featureCollection, response){
 
 ```js
 var find = L.esri.find({
-    url: 'http://services.nationalmap.gov/arcgis/rest/services/govunits/MapServer'
+    url: 'https://services.nationalmap.gov/arcgis/rest/services/govunits/MapServer'
 });
 
 find.layers('13')

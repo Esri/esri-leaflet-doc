@@ -213,7 +213,7 @@ var map = L.map('map').setView([ 38.83,-98.5], 7);
 
 L.esri.basemapLayer('Gray').addTo(map);
 
-var url = "http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/World/MODIS/ImageServer";
+var url = "https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/World/MODIS/ImageServer";
 
 L.esri.imageMapLayer({
   url: url,

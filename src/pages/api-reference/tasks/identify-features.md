@@ -112,7 +112,7 @@ layout: documentation.hbs
 var map = new L.Map('map').setView([ 45.543, -122.621 ], 5);
 
 L.esri.identifyFeatures({
-    url: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer'
+    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer'
 })
 .on(map)
 .at([45.543, -122.621])
