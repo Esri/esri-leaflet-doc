@@ -9,7 +9,7 @@ Inherits from [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer)
 
 Access tiles from ArcGIS Online and ArcGIS Server as well as visualize and identify features.
 
-Is you have Feature Services published in ArcGIS Online you can create a static set of tiles using your Feature Service. You can find details about that process in the [ArcGIS Online Help](http://doc.arcgis.com/en/arcgis-online/share-maps/publish-tiles.htm#ESRI_SECTION1_F68FCBD33BD54117B23232D41A762E89)
+If you have published a Feature Service in ArcGIS Online you can use it to create a static set of tiles. You can find details about that process in the [ArcGIS Online Help](http://doc.arcgis.com/en/arcgis-online/share-maps/publish-tiles.htm#ESRI_SECTION1_F68FCBD33BD54117B23232D41A762E89)
 
 **Your map service must be published using the Web Mercator Auxiliary Sphere tiling scheme (WKID 102100/3857) and the default scale options used by Google Maps, Bing Maps and [ArcGIS Online](http://resources.arcgis.com/en/help/arcgisonline-content/index.html#//011q00000002000000). Esri Leaflet will not support any other spatial reference for tile layers.**
 
