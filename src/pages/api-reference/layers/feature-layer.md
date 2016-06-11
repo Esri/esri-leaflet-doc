@@ -61,7 +61,7 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         <tr>
             <td><code>pointToLayer({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'LatLng' 'latlng' 'http://leafletjs.com/reference.html#latlng'}}})</code></td>
             <td><code>Function</code></td>
-            <td>Function that will be used for creating layers for GeoJSON points (if not specified, simple markers will be created).</td>
+            <td>Function that will be used for creating layers for GeoJSON points.  If the option is not specified, simple markers will be created).  For point layers, custom panes should be passed through pointToLayer (example [here](../../examples/layer-ordering.html)).</td>
         </tr>
         <tr>
             <td><code>style({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'ILayer' 'layer' 'http://leafletjs.com/reference.html#ilayer'}}})</code></td>
@@ -151,7 +151,12 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         <tr>
             <td><code>pane</code></td>
             <td><code>String</code></td>
-            <td>The map pane to render on. Usually `overlayPane` for vectors and `markerPane` for markers.</td>
+            <td>A custom map pane to render lines and polygons on. For point geometries, custom panes should be passed through `pointToLayer()`.</td>
+        </tr>
+        <tr>
+            <td><code>ignoreRenderer</code></td>
+            <td><code>Boolean</code></td>
+            <td>When utilizing esri-leaflet-renderers ['2.0.2'](https://github.com/Esri/esri-leaflet-renderers/releases/tag/v2.0.1) or above, this option makes it possible to override the symbology defined by the service itself .</td>
         </tr>
     </tbody>
 </table>
