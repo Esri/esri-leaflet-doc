@@ -98,7 +98,7 @@ dynamicMapLayer.bindPopup(
         <tr>
             <td><code>getLayers()</code></td>
             <td><code>Array</code></td>
-            <td>Returns the array of layers on the MapService that are being shown.</td>
+            <td>Returns the array of visible layers specified in the layer constructor.</td>
         </tr>
         <tr>
             <td><code>setLayers({{{param 'Array' 'layers'}}})</code></td>

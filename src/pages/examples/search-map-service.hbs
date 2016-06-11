@@ -21,7 +21,7 @@ layout: example.hbs
   var searchControl = L.esri.Geocoding.geosearch({
     providers: [
       arcgisOnline,
-      new L.esri.Geocoding.MapServiceProvider({
+      L.esri.Geocoding.mapServiceProvider({
         label: 'States and Counties',
         url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer',
         layers: [2, 3],

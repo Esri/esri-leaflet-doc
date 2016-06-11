@@ -54,7 +54,7 @@ Fires all [L.esri.Service](service.html) events.
             <td>Returns a new Suggest task bound to this server.</td>
         </tr>
         <tr>
-            <td><code>reverse())</code></td>
+            <td><code>reverse()</code></td>
             <td><code>`L.esri.Geocoding.reverseGeocode`</code></td>
             <td>Returns a new ReverseGeocode task bound to this server.</td>
         </tr>

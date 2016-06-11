@@ -136,7 +136,7 @@ All providers share the following options:
 | Option | Type | Default | Description
 | --- | --- | --- | --- |
 | label | `String` | `'Provider Type'` | Text that will be used to group suggestions (when more than one provider is used).
-| maxResults | `Integer` | `5` | Maximum number of results to show for the provider.  Hard limit for the [ArcGIS World Geocoding Service](https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm) is 50.
+| maxResults | `Integer` | `5` | Maximum number of results to show for the provider.  Hard limit for suggestions from the [ArcGIS World Geocoding Service](https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm) is 15.
 | attribution | `string` | `Varies by provider` | Adds attribution to the map to credit the source.
 
 ##### arcgisOnlineProvider
@@ -155,7 +155,6 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 `url` | `String` | *Required* | The URL for the service that will be searched.
 `label` | `String` | `'Geocode Service'` | Text that will be used to group suggestions under when more than one provider is being used.
-`maxResults` | `Integer` | 5 | Maximum number of results to show for this provider.
 
 Results from the `geocodeServiceProvider` will have an additional `properties` key which will correspond with all the available fields in the service.
 
@@ -178,7 +177,7 @@ Option | Type | Default | Description
 `searchFields` | `String` `Array[Strings]` | None | An array of fields to search for text.
 `layer` | `Integer` | `0` | The layer to find text matches on. Can also be an array of layer identifiers.
 `formatSuggestion`| `Function` | See Description | Formatting function for the suggestion text. Receives feature information and returns a string.
-`bufferRadius`, | `Integer` `Array[Integers]`| Buffer point results by this radius to create bounds.
+`bufferRadius` | `Integer` `Array[Integers]`| Buffer point results by this radius to create bounds.
 
 Results from the `mapServiceProvider` will have an additional `properties` key which will contain all the information for the feature and a `geojson` key that will contain a [GeoJSON](http://geojson.org/) representation of the feature.
 
@@ -202,4 +201,4 @@ Property | Type | Description
 `bounds` | [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds)| The bounds around this result. Helpful for zooming to results like cities and states.
 `latlng` | [`L.LatLng`](http://leafletjs.com/reference.html#latlng)| The center of the result.
 
-The result object will also contain any additional properties from the provider. See the [available providers](#available-providers) for more informationc.
+The result object will also contain any additional properties from the provider. See the [available providers](#available-providers) for more information.
