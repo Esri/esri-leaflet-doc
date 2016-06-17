@@ -1,0 +1,55 @@
+---
+title: Displaying Web maps
+description: With the appropriate plugin(s), its possible to render web maps created in arcgis.com.
+layout: example.hbs
+---
+
+<!-- Load Leaflet Label from GitHub -->
+<script src="https://leaflet.github.io/Leaflet.label/leaflet.label.js"></script>
+
+<!-- Load Leaflet Heat from CDN -->
+<script src="https://cdn.rawgit.com/Leaflet/Leaflet.heat/gh-pages/dist/leaflet-heat.js"></script>
+
+<!-- Load Heatmap Feature Layer from CDN -->
+<script src="https://cdn.jsdelivr.net/leaflet.esri.heatmap-feature-layer/2.0.0-beta.1/esri-leaflet-heatmap-feature-layer.js"></script>
+
+ <!-- Load Esri Leaflet Renderers from CDN -->
+ <script src="http://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.2/esri-leaflet-renderers.js"></script>
+
+ <!-- Load Vector Icon from GitHub -->
+ <script src="https://muxlab.github.io/Leaflet.VectorIcon/L.VectorIcon.js"></script>
+
+ <!-- Load L.esri.WebMap -->
+<script src="https://cdn.rawgit.com/ynunokawa/L.esri.WebMap/master/src/L.esri.WebMap.js"></script>
+
+<div id="map"></div>
+
+<script>
+  // to draw a different webmap, just append its id instead
+  // webmap.html?id=13750b8b548d48bfa99a9731f2a93ba0
+
+  var webmapId = '22c504d229f14c789c5b49ebff38b941'; // Default WebMap ID
+  getIdfromUrl();
+
+  var webmap = L.esri.webMap(webmapId, { map: L.map("map") });
+
+  webmap.on('load', function() {
+      var overlayMaps = {};
+      webmap.layers.map(function(l) {
+          overlayMaps[l.title] = l.layer;
+      });
+      L.control.layers({}, overlayMaps, {
+          position: 'bottomleft'
+      }).addTo(webmap._map);
+  });
+
+  function getIdfromUrl() {
+    var urlParams = location.search.substring(1).split('&');
+    for (var i=0; urlParams[i]; i++) {
+        var param = urlParams[i].split('=');
+        if(param[0] === 'id') {
+            webmapId = param[1]
+        }
+    }
+  }
+</script>
