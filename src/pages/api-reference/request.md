@@ -1,9 +1,9 @@
 ---
-title: Request
+title: request
 layout: documentation.hbs
 ---
 
-# L.esri.Request
+# L.esri.request
 
 Generic methods for GET and POST requests to ArcGIS Online or ArcGIS Server resources. These methods will handle serializing the input parameters and parsing of the response, making them available in a callback function via a response and error property similar to Node.js.
 
