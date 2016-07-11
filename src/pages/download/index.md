@@ -53,9 +53,9 @@ bower install esri-leaflet
 
 ### Still using Leaflet `0.7.x`?
 
-Version `1.0.3` of esri-leaflet is the one for you.
+Version `1.0.4` of esri-leaflet is the one for you.
 ```xml
-<script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.3/esri-leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
 ```
 
 ### Older Hosted Versions
