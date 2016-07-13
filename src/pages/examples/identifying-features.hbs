@@ -20,18 +20,17 @@ layout: example.hbs
 </style>
 
 <div id="map"></div>
-<div id="selectedFeatures" class="leaflet-bar map-text">Click on a
-  <a href="https://tmservices1.esri.com/arcgis/rest/services/LiveFeeds/Earthquakes/MapServer">USGS</a> earthquake.
+<div id="selectedFeatures" class="leaflet-bar map-text">Click on the map for Soil <a href="https://services.arcgisonline.com/arcgis/rest/services/Specialty/Soil_Survey_Map/MapServer">Order/ Sub-Order</a>
 </div>
 <script>
-  var map = L.map('map').setView([38.5, -96.8], 4);
-
+  var map = L.map('map', {
+    minZoom: 5
+  }).setView([38.5, -96.8], 6);
   L.esri.basemapLayer('Gray').addTo(map);
 
-  var earthquakes = L.esri.dynamicMapLayer({
-    url: 'https://tmservices1.esri.com/arcgis/rest/services/LiveFeeds/Earthquakes/MapServer',
-    opacity: 0.5,
-    useCors: false
+  var soil = L.esri.dynamicMapLayer({
+    url: 'https://services.arcgisonline.com/arcgis/rest/services/Specialty/Soil_Survey_Map/MapServer',
+    opacity: 0.7
   }).addTo(map);
 
   var identifiedFeature;
@@ -39,16 +38,18 @@ layout: example.hbs
 
   map.on('click', function (e) {
     pane.innerHTML = 'Loading';
-    if(identifiedFeature){
+    if (identifiedFeature){
       map.removeLayer(identifiedFeature);
     }
-    earthquakes.identify().on(map).at(e.latlng).run(function(error, featureCollection){
-      console.log(featureCollection.features[0]);
+    soil.identify().on(map).at(e.latlng).run(function(error, featureCollection){
+      // make sure at least one feature was identified.
       if (featureCollection.features.length > 0) {
         identifiedFeature = L.geoJson(featureCollection.features[0]).addTo(map);
-        // string to number to string = trimmed zeros.  the wonders of JavaScript
-        var magTrimmed = parseFloat(featureCollection.features[0].properties.MAGNITUDE).toString();
-        pane.innerHTML = "magnitude: " + magTrimmed;
+        var soilDescription =
+          featureCollection.features[0].properties['Dominant Order'] +
+          ' - ' +
+          featureCollection.features[0].properties['Dominant Sub-Order'];
+        pane.innerHTML = soilDescription;
       }
       else {
         pane.innerHTML = 'No features identified.';
