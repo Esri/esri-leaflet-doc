@@ -34,7 +34,7 @@ in production you'd be better off hosting these libraries yourself -->
   // The min/maxZoom values provided should match the actual cache thats been published. This information can be retrieved from the service endpoint directly.
   L.esri.tiledMapLayer({
     url: 'http://maverick.arcgis.com/ArcGIS/rest/services/World_Mollweide/MapServer',
-    // overlay is misaligned at world scale, needs looked into.
+    // to do: overlay is misaligned at world scale, needs to figure out why.
     maxZoom: 3,
     minZoom: 3,
     continuousWorld: true,

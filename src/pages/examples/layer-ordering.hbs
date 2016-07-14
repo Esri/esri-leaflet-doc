@@ -37,7 +37,7 @@ layout: example.hbs
 
   map.createPane('blockpoints');
 
-  // for point GeoJSON, Leafet expects custom panes to be passed returned by pointToLayer()
+  // for point GeoJSON, Leafet expects custom panes to be returned in pointToLayer()
   L.esri.featureLayer({
     url: blockPointsUrl,
     pointToLayer: function (geojson, latlng) {

@@ -12,7 +12,7 @@ layout: example.hbs
     window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
   }
 
-  var map = L.map('map').setView([34.326, -117.697], 12);
+  var map = L.map('map').setView([34.089, -116.865], 9);
   L.esri.basemapLayer('Topographic').addTo(map);
 
   function serverAuth(callback){
