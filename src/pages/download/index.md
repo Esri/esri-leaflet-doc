@@ -45,7 +45,7 @@ npm install esri-leaflet --save
 
 # Bower
 
-Esri Leaflet is [available on Bower](http://bower.io/search/?q=esri-leaflet) as well, and can be installed with the following command.
+Esri Leaflet is [available on Bower](http://bower.io/search/?q=esri-leaflet) as well.
 
 ```bash
 bower install esri-leaflet
