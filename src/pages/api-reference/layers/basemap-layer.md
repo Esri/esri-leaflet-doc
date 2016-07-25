@@ -26,6 +26,7 @@ Inherits from [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer)
     </tbody>
 </table>
 
+
 ##### Basemaps
 
 These maps have worldwide coverage at a variety of zoom levels.
@@ -55,7 +56,11 @@ These are optional layers that add extra text labels to the basemaps.
 
 ### Options
 
-`L.esri.TiledMapLayer` accepts all [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer-options) options.
+`L.esri.basemapLayer` also accepts all [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer-options) options.
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `token` | `String` | `null` | Will use this token to authenticate all calls to the service. |
 
 ### Methods
 
