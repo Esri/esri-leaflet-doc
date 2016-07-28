@@ -1,6 +1,6 @@
 ---
 title: Query without a map
-description: We create a map here to take advantage of Leaflet's built in HTML5 location method, it is not necessary to add a layer in order to execute a spatial query.  More information about Queries can be found in the <a href="../api-reference/tasks/query.html">L.esri.Query</a> documentation.
+description: It is not necessary to add a layer to a map in order to execute a spatial query.  More information about Queries can be found in the <a href="../api-reference/tasks/query.html">L.esri.Query</a> documentation.
 layout: example.hbs
 ---
 
@@ -21,7 +21,8 @@ layout: example.hbs
 
   document.getElementById('map').style.height = '100px';
 
-  // no need to display, but lets use a map to ask user for HTML5 location
+  // its not necessary to instaniate a map in order to execute a spatial query,
+ //  we do it here because it provides a convenient way to ask the user for their HTML5 location
   var map = L.map('invisibleMap');
   map.locate();
 

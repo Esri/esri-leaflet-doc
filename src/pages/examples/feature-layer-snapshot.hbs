@@ -1,5 +1,5 @@
 ---
-title: Loading a Feature Layer programatically
+title: Load each and every feature initially
 description: Sometimes it is desirable to load a "snapshot" of a Feature Layer instead of loading it progressively as you pan around the map. The approach is useful for smaller services.
 layout: example.hbs
 ---
@@ -7,7 +7,7 @@ layout: example.hbs
 <div id="map"></div>
 
 <script>
-  var map = L.map("map").setView([45.525231693565054, -122.62836456298828], 11);
+  var map = L.map("map").setView([45.5252, -122.6284], 11);
 
   L.esri.basemapLayer("Topographic").addTo(map);
 

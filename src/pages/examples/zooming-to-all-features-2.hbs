@@ -19,7 +19,7 @@ layout: example.hbs
   }).addTo(map);
 
   // listen for when all features have been retrieved from the server
-  fl.on("load", function(evt) {
+  fl.once("load", function(evt) {
     // create a new empty Leaflet bounds object
     var bounds = L.latLngBounds([]);
     // loop through the features returned by the server
@@ -32,9 +32,6 @@ layout: example.hbs
 
     // once we've looped through all the features, zoom the map to the extent of the collection
     map.fitBounds(bounds);
-
-    // unwire the event listener so that it only fires once when the page is loaded
-    fl.off('load');
   });
 
 </script>
