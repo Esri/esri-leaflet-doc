@@ -1,15 +1,12 @@
-var elTopo = L.esri.basemapLayer('Imagery');
-
 var bgmap = L.map('background-map', {
     center: [37.739, -117.986],
     zoom: 10,
     scrollWheelZoom: false,
-    doubleClickZoom: false,
-    touchZoom: false,
+    touchZoom: true,
     zoomControl: false,
     tap: false,
     attributionControl: false,
-    layers: [elTopo]
+    layers: [L.esri.basemapLayer('Imagery')]
 });
 
 if (map) {

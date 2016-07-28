@@ -12,7 +12,6 @@ layout: example.hbs
   var map = L.map('map').setView([40, -100], 5);
   L.esri.basemapLayer('DarkGray').addTo(map);
 
-  var bounds;
   // add a graphic layer composed of selected US Counties
   var fl = L.esri.featureLayer({
     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/2',
@@ -22,7 +21,7 @@ layout: example.hbs
   // listen for when all features have been retrieved from the server
   fl.once("load", function(evt) {
     // create a new empty Leaflet bounds object
-    bounds = L.latLngBounds([]);
+    var bounds = L.latLngBounds([]);
     // loop through the features returned by the server
     fl.eachFeature(function(layer) {
       // get the bounds of an individual feature
