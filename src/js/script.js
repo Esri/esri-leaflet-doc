@@ -1,25 +1,22 @@
-var map;
+var elTopo = L.esri.basemapLayer('Imagery');
+
 var bgmap = L.map('background-map', {
-    center: [68.41, 16.53],
+    center: [37.739, -117.986],
     zoom: 10,
     scrollWheelZoom: false,
-    doubleClickZoom: true,
-    touchZoom: true,
+    doubleClickZoom: false,
+    touchZoom: false,
     zoomControl: false,
     tap: false,
-    attributionControl: false
+    attributionControl: false,
+    layers: [elTopo]
 });
-
-L.esri.basemapLayer('Imagery', {
-  hideLogo: true
-}).addTo(bgmap);
 
 if (map) {
   map.scrollWheelZoom.disable();
-  map.on("click", accidentalScroll);
+  map.once("click", accidentalScroll, map);
 }
 
 function accidentalScroll() {
   map.scrollWheelZoom.enable();
-  map.off("click", accidentalScroll);
 }
