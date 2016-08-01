@@ -1,0 +1,33 @@
+---
+title: Add a Stream Service
+description: This demo relies on the <a href="https://github.com/rowanwins/esri-leaflet-stream">Esri Leaflet Stream</a> plugin.<br>More information about Stream Services can be found in the <a href="http://server.arcgis.com/en/geoevent-extension/latest/process-event-data/stream-services.htm">ArcGIS REST</a> documentation.
+layout: example.hbs
+---
+
+<script src="https://cdn.rawgit.com/rowanwins/esri-leaflet-stream/gh-pages/dist/esri-leaflet-stream.min.js"></script>
+
+
+<div id="map"></div>
+
+<script type='text/javascript'>
+  var map = L.map('map').setView([47.59242, -122.31726999], 12);
+
+  L.esri.basemapLayer('Gray').addTo(map);
+
+  function createRandomFill(){
+    return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+  }
+
+  var buses = L.esri.streamFeatureLayer({
+    url: 'https://geoeventsample3.esri.com:6443/arcgis/rest/services/SeattleBus/StreamServer',
+    pointToLayer: function (geojson, latlng) {
+      return L.circleMarker(latlng, {
+        fillColor: createRandomFill(),
+        fillOpacity: 0.8,
+        color: "#cccccc",
+        weight: 2
+      });
+    },
+  }).addTo(map);
+  
+</script>
