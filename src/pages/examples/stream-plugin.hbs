@@ -1,6 +1,6 @@
 ---
 title: Add a Stream Service
-description: This demo relies on the <a href="https://github.com/rowanwins/esri-leaflet-stream">Esri Leaflet Stream</a> plugin.<br>More information about Stream Services can be found in the <a href="http://server.arcgis.com/en/geoevent-extension/latest/process-event-data/stream-services.htm">ArcGIS REST</a> documentation.
+description: This demo displays a real-time data feed from a service published using the <a href="http://server.arcgis.com/en/geoevent-extension/latest/process-event-data/stream-services.htm">GeoEvent extension</a> for ArcGIS Server using a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSocket</a>.  In addition to Esri Leaflet, it relies on <a href="https://github.com/rowanwins/esri-leaflet-stream">Esri Leaflet Stream.</a>
 layout: example.hbs
 ---
 
@@ -10,7 +10,7 @@ layout: example.hbs
 <div id="map"></div>
 
 <script type='text/javascript'>
-  var map = L.map('map').setView([47.59242, -122.31726999], 12);
+  var map = L.map('map').setView([47.59242, -122.31727], 12);
 
   L.esri.basemapLayer('Gray').addTo(map);
 
@@ -29,5 +29,5 @@ layout: example.hbs
       });
     },
   }).addTo(map);
-  
+
 </script>
