@@ -7,7 +7,7 @@ var bgmap = L.map('background-map', {
     zoomControl: false,
     tap: false,
     attributionControl: false,
-    layers: [L.esri.basemapLayer('Imagery')]
+    layers: [L.esri.basemapLayer('Topographic')]
 });
 
 if (map) {
