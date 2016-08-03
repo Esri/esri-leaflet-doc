@@ -113,7 +113,7 @@ layout: documentation.hbs
         <tr>
             <td><code>orderBy({{{param 'String' 'fieldName'}}}, {{{param 'String' 'order'}}})</code></td>
             <td><code>this</code></td>
-            <td>Order the output features on certain field either ascending or descending. This can be called multiple times to define a very detailed sort order.</td>
+            <td>Sort output features using values from an individual field. `"ASC"` (ascending) is the default sort order, but `"DESC"` can be passed as an alternative.  This method can be called more than once to apply advanced sorting.</td>
         </tr>
         <tr>
             <td><code>featureIds({{{param 'Array' 'ids'}}})</code></td>
