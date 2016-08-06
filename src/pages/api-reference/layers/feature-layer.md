@@ -25,6 +25,8 @@ Note that the Feature Layer URL ends in `/FeatureServer/{LAYER_ID}`.
 
 You can create a new empty feature service with a single layer on the [ArcGIS for Developers website](https://developers.arcgis.com/en/hosted-data/#/new) or you can use ArcGIS Online to [create a Feature Service from a CSV or Shapefile](https://doc.arcgis.com/en/arcgis-online/share-maps/publish-features.htm).
 
+Note: `L.esri.FeatureLayer` uses gridded queries to retrieve and cache tiles (of features) that intersect the map extent, similar to ArcGIS JS API's MODE_ONDEMAND. For more information see: https://developers.arcgis.com/javascript/3/jshelp/best_practices_feature_layers.html
+
 ### Constructor
 
 <table>
