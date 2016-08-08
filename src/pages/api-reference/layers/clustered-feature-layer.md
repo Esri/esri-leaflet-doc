@@ -170,7 +170,7 @@ In additon to these events `L.esri.FeatureLayer` also fires the following [Mouse
             <td>
               Defines a function that will return HTML to be bound to a popup on each feature.
 <pre class="js"><code>featureLayer.bindPopup(function(features){
-  return "Name: " + features.properties.NAME;
+  return "Name: " + features.feature.properties.NAME;
 });</code></pre>
             </td>
         </tr>
