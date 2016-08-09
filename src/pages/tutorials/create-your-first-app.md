@@ -57,7 +57,7 @@ The easiest option is to point to a CDN where the libraries are already hosted. 
 
 We are now ready to create a container for our map.  This will be a  `<div>`  element within the  `<body>`  element.  We must provide it with an `id` attribute.  The `id` will be passed into the code that creates the Leaflet map.  We will use an `id` of **map**.
 
-For our map to display, we must set the height and width for this element.  Since we want it to fill the whole page, we'll make sure there to remove all margins and padding too.
+For our map to display, we must set the height and width for this element.  Since we want it to fill the whole page, we'll make sure to remove all margins and padding too.
 
 ```xml
 <!doctype html>
@@ -95,7 +95,7 @@ For our map to display, we must set the height and width for this element.  Sinc
 
 Now its time to write some JavaScript!  This belongs inside a `<script>` tag inside the `<body>`.
 
-Our first step is to create a map object. In our constructor we must provide the `id` of the element containing the map.  Its a good idea to specify latitude and longitude coordinates for the center of the map, and the initial zoom level too.
+Our first step is to create a map object. In our constructor we must provide the `id` of the element containing the map.  In order to set the initial location, we'll specify the latitude and longitude coordinates for the center of the map and the zoom level.
 
 > Its helpful to cross reference help documents to double-check syntax and learn more about what is possible.  Check out the [Leaflet.js documentation](http://leafletjs.com/reference.html#map-usage "Leaflet Map Object") for more information about additional map constructor options.
 
