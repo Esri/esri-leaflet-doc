@@ -213,21 +213,6 @@ In addition to the events above, `L.esri.FeatureLayer` also fires the following 
             <td>Given the ID of a feature, reset that feature to the original style.</td>
         </tr>
         <tr>
-            <td><code>bindPopup({{{param 'Function' 'fn'}}}, {{{param 'PopupOptions' 'popupOptions' 'http://leafletjs.com/reference.html#popup-options'}}})</code></td>
-            <td><code>this</code></td>
-            <td>
-              Defines a function that will return HTML to be bound to a popup on each feature.
-<pre class="js"><code>featureLayer.bindPopup(function(features){
-  return "Name: " + features.properties.NAME;
-});</code></pre>
-            </td>
-        </tr>
-        <tr>
-            <td><code>unbindPopup()</code></td>
-            <td><code>this</code></td>
-            <td>Removed a popup previously bound with `bindPopup`.</td>
-        </tr>
-        <tr>
             <td><code>eachFeature({{{param 'Function' 'fn'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
             <td>
