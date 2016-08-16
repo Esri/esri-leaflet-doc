@@ -7,6 +7,8 @@ layout: documentation.hbs
 
 `L.esri.FeatureLayer` is used to visualize and query vector geographic data hosted in both ArcGIS Online and published using ArcGIS Server.
 
+Inherits from [L.Layer](http://leafletjs.com/reference-1.0.0.html#layer)
+
 Feature Layers are provided by Feature Services which can contain multiple layers. Feature Layers expose vector geographic information as a web service that can be visualized, styled, queried and edited.
 
 Here is a sample Feature Service URL
