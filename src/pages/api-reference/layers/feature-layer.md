@@ -322,6 +322,20 @@ featureLayer.query()
                 </ul>
             </td>
         </tr>
+        <tr>
+            <td><code>redraw({{{param 'String or Integer' 'id'}}})</code></td>
+            <td><code>this</code></td>
+            <td>
+                Redraws a feature with the provided id from the feature layer.
+            </td>
+        </tr>
+        <tr>
+            <td><code>reset()</code></td>
+            <td><code>this</code></td>
+            <td>
+                Redraws all features from the feature layer that exist on the map.
+            </td>
+        </tr>
     </tbody>
 </table>
 
