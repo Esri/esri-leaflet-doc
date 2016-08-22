@@ -7,6 +7,8 @@ layout: documentation.hbs
 
 `L.esri.FeatureLayer` is used to visualize and query vector geographic data hosted in both ArcGIS Online and published using ArcGIS Server.
 
+Inherits from [L.Layer](http://leafletjs.com/reference-1.0.0.html#layer)
+
 Feature Layers are provided by Feature Services which can contain multiple layers. Feature Layers expose vector geographic information as a web service that can be visualized, styled, queried and edited.
 
 Here is a sample Feature Service URL
@@ -213,21 +215,6 @@ In addition to the events above, `L.esri.FeatureLayer` also fires the following 
             <td>Given the ID of a feature, reset that feature to the original style.</td>
         </tr>
         <tr>
-            <td><code>bindPopup({{{param 'Function' 'fn'}}}, {{{param 'PopupOptions' 'popupOptions' 'http://leafletjs.com/reference.html#popup-options'}}})</code></td>
-            <td><code>this</code></td>
-            <td>
-              Defines a function that will return HTML to be bound to a popup on each feature.
-<pre class="js"><code>featureLayer.bindPopup(function(features){
-  return "Name: " + features.properties.NAME;
-});</code></pre>
-            </td>
-        </tr>
-        <tr>
-            <td><code>unbindPopup()</code></td>
-            <td><code>this</code></td>
-            <td>Removed a popup previously bound with `bindPopup`.</td>
-        </tr>
-        <tr>
             <td><code>eachFeature({{{param 'Function' 'fn'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
             <td>
@@ -335,6 +322,20 @@ featureLayer.query()
                     <li>Requires authentication as a user who has permission to edit the service in ArcGIS Online or the user who created the service.</li>
                     <li>Requires the <code>Delete</code> capability be enabled on the service. You can check if this operation exists by checking the metadata of your service under capabilities.</li>
                 </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>redraw({{{param 'String or Integer' 'id'}}})</code></td>
+            <td><code>this</code></td>
+            <td>
+                Redraws a feature with the provided id from the feature layer.
+            </td>
+        </tr>
+        <tr>
+            <td><code>reset()</code></td>
+            <td><code>this</code></td>
+            <td>
+                Redraws all features from the feature layer that exist on the map.
             </td>
         </tr>
     </tbody>
