@@ -1,6 +1,6 @@
 ---
 title: Working with feature layers
-description: Learn how to [the content] in Leaflet.
+description: Learn how to use feature layers in Leaflet.
 layout: tutorials.hbs
 ---
 
@@ -57,17 +57,15 @@ Start by copying this skeleton code which outlines the structure of a single pag
 
 ##### Add a Feature Layer to the Map
 
-We will add a REST service using the `L.esri.featureLayer` class from the Esri Leaflet plugin.  This can be either a **Map Service** or **Feature Service**.  You must provide the url for the service.  Below is an example for creating a Feature Layer using both types of services:
+We will add a REST service using the `L.esri.featureLayer` class from the Esri Leaflet plugin.  This can be either a **Map Service** or **Feature Service**.  You must provide the url for the service.  You can learn more about map and feature services at the [Introduction to Layer Types](http://esri.github.io/esri-leaflet/tutorials/introduction-to-layer-types.html "Introduction to Layer Types Tutorial") tutorial.
+
+Below is an example for creating a Feature Layer using both types of services:
 
 ```JavaScript
 var portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'});
 
-var someService =  L.esri.featureLayer({url: 'https://subdomain.domain.com/arcgis/rest/services/Name-of-Service/MapServer/0'});
+var worldCities =  L.esri.featureLayer({url: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0'});
 ```
-
-> Feel free to pick an actual service for the Map Server.
-
-> Do we want to include a link to the REST API or ArcGIS for Server docs for the service types?
 
 In order to display our new layer, we need to add it to our map using Leaflet's `addTo()` method.  We can chain this method directly to the object constructor, or call it in a separate line.  In our sample, we'll use the chaining approach.
 
@@ -75,7 +73,12 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
 var portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'}).addTo(map);
 ```
 
-If we save and refresh our map, we should see many blue markers on the map, which are the features from the service.  Leaflet is applying a default style to the features.
+If we save and refresh our map, we should see many blue markers on the map, which are the features from the service.  Leaflet is applying a default style to the features.  It is up to you to define the styles for the data tha that is drawn. See the links below for examples of doing this:
+
+> [Styling Points](http://esri.github.io/esri-leaflet/tutorials/introduction-to-layer-types.html "Styling Points Feature Layer")
+> [Styling Lines](http://esri.github.io/esri-leaflet/examples/styling-feature-layer-polylines.html "Styling Lines Feature Layer")
+> [Styling Polygons](http://esri.github.io/esri-leaflet/examples/styling-feature-layer-polygons.html "Styling Polygon Feature Layer")
+
 
 > Its helpful to cross reference help documents to double-check syntax and learn more about what is possible.  Check out the [Esri Leaflet documentation](http://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html "Esri Feature Layer") for more information about additional feature layer constructor options.
 
@@ -88,7 +91,7 @@ If we want to use the symbology set when a service was published, we'll need to 
 <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/1.0.1/esri-leaflet-renderers.js"></script>  
 ```  
 
-If we save and refresh our map, we'll now see the trees displayed as red circles.  It is also possible to define a custom symbology for the features.
+If we save and refresh our map, we'll now see the trees displayed as red circles.  
 
 > Do we want to provide links to the examples for custom styling?
 
@@ -174,8 +177,3 @@ Here is what the final `html` file should look like for this tutorial:
 </body>
 </html>
 ```
-
-##### Topics left to cover
-
-> remind that services are supported whether you can fetch `f=geojson` or not
-> describe gridded queries
