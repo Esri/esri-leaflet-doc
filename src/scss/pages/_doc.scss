@@ -6,6 +6,13 @@
   @include box-sizing(border-box);
   position: relative;
   background-color: white;
+  h1, h2, h3, h4 {
+    transition: 0.4s;
+    &:hover {
+      color: #868e96;
+      cursor: pointer;
+    }
+  }
   h3, h4 {
     margin-top: lines(1);
   }
