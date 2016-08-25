@@ -76,11 +76,13 @@ var portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.c
 If we save and refresh our map, we should see many blue markers on the map, which are the features from the service.  Leaflet is applying a default style to the features.  It is up to you to define the styles for the data tha that is drawn. See the links below for examples of doing this:
 
 > [Styling Points](http://esri.github.io/esri-leaflet/tutorials/introduction-to-layer-types.html "Styling Points Feature Layer")
+
 > [Styling Lines](http://esri.github.io/esri-leaflet/examples/styling-feature-layer-polylines.html "Styling Lines Feature Layer")
+
 > [Styling Polygons](http://esri.github.io/esri-leaflet/examples/styling-feature-layer-polygons.html "Styling Polygon Feature Layer")
 
 
-> Its helpful to cross reference help documents to double-check syntax and learn more about what is possible.  Check out the [Esri Leaflet documentation](http://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html "Esri Feature Layer") for more information about additional feature layer constructor options.
+It's helpful to cross reference help documents to double-check syntax and learn more about what is possible.  Check out the [Esri Leaflet documentation](http://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html "Esri Feature Layer") for more information about additional feature layer constructor options.
 
 ##### Add Esri Leaflet Renderers Plugin
 
@@ -93,30 +95,16 @@ If we want to use the symbology set when a service was published, we'll need to 
 
 If we save and refresh our map, we'll now see the trees displayed as red circles.  
 
-> Do we want to provide links to the examples for custom styling?
-
-> http://esri.github.io/esri-leaflet/examples/styling-feature-layer-points.html
-
-> http://esri.github.io/esri-leaflet/examples/styling-feature-layer-polylines.html
-
-> http://esri.github.io/esri-leaflet/examples/styling-feature-layer-polygons.html
-
-
 ##### Add a Popup to Feature Layer
 
-Now we will add a popup to our feature layer.  The popup can contain both static text and dynamic text from the fields in the service.  We'll use the `onEachFeature` method to create the popup.
+Now we will add a popup to our feature layer.  The popup can contain both static text and dynamic text from the fields in the service.  We'll use the `bindPopup` method to create the popup.  You can learn more about popups in Leaflet by visting the [documentation](http://leafletjs.com/reference.html#popup "Leaflet Popup Documentation").
 
-First, we will create a variable for the popup content, using Leaflet's [Utility Template](http://leafletjs.com/reference.html#util-template 'Leaflet Utility Template').  We place the name of fields from the service in  curly brackets **{ }**, and add `feature.properties` at the end of the `L.Util.template` to access the fields.  Second, we will bind the popup to the feature layer.
+We will create the content for the popup using Leaflet's [Utility Template](http://leafletjs.com/reference.html#util-template 'Leaflet Utility Template').  We place the name of fields from the service in  curly brackets **{ }**, and add `feature.properties` at the end of the `L.Util.template` to access the fields. 
 
 ```JavaScript
- var portlandHeritageTrees = L.esri.featureLayer({
-    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0',
-    onEachFeature: function(feature,layer) {
-        var popupContent = L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', feature.properties);
-        
-        layer.bindPopup(popupContent);        
-    }
-}).addTo(map);
+portlandHeritageTrees.bindPopup(function(evt) {
+    return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
+});         
 ```
 
 If we save and refresh our map, we are able to click on the features and a popup will open.
@@ -165,14 +153,11 @@ Here is what the final `html` file should look like for this tutorial:
         
         var esriStreets = L.esri.basemapLayer('Streets').addTo(map);
         
-        var portlandHeritageTrees = L.esri.featureLayer({
-            url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0',
-            onEachFeature: function(feature,layer) {
-                var popupContent = L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', feature.properties);
-                
-                layer.bindPopup(popupContent);        
-            }
-        }).addTo(map);
+        var portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'}).addTo(map);
+        
+        portlandHeritageTrees.bindPopup(function(evt) {
+            return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
+        });          
     </script>    
 </body>
 </html>
