@@ -102,8 +102,8 @@ Now we will add a popup to our feature layer.  The popup can contain both static
 We will create the content for the popup using Leaflet's [Utility Template](http://leafletjs.com/reference.html#util-template 'Leaflet Utility Template').  We place the name of fields from the service in  curly brackets **{ }**, and add `feature.properties` at the end of the `L.Util.template` to access the fields. 
 
 ```JavaScript
-portlandHeritageTrees.bindPopup(function(evt) {
-    return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
+portlandHeritageTrees.bindPopup(function(feature) {
+    return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', feature.properties);
 });         
 ```
 
@@ -155,8 +155,8 @@ Here is what the final `html` file should look like for this tutorial:
         
         var portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'}).addTo(map);
         
-        portlandHeritageTrees.bindPopup(function(evt) {
-            return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
+        portlandHeritageTrees.bindPopup(function(feature) {
+            return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', feature.properties);
         });          
     </script>    
 </body>
