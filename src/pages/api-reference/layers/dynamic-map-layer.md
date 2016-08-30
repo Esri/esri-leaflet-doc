@@ -226,7 +226,8 @@ var url = "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Petroleum
 
 L.esri.dynamicMapLayer({
   url: url,
-  opacity : 0.25
+  opacity : 0.25,
+  useCors: false
 }).addTo(map);
 
 ```
