@@ -35,16 +35,17 @@
   {{#if siteData.isDev}}
     <!-- 'livereload' for development -->
     <script src="//localhost:35729/livereload.js"></script>
+  {{else}}
+    <!-- use CDN -->
+    <script src="https://cdn.jsdelivr.net/jsdelivr-rum/latest/jsdelivr-rum.min.js"></script>
+  {{/if}}
 
+  {{#if siteData.localSource}}
     <!-- Load local linked resources -->
     <link rel="stylesheet" href="/js/linked/leaflet-dist/leaflet.css" />
     <script src="/js/linked/leaflet-dist/leaflet-src.js"></script>
     <script src="/js/linked/esri-leaflet-dist/esri-leaflet-debug.js"></script>
   {{else}}
-
-    <!-- use CDN -->
-    <script src="https://cdn.jsdelivr.net/jsdelivr-rum/latest/jsdelivr-rum.min.js"></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.3/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.3/leaflet-src.js"></script>
     <script src="https://cdn.jsdelivr.net/leaflet.esri/{{package.version}}/esri-leaflet-debug.js"></script>
