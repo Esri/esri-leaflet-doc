@@ -1,6 +1,6 @@
 ---
 title: Time Ranges
-description: Using time to filter visualized information from a Map Service. Enter dates between 1990 and 2010. More information about Image Services can be found in the <a href="../api-reference/layers/image-map-layer.html">L.esri.ImageMapLayer</a> documentation.
+description: Using time to filter visualized information from an Image Service. Enter dates between 1990 and 2010. More information about Image Services can be found in the <a href="../api-reference/layers/image-map-layer.html">L.esri.ImageMapLayer</a> documentation.
 layout: example.hbs
 ---
 
@@ -13,7 +13,7 @@ layout: example.hbs
         padding: 1em;
         background: white;
     }
-    #time-ranges input {
+    #time-ranges input, #time-ranges select {
         display: inline-block;
         border: 1px solid #999;
         font-size: 14px;
@@ -36,8 +36,12 @@ layout: example.hbs
 <div id="time-ranges" class="leaflet-bar">
     <form action="#" id="timeForm">
         <label for="timeInput">
-            Date
-            <input id='timeInput' type="date" value='1990-01-01' name='date'>
+            Date:
+            <select id='timeInput' type="date" name='date'>
+                <option>1990</option>
+                <option>2000</option>
+                <option>2010</option>
+            </select>
         </label>
         <input type="submit" value="Update">
     </form>
