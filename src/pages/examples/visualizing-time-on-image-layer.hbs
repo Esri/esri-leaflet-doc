@@ -1,6 +1,6 @@
 ---
 title: Time Ranges
-description: Using time to filter visualized information from an Image Service. Enter dates between 1990 and 2010. More information about Image Services can be found in the <a href="../api-reference/layers/image-map-layer.html">L.esri.ImageMapLayer</a> documentation.
+description: Select a date between 1990 and 2010 to fetch appropriate imagery from an Image Service.  More information about Image Services can be found in the <a href="../api-reference/layers/image-map-layer.html">L.esri.ImageMapLayer</a> documentation.
 layout: example.hbs
 ---
 
@@ -21,14 +21,6 @@ layout: example.hbs
         height: 28px;
         line-height: 28px;
     }
-    #time-ranges input[type='submit'] {
-        box-sizing: content-box;
-        padding: 0 1em;
-        text-transform: uppercase;
-        color: white;
-        background: #5C7DB8;
-        border-color: #5C7DB8;
-    }
 </style>
 
 <div id="map"></div>
@@ -36,14 +28,13 @@ layout: example.hbs
 <div id="time-ranges" class="leaflet-bar">
     <form action="#" id="timeForm">
         <label for="timeInput">
-            Date:
+            Year:
             <select id='timeInput' type="date" name='date'>
                 <option>1990</option>
                 <option>2000</option>
                 <option>2010</option>
             </select>
         </label>
-        <input type="submit" value="Update">
     </form>
 </div>
 
@@ -66,7 +57,7 @@ layout: example.hbs
         to: new Date(timeInput.value)
     }).addTo(map);
 
-    timeForm.addEventListener('submit', function updateTimeRange(e){
+    timeInput.addEventListener('change', function updateTimeRange(e){
         vegetation.setTimeRange(new Date(timeInput.value), new Date(timeInput.value));
         e.preventDefault();
     });
