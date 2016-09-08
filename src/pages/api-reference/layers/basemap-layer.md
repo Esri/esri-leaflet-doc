@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Quickly access Esri published map tiles from ArcGIS Online or ArcGIS Server in Leaflet.
+The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications. `L.esri.basemapLayer` is used to display Esri hosted basemaps and attributes data providers appropriately.
 
 Inherits from [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer)
 
