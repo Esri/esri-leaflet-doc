@@ -39,9 +39,7 @@ in production you'd be better off hosting these libraries yourself -->
     url: 'http://maverick.arcgis.com/ArcGIS/rest/services/World_Mollweide/MapServer',
     maxZoom: 3,
     minZoom: 1,
-    continuousWorld: true,
-    attribution: 'maverick',
-    errorTileUrl: 'http://downloads2.esri.com/support/TechArticles/blank256.png'
+    continuousWorld: true
   }).addTo(map);
 
   // feature layers will be requested in WGS84 (4326) and reprojected on the client
