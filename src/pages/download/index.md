@@ -22,6 +22,9 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 #### Other Plugins
 
 ```xml
+<!-- ArcGIS Online Vector Basemaps -->
+<script src="https://unpkg.com/esri-leaflet-vector@1.0.0"></script>
+
 <!-- Clustered Feature Layer -->
 <script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
 
@@ -29,8 +32,8 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 <script src="https://unpkg.com/esri-leaflet-heatmap@2.0.0"></script>
 
 <!-- Geocoding Control -->
-<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.1.1/dist/esri-leaflet-geocoder.css">
-<script src="https://unpkg.com/esri-leaflet-geocoder@2.1.1"></script>
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.1.3/dist/esri-leaflet-geocoder.css">
+<script src="https://unpkg.com/esri-leaflet-geocoder@2.1.3"></script>
 
 <!-- Renderers Plugin -->
 <script src="https://unpkg.com/esri-leaflet-renderers@2.0.2"></script>
