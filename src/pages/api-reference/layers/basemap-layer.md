@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications. `L.esri.basemapLayer` is used to display Esri hosted basemaps and attributes data providers appropriately.
+`L.esri.basemapLayer` is used to display Esri hosted basemaps and attributes data providers appropriately. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
 
 Inherits from [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer)
 
