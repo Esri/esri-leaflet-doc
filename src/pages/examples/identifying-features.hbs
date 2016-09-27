@@ -44,7 +44,7 @@ layout: example.hbs
     soil.identify().on(map).at(e.latlng).run(function(error, featureCollection){
       // make sure at least one feature was identified.
       if (featureCollection.features.length > 0) {
-        identifiedFeature = L.geoJson(featureCollection.features[0]).addTo(map);
+        identifiedFeature = L.geoJSON(featureCollection.features[0]).addTo(map);
         var soilDescription =
           featureCollection.features[0].properties['Dominant Order'] +
           ' - ' +
