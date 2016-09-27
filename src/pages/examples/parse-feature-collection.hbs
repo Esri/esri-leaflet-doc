@@ -31,7 +31,7 @@ layout: example.hbs
       featureCollection.features.push(feature);
     }
 
-    var geojson = L.geoJson(featureCollection).addTo(map);
+    var geojson = L.geoJSON(featureCollection).addTo(map);
     map.fitBounds(geojson.getBounds());
   });
 </script>

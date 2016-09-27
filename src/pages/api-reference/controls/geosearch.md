@@ -129,8 +129,6 @@ L.esri.Geocoding.Controls.geosearch({
 
 * `L.esri.Geocoding.geocodeServiceProvider`<br>uses an ArcGIS Server Geocode Service (and supports suggestions from ArcGIS Server 10.3+ enabled endpoints).
 
-#### Providers
-
 All providers share the following options:
 
 | Option | Type | Default | Description
