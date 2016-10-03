@@ -31,9 +31,9 @@ Inherits from [`L.Layer`](http://leafletjs.com/reference-1.0.0.html#layer)
 
 Worldwide coverage at a variety of zoom levels.
 
-* `Newspaper` (added in 1.0.2)
-* `MidCentury` (added in 1.0.2)
-* `Spring` (added in 1.0.2)
+* `Newspaper` (added in `1.0.2`)
+* `MidCentury` (added in `1.0.2`)
+* `Spring` (added in `1.0.2`)
 * `Gray`
 * `DarkGray`
 * `Topographic`
@@ -51,11 +51,10 @@ Worldwide coverage at a variety of zoom levels.
 
 `L.esri.Vector.Basemap` inherits all methods from [`L.Layer`](http://leafletjs.com/reference-1.0.0.html#layer).
 
-### Events
-
-`L.esri.TiledMapLayer` fires all  [`L.Layer`](http://leafletjs.com/reference-1.0.0.html#layer) events.
-
 ### Example
+```xml
+<script src="./esri-leaflet-vector.js"></script>
+```
 
 ```js
 var map = L.map('map').setView([37.75,-122.45], 12);
