@@ -174,7 +174,7 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 `url` | `String` | *Required* | The URL for the service that will be searched.
 `searchFields` | `String` `Array[Strings]` | None | An array of fields to search for text.
-`layer` | `Integer` | `0` | The layer to find text matches on. Can also be an array of layer identifiers.
+`layers` | `Integer` `Array[Integers]` | `[0]` | An array of layer identifiers to find text matches on. 
 `formatSuggestion`| `Function` | See Description | Formatting function for the suggestion text. Receives feature information and returns a string.
 `bufferRadius` | `Integer` `Array[Integers]`| Buffer point results by this radius to create bounds.
 
