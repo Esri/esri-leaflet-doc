@@ -5,25 +5,23 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-`L.esri.FeatureLayer` is used to visualize and query vector geographic data hosted in both ArcGIS Online and published using ArcGIS Server.
+`L.esri.FeatureLayer` is used to visualize, style, query and edit vector geographic data hosted in both ArcGIS Online and published using ArcGIS Server.  Copyright text from the service is added to map attribution automatically.
 
 Inherits from [L.Layer](http://leafletjs.com/reference-1.0.0.html#layer)
 
-Feature Layers are provided by Feature Services which can contain multiple layers. Feature Layers expose vector geographic information as a web service that can be visualized, styled, queried and edited.
-
-Here is a sample Feature Service URL
+Feature Layers reference an individual data source in either a parent [Map Service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Map_Service/02r3000000w2000000/) or [Feature Service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Feature_Service/02r3000000z2000000/) that can contain multiple layers.  You can see a sample Map Service URL below:
 
 ```
-https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Neighborhoods_pdx/
+http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer
 ```
 
-This particular service contains only one Feature Layer. Here is the Feature Layer URL
+This particular service includes two different data sources.  The URL for the 'Hurricane Tracks' feature layer will end in a number (representing its position among the other layers).
 
 ```
-https://services.arcgis.com/rOo16HdIMeOBI4Mb/ArcGIS/rest/services/Neighborhoods_pdx/FeatureServer/0
+http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/1
 ```
 
-Note that the Feature Layer URL ends in `/FeatureServer/{LAYER_ID}`.
+**Feature Layer URLs always end in a number (ex: `/FeatureServer/{LAYER_ID}` or `/MapServer/{LAYER_ID}`).**
 
 You can create a new empty feature service with a single layer on the [ArcGIS for Developers website](https://developers.arcgis.com/en/hosted-data/#/new) or you can use ArcGIS Online to [create a Feature Service from a CSV or Shapefile](https://doc.arcgis.com/en/arcgis-online/share-maps/publish-features.htm).
 

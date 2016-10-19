@@ -7,7 +7,9 @@ layout: documentation.hbs
 
 Inherits from [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer)
 
-Access tiles from ArcGIS Online and ArcGIS Server to visualize and identify features. If you have published a Feature Service in ArcGIS Online, it can be used to create a static set of tiles as well. You can find details about that process in the [ArcGIS Online Help](http://doc.arcgis.com/en/arcgis-online/share-maps/publish-tiles.htm#ESRI_SECTION1_F68FCBD33BD54117B23232D41A762E89).
+Access tiles from ArcGIS Online and ArcGIS Server to visualize and identify features. Copyright text from the service is added to map attribution automatically. 
+
+If you have published a Feature Service in ArcGIS Online, it can be used to create a static set of tiles as well. You can find details about that process in the [ArcGIS Online Help](http://doc.arcgis.com/en/arcgis-online/share-maps/publish-tiles.htm#ESRI_SECTION1_F68FCBD33BD54117B23232D41A762E89).
 
 > Your map service must be published using the Web Mercator Auxiliary Sphere tiling scheme (WKID 102100/3857) and the default scale options used by Google Maps, Bing Maps and [ArcGIS Online](http://resources.arcgis.com/en/help/arcgisonline-content/index.html#//011q00000002000000). Esri Leaflet will not support any other spatial reference for tile layers.
 
@@ -35,7 +37,7 @@ Access tiles from ArcGIS Online and ArcGIS Server to visualize and identify feat
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
 |`url` | `String` | | *Required*: URL of the [Map Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Map_Service/02r3000000w2000000) with a tile cache.
-| `zoomOffsetAllowance` | `Number` | `0.1` | If `correctZoomLevels` is enabled this controls the amount of tolerance if the difference at each scale level for remapping tile levels.
+| `zoomOffsetAllowance` | `Number` | `0.1` | If `correctZoomLevels` is enabled this controls the amount of tolerance for the difference at each scale level for remapping tile levels.
 | `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) to use for proxying requests. |
 | `useCors` | `Boolean` | `true` | Dictates if the service should use CORS when making GET requests. |
 | `token` | `String` | `null` | Will use this token to authenticate all calls to the service.

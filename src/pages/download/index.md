@@ -23,7 +23,7 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 
 ```xml
 <!-- ArcGIS Online Vector Basemaps -->
-<script src="https://unpkg.com/esri-leaflet-vector@1.0.0"></script>
+<script src="https://unpkg.com/esri-leaflet-vector@1.0.3"></script>
 
 <!-- Clustered Feature Layer -->
 <script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
