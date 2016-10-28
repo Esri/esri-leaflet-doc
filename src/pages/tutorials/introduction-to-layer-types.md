@@ -70,8 +70,10 @@ L.esri.dynamicMapLayer({
 ```
 
 ### What does the data look like?
-When you request a Dynamic Map Layer from an ArcGIS Server the response might look something like 
-![Map tile](https://services.arcgisonline.com/arcgis/rest/directories/arcgisoutput/Specialty/Soil_Survey_Map_MapServer/_ags_map7ec03f83fc184c65b3e98b240810d139.png)
+When you request a Dynamic Map Layer from an ArcGIS Server the response might look something like the following:
+
+![Map tile](https://services.arcgisonline.com/arcgis/rest/services/Specialty/Soil_Survey_Map/MapServer/export?bbox=-15214026.109881485,1868732.467515991,-7337954.715376922,8365268.375529694&size=600,200&dpi=96&format=png24&transparent=true&bboxSR=3857&imageSR=3857&f=image)
+
 As you can see, it is simply an image!
 
 
@@ -80,7 +82,7 @@ A [Tiled Map Layer](http://esri.github.io/esri-leaflet/api-reference/layers/tile
 
 The benefit of a Tiled Map Layer is that it can respond more quickly than a Dynamic Map Layer as an image has already been rendered and is available on the server. Tile Map Layers are typically used for basemaps.
 
-The downside of a Tiled Map Layer is that it can take up a lot of space on your server as each tile has to be pre-rendered. Your tiles also only represent the state of your data when the tile was created, they don't automatically update to refect changes to your data.
+The downside of a Tiled Map Layer is that it can take up a lot of space on your server as each tile has to be pre-rendered. Your tiles also only represent the state of your data when the tile was created, they don't automatically update to reflect changes to your data.
 
 ### How to consume Tiled Map Layers from ArcGIS Server
 Tiled Map Layers can be created in Esri-Leaflet from a `MapServer` service published by ArcGIS Server that contains a `Single Fused Map Cache`, you would create the cache when you publish a layer in ArcGIS Server.
