@@ -19,7 +19,7 @@ layout: example.hbs
     url: neighborhoodsUrl
   }).where("NAME='HOLLYWOOD'").run(function(error, neighborhoods){
     // draw neighborhood on the map
-    var hollywood = L.geoJson(neighborhoods).addTo(map);
+    var hollywood = L.geoJSON(neighborhoods).addTo(map);
 
     // fit map to boundry
     map.fitBounds(hollywood.getBounds().pad(0.5));
@@ -28,7 +28,7 @@ layout: example.hbs
     L.esri.query({
       url: bikeParkingUrl
     }).where("BPSTYLE='STAPLE'").within(hollywood).run(function(error, bikeParking){
-      L.geoJson(bikeParking).addTo(map);
+      L.geoJSON(bikeParking).addTo(map);
     });
   });
 </script>

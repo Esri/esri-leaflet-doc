@@ -23,8 +23,8 @@ Start by copying this skeleton code which outlines the structure of a single pag
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
-  <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
 
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
@@ -122,8 +122,8 @@ Here is what the final `html` file should look like for this tutorial:
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
-  <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
 
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>

@@ -95,7 +95,9 @@ Inherits from [`L.esri.Service`]({{assets}}api-reference/services/service.html)
 ```js
 var map = new L.Map('map').setView([ 45.543, -122.621 ], 5);
 
-var service = L.esri.mapService('https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer');
+var service = L.esri.mapService({
+    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer'
+});
 
 service.identify()
     .on(map)

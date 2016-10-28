@@ -1,0 +1,57 @@
+---
+title: Vector Basemaps
+description: Display ArcGIS Online vector basemaps. Notice that the map attribution updates automatically as users pan and zoom in accordance with Esri's <a href='https://github.com/esri/esri-leaflet#terms'>Terms of Use</a>.
+layout: example.hbs
+---
+
+<script src="https://unpkg.com/esri-leaflet-vector@1.0.3"></script>
+
+<style>
+  #basemaps-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 400;
+    background: white;
+    padding: 10px;
+  }
+  #basemaps {
+    margin-bottom: 5px;
+  }
+</style>
+
+<div id="map"></div>
+
+<div id="basemaps-wrapper" class="leaflet-bar">
+  <select name="basemaps" id="basemaps" onChange="changeBasemap(basemaps)">
+    <option value="Newspaper">Newspaper</option>
+    <option value="Spring">Spring</option>
+    <option value="MidCentury">Mid-Century</option>
+    <option value="Topographic">Topographic</option>
+    <option value="Gray">Gray</option>
+    <option value="DarkGray">Dark Gray</option>
+    <option value="Navigation">Navigation</option>
+    <option value="Streets">Streets</option>
+    <option value="StreetsNight">Streets Night</option>
+    <option value="StreetsRelief">Streets Relief</option>
+  </select>
+</div>
+
+<script>
+  var map = L.map('map').setView([40, -4], 6);
+  var layer = L.esri.Vector.basemap('Newspaper').addTo(map);
+
+  function setBasemap(basemap) {
+    if (layer) {
+      map.removeLayer(layer);
+    }
+
+    layer = L.esri.Vector.basemap(basemap);
+    map.addLayer(layer);
+  }
+
+  function changeBasemap(basemaps){
+    var basemap = basemaps.value;
+    setBasemap(basemap);
+  }
+</script>

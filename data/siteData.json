@@ -1,3 +1,4 @@
 {
-  "isDev": true
+  "isDev": true,
+  "localSource": false
 }

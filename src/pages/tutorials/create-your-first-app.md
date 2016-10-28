@@ -17,10 +17,10 @@ Start by copying this skeleton code which outlines the structure of a single pag
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Leaflet Map with a Basemap</title>  
+  <title>Leaflet Map with a Basemap</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 </head>
-<body>  
+<body>
 </body>
 </html>
 ```
@@ -38,17 +38,17 @@ The easiest option is to point to a CDN where the libraries are already hosted. 
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Leaflet Map with a Basemap</title>  
+  <title>Leaflet Map with a Basemap</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- lets load Leaflet's .js and .css from CDN-->
-  <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
-  <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
 
   <!-- Load Esri Leaflet from CDN.  it has no .css stylesheet of its own, only .js -->
   <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
 </head>
-<body>  
+<body>
 </body>
 </html>
 ```
@@ -64,12 +64,12 @@ For our map to display, we must set the height and width for this element.  Sinc
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Leaflet Map with a Basemap</title>  
+  <title>Leaflet Map with a Basemap</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
-  <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
 
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
@@ -104,12 +104,12 @@ Our first step is to create a map object. In our constructor we must provide the
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Leaflet Map with a Basemap</title>  
+  <title>Leaflet Map with a Basemap</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
-  <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
 
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
@@ -146,6 +146,8 @@ If we save and refresh our page after this step, we should see a gray background
 
 Now it is time to add an ArcGIS Online basemap to our map.  For this we will use the  `L.esri.basemapLayer`  class from the Esri Leaflet plugin.  Please refer to the [API Reference](http://esri.github.io/esri-leaflet/api-reference/layers/basemap-layer.html "ESRI Leaflet Reference") for more information on this class.
 
+> The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
+
 Below are a few different basemaps we can use from ArcGIS Online:
 
 - Streets
@@ -167,12 +169,12 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Leaflet Map with a Basemap</title>  
+  <title>Leaflet Map with a Basemap</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
-  <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
 
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
@@ -196,7 +198,7 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
           center: [37.75, -122.23],
           zoom: 10
         });
-        var esriStreets = L.esri.basemapLayer('Streets').addTo(map);    
+        var esriStreets = L.esri.basemapLayer('Streets').addTo(map);
     </script>
 </body>
 </html>

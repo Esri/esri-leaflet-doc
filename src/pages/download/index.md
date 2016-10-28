@@ -16,24 +16,30 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 #### Esri Leaflet
 
 ```xml
-<script src="https://cdn.jsdelivr.net/leaflet.esri/{{package.version}}/esri-leaflet.js"></script>
+<script src="https://unpkg.com/esri-leaflet@{{package.version}}"></script>
 ```
 
 #### Other Plugins
 
 ```xml
+<!-- ArcGIS Online Vector Basemaps -->
+<script src="https://unpkg.com/esri-leaflet-vector@1.0.3"></script>
+
 <!-- Clustered Feature Layer -->
-<script src="https://cdn.jsdelivr.net/leaflet.esri.clustered-feature-layer/2.0.0-beta.1/esri-leaflet-clustered-feature-layer.js"></script>
+<script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
+
+<!-- Heatmap Feature Layer -->
+<script src="https://unpkg.com/esri-leaflet-heatmap@2.0.0"></script>
 
 <!-- Geocoding Control -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet.esri.geocoder/2.1.1/esri-leaflet-geocoder.css">
-<script src="https://cdn.jsdelivr.net/leaflet.esri.geocoder/2.1.1/esri-leaflet-geocoder.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.1.4/dist/esri-leaflet-geocoder.css">
+<script src="https://unpkg.com/esri-leaflet-geocoder@2.1.4"></script>
 
 <!-- Renderers Plugin -->
-<script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.2/esri-leaflet-renderers.js"></script>
+<script src="https://unpkg.com/esri-leaflet-renderers@2.0.2"></script>
 
 <!-- Geoprocessing Plugin -->
-<script src="https://cdn.jsdelivr.net/leaflet.esri.gp/2.0.2/esri-leaflet-gp.js"></script>
+<script src="https://unpkg.com/esri-leaflet-gp@2.0.1"></script>
 ```
 # npm
 

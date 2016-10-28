@@ -1,11 +1,11 @@
 ---
-title: L.esri.Cluster.ClusteredFeatureLayer
+title: L.esri.Cluster.FeatureLayer
 layout: documentation.hbs
 ---
 
 # {{page.data.title}}
 
-`L.esri.Cluster.ClusteredFeatureLayer` provides integration for Feature Layers with the [Leaflet.markercluster plugin](https://github.com/Leaflet/Leaflet.markercluster). Because of the extra dependency on Leaflet.markercluster we do not include `L.esri.Cluster.ClusteredFeatureLayer` in the default build of Esri Leaflet.  You will also need to include your own copy of the [Leaflet.markercluster plugin](https://github.com/Leaflet/Leaflet.markercluster).
+`L.esri.Cluster.FeatureLayer` provides integration for Feature Layers with the [Leaflet.markercluster plugin](https://github.com/Leaflet/Leaflet.markercluster). Because of the extra dependency on Leaflet.markercluster we do not include `L.esri.Cluster.FeatureLayer` in the default build of Esri Leaflet.  You will also need to include your own copy of the [Leaflet.markercluster plugin](https://github.com/Leaflet/Leaflet.markercluster).
 
 More information about Feature Layers can be found in the [`L.esri.FeatureLayer` documentation]({{assets}}api-reference/layers/feature-layer.html).
 
@@ -20,7 +20,7 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
     </thead>
     <tbody>
         <tr>
-            <td><code class="nobr">L.esri.Cluster.clusteredFeatureLayer({{{param 'Object' 'options'}}})</code></td>
+            <td><code class="nobr">L.esri.Cluster.featureLayer({{{param 'Object' 'options'}}})</code></td>
             <td>You must pass a <code>url</code> to a [Feature Layer](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Layer/02r3000000w6000000/) in your <code>options</code></td>
         </tr>
     </tbody>
@@ -129,7 +129,7 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
 
 `L.esri.FeatureLayer` also fires all  [`L.esri.FeatureLayerService`]({{assets}}api-reference/services/feature-layer-service.html) events.
 
-In additon to these events `L.esri.FeatureLayer` also fires the following [Mouse Events](http://leafletjs.com/reference.html#event-objects) `click`, `dblclick`, `mouseover`, `mouseout`, `mousemove`, and `contextmenu`, `clusterclick`, `clusterdblclick`, `clustermouseover`, `clustermousemove`, and `clustercontextmenu` as well as the following the [Popup Events](http://leafletjs.com/reference.html#event-objects) `popupopen` and `popupclose`.
+In additon to these events `L.esri.Cluster.FeatureLayer` also fires the following [Mouse Events](http://leafletjs.com/reference.html#event-objects) `click`, `dblclick`, `mouseover`, `mouseout`, `mousemove`, and `contextmenu`, `clusterclick`, `clusterdblclick`, `clustermouseover`, `clustermousemove`, and `clustercontextmenu` as well as the following the [Popup Events](http://leafletjs.com/reference.html#event-objects) `popupopen` and `popupclose`.
 
 ### Methods
 
@@ -271,7 +271,7 @@ Live sample [here](http://esri.github.io/esri-leaflet/examples/clustering-featur
 <link rel="stylesheet" type="text/css" href="./MarkerCluster.Default.css">
 <link rel="stylesheet" type="text/css" href="./MarkerCluster.css">
 <script src="./leaflet.markercluster.js"></script>
-<script>./esri-leaflet-clustered-feature-layer.js</script>
+<script>./esri-leaflet-cluster.js</script>
 ```
 
 ```js
@@ -280,7 +280,7 @@ L.esri.basemapLayer("Streets").addTo(map);
 
 var url = "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0";
 
-var busStops = L.esri.Cluster.clusteredFeatureLayer({
+var busStops = L.esri.Cluster.featureLayer({
   url: url,
   // Cluster Options
   polygonOptions: {
