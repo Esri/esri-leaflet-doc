@@ -80,7 +80,7 @@ A [Tiled Map Layer](http://esri.github.io/esri-leaflet/api-reference/layers/tile
 
 The benefit of a Tiled Map Layer is that it can respond more quickly than a Dynamic Map Layer as an image has already been rendered and is available on the server. Tile Map Layers are typically used for basemaps.
 
-The downside of a Tiled Map Layer is that it can take up a lot of space on your server as each tile has to be pre-rendered. Your tiles also only represent the state of your data when the tile was created, they don't automatically update to refect changes to your data.
+The downside of a Tiled Map Layer is that it can take up a lot of space on your server as each tile has to be pre-rendered. Your tiles also only represent the state of your data when the tile was created, they don't automatically update to reflect changes to your data.
 
 ### How to consume Tiled Map Layers from ArcGIS Server
 Tiled Map Layers can be created in Esri-Leaflet from a `MapServer` service published by ArcGIS Server that contains a `Single Fused Map Cache`, you would create the cache when you publish a layer in ArcGIS Server.
