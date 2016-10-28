@@ -71,7 +71,7 @@ L.esri.dynamicMapLayer({
 
 ### What does the data look like?
 When you request a Dynamic Map Layer from an ArcGIS Server the response might look something like 
-![Map tile](https://services.arcgisonline.com/arcgis/rest/directories/arcgisoutput/Specialty/Soil_Survey_Map_MapServer/_ags_map7ec03f83fc184c65b3e98b240810d139.png)
+![Map tile](https://server.arcgisonline.com/arcgis/rest/services/Specialty/Soil_Survey_Map/MapServer/tile/8/95/65)
 As you can see, it is simply an image!
 
 
