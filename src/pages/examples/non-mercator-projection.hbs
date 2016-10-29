@@ -7,7 +7,7 @@ layout: example.hbs
 <!-- Include Proj4JS via rawgit.com
 in production you'd be better off hosting these libraries yourself -->
 <script src="https://rawgit.com/proj4js/proj4js/2.3.12/dist/proj4-src.js"></script>
-<script src="https://rawgit.com/kartena/Proj4Leaflet/1.0.0-beta.1/src/proj4leaflet.js"></script>
+<script src="https://rawgit.com/kartena/Proj4Leaflet/1.0.0-beta.2/src/proj4leaflet.js"></script>
 
 <!-- Load shapeMarkers from CDN -->
 <script src="https://cdn.jsdelivr.net/leaflet.shapemarkers/1.0.4/leaflet-shape-markers.js"></script>
@@ -17,46 +17,49 @@ in production you'd be better off hosting these libraries yourself -->
 <script>
   /* create new Proj4Leaflet CRS:
   1. Proj4 and WKT definitions can be found at sites like http://epsg.io, http://spatialreference.org/ or by using gdalsrsinfo http://www.gdal.org/gdalsrsinfo.html
-  2. Appropriate values to supply to the resolution and origin constructor options can be found in the ArcGIS Server RESTful tile server endpoint (ex: http://mapserv.utah.gov/arcgis/rest/services/BaseMaps/Terrain/MapServer)
-  3. The numeric code within the first parameter (ex: `26912`) will be used to project the dynamic map layer on the fly
+  2. Appropriate values to supply to the resolution and origin constructor options can be found in the ArcGIS Server tile server REST endpoint (ex: https://tiles.arcgis.com/tiles/qHLhLQrcvEnxjtPr/arcgis/rest/services/OS_Open_Background_2/MapServer).
+  3. The numeric code within the first parameter (ex: `27700`) will be used to project the dynamic map layer on the fly
   */
-  // TW: I got crs from http://epsg.io/27700
   var crs = new L.Proj.CRS('EPSG:27700', '+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 +units=m +no_defs', {
-    // TW: I got origin/resolutions from http://tiles.arcgis.com/tiles/qHLhLQrcvEnxjtPr/arcgis/rest/services/OS_Open_Background_2/MapServer
     origin: [-5220400.0, 4470200.0],
-    // TW: initial extent (niether this, nor full extent below seemed to work)
-    // resolutions: [
-    //   -5782272.605516044,
-    //   -16427237.306853786,
-    //   6582271.701697571,
-    //   5170177.047349929
-    // ]
-    // TW: full extent:
     resolutions: [
-      -5220247.864279062,
-      -15445536.65438998,
-      6020246.960460588,
-      4188476.394886123
+      132291.9312505292,
+      66145.9656252646,
+      26458.386250105836,
+      19843.789687579378,
+      13229.193125052918,
+      6614.596562526459,
+      2645.8386250105837,
+      1322.9193125052918,
+      661.4596562526459,
+      264.5838625010584,
+      132.2919312505292,
+      66.1459656252646,
+      26.458386250105836,
+      19.843789687579378,
+      13.229193125052918,
+      6.614596562526459,
+      2.6458386250105836,
+      1.3229193125052918,
+      0.6614596562526459
     ]
   });
 
-  // TW: view center comes from taking the center coordinates of http://epsg.io/27700 and transforming them to  http://epsg.io/transform#s_srs=27700&t_srs=4326&x=309075.4453790&y=651328.2099810
   var map = L.map('map', {
     crs: crs
-  }).setView([55.7467592,-3.45], 1);
+  }).setView([53.386, -2.319], 7);
 
   // The min/maxZoom values provided should match the actual cache thats been published. This information can be retrieved from the service endpoint directly.
   L.esri.tiledMapLayer({
     url: 'https://tiles.arcgis.com/tiles/qHLhLQrcvEnxjtPr/arcgis/rest/services/OS_Open_Background_2/MapServer',
-    // maxZoom: 3,
-    // minZoom: 1,
-    // continuousWorld: true
+    maxZoom: 19,
+    minZoom: 6,
   }).addTo(map);
 
-  // feature layers will be requested in WGS84 (4326) and reprojected on the client
+  // feature layers will be requested in WGS84 (4326) and reprojected
   var cities = L.esri.featureLayer({
     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer/0',
-    where: 'POP_RANK < 3',
+    where: 'POP_RANK < 5',
     pointToLayer (geojson, latlng) {
       return L.shapeMarkers.diamondMarker(latlng, 5, {
         color: '#0099FF',
