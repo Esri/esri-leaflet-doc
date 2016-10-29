@@ -36,7 +36,7 @@ in production you'd be better off hosting these libraries yourself -->
 
   // The min/maxZoom values provided should match the actual cache thats been published. This information can be retrieved from the service endpoint directly.
   L.esri.tiledMapLayer({
-    url: 'http://maverick.arcgis.com/ArcGIS/rest/services/World_Mollweide/MapServer',
+    url: 'https://maverick.arcgis.com/ArcGIS/rest/services/World_Mollweide/MapServer',
     maxZoom: 3,
     minZoom: 1,
     continuousWorld: true
@@ -44,7 +44,7 @@ in production you'd be better off hosting these libraries yourself -->
 
   // feature layers will be requested in WGS84 (4326) and reprojected on the client
   var cities = L.esri.featureLayer({
-    url: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer/0',
+    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer/0',
     where: 'POP_RANK < 3',
     pointToLayer (geojson, latlng) {
       return L.shapeMarkers.diamondMarker(latlng, 5, {
