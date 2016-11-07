@@ -42,11 +42,11 @@ The easiest option is to point to a CDN where the libraries are already hosted. 
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- lets load Leaflet's .js and .css from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 
   <!-- Load Esri Leaflet from CDN.  it has no .css stylesheet of its own, only .js -->
-  <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
 </head>
 <body>
 </body>
@@ -68,11 +68,11 @@ For our map to display, we must set the height and width for this element.  Sinc
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 
   <!-- Load Esri Leaflet from CDN -->
-  <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
 
   <style>
     html,
@@ -108,11 +108,11 @@ Our first step is to create a map object. In our constructor we must provide the
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 
   <!-- Load Esri Leaflet from CDN -->
-  <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
 
   <style>
 
@@ -173,11 +173,11 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 
   <!-- Load Esri Leaflet from CDN -->
-  <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
 
   <style>
     html,
