@@ -5,10 +5,9 @@
 ### Instructions
 
 1. clone this repository
-2. `npm install`
-3. `npm start`
-
-**NOTE**: To run the docs site, you will first need to have  [Grunt](http://gruntjs.com/), [Ruby](http://www.ruby-lang.org/en/downloads/), and [Sass](http://sass-lang.com/download.html) installed globally. To install Grunt use `npm install -g grunt-cli`. If you're on OS X or Linux you probably already have Ruby installed; test with `ruby -v` in your terminal. When you've confirmed you have Ruby installed, run `gem install sass` to install Sass.
+2. `npm install -g grunt-cli`
+3. `npm install`
+4. `npm start`
 
 ### Issues
 
