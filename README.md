@@ -5,8 +5,9 @@
 ### Instructions
 
 1. clone this repository
-2. `npm install`
-3. `npm start`
+2. `npm install -g grunt-cli`
+3. `npm install`
+4. `npm start`
 
 ### Issues
 
