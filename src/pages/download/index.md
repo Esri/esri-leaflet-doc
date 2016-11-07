@@ -32,8 +32,8 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 <script src="https://unpkg.com/esri-leaflet-heatmap@2.0.0"></script>
 
 <!-- Geocoding Control -->
-<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.1.4/dist/esri-leaflet-geocoder.css">
-<script src="https://unpkg.com/esri-leaflet-geocoder@2.1.4"></script>
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css">
+<script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script>
 
 <!-- Renderers Plugin -->
 <script src="https://unpkg.com/esri-leaflet-renderers@2.0.2"></script>

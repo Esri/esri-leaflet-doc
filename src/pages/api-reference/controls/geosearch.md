@@ -164,7 +164,27 @@ Option | Type | Default | Description
 `url` | `String` | *Required* | The URL for the service that will be searched.
 `searchFields` | `String` `Array[Strings]` | None | An array of fields to search for text.
 `formatSuggestion`| `Function` | See Description | Formatting function for the suggestion text. Receives feature information and returns a string.
-`bufferRadius` | `Integer` | If a service or layer contains points, buffer points by this radius to create bounds.
+`bufferRadius` | `Integer` | 1000 | If a service or layer contains points, buffer points by this radius (in meters) to create bounds.
+
+##### featureLayerProvider Methods
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Returns</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>orderBy({{{param 'String' 'fieldname'}}}, {{{param 'String' 'order'}}})</code></td>
+            <td><code>this</code></td>
+            <td>Sort output features using values from an individual field. `"ASC"` (ascending) is the default sort order, but `"DESC"` can be passed as an alternative. This method can be called more than once to apply advanced sorting.
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 Results from the `featureLayerProvider` will have an additional `properties` key which will contain all the information for the feature and a `geojson` key that will contain a [GeoJSON](http://geojson.org/) representation of the feature.
 
