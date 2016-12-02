@@ -330,7 +330,7 @@ featureLayer.query()
             </td>
         </tr>
         <tr>
-            <td><code>reset()</code></td>
+            <td><code>refresh()</code></td>
             <td><code>this</code></td>
             <td>
                 Redraws all features from the feature layer that exist on the map.

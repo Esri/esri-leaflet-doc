@@ -17,26 +17,23 @@ Feature Layers are great because they contain all the attribute information, thi
 
 That said, Feature Layers can potentially transfer large amounts of data from the server to the client. For example you wouldn't want to use a Feature Layer if you were drawing draw tax parcels for the whole of the USA. To address this Esri Leaflet provides a few options. By default we only request features within the current map extent.  This allows you to extract a manageable number of a features from a service with lots of data on the back end.
 
-Esri Leaflet provides other mechanisms to optimize performance as well. You can control which attributes are fetched, generalizing geometry before it is downloaded and filter data using SQL clauses. However even after you've optimized your setup there will always be a limit to the amount of features which it makes sense to try and display clientside, this limit depends on the individual service, and the browser being used.
+Esri Leaflet provides other mechanisms to optimize performance. You can control which attributes are fetched, generalizing geometry before it is downloaded and filter data using SQL clauses. However, there will always be a limit to the amount of features which it makes sense to try and display clientside, this limit depends on the individual service, and the browser being used. Moreover, the limit defined by the service controls the maximum number of features that can be returned by any single query. 
 
 ### How to consume Feature Layers from ArcGIS Server
-Feature Layers can be created in Esri Leaflet from both `MapServer` or `FeatureServer` services published by ArcGIS Server. To utilise a `MapServer` service you need to specify a particular layer by appending the layer index, eg "ESRI_Population_World/MapServer*/0*".
+Feature Layers can be created in Esri Leaflet from both `MapServer` or `FeatureServer` services published by ArcGIS Server. To utilize either service type you need to append the specific layer index, eg "ESRI_Population_World/MapServer*/0*".
 
-So for example both of these are valid uses 
+So for example both of these are valid:
 ```js
-// NOTE - The FeatureServer part of this url
 L.esri.featureLayer({
 	url: '.../ArcGIS/rest/services/BloomfieldHillsMichigan/LandusePlanning/FeatureServer/0'
 })
 
-// Note the MapServer part of this url 
-// Remember to append a layer index eg '/0'
 L.esri.featureLayer({
 	url: '.../ArcGIS/rest/services/Demographics/ESRI_Population_World/MapServer/0'
 })
 ```
 
-If you want to edit data in the browser then you will need to be consuming a `FeatureServer` service.
+If you want to edit data in the browser then you will need to consume a `FeatureServer` service.
 
 ### What does the data look like?
 When you request a feature layer from an ArcGIS Server the response will look something like 

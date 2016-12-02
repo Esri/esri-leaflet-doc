@@ -38,7 +38,7 @@ Option | Type | Default | Description
 `f` | `String` | `'json'` |  Server response content type.
 `attribution` | `String` | `''` |  Attribution from service metadata [copyright text](https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer) is automatically displayed in Leaflet's default control.  This property can be used for customization.
 `layers` | `Array` | `''` | An array of Layer IDs like `[3,4,5]` to show from the service.
-`layerDefs` | `String` `Object` | `''` | A string representing a query to run against the service before the image is rendered. This can be a string like `"STATE_NAME='Kansas' and POP2007>25000"` or an object mapping different queries to specific layers `{5:"STATE_NAME='Kansas'", 4:"STATE_NAME='Kansas'}`.
+`layerDefs` | `String` `Object` | `''` | A string representing a query to run against the service before the image is rendered. This can be a string like `"3:STATE_NAME='Kansas'"` or an object mapping different queries to specific layers `{3:"STATE_NAME='Kansas'", 2:"POP2007>25000"}`.
 `opacity` | `Number` | `1` | Opacity of the layer. Should be a value between 0 (completely transparent) and 1 (completely opaque).
 `position` | `String` | `'front'` | Position of the layer relative to other overlays.
 `dynamicLayers` | `Object` | `null` | JSON object literal used to manipulate the layer symbology defined in the service itself.  Requires a 10.1 (or above) map service which supports [dynamicLayers](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Map/02r3000000v7000000/) requests.
