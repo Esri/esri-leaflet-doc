@@ -5,8 +5,8 @@ layout: example.hbs
 ---
 
 <!-- Leaflet Draw -->
-<script src="//rawgit.com/Leaflet/Leaflet.draw/master/dist/leaflet.draw-src.js"></script>
-<link rel="stylesheet" href="//rawgit.com/Leaflet/Leaflet.draw/master/dist/leaflet.draw.css">
+<script src="https://unpkg.com/leaflet-draw@0.4.7/dist/leaflet.draw-src.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-draw@0.4.7/dist/leaflet.draw-src.css">
 
 <style>
   #info-pane {
@@ -117,6 +117,8 @@ layout: example.hbs
     if (!currentlyDeleting) {
       displayAttributes();
     }
+    // make sure map click event isn't fired. (seems like a bug)
+    L.DomEvent.stopPropagation(e);
   });
 
   // when pedestrian districts start loading (because of pan/zoom) stop editing
