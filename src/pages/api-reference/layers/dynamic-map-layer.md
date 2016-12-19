@@ -41,6 +41,8 @@ Option | Type | Default | Description
 `layerDefs` | `String` `Object` | `''` | A string representing a query to run against the service before the image is rendered. This can be a string like `"3:STATE_NAME='Kansas'"` or an object mapping different queries to specific layers `{3:"STATE_NAME='Kansas'", 2:"POP2007>25000"}`.
 `opacity` | `Number` | `1` | Opacity of the layer. Should be a value between 0 (completely transparent) and 1 (completely opaque).
 `position` | `String` | `'front'` | Position of the layer relative to other overlays.
+`maxZoom` | `Number` | | Closest zoom level the layer will be displayed on the map.
+`minZoom` | `Number` | | Furthest zoom level the layer will be displayed on the map.
 `dynamicLayers` | `Object` | `null` | JSON object literal used to manipulate the layer symbology defined in the service itself.  Requires a 10.1 (or above) map service which supports [dynamicLayers](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Map/02r3000000v7000000/) requests.
 `token` | `String` | `null` | If you pass a token in your options it will be included in all requests to the service.
 `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) to use for proxying POST requests.

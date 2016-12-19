@@ -81,14 +81,14 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
             <td>An optional expression to filter features server side. String values should be denoted using single quotes ie: `where: "FIELDNAME = 'field value'";` More information about valid SQL syntax can be found <a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/SQL_reference_for_query_expressions_used_in_ArcGIS/00s500000033000000/">here</a>.</td>
         </tr>
         <tr>
-            <td><code>minZoom</code></td>
-            <td><code>Integer</code></td>
-            <td>Minimum zoom level of the map that features will display. example:  <code>minZoom:0</code></td>
+            <td><code>maxZoom</code></td>
+            <td><code>Number</code></td>
+            <td>Closest zoom level the layer will be displayed on the map. example:  <code>maxZoom:19</code></td>
         </tr>
         <tr>
-            <td><code>maxZoom</code></td>
-            <td><code>Integer</code></td>
-            <td>Maximum zoom level of the map that features will display. example:  <code>maxZoom:19</code></td>
+            <td><code>minZoom</code></td>
+            <td><code>Number</code></td>
+            <td>Furthest zoom level the layer will be displayed on the map. example:  <code>maxZoom:3</code></td>
         </tr>
         <tr>
             <td><code>cacheLayers</code></td>
@@ -122,8 +122,8 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         </tr>
         <tr>
             <td><code>simplifyFactor</code></td>
-            <td><code>Integer</code></td>
-            <td>How much to simplify polygons and polylines. More means better performance, and less means more accurate representation.</td>
+            <td><code>Number</code></td>
+            <td>How much to simplify polygons and polylines. A higher value gives better performance, a lower value gives a more accurate representation.</td>
         </tr>
         <tr>
             <td><code>precision</code></td>
