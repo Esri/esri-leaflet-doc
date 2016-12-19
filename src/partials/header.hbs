@@ -43,14 +43,14 @@
     <script src="/js/linked/leaflet-dist/leaflet-src.js"></script>
     <script src="/js/linked/esri-leaflet-dist/esri-leaflet-debug.js"></script>
   {{else}}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.leaflet-version}}/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@{{siteData.leaflet-version}}/dist/leaflet-src.js"></script>
-    <script src="https://unpkg.com/esri-leaflet@{{siteData.version}}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{package.sample-versions.leaflet}}/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@{{package.sample-versions.leaflet}}/dist/leaflet-src.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@{{package.sample-versions.esri-leaflet}}"></script>
   {{/if}}
 
   {{#if page.data.geocoder}}
-    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.geocoder-version}}/dist/esri-leaflet-geocoder.css">
-    <script src="https://unpkg.com/esri-leaflet-geocoder@{{siteData.geocoder-version}}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{package.sample-versions.esri-leaflet-geocoder}}/dist/esri-leaflet-geocoder.css">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@{{package.sample-versions.esri-leaflet-geocoder}}"></script>
   {{/if}}
 
   <!-- Google Analytics -->

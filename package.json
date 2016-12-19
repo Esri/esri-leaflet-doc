@@ -1,6 +1,6 @@
 {
   "name": "esri-leaflet-doc",
-  "version": "2.0.6",
+  "version": "1.0.0",
   "private": true,
   "author": "Patrick Arlt <parlt@esri.com> (http://patrickarlt.com)",
   "contributors": [
@@ -28,6 +28,11 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:Esri/esri-leaflet-doc.git"
+  },
+  "sample-versions": {
+    "leaflet": "1.0.2",
+    "esri-leaflet": "2.0.6",
+    "esri-leaflet-geocoder": "2.2.2"
   },
   "scripts": {
     "start": "grunt"
