@@ -21,15 +21,15 @@ layout: page.hbs
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.leaflet-version}}/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@{{siteData.leaflet-version}}/dist/leaflet-src.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@{{package.sample-versions.leaflet}}/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@{{package.sample-versions.leaflet}}/dist/leaflet-src.js"></script>
 
   <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@{{siteData.version}}"></script>
+  <script src="https://unpkg.com/esri-leaflet@{{package.sample-versions.esri-leaflet}}"></script>
   {{#if page.data.geocoder}}
   <!-- Load Esri Leaflet Geocoder from CDN -->
-  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.geocoder-version}}/dist/esri-leaflet-geocoder.css">
-  <script src="https://unpkg.com/esri-leaflet-geocoder@{{siteData.geocoder-version}}"></script>
+  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{package.sample-versions.esri-leaflet-geocoder}}/dist/esri-leaflet-geocoder.css">
+  <script src="https://unpkg.com/esri-leaflet-geocoder@{{package.sample-versions.esri-leaflet-geocoder}}"></script>
   {{/if}}
   <style>
     body { margin:0; padding:0; }
