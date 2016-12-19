@@ -1,4 +1,7 @@
 {
   "isDev": true,
-  "localSource": false
+  "localSource": false,
+  "version": "2.0.6",
+  "leaflet-version": "1.0.2",
+  "geocoder-version": "2.2.2"
 }

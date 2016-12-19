@@ -14,6 +14,8 @@ Option | Type | Default | Description
 `f` | `String` | `'image'` |  Server response content type.
 `opacity` | `Number` | `1` | Opacity of the layer. Should be a value between 0 and 1.
 `position` | `String` | `'front'` | Position of the layer relative to other overlays.
+`maxZoom` | `Number` | | Closest zoom level the layer will be displayed on the map.
+`minZoom` | `Number` | | Furthest zoom level the layer will be displayed on the map.
 
 ### Methods
 

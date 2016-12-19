@@ -37,15 +37,18 @@ Option | Type | Default | Description
 `f` | `String` | `'image'` | Server response content type.
 `opacity` | `Number` | `1` | Opacity of the layer. Should be a value between 0 and 1.
 `position` | `String` | `'front'` | Position of the layer relative to other overlays.
-`proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxies](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxies](https://github.com/Esri/resource-proxy) to use for proxying POST requests.
+`maxZoom` | `Number` | | Closest zoom level the layer will be displayed on the map.
+`minZoom` | `Number` | | Furthest zoom level the layer will be displayed on the map.
 `bandIds` | `String` | `undefined` | If there are multiple bands, you can specify which bands to export.
 `noData` | `Number` | `undefined` | The pixel value representing no information.
 `noDataInterpretation` | `String` | `undefined` | Interpretation of the `noData` setting.
 `pixelType` | `String` | `undefined` | Leave `pixelType` as unspecified, or `UNKNOWN`, in most exportImage use cases, unless such `pixelType` is desired. Possible values: `C128`, `C64`, `F32`, `F64`, `S16`, `S32`, `S8`, `U1`, `U16`, `U2`, `U32`, `U4`, `U8`, `UNKNOWN`.
-`useCors` | `Boolean` | `true` | If this service should use CORS when making GET requests.
 `renderingRule` | `Object` | `undefined` | A JSON representation of a [raster function](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Raster_function_objects/02r3000000rv000000/)
 `mosaicRule` | `Object` | `undefined` | A JSON representation of a [mosaic rule](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Mosaic_rule_objects/02r3000000s4000000/)
 `pane` | `String` | `overlayPane` | The map pane to render on.
+`token` | `String` | `null` | If you pass a token in your options it will be included in all requests to the service.
+`proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxies](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxies](https://github.com/Esri/resource-proxy) to use for proxying POST requests.
+`useCors` | `Boolean` | `true` | If this service should use CORS when making GET requests.
 
 ### Methods
 

@@ -21,12 +21,16 @@ layout: page.hbs
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet-src.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.leaflet-version}}/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@{{siteData.leaflet-version}}/dist/leaflet-src.js"></script>
 
   <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@{{package.version}}"></script>
-
+  <script src="https://unpkg.com/esri-leaflet@{{siteData.version}}"></script>
+  {{#if page.data.geocoder}}
+  <!-- Load Esri Leaflet Geocoder from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.geocoder-version}}/dist/esri-leaflet-geocoder.css">
+  <script src="https://unpkg.com/esri-leaflet-geocoder@{{siteData.geocoder-version}}"></script>
+  {{/if}}
   <style>
     body { margin:0; padding:0; }
     #map { position: absolute; top:0; bottom:0; right:0; left:0; }
