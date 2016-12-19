@@ -35,7 +35,6 @@
   {{#if siteData.isDev}}
     <!-- 'livereload' for development -->
     <script src="//localhost:35729/livereload.js"></script>
-  {{else}}
   {{/if}}
 
   {{#if siteData.localSource}}
@@ -44,9 +43,14 @@
     <script src="/js/linked/leaflet-dist/leaflet-src.js"></script>
     <script src="/js/linked/esri-leaflet-dist/esri-leaflet-debug.js"></script>
   {{else}}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet-src.js"></script>
-    <script src="https://unpkg.com/esri-leaflet@{{package.version}}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.leaflet-version}}/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@{{siteData.leaflet-version}}/dist/leaflet-src.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@{{siteData.version}}"></script>
+  {{/if}}
+
+  {{#if page.data.geocoder}}
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.geocoder-version}}/dist/esri-leaflet-geocoder.css">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@{{siteData.geocoder-version}}"></script>
   {{/if}}
 
   <!-- Google Analytics -->
