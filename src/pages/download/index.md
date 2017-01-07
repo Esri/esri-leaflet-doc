@@ -33,7 +33,7 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 
 <!-- Geocoding Control -->
 <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{package.sample-versions.esri-leaflet-geocoder}}/dist/esri-leaflet-geocoder.css">
-<script src="https://unpkg.com/esri-leaflet-geocoder@{{package.sample-versions.esri-leaflet-vector}}"></script>
+<script src="https://unpkg.com/esri-leaflet-geocoder@{{package.sample-versions.esri-leaflet-geocoder}}"></script>
 
 <!-- Renderers Plugin -->
 <script src="https://unpkg.com/esri-leaflet-renderers@2.0.2"></script>

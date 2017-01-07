@@ -73,6 +73,11 @@ Option | Type | Default | Description
             <td><code>this</code></td>
             <td>Authenticates this service with a new token and runs any pending requests that required a token.</td>
         </tr>
+        <tr>
+            <td><code>redraw()</code></td>
+            <td></td>
+            <td>Used to make a fresh request to the service and draw the response.</td>
+        </tr>
     </tbody>
 </table>
 
