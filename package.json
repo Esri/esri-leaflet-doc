@@ -31,8 +31,9 @@
   },
   "sample-versions": {
     "leaflet": "1.0.2",
-    "esri-leaflet": "2.0.6",
-    "esri-leaflet-geocoder": "2.2.2"
+    "esri-leaflet": "2.0.7",
+    "esri-leaflet-geocoder": "2.2.3",
+    "esri-leaflet-vector": "1.0.6"
   },
   "scripts": {
     "start": "grunt"

@@ -4,7 +4,8 @@ description: Display ArcGIS Online vector basemaps. Notice that the map attribut
 layout: example.hbs
 ---
 
-<script src="https://unpkg.com/esri-leaflet-vector@1.0.5"></script>
+<!-- load the latest release from the cdn -->
+<script src="https://unpkg.com/esri-leaflet-vector"></script>
 
 <style>
   #basemaps-wrapper {
@@ -25,6 +26,8 @@ layout: example.hbs
 <div id="basemaps-wrapper" class="leaflet-bar">
   <select name="basemaps" id="basemaps" onChange="changeBasemap(basemaps)">
     <option value="Newspaper">Newspaper</option>
+    <option value="ModernAntique">ModernAntique</option>
+    <option value="BlackAndWhite">BlackAndWhite</option>
     <option value="Spring">Spring</option>
     <option value="MidCentury">Mid-Century</option>
     <option value="Topographic">Topographic</option>
