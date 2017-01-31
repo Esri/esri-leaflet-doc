@@ -106,9 +106,9 @@ layout: documentation.hbs
             <td>Return geometry with results. Default is `true`.</td>
         </tr>
         <tr>
-            <td><code>simplify({{{param 'Map' 'map' 'http://leafletjs.com/reference.html#map'}}},  {{{param 'Integer' 'factor'}}})</code></td>
+            <td><code>simplify({{{param 'Map' 'map' 'http://leafletjs.com/reference.html#map'}}},  {{{param 'Number' 'factor'}}})</code></td>
             <td><code>this</code></td>
-            <td>Simplify the geometries of the output features for the current map view. the <code>factor</code> parameter controls the amount of simplification between 0 (no simplification) and 1 (simplify to the most basic shape possible).</td>
+            <td>Simplify the geometries of the output features for the current map view. the <code>factor</code> parameter controls the amount of simplification between 0 (no simplification) and 1 (the most basic shape possible).</td>
         </tr>
         <tr>
             <td><code>orderBy({{{param 'String' 'fieldName'}}}, {{{param 'String' 'order'}}})</code></td>
