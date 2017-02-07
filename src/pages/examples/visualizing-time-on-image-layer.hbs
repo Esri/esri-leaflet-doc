@@ -48,7 +48,7 @@ layout: example.hbs
     L.esri.basemapLayer('GrayLabels').addTo(map);
 
     var vegetation = L.esri.imageMapLayer({
-        url: 'https://imagery.arcgisonline.com/arcgis/rest/services/LandsatGLS/NDVI_Colorized/ImageServer',
+        url: 'http://imagery.arcgisonline.com/arcgis/rest/services/LandsatGLS/NDVI_Colorized/ImageServer',
         useCors: false,
         layers: [0],
         // for some reason this service in particular sometimes redirects json requests to a bogus IP address
