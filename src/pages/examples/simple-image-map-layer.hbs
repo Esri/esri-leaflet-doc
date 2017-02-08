@@ -10,6 +10,7 @@ layout: example.hbs
     var map = L.map('map').setView([37.75, -122.23], 10);
 
     L.esri.imageMapLayer({
-      url: 'https://imagery.arcgisonline.com/ArcGIS/rest/services/LandsatGLS/NaturalColor/ImageServer'
+      url: 'https://landsat.arcgis.com/arcgis/rest/services/Landsat/PS/ImageServer',
+      attribution: 'United States Geological Survey (USGS), National Aeronautics and Space Administration (NASA)'
     }).addTo(map);
 </script>

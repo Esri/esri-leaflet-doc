@@ -68,12 +68,12 @@ layout: documentation.hbs
         <tr>
             <td><code>overlap({{{param 'Geometry' 'geometry'}}})</code></td>
             <td><code>this</code></td>
-            <td>Queries features from the service that overlap (touch but are not fully contained by) the passed geometry object. `geometry` can be an instance of [`L.Marker`](http://leafletjs.com/reference.html#marker), [`L.Polygon`](http://leafletjs.com/reference.html#polygon), [`L.Polyline`](http://leafletjs.com/reference.html#polyline), [`L.LatLng`](http://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](http://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](http://geojson.org/geojson-spec.html#point), [Polyline](http://geojson.org/geojson-spec.html#polyline), [Polygon](http://geojson.org/geojson-spec.html#polygon) objects and GeoJSON [Feature objects](http://geojson.org/geojson-spec.html#feature-objects) objects containing Point, Polyline, Polygon.</td>
+            <td>Queries features from the service that overlap (touch but are not fully contained by) the passed geometry object. `geometry` can be an instance of [`L.Marker`](http://leafletjs.com/reference.html#marker), [`L.Polygon`](http://leafletjs.com/reference.html#polygon), [`L.Polyline`](http://leafletjs.com/reference.html#polyline), [`L.LatLng`](http://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](http://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](http://geojson.org/geojson-spec.html#point), [Polyline](http://geojson.org/geojson-spec.html#polyline), [Polygon](http://geojson.org/geojson-spec.html#polygon) objects and GeoJSON [Feature objects](http://geojson.org/geojson-spec.html#feature-objects) containing Point, Polyline, Polygon.</td>
         </tr>
         <tr>
             <td><code>nearby({{{param 'LatLng' 'latlng' 'http://leafletjs.com/reference.html#latlng'}}}, {{{param 'Integer' 'distance'}}})</code></td>
             <td><code>this</code></td>
-            <td>Queries features a given distance in meters around a <a href="http://leafletjs.com/reference.html#latlng">LatLng</a>. <small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3 that include the capability <code>supportQueryWithDistance</code>.</small></td>
+            <td>Queries features a given distance in meters around a <a href="http://leafletjs.com/reference.html#latlng">LatLng</a>. <br><small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3 that include the capability <code>supportQueryWithDistance</code>.</small></td>
         </tr>
         <tr>
             <td><code>where({{{param 'String' 'where'}}})</code></td>
@@ -83,12 +83,12 @@ layout: documentation.hbs
         <tr>
             <td><code>offset({{{param 'Integer' 'offset'}}})</code></td>
             <td><code>this</code></td>
-            <td>Define the offset of the results, when combined with `limit` can be used for paging. <small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3.</small></td>
+            <td>Define the offset of the results, when combined with `limit` can be used for paging. <br><small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3.</small></td>
         </tr>
         <tr>
             <td><code>limit({{{param 'Integer' 'limit'}}})</code></td>
             <td><code>this</code></td>
-            <td>Limit the number of results returned by this query, when combined with `offset` can be used for paging. <small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3.</small></td>
+            <td>Limit the number of results returned by this query, when combined with `offset` can be used for paging. <br><small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3.</small></td>
         </tr>
         <tr>
             <td><code>between({{{param 'Date' 'from'}}}, {{{param 'Date' 'to'}}})</code></td>
