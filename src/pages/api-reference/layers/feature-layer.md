@@ -88,7 +88,7 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         <tr>
             <td><code>minZoom</code></td>
             <td><code>Number</code></td>
-            <td>Furthest zoom level the layer will be displayed on the map. example:  <code>maxZoom:3</code></td>
+            <td>Furthest zoom level the layer will be displayed on the map. example:  <code>minZoom:3</code></td>
         </tr>
         <tr>
             <td><code>cacheLayers</code></td>
