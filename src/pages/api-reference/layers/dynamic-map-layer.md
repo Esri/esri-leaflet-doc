@@ -5,11 +5,11 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-<!-- Inherits from [`L.esri.RasterLayer`]({{assets}}api-reference/layers/raster-layer.html) -->
+Inherits from [`L.esri.RasterLayer`]({{assets}}api-reference/layers/raster-layer.html)
 
 Render and visualize Map Services from ArcGIS Online and ArcGIS Server. L.esri.DynamicMapLayer also supports custom popups and identification of features.
 
-Map Services are a way to expose the contents of a map as a web service and expose capabilities for exporting tile images, querying and identifying features and more.
+Map Services are used when its preferable to ask the server to draw layers at a particular location and scale and pass back the image which was generated on the fly.  They also expose capabilities for querying and identifying individual features.
 
 ### Constructor
 
@@ -23,7 +23,7 @@ Map Services are a way to expose the contents of a map as a web service and expo
     <tbody>
         <tr>
             <td>L.esri.dynamicMapLayer({{{param 'Object' 'options'}}})</code></td>
-            <td>The <code>options</code> parameter can accept the same options as <a href="http://leafletjs.com/reference.html#imageoverlay"><code>L.ImageOverlay</code></a>. You also must pass a <code>url</code> key in your <code>options</code>.</td>
+            <td>The <code>options</code> parameter can accept the same options as <a href="http://leafletjs.com/reference.html#imageoverlay"><code>L.ImageOverlay</code></a>.<br>Passing a <code>url</code> is mandatory.</td>
         </tr>
     </tbody>
 </table>
@@ -36,15 +36,15 @@ Option | Type | Default | Description
 `format` | `String` | `'png24'` | Output format of the image.
 `transparent` | `Boolean` | `true` | Allow the server to produce transparent images.
 `f` | `String` | `'json'` |  Server response content type.
-`attribution` | `String` | `''` |  Attribution from service metadata [copyright text](https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer) is automatically displayed in Leaflet's default control.  This property can be used for customization.
-`layers` | `Array` | `''` | An array of Layer IDs like `[3,4,5]` to show from the service.
-`layerDefs` | `String` `Object` | `''` | A string representing a query to run against the service before the image is rendered. This can be a string like `"3:STATE_NAME='Kansas'"` or an object mapping different queries to specific layers `{3:"STATE_NAME='Kansas'", 2:"POP2007>25000"}`.
+`attribution` | `String` |  |  Attribution from service metadata [copyright text](https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer) is automatically displayed in Leaflet's default control.  This property can be used for customization.
+`layers` | `Array` |  | An array of Layer IDs like `[3,4,5]` to show from the service.
+`layerDefs` | `Object` |  | SQL filters to define what features will be included in the image rendered by the service. An object is used with keys that map each query to its respective layer. <br> `{ 3: "STATE_NAME='Kansas'", 9: "POP2007>25000" }`
 `opacity` | `Number` | `1` | Opacity of the layer. Should be a value between 0 (completely transparent) and 1 (completely opaque).
 `position` | `String` | `'front'` | Position of the layer relative to other overlays.
-`maxZoom` | `Number` | | Closest zoom level the layer will be displayed on the map.
-`minZoom` | `Number` | | Furthest zoom level the layer will be displayed on the map.
-`dynamicLayers` | `Object` | `null` | JSON object literal used to manipulate the layer symbology defined in the service itself.  Requires a 10.1 (or above) map service which supports [dynamicLayers](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Map/02r3000000v7000000/) requests.
-`token` | `String` | `null` | If you pass a token in your options it will be included in all requests to the service.
+`maxZoom` | `Number` |  | Closest zoom level the layer will be displayed on the map.
+`minZoom` | `Number` |  | Furthest zoom level the layer will be displayed on the map.
+`dynamicLayers` | `Object` |   | JSON object literal used to manipulate the layer symbology defined in the service itself.  Requires a 10.1 (or above) map service which supports [dynamicLayers](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Map/02r3000000v7000000/) requests.
+`token` | `String` |   | If you pass a token in your options it will be included in all requests to the service.
 `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) to use for proxying POST requests.
 `useCors` | `Boolean` | `true` | If this service should use CORS when making GET requests.
 
