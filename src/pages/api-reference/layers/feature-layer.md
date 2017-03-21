@@ -156,9 +156,14 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
             <td>A custom map pane to render lines and polygons on. For point geometries, custom panes should be passed through `pointToLayer()`.</td>
         </tr>
         <tr>
+            <td><code>isModern</code></td>
+            <td><code>Boolean</code></td>
+            <td>Set this to `false` if your own service supports GeoJSON as an output format but you'd like to ask for [Geoservices JSON](http://geoservices.github.io/) instead.</td>
+        </tr>
+        <tr>
             <td><code>ignoreRenderer</code></td>
             <td><code>Boolean</code></td>
-            <td>When utilizing esri-leaflet-renderers ['2.0.2'](https://github.com/Esri/esri-leaflet-renderers/releases/tag/v2.0.1) or above, this option makes it possible to override the symbology defined by the service itself .</td>
+            <td>When utilizing esri-leaflet-renderers ['2.0.2'](https://github.com/Esri/esri-leaflet-renderers/releases/tag/v2.0.1) or above, this option makes it possible to override the symbology defined by the service itself.</td>
         </tr>
     </tbody>
 </table>
@@ -221,6 +226,13 @@ In addition to the events above, `L.esri.FeatureLayer` also fires the following 
   console.log(
     layer.feature.properties.NAME);
 });</code></pre>
+            </td>
+        </tr>
+        <tr>
+            <td><code>eachActiveFeature({{{param 'Function' 'fn'}}}, {{{param 'Object' 'context'}}})</code></td>
+            <td><code>this</code></td>
+            <td>
+                Calls the passed function against every feature that is currently being displayed.
             </td>
         </tr>
         <tr>
