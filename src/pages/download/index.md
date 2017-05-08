@@ -22,7 +22,7 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 #### Other Plugins
 
 ```xml
-<!-- ArcGIS Online Vector Basemaps -->
+<!-- Vector Tiles -->
 <script src="https://unpkg.com/esri-leaflet-vector@{{package.sample-versions.esri-leaflet-vector}}"></script>
 
 <!-- Clustered Feature Layer -->
@@ -36,10 +36,10 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 <script src="https://unpkg.com/esri-leaflet-geocoder@{{package.sample-versions.esri-leaflet-geocoder}}"></script>
 
 <!-- Renderers Plugin -->
-<script src="https://unpkg.com/esri-leaflet-renderers@2.0.2"></script>
+<script src="https://unpkg.com/esri-leaflet-renderers@{{package.sample-versions.esri-leaflet-renderers}}"></script>
 
 <!-- Geoprocessing Plugin -->
-<script src="https://unpkg.com/esri-leaflet-gp@2.0.1"></script>
+<script src="https://unpkg.com/esri-leaflet-gp@{{package.sample-versions.esri-leaflet-gp}}"></script>
 ```
 # npm
 
@@ -59,9 +59,9 @@ bower install esri-leaflet
 
 ### Still using Leaflet `0.7.x`?
 
-Version `1.0.4` of esri-leaflet is the one for you.
+Version `1.0.5` of esri-leaflet is the one for you.
 ```xml
-<script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.4/esri-leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.5/esri-leaflet.js"></script>
 ```
 
 ### Older Hosted Versions

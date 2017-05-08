@@ -1,0 +1,115 @@
+---
+title: Use Turf and Esri Leaflet together
+description: Esri Leaflet pairs nicely with clientside libraries that can perform spatial analysis in the browser like <a href="http://turfjs.org/getting-started/">Turf.js</a>. This demo shows how the output from a spatial query can be augmented to isolate features that have a spatial relationship with another arbitrary geometry.
+layout: example.hbs
+---
+
+<script src="https://unpkg.com/@turf/turf@3.5.1/turf.min.js"></script>
+
+<style>
+  #info-pane {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    padding: 1em;
+    background: white;
+    max-width: 150px;
+  }
+</style>
+
+<div id="map"></div>
+<div id="info-pane" class="leaflet-bar">
+  <label>
+  Census block points that intersect both bounding boxes and are shown in red.
+  </label>
+</div>
+
+<script type='text/javascript'>
+  // two GeoJSON bounding boxes.  the first smaller than the second.
+    var boundingBoxes = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "color": "orange"
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [ -84.39010620117188, 33.747965492070236 ],
+                [ -84.39010620117188, 33.75431694675655 ],
+                [ -84.37311172485352, 33.75431694675655 ],
+                [ -84.37311172485352, 33.747965492070236 ],
+                [ -84.39010620117188, 33.747965492070236 ]
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "color": "#0ceb70"
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [ -84.39963340759277, 33.744254312044156 ],
+                [ -84.39963340759277,  33.75817040902938 ],
+                [ -84.38444137573242, 33.75817040902938 ],
+                [ -84.38444137573242, 33.744254312044156 ],
+                [ -84.39963340759277, 33.744254312044156 ]
+              ]
+            ]
+          }
+        }
+      ]
+    }
+
+    // draw a map of atlanta
+    var map = L.map('map').setView([33.752, -84.385], 14.5);
+    L.esri.basemapLayer('Topographic').addTo(map);
+
+    // display the bounding boxes on the map
+    L.geoJSON(boundingBoxes, {
+      style: function (feature) {
+        return {color: feature.properties.color};
+      }
+    }).addTo(map);
+
+    // query for census block points that intersect the smaller box
+    var query = L.esri.query({
+      url: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/0'
+    })
+    query.intersects(boundingBoxes.features[0])
+    query.run(function (err, censusCollection, raw) {
+      var features = censusCollection.features;
+      // loop through the collection of census block points
+      for (i=0; i<features.length; i++) {
+        // if the point is inside (or contained by, the bigger box) draw it in red
+        if (turf.inside(features[i], boundingBoxes.features[1])) {
+          L.geoJSON(features[i], {
+            pointToLayer: function(geoJsonPoint, latlng) {
+              return L.circleMarker(latlng, {
+                color: '#ff0066'
+              });
+            }
+          }).addTo(map);
+        } else {
+          // if its outside (or not contained) by the bigger box, make it less opaque.
+          L.geoJSON(features[i], {
+            pointToLayer: function(geoJsonPoint, latlng) {
+              return L.circleMarker(latlng, {
+                radius: 10,
+                color: 'gray',
+                opacity: 0.2
+              });
+            }
+          }).addTo(map);
+        }
+      }
+    });
+</script>
