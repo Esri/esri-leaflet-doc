@@ -5,11 +5,11 @@ layout: documentation.hbs
 
 # L.esri.request
 
-Generic methods for GET and POST requests to ArcGIS Online or ArcGIS Server resources. These methods will handle serializing the input parameters and parsing of the response, making them available in a callback function via a response and error property similar to Node.js.
+Generic methods to make GET and POST requests to ArcGIS Online and ArcGIS Enterprise. These methods will handle serializing the input parameters and parsing of the response, making them available in a callback function via a response and error property similar to Node.js.
 
-GET requests will be made with `XMLHttpRequest` (via CORS) if the browser supports it and will fallback to JSONP. POST requests will always be made with `XMLHttpRequest` (via CORS) but the [ArcGIS API for JavaScript proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) and the [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) are support via [`L.esri.Service`]({{assets}}api-reference/services/service.html).
+GET requests will be made with `XMLHttpRequest` (via CORS) if the browser supports it and will fallback to JSONP. POST requests will always be made with `XMLHttpRequest` (via CORS). The [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) or something similar must be configured to support cross domain requests via [`L.esri.Service`]({{assets}}api-reference/services/service.html) if CORS cannot be leveraged.
 
-If you are using a version of ArcGIS Server before 10.1 your server does not support CORS by default. You can either enable CORS support on your server (documentation is available at http://enable-cors.org/) or, if you cannot or do not want to enable CORS, use the following code to make all requests utilize JSONP.
+If you are using a version of ArcGIS Server older than 10.1, CORS is not enabled by default but can be configured using the documentation available at http://enable-cors.org/. If you cannot enable CORS, the following line of code will force all requests to be made using JSONP instead.
 
 ```js
 L.esri.Support.cors = false;
