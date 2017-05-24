@@ -131,11 +131,12 @@ L.esri.Geocoding.Controls.geosearch({
 
 All providers share the following options:
 
-| Option | Type | Default | Description
-| --- | --- | --- | --- |
-| label | `String` | `'Provider Type'` | Text that will be used to group suggestions (when more than one provider is used).
-| maxResults | `Integer` | `5` | Maximum number of results to show for the provider.  Hard limit for suggestions from the [ArcGIS World Geocoding Service](https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm) is 15.
-| attribution | `string` | `Varies by provider` | Adds attribution to the map to credit the source.
+Option | Type | Default | Description
+--- | --- | --- | --- |
+`label` | `String` | `'Provider Type'` | Text that will be used to group suggestions (when more than one provider is used).
+`maxResults` | `Integer` | `5` | Maximum number of results to show for the provider.  Hard limit for suggestions from the [ArcGIS World Geocoding Service](https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm) is 15.
+`attribution` | `string` | `Varies by provider` | Adds attribution to the map to credit the source.
+`token` | `String` | `null` | Will use this token to authenticate all calls to the service.
 
 ##### arcgisOnlineProvider
 
@@ -144,7 +145,7 @@ Option | Type | Default | Description
 `countries` | `String` `[Strings]` | null | Limit results to one or more countries. Any ISO 3166 2 or 3 digit [country code](https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm)  supported by the ArcGIS World Geocode service is allowed. *Note*: using an array of country codes may result in inaccurate results even when a specific suggestion is supplied.
 `categories` | `String` `[Strings]` | null | Limit results to one or more categories. See the [list of valid categories](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-category-filtering.htm#ESRI_SECTION1_502B3FE2028145D7B189C25B1A00E17B) for possible values.
 `forStorage` | `Boolean` | false | Indicates whether results will be stored permanently.  More information can be found [here](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-free-vs-paid.htm).
-`token` | `String` | `null` | Will use this token to authenticate all calls to the service.
+
 
 Results from the `arcgisOnlineProvider` will have an additional `properties` key which will correspond with [all available fields](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-service-output.htm#ESRI_SECTION1_42D7D3D0231241E9B656C01438209440) in the World Geocode service
 
@@ -194,7 +195,7 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 `url` | `String` | *Required* | The URL for the service that will be searched.
 `searchFields` | `String` `Array[Strings]` | None | An array of fields to search for text.
-`layers` | `Integer` `Array[Integers]` | `[0]` | An array of layer identifiers to find text matches on. 
+`layers` | `Integer` `Array[Integers]` | `[0]` | An array of layer identifiers to find text matches on.
 `formatSuggestion`| `Function` | See Description | Formatting function for the suggestion text. Receives feature information and returns a string.
 `bufferRadius` | `Integer` `Array[Integers]`| Buffer point results by this radius to create bounds.
 
