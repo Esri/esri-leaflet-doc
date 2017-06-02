@@ -147,8 +147,8 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         </tr>
         <tr>
             <td><code>renderer</code></td>
-            <td><code>L.svg</code> or <code>L.canvas</code></td>
-            <td>The vector renderer to use to draw the service. Usually `L.svg` but setting to `L.canvas` contains performance benefits for large polygon layers.</td>
+            <td><code>L.svg()</code> or <code>L.canvas()</code></td>
+            <td>The vector renderer to use to draw the service. Usually `L.svg()` is preferable but setting to `L.canvas()` can have performance benefits for large polygon layers.</td>
         </tr>
         <tr>
             <td><code>pane</code></td>

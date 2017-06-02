@@ -35,7 +35,7 @@
     "esri-leaflet-geocoder": "2.2.4",
     "esri-leaflet-vector": "1.0.7",
     "esri-leaflet-gp": "2.0.2",
-    "esri-leaflet-renderers": "2.0.4"
+    "esri-leaflet-renderers": "2.0.5"
   },
   "scripts": {
     "start": "grunt"
