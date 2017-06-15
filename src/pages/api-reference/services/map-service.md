@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Inherits from [`L.esri.Service`]({{assets}}api-reference/services/service.html)
+Extends [`L.esri.Service`]({{assets}}api-reference/services/service.html)
 
 `L.esri.MapService` is an abstraction for interacting with Map Services running on ArcGIS Online and ArcGIS Server that allows you to make requests to the API, as well as query and identify published features.
 

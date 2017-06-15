@@ -5,6 +5,8 @@ layout: documentation.hbs
 
 # L.esri.Related.Query
 
+Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
+
 An abstraction to assist querying related tables published in ArcGIS Server or ArcGIS Online.  You can find more information and the source code for this plugin [here](https://github.com/jgravois/esri-leaflet-related).
 
 ### Constructor

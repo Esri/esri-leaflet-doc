@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Inherits from [`L.esri.Service`]({{assets}}api-reference/services/service.html)
+Extends [`L.esri.Service`]({{assets}}api-reference/services/service.html)
 
 `L.esri.ImageService` is an abstraction for interacting with Image Services running on ArcGIS Online and ArcGIS Server that allows you to make requests to the API, as well as query and identify features on the service.
 

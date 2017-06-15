@@ -5,6 +5,8 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
+Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
+
 `L.esri.Find` is an abstraction for the find API included in Map Services. It provides a chainable API for building request parameters and executing find tasks.
 
 ### Constructor

@@ -5,10 +5,12 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
+Extends [`L.Control`](http://leafletjs.com/reference-{{package.sample-versions.leaflet}}.html#control)
+
 `L.esri.Geocoding.Geosearch` is a control for auto-complete enabled search.  You can find more information and the source code for this plugin [here](https://github.com/Esri/esri-leaflet-geocoder).
 
 ### Constructor
-Extends [`L.Control`](http://leafletjs.com/reference.html#control)
+
 <table>
     <thead>
         <tr>
