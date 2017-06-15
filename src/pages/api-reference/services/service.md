@@ -5,6 +5,8 @@ layout: documentation.hbs
 
 # L.esri.Service
 
+Extends [`L.Evented`](http://leafletjs.com/reference-{{package.sample-versions.leaflet}}.html#evented)
+
 A generic class representing a hosted resource on ArcGIS Online or ArcGIS Server. This class can be extended to provide support for making requests and serves as a standard for authentication and proxying.
 
 ### Constructor

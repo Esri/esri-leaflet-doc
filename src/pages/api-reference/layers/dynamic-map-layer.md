@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Inherits from [`L.esri.RasterLayer`]({{assets}}api-reference/layers/raster-layer.html)
+Extends [`L.esri.RasterLayer`]({{assets}}api-reference/layers/raster-layer.html)
 
 Render and visualize Map Services from ArcGIS Online and ArcGIS Server. L.esri.DynamicMapLayer also supports custom popups and identification of features.
 

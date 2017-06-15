@@ -5,6 +5,8 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
+Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
+
 `L.esri.IdentifyFeatures` is an abstraction for the Identify API found in Map Services. It provides a chainable API for building request parameters and executing the request.
 
 ### Constructor

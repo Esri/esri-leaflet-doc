@@ -5,9 +5,11 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-`L.esri.Heat.FeatureLayer` provides integration for Feature Layers with the [Leaflet.heat plugin](https://github.com/Leaflet/Leaflet.heat). Because of the extra dependency on Leaflet.heat we do not include `L.esri.Heat.FeatureLayer` in the default build of Esri Leaflet. You will need to include your own copy of the [Leaflet.heat plugin](https://github.com/Leaflet/Leaflet.heat) in your application as well.
+Extends [`L.esri.Layers.FeatureLayer`]({{assets}}api-reference/layers-feature-layer.html)
 
-More information about Feature Layers can be found in the [`L.esri.FeatureLayer` documentation]({{assets}}api-reference/layers/feature-layer.html).
+`L.esri.Heat.FeatureLayer` provides integration for Feature Layers with the [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) plugin. Because of the extra dependency on Leaflet.heat we do not include `L.esri.Heat.FeatureLayer` in the default build of Esri Leaflet. You will need to include your own copy of the [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) plugin in your application as well.
+
+More information about Feature Layers can be found in the [`L.esri.FeatureLayer`]({{assets}}api-reference/layers/feature-layer.html) documentation.
 
 ### Constructor
 

@@ -5,9 +5,9 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-`L.esri.FeatureLayer` is used to visualize, style, query and edit vector geographic data hosted in both ArcGIS Online and published using ArcGIS Server.  Copyright text from the service is added to map attribution automatically.
+Extends [L.Layer](http://leafletjs.com/reference-{{package.sample-versions.leaflet}}.html#layer)
 
-Inherits from [L.Layer](http://leafletjs.com/reference-1.0.0.html#layer)
+`L.esri.FeatureLayer` is used to visualize, style, query and edit vector geographic data hosted in both ArcGIS Online and published using ArcGIS Server.  Copyright text from the service is added to map attribution automatically.
 
 Feature Layers reference an individual data source in either a parent [Map Service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Map_Service/02r3000000w2000000/) or [Feature Service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Feature_Service/02r3000000z2000000/) that can contain multiple layers.  You can see a sample Map Service URL below:
 
@@ -68,7 +68,7 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         <tr>
             <td><code>style({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'ILayer' 'layer' 'http://leafletjs.com/reference.html#ilayer'}}})</code></td>
             <td><code>Function</code></td>
-            <td>Function that will be used to get style options for vector layers created for GeoJSON features.</td>
+            <td>Function that will be used to get [style options](http://leafletjs.com/reference-{{package.sample-versions.leaflet}}.html#path-option) for vector layers created for GeoJSON features.</td>
         </tr>
         <tr>
             <td><code>onEachFeature({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'ILayer' 'layer' 'http://leafletjs.com/reference.html#ilayer'}}})</code></td>
@@ -149,11 +149,6 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
             <td><code>renderer</code></td>
             <td><code>L.svg()</code> or <code>L.canvas()</code></td>
             <td>The vector renderer to use to draw the service. Usually `L.svg()` is preferable but setting to `L.canvas()` can have performance benefits for large polygon layers.</td>
-        </tr>
-        <tr>
-            <td><code>pane</code></td>
-            <td><code>String</code></td>
-            <td>A custom map pane to render lines and polygons on. For point geometries, custom panes should be passed through `pointToLayer()`.</td>
         </tr>
         <tr>
             <td><code>isModern</code></td>

@@ -5,6 +5,8 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
+Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
+
 `L.esri.Geocoding.ReverseGeocode` is an abstraction for submitting requests for address candidates associated with a particular location.  You can find more information and the source code for this plugin [here](https://github.com/Esri/esri-leaflet-geocoder).
 
 ### Constructor
