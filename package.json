@@ -30,7 +30,7 @@
     "url": "git@github.com:Esri/esri-leaflet-doc.git"
   },
   "sample-versions": {
-    "leaflet": "1.0.3",
+    "leaflet": "1.1.0",
     "esri-leaflet": "2.0.8",
     "esri-leaflet-geocoder": "2.2.4",
     "esri-leaflet-vector": "1.0.7",
