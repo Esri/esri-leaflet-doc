@@ -43,8 +43,13 @@
     <script src="/js/linked/leaflet-dist/leaflet-src.js"></script>
     <script src="/js/linked/esri-leaflet-dist/esri-leaflet-debug.js"></script>
   {{else}}
+    {{#if page.data.legacy}}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"></script>
+    {{else}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@{{package.sample-versions.leaflet}}/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@{{package.sample-versions.leaflet}}/dist/leaflet-src.js"></script>
+    {{/if}}
     <script src="https://unpkg.com/esri-leaflet@{{package.sample-versions.esri-leaflet}}"></script>
   {{/if}}
 
