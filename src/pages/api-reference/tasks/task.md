@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Extends [`L.Class`](http://leafletjs.com/reference-{{package.sample-versions.leaflet}}.html#class)
+Extends [`L.Class`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#class)
 
 `L.esri.Task` is a generic class that provides the foundation for calling operations on ArcGIS Online and ArcGIS Server Services like query, find and identify.
 
