@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Extends [`L.TileLayer`](http://leafletjs.com/reference-{{package.sample-versions.leaflet}}.html#tilelayer)
+Extends [`L.TileLayer`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#tilelayer)
 
 Access tiles from ArcGIS Online and ArcGIS Server to visualize and identify features. Copyright text from the service is added to map attribution automatically.
 

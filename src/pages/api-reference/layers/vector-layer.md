@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Extends [`L.Layer`](http://leafletjs.com/reference-{{package.sample-versions.leaflet}}.html#layer)
+Extends [`L.Layer`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#layer)
 
 `L.esri.Vector.Layer` is used to display vector tile services and attributes data providers appropriately. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
 

@@ -15,31 +15,47 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 
 #### Esri Leaflet
 
-```xml
-<script src="https://unpkg.com/esri-leaflet@{{package.sample-versions.esri-leaflet}}"></script>
+```html
+<script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+    integrity="{{siteData.latest_esri_leaflet_integrity}}"
+    crossorigin=""></script>
 ```
 
 #### Other Plugins
 
 ```xml
 <!-- Vector Tiles -->
-<script src="https://unpkg.com/esri-leaflet-vector@{{package.sample-versions.esri-leaflet-vector}}"></script>
+<script src="https://unpkg.com/esri-leaflet-vector@{{siteData.latest_esri_leaflet_vector}}/dist/esri-leaflet-vector.js"
+    integrity="{{siteData.latest_esri_leaflet_vector_integrity}}"
+    crossorigin=""></script>
 
 <!-- Clustered Feature Layer -->
-<script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
+<script src="https://unpkg.com/esri-leaflet-cluster@{{siteData.latest_esri_leaflet_cluster}}/dist/esri-leaflet-cluster.js"
+    integrity="{{siteData.latest_esri_leaflet_cluster_integrity}}"
+    crossorigin=""></script>
 
 <!-- Heatmap Feature Layer -->
-<script src="https://unpkg.com/esri-leaflet-heatmap@2.0.0"></script>
+<script src="https://unpkg.com/esri-leaflet-heatmap@{{siteData.latest_esri_leaflet_heatmap}}/dist/esri-leaflet-heatmap.js"
+    integrity="{{siteData.latest_esri_leaflet_heatmap_integrity}}"
+    crossorigin=""></script>
 
 <!-- Geocoding Control -->
-<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{package.sample-versions.esri-leaflet-geocoder}}/dist/esri-leaflet-geocoder.css">
-<script src="https://unpkg.com/esri-leaflet-geocoder@{{package.sample-versions.esri-leaflet-geocoder}}"></script>
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.latest_esri_leaflet_geocoder}}/dist/esri-leaflet-geocoder.css"
+    integrity="{{siteData.latest_esri_leaflet_geocoder_css_integrity}}"
+    crossorigin="">
+<script src="https://unpkg.com/esri-leaflet-geocoder@{{siteData.latest_esri_leaflet_geocoder}}/dist/esri-leaflet-geocoder.js"
+    integrity="{{siteData.latest_esri_leaflet_geocoder_integrity}}"
+    crossorigin=""></script>
 
 <!-- Renderers Plugin -->
-<script src="https://unpkg.com/esri-leaflet-renderers@{{package.sample-versions.esri-leaflet-renderers}}"></script>
+<script src="https://unpkg.com/esri-leaflet-renderers@{{siteData.latest_esri_leaflet_renderers}}/dist/esri-leaflet-renderers.js"
+    integrity="{{siteData.latest_esri_leaflet_renderers_integrity}}"
+    crossorigin=""></script>
 
 <!-- Geoprocessing Plugin -->
-<script src="https://unpkg.com/esri-leaflet-gp@{{package.sample-versions.esri-leaflet-gp}}"></script>
+<script src="https://unpkg.com/esri-leaflet-gp@{{siteData.latest_esri_leaflet_gp}}/dist/esri-leaflet-gp.js"
+    integrity="{{siteData.latest_esri_leaflet_gp_integrity}}"
+    crossorigin=""></script>
 ```
 # npm
 

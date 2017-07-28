@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Extends [L.Layer](http://leafletjs.com/reference-{{package.sample-versions.leaflet}}.html#layer)
+Extends [L.Layer](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#layer)
 
 `L.esri.FeatureLayer` is used to visualize, style, query and edit vector geographic data hosted in both ArcGIS Online and published using ArcGIS Server.  Copyright text from the service is added to map attribution automatically.
 
@@ -68,7 +68,7 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
         <tr>
             <td><code>style({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'ILayer' 'layer' 'http://leafletjs.com/reference.html#ilayer'}}})</code></td>
             <td><code>Function</code></td>
-            <td>Function that will be used to get [style options](http://leafletjs.com/reference-{{package.sample-versions.leaflet}}.html#path-option) for vector layers created for GeoJSON features.</td>
+            <td>Function that will be used to get [style options](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#path-option) for vector layers created for GeoJSON features.</td>
         </tr>
         <tr>
             <td><code>onEachFeature({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'ILayer' 'layer' 'http://leafletjs.com/reference.html#ilayer'}}})</code></td>

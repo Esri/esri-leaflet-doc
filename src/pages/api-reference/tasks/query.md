@@ -80,7 +80,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
         <tr>
             <td><code>nearby({{{param 'LatLng' 'latlng' 'http://leafletjs.com/reference.html#latlng'}}}, {{{param 'Integer' 'distance'}}})</code></td>
             <td><code>this</code></td>
-            <td>Queries features a given distance in meters around a <a href="http://leafletjs.com/reference.html#latlng">LatLng</a>. <br><small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3 that include the capability <code>supportQueryWithDistance</code>.</small></td>
+            <td>Queries features a given distance in meters around a <a href="http://leafletjs.com/reference.html#latlng">LatLng</a>. <br><small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3+ that include the capability <code>supportQueryWithDistance</code>.</small></td>
         </tr>
         <tr>
             <td><code>where({{{param 'String' 'where'}}})</code></td>
@@ -90,7 +90,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
         <tr>
             <td><code>offset({{{param 'Integer' 'offset'}}})</code></td>
             <td><code>this</code></td>
-            <td>Define the offset of the results, when combined with `limit` can be used for paging. <br><small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3.</small></td>
+            <td>Define the offset of the results, when combined with `limit` can be used for paging. <br><small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3+.</small></td>
         </tr>
         <tr>
             <td><code>limit({{{param 'Integer' 'limit'}}})</code></td>
@@ -148,19 +148,24 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
             <td>Override the default pixelSize when querying an Image Service. <br><small>Only available for Image Services.</small></td>
         </tr>
         <tr>
+            <td><code>transform({{{param 'Number' 'Number'}}})</code></td>
+            <td><code>this</code></td>
+            <td>The WKID of a [datum transformation](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Datum_transformations/02r3000000r8000000/) for the server to apply when reprojecting output features.<br><small>Only available for ArcGIS Server 10.5+.</small></td>
+        </tr>
+        <tr>
             <td><code>run({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
-            <td>Exectues the query request with the current parameters, features will be passed to <code>callback</code> as a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a>. Accepts an optional function context.</td>
+            <td>Executes the query request with the current parameters, features will be passed to <code>callback</code> as a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a>. Accepts an optional function context.</td>
         </tr>
         <tr>
             <td><code>count({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
-            <td>Exectues the query request with the current parameters, passing only the number of features matching the query to callback as an <code>Integer</code>. Accepts an optional function context.</td>
+            <td>Executes the query request with the current parameters, passing only the number of features matching the query to callback as an <code>Integer</code>. Accepts an optional function context.</td>
         </tr>
         <tr>
             <td><code>ids({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
-            <td>Exectues the query request with the current parameters, passing only an array of the feature ids matching the query to callback<code>callback</code>. Accepts an optional function context.</td>
+            <td>Executes the query request with the current parameters, passing only an array of the feature ids matching the query to callback<code>callback</code>. Accepts an optional function context.</td>
         </tr>
         <tr>
             <td><code>bounds({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
