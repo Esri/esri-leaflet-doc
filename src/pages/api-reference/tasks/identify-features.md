@@ -53,9 +53,9 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
             <td>The map to identify features on.</td>
         </tr>
         <tr>
-            <td><code>at({{{param 'LatLng' 'latlng' 'http://leafletjs.com/reference.html#latlng'}}})</code></td>
+            <td><code>at({{{param 'Geometry' 'geometry'}}})</code></td>
             <td><code>this</code></td>
-            <td>Identifies feautres at a given [LatLng](http://leafletjs.com/reference.html#latlng)</td>
+            <td>Identifies features at a given [LatLng](http://leafletjs.com/reference.html#latlng). `geometry` can also be an instance of [`L.Marker`](http://leafletjs.com/reference.html#marker), [`L.Polygon`](http://leafletjs.com/reference.html#polygon), [`L.Polyline`](http://leafletjs.com/reference.html#polyline), [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds), [`L.GeoJSON`](http://leafletjs.com/reference.html#geojson) or a valid [GeoJSON](http://geojson.org/geojson-spec.html) object literal.</td>
         </tr>
         <tr>
             <td><code>layerDef({{{param 'Integer' 'id'}}}, {{{param 'String' 'where'}}})</code></td>
@@ -78,7 +78,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
         <tr>
             <td><code>precision({{{param 'Integer' 'precision'}}})</code></td>
             <td><code>this</code></td>
-            <td>Return only this many decimal points of precision in the output geometries.</td>
+            <td>Used to cap the number of decimal points included in output geometries.</td>
         </tr>
         <tr>
             <td><code>tolerance({{{param 'Integer' 'precision'}}})</code></td>
@@ -94,6 +94,11 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
             <td><code>simplify({{{param 'Map' 'map' 'http://leafletjs.com/reference.html#map'}}},  {{{param 'Number' 'factor'}}})</code></td>
             <td><code>this</code></td>
             <td>Simplify the geometries of the output features for the current map view. the <code>factor</code> parameter controls the amount of simplification between 0 (no simplification) and 1 (the most basic shape possible).</td>
+        </tr>
+        <tr>
+            <td><code>format({{{param 'Boolean' 'formatResponse'}}})</code></td>
+            <td><code>this</code></td>
+            <td>Use <code>false</code> to ensure that the server returns unformatted feature attributes.<br><small>Only available for ArcGIS Server 10.5+.</small></td>
         </tr>
         <tr>
             <td><code>token({{{param 'String' 'token'}}})</code></td>

@@ -114,6 +114,11 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
             <td>Simplify the geometries of the output features for the current map view. the <code>factor</code> parameter controls the amount of simplification between 0 (no simplification) and 1 (simplify to the most basic shape possible).</td>
         </tr>
         <tr>
+            <td><code>format({{{param 'Boolean' 'formatResponse'}}})</code></td>
+            <td><code>this</code></td>
+            <td>Use <code>false</code> to ensure that the server returns unformatted feature attributes.<br><small>Only available for ArcGIS Server 10.5+.</small></td>
+        </tr>
+        <tr>
             <td><code>token({{{param 'String' 'token'}}})</code></td>
             <td><code>this</code></td>
             <td>Adds a token to this request if the service requires authentication. Will be added automatically if used with a service.</td>

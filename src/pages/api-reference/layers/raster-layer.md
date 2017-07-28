@@ -89,3 +89,4 @@ Option | Type | Default | Description
 | --- | --- | --- |
 | `loading` | [<`LoadingEvent`>]({{assets}}api-reference/events.html#loading-event) | Fires when new features start loading. |
 | `load` | [<`LoadEvent`>]({{assets}}api-reference/events.html#load-event) | Fires when all features in the current bounds of the map have loaded. |
+| `error` | <`Event`> | Fires when an image fails to load and ensures that the offending ImageOverlay is removed by the API. |
