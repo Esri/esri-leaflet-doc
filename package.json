@@ -28,7 +28,7 @@
     "grunt-gh-pages": "^1.0.0",
     "grunt-newer": "^1.1.1",
     "grunt-sass": "^1.2.1",
-    "leaflet": "^1.1.0",
+    "leaflet": "^1.2.0",
     "load-grunt-tasks": "^3.4.0",
     "ssri": "^4.1.6"
   },

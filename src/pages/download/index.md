@@ -8,14 +8,14 @@ class: no-sidebar
 
 All builds of Esri Leaflet are available for download on [GitHub](https://github.com/Esri/esri-leaflet/releases/).
 
-<a href="https://github.com/Esri/esri-leaflet/releases/tag/v{{package.version}}" class="btn">Current Release</a>
+<a href="https://github.com/Esri/esri-leaflet/releases/tag/v{{siteData.latest_esri_leaflet}}" class="btn">Current Release</a>
 <a href="https://github.com/Esri/esri-leaflet/releases/" class="btn">Past Releases</a>
 
 # CDN
 
 #### Esri Leaflet
 
-```html
+```xml
 <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
     integrity="{{siteData.latest_esri_leaflet_integrity}}"
     crossorigin=""></script>
@@ -24,6 +24,14 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 #### Other Plugins
 
 ```xml
+<!-- Geocoding Control -->
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.latest_esri_leaflet_geocoder}}/dist/esri-leaflet-geocoder.css"
+    integrity="{{siteData.latest_esri_leaflet_geocoder_css_integrity}}"
+    crossorigin="">
+<script src="https://unpkg.com/esri-leaflet-geocoder@{{siteData.latest_esri_leaflet_geocoder}}/dist/esri-leaflet-geocoder.js"
+    integrity="{{siteData.latest_esri_leaflet_geocoder_integrity}}"
+    crossorigin=""></script>
+
 <!-- Vector Tiles -->
 <script src="https://unpkg.com/esri-leaflet-vector@{{siteData.latest_esri_leaflet_vector}}/dist/esri-leaflet-vector.js"
     integrity="{{siteData.latest_esri_leaflet_vector_integrity}}"
@@ -39,14 +47,6 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
     integrity="{{siteData.latest_esri_leaflet_heatmap_integrity}}"
     crossorigin=""></script>
 
-<!-- Geocoding Control -->
-<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.latest_esri_leaflet_geocoder}}/dist/esri-leaflet-geocoder.css"
-    integrity="{{siteData.latest_esri_leaflet_geocoder_css_integrity}}"
-    crossorigin="">
-<script src="https://unpkg.com/esri-leaflet-geocoder@{{siteData.latest_esri_leaflet_geocoder}}/dist/esri-leaflet-geocoder.js"
-    integrity="{{siteData.latest_esri_leaflet_geocoder_integrity}}"
-    crossorigin=""></script>
-
 <!-- Renderers Plugin -->
 <script src="https://unpkg.com/esri-leaflet-renderers@{{siteData.latest_esri_leaflet_renderers}}/dist/esri-leaflet-renderers.js"
     integrity="{{siteData.latest_esri_leaflet_renderers_integrity}}"
@@ -59,7 +59,7 @@ All builds of Esri Leaflet are available for download on [GitHub](https://github
 ```
 # npm
 
-Esri Leaflet is also [available on npm](https://www.npmjs.org/package/esri-leaflet) and can be installed with the following command.
+Esri Leaflet is available on [npm](https://www.npmjs.org/package/esri-leaflet) and can be installed with the following command.
 
 ```bash
 npm install esri-leaflet --save
@@ -67,17 +67,17 @@ npm install esri-leaflet --save
 
 # Bower
 
-Esri Leaflet is [available on Bower](http://bower.io/search/?q=esri-leaflet) as well.
+Esri Leaflet is available from [Bower](http://bower.io/search/?q=esri-leaflet) as well.
 
 ```bash
 bower install esri-leaflet
 ```
 
-### Still using Leaflet `0.7.x`?
+### Still using Leaflet `0.7`?
 
 Version `1.0.5` of esri-leaflet is the one for you.
 ```xml
-<script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.5/esri-leaflet.js"></script>
+<script src="https://unpkg.com/esri-leaflet@1.0.5"></script>
 ```
 
 ### Older Hosted Versions
