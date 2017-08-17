@@ -1,0 +1,47 @@
+---
+title: Indoor Mapping
+description: Display a layer using the <a href="https://github.com/cbaines/leaflet-indoor">Leaflet Indoors plugin</a>.
+
+layout: example.hbs
+legacyLeaflet: 0.7.7
+legacyEsriLeaflet: 1.0.4
+---
+
+<!-- Include Leaflet Indoor package (https://github.com/cbaines/leaflet-indoor) -->
+<script src="https://rawgit.com/cbaines/leaflet-indoor/master/leaflet-indoor.js"></script>
+
+<div id="map"></div>
+
+<script>
+  var map = L.map('map').setView([28.470, -82.444], 18);
+
+  L.esri.basemapLayer('Streets').addTo(map);
+  var featureLayer = L.esri.featureLayer({
+    url: 'https://www25.swfwmd.state.fl.us/arcgis/rest/services/Internal/FacilitiesSearch/MapServer/0'
+  });
+  
+  // Run a query against our Feature Layer (that we have not added to the map) 
+  // to get a FeatureCollection (https://tools.ietf.org/html/rfc7946#section-3.3)
+  featureLayer.query().run(function(error, featureCollection) {
+    indoorLayer = new L.Indoor(featureCollection, {
+      getLevel: function(feature) {
+        return feature.properties.FLOOR;
+      }
+    });
+    // set the initial level to show
+    indoorLayer.setLevel("1");
+    indoorLayer.addTo(map);
+
+    // Add Level Control (code from https://github.com/cbaines/leaflet-indoor)
+    var levelControl = new L.Control.Level({
+        level: "1",
+        levels: indoorLayer.getLevels()
+    });
+
+    // Connect the level control to the indoor layer
+    levelControl.addEventListener("levelchange", indoorLayer.setLevel, indoorLayer);
+
+    levelControl.addTo(map);
+  });
+
+</script>

@@ -19,26 +19,28 @@ layout: page.hbs
   <meta charset=utf-8 />
   <title>{{page.data.title}}</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-
-  {{#if page.data.legacy}}
-  <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"/>
-  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"></script>
+  {{#if page.data.legacyLeaflet}}
+    <!-- Load Leaflet (not latest version due to dependencies) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{page.data.legacyLeaflet}}/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@{{page.data.legacyLeaflet}}/dist/leaflet-src.js"></script>
   {{else}}
-  <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
     integrity="{{siteData.latest_leaflet_css_integrity}}"
     crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
+    <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
     integrity="{{siteData.latest_leaflet_integrity}}"
     crossorigin=""></script>
   {{/if}}
-
-  <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+  {{#if page.data.legacyEsriLeaflet}}
+    <!-- Load Esri Leaflet (not latest version due to dependencies) -->
+    <script src="https://unpkg.com/esri-leaflet@{{page.data.legacyEsriLeaflet}}/dist/esri-leaflet.js"></script>
+  {{else}}
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
     integrity="{{siteData.latest_esri_leaflet_integrity}}"
     crossorigin=""></script>
-
+  {{/if}}
   {{#if page.data.geocoder}}
   <!-- Load Esri Leaflet Geocoder from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.latest_esri_leaflet_geocoder}}/dist/esri-leaflet-geocoder.css"
