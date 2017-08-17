@@ -43,20 +43,26 @@
     <script src="/js/linked/leaflet-dist/leaflet-src.js"></script>
     <script src="/js/linked/esri-leaflet-dist/esri-leaflet-debug.js"></script>
   {{else}}
-    {{#if page.data.legacy}}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"></script>
+    {{#if page.data.legacyLeaflet}}
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@{{page.data.legacyLeaflet}}/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet@{{page.data.legacyLeaflet}}/dist/leaflet-src.js"></script>
     {{else}}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
-    integrity="{{siteData.latest_leaflet_css_integrity}}"
-    crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
-    integrity="{{siteData.latest_leaflet_integrity}}"
-    crossorigin=""></script>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
+      integrity="{{siteData.latest_leaflet_css_integrity}}"
+      crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
+      integrity="{{siteData.latest_leaflet_integrity}}"
+      crossorigin=""></script>
     {{/if}}
-    <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
-    integrity="{{siteData.latest_esri_leaflet_integrity}}"
-    crossorigin=""></script>
+
+    {{#if page.data.legacyEsriLeaflet}}
+      <script src="https://unpkg.com/esri-leaflet@{{page.data.legacyEsriLeaflet}}/dist/esri-leaflet.js"></script>
+    {{else}}
+      <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+      integrity="{{siteData.latest_esri_leaflet_integrity}}"
+      crossorigin=""></script>
+    {{/if}}
+    
   {{/if}}
 
   {{#if page.data.geocoder}}
