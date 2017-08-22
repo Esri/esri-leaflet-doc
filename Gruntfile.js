@@ -68,7 +68,7 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          data: ['data/*.json', 'package.json'],
+          data: ['data/siteData.json', 'package.json'],
           assets: 'built/'
         },
         files: [{

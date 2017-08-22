@@ -32,12 +32,12 @@
   <!-- stylesheet -->
   <link rel="stylesheet" href="{{assets}}css/style.css">
 
-  {{#if siteData.isDev}}
+  {{#if devSiteData.isDev}}
     <!-- 'livereload' for development -->
     <script src="//localhost:35729/livereload.js"></script>
   {{/if}}
 
-  {{#if siteData.localSource}}
+  {{#if devSiteData.localSource}}
     <!-- Load local linked resources -->
     <link rel="stylesheet" href="/js/linked/leaflet-dist/leaflet.css" />
     <script src="/js/linked/leaflet-dist/leaflet-src.js"></script>
@@ -62,7 +62,7 @@
       integrity="{{siteData.latest_esri_leaflet_integrity}}"
       crossorigin=""></script>
     {{/if}}
-    
+
   {{/if}}
 
   {{#if page.data.geocoder}}
