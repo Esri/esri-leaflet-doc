@@ -1,11 +1,9 @@
 {
-  "isDev": true,
-  "localSource": false,
   "latest_leaflet": "1.2.0",
   "latest_leaflet_integrity": "sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==",
   "latest_leaflet_css_integrity": "sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==",
-  "latest_esri_leaflet": "2.1.0",
-  "latest_esri_leaflet_integrity": "sha512-Tojl3UMd387f6DdAJlo+fKfJZiP55fYT+6Y58yKbHydnueOdSFOxrgLPuUxm7VW1szEt3hZVwv3V2sSUCuT35w==",
+  "latest_esri_leaflet": "2.1.1",
+  "latest_esri_leaflet_integrity": "sha512-ECQqaYZke9cSdqlFG08zSkudgrdF6I1d8ViSa7I3VIszJyVqw4ng1G8sehEXlumdMnFYfzY0tMgdQa4WCs9IUw==",
   "latest_esri_leaflet_geocoder": "2.2.6",
   "latest_esri_leaflet_geocoder_integrity": "sha512-NE6FicJEhXDHZNxWrGwC4gdaxb7iOMsp7+bQSintY+stx4GpoUpNAH+yuiE1uduT5inQCPPmH0lf0cdjJFfwcA==",
   "latest_esri_leaflet_geocoder_css_integrity": "sha512-v5YmWLm8KqAAmg5808pETiccEohtt8rPVMGQ1jA6jqkWVydV5Cuz3nJ9fQ7ittSxvuqsvI9RSGfVoKPaAJZ/AQ==",

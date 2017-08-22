@@ -10,7 +10,7 @@
   "description": "Esri Leaflet documentation, api reference and tutorials.",
   "devDependencies": {
     "assemble": "^0.4.42",
-    "esri-leaflet": "^2.1.0",
+    "esri-leaflet": "^2.1.1",
     "esri-leaflet-cluster": "^2.0.0",
     "esri-leaflet-geocoder": "^2.2.6",
     "esri-leaflet-gp": "^2.0.2",
@@ -39,9 +39,10 @@
     "url": "git@github.com:Esri/esri-leaflet-doc.git"
   },
   "scripts": {
-    "start": "grunt",
+    "build": "grunt docs:build",
     "deploy": "grunt docs:deploy",
-    "integrity": "node ./data/integrity.js"
+    "integrity": "node ./data/integrity.js",
+    "start": "grunt"
   },
   "dependencies": {}
 }
