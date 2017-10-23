@@ -46,11 +46,10 @@ body {
 .copyright {
   display: inline-block;
   font-size: 1rem;
-  color: $white;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  color: black;
   margin: 0;
   a {
-    color: $white;
+    color: black;
     &:hover {
       border-color: $white;
     }
