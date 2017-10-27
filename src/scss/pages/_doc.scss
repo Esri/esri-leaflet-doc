@@ -19,6 +19,16 @@
   h5 {
     margin-top: lines(2);
   }
+  @include respond-to($tablet-mid) {
+    width: 100%;
+  }
+
+  table {
+    table-layout: fixed;
+    td {
+      word-wrap:break-word;
+    }
+  }
 }
 
 .no-sidebar {
@@ -39,7 +49,7 @@
     position: absolute;
     background: $white;
     height: 100%;
-    width: 24.75%;
+    // width: 24.75%;
     z-index: 2;
   }
   &:after {
@@ -73,6 +83,9 @@
   .wrap {
     margin: 1rem 0 0 0;
     padding: 0 1rem;
+  }
+  @include respond-to($tablet-mid) {
+    width: 100%;
   }
 }
 
