@@ -3,6 +3,9 @@
   .modal {
     margin-top: 6rem;
     text-align: center;
+    @include respond-to($tablet-mid) {
+      margin-top: 0;
+    }
   }
 
   #homepage-map {
@@ -25,5 +28,9 @@
   .btn {
     @include box-sizing(border-box);
     width: 32%;
+    @include respond-to($tablet-mid) {
+      width: 100%;
+      margin-bottom: 5px;
+    }
   }
 }

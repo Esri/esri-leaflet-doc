@@ -1,5 +1,4 @@
 body {
-  min-width: 768px;
 }
 
 .page-content {
@@ -23,8 +22,29 @@ body {
     padding: 1px 1em;
   }
 }
-
-.site-nav,  {
+.mobileMenuButton {
+  display: none;
+  float: right;
+  font-size: 30px;
+  @include respond-to($tablet-mid) {
+    display: inline-block;
+  }
+}
+.site-nav-wrapper {
+  float: right;
+  @include respond-to($tablet-mid) {
+    float: none;
+    display: none;
+    .site-nav {
+      text-align: center;
+      margin: 0;
+    }
+    &.show {
+      display: block;
+    }
+  }
+}
+.site-nav {
   display: inline-block;
   margin: 0 1em;
   font-size: 1rem;
@@ -40,6 +60,9 @@ body {
   }
   &:last-of-type {
     margin-right: 0;
+  }
+  @include respond-to($tablet-mid) {
+    display: block;
   }
 }
 

@@ -32,4 +32,20 @@
     clear: both;
     margin: 1rem 0 0.5rem;
   }
+
+  @include respond-to($tablet-mid) {
+    display: none;
+    
+  }
+}
+
+.mobile-menu  {
+  border-top: 1px solid mix($lighter-gray, $light-gray);
+  .sidebar {
+    width: 100%;
+    display: none;
+    @include respond-to($tablet-mid) {
+      display: block;
+    }
+  }
 }

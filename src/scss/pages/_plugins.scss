@@ -3,6 +3,10 @@
   .panel {
     width: 33.3%;
     float: left;
+    @include respond-to($tablet-mid) {
+      width: 100%;
+      float: none;
+    }
   }
 
   .card {
@@ -10,5 +14,11 @@
     h3 {
       margin: 0;
     }
+    @include box-sizing(border-box);
+    padding: 1.5rem 1rem;
+    float: left;
+    position: relative;
+    background-color: white;
+    z-index: 3;
   }
 }

@@ -18,7 +18,7 @@
   {{/if}}
 
   <meta name="description" content="Esri Leaflet">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!--[if lt IE 9]>
     <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.js"></script>
@@ -89,8 +89,9 @@
 <body>
   <div class="page-content {{ this.page.class }}">
     <div class="container">
+      <span id="mobileMenuButton" class="mobileMenuButton">&#9776;</span>
       <a class="site-nav" href="{{assets}}" class="left logo">Esri Leaflet</a>
-      <nav class="right">
+      <nav id="site-nav-wrapper" class="site-nav-wrapper">
         <a class="site-nav" href="{{assets}}tutorials/">Tutorials</a>
         <a class="site-nav" href="{{assets}}plugins/">Plugins</a>
         <a class="site-nav" href="{{assets}}examples/">Examples</a>
