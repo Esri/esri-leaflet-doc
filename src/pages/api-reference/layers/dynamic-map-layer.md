@@ -188,7 +188,7 @@ dynamicMapLayer.bindPopup(
                 Returns a new <a href="{{assets}}/api-reference/tasks/find.html"><code>L.esri.services.Find</code></a> object that can be used to find features. Your callback function will be passed a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a> with the results or an error.
 <pre class="js"><code>dynamicMapLayer.find()
   .layers('18')
-  .searchText('Colorado')
+  .text('Colorado')
   .run(function(error, featureCollection){
     console.log(featureCollection);
   });</code></pre>

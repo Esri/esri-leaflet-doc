@@ -117,7 +117,7 @@ var service = L.esri.mapService({
 
 service.find()
     .layers('18')
-    .searchText('Colorado')
+    .text('Colorado')
     .searchFields('GNIS_NAME')
     .run(function(error, featureCollection, response){
         console.log('Found GNIS ID: ' + featureCollection.features[0].properties.GNIS_ID + ' for the state of ' + featureCollection.features[0].properties.STATE_NAME);
