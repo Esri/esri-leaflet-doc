@@ -1,6 +1,6 @@
 ---
-title: Working with Authenticated Services
-description: How to access authenticated services with Esri Leaflet.
+title: Working with Authenticated Services in ArcGIS Server
+description: How to access authenticated services hosted on ArcGIS Server with Esri Leaflet.
 layout: tutorials.hbs
 ---
 
@@ -10,7 +10,7 @@ layout: tutorials.hbs
 
 #### Introduction
 
-In this tutorial, you will learn how to use authenticated services from ArcGIS Server with the Leaflet.js web mapping library.  In the future, this tutorial will cover adding authenticated services from ArcGIS Online.
+In this tutorial, you will learn how to use authenticated services from ArcGIS Server with the Leaflet.js web mapping library.  
 
 Authenticated services published on ArcGIS Server require a username and password to access the service.  As part of the authentication process, a token is generated.  To add an authenticated service to a Leaflet.js web map, you'll need to use the **L.esri.post** method to submit the username and password to the server to generate the token.  To see a token generation page in a web browser, please visit this [page](https://sampleserver6.arcgisonline.com/arcgis/tokens/GenerateToken).  You can learn more about making requests with Esri Leaflet by visiting the [documentation site](https://esri.github.io/esri-leaflet/api-reference/request.html). 
 
@@ -323,7 +323,7 @@ dl.on('requesterror', function(e) {
 });                   
 ```
 
-We have now built a basic Esri Leaflet web map that retrieves an authenticated service from ArcGIS Server, and handles errors with both the POST request to generate the token, as well as accessing the service.  Below is the completed code.  In the future, this tutorial (or a seperate?) will cover accessing authenticated content from ArcGIS Online.  Try experimenting with the wrong username/password and service URL to test the error trapping logic.
+We have now built a basic Esri Leaflet web map that retrieves an authenticated service from ArcGIS Server, and handles errors with both the POST request to generate the token, as well as accessing the service.  Below is the completed code.  Try experimenting with the wrong username/password and service URL to test the error trapping logic.
 
 ```xml
 <!DOCTYPE html>
