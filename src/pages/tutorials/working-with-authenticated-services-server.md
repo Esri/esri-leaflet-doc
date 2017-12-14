@@ -72,7 +72,9 @@ Within the `<form>`, we'll add text inputs and labels to capture the username an
 
 > For most instances of ArcGIS Server, the generate token URL will be **[server domain]/arcgis/tokens/GenerateToken**.  However, depending upon the installation of ArcGIS Server, the URL may be different.
 
-We'll need to define a few rules to control the style of the elements we have created.  Using a .css framework may make this process easier. [Esri Calcite Maps](https://github.com/Esri/calcite-maps) uses Bootstrap and contains samples for Esri Leaflet.
+We'll need to define a few rules to control the style of the elements we have created.  Using a .css framework may make this process easier. [Esri Calcite Maps](https://github.com/Esri/calcite-maps) uses Bootstrap and contains samples for Esri Leaflet.  Below is how the form looks on the map.
+
+![screen shot of form to add secured service to map](../../img/tutorials/ags-secured-services/secured-service-form-screenshot.png "Form to add secured services to map")
 
 ```xml
 <!DOCTYPE html>
@@ -250,6 +252,8 @@ function addServicesFromServer(e) {
 ```
 
 Our response from the token generation page includes our access token for the service.  We pass this into the token option for the map service.  The username and password for this service are **user1**.
+
+![screen shot of map with secured services](../../img/tutorials/ags-secured-services/secured-services-on-map.png "Map with secured services displayed")
 
 We have now built a basic Esri Leaflet web map that retrieves an authenticated service from ArcGIS Server.
 
