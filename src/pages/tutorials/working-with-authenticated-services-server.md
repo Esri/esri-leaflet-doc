@@ -176,8 +176,7 @@ function addServicesFromServer(e) {
 
     // get values from form
     var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-    var tokenUrl = document.getElementById('tokenUrl').value;
+    var password = document.getElementById('password').value;    
 
     // call function to handle server request
 }
@@ -252,7 +251,7 @@ function addServicesFromServer(e) {
 
 Our response from the token generation page includes our access token for the service.  We pass this into the token option for the map service.  The username and password for this service are **user1**.
 
-We have now built a basic Esri Leaflet web map that retrieves an authenticated service from ArcGIS Server, and handles errors with both the POST request to generate the token, as well as accessing the service.
+We have now built a basic Esri Leaflet web map that retrieves an authenticated service from ArcGIS Server.
 
 ```xml
 <!DOCTYPE html>
