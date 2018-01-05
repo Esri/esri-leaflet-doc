@@ -33,6 +33,7 @@ A generic class representing a hosted resource on ArcGIS Online or ArcGIS Server
 | `url` | `String` | `''` | URL of the ArcGIS service you would like to consume. |
 | `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) to use for proxying POST requests. |
 | `useCors` | `Boolean` | `true` | If this service should use CORS when making GET requests. |
+| `requestParams` | `Object` | `null` | Used to pass through arbitrary request parameters to services. |
 
 ### Events
 

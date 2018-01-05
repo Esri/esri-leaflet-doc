@@ -34,6 +34,7 @@ Extends [`L.Class`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.h
 | `url` | `String` | `''` | URL of the ArcGIS Server or ArcGIS Online service you would like to consume. |
 | `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) to use for proxying POST requests. |
 | `useCors` | `Boolean` | `true` | If this task should use CORS when making GET requests. |
+| `requestParams` | `Object` | `null` | Used to pass through arbitrary request parameters to services. |
 
 ### Methods
 

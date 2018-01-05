@@ -153,6 +153,16 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
             <td>The WKID of a [datum transformation](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Datum_transformations/02r3000000r8000000/) for the server to apply when reprojecting output features.<br><small>Only available for ArcGIS Server 10.5+.</small></td>
         </tr>
         <tr>
+            <td><code>distinct()</code></td>
+            <td><code>this</code></td>
+            <td>Ensures that no geometry or duplicate field values will be returned in the subsequent request.</td>
+        </tr>
+        <tr>
+            <td><code>returnM({{{param 'Boolean' 'returnM'}}})</code></td>
+            <td><code>this</code></td>
+            <td>Return geometry with four dimensional measure values in results.</td>
+        </tr>
+        <tr>
             <td><code>run({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
             <td>Executes the query request with the current parameters, features will be passed to <code>callback</code> as a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a>. Accepts an optional function context.</td>
