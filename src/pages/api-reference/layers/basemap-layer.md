@@ -38,6 +38,7 @@ These maps have worldwide coverage at a variety of zoom levels.
 * `Gray`
 * `DarkGray`
 * `Imagery`
+* `ImageryClarity` (added in 2.1.3)
 * `ShadedRelief`
 * `Terrain`
 * `USATopo` (added in 2.0.0)
