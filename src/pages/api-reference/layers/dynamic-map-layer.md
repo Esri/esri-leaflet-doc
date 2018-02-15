@@ -48,6 +48,7 @@ Option | Type | Default | Description
 `token` | `String` |   | If you pass a token in your options it will be included in all requests to the service.
 `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) to use for proxying POST requests.
 `useCors` | `Boolean` | `true` | If this service should use CORS when making GET requests.
+`popup` | `Object` |  | Instance of [IdentifyFeatures]({{assets}}api-reference/tasks/identify-features.html) to allow for more fine-grained control over the `/identify` request triggered by 'bindPopup()'. 
 
 ### Methods
 
