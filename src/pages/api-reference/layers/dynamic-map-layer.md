@@ -43,7 +43,7 @@ Option | Type | Default | Description
 `position` | `String` | `'front'` | Position of the layer relative to other overlays.
 `maxZoom` | `Number` |  | Closest zoom level the layer will be displayed on the map.
 `minZoom` | `Number` |  | Furthest zoom level the layer will be displayed on the map.
-`dynamicLayers` | `Object` |   | JSON object literal used to manipulate the layer symbology defined in the service itself.  Requires a 10.1 (or above) map service which supports [dynamicLayers](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Map/02r3000000v7000000/) requests.
+`dynamicLayers` | `[Object]` |   | Array of one or more JSON objects used to override the layer symbology defined by the service.  Requires a 10.1+ map service which supports [dynamicLayers](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Map/02r3000000v7000000/) requests.
 `disableCache` | `Boolean` |  | If enabled, appends a timestamp to each request to ensure a fresh image is created server-side.
 `token` | `String` |   | If you pass a token in your options it will be included in all requests to the service.
 `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) to use for proxying POST requests.
@@ -135,19 +135,19 @@ dynamicMapLayer.bindPopup(
             <td>Returns the current time options being used for rendering.</td>
         </tr>
         <tr>
-            <td><code>setTimeOptions({{{param 'Object' 'timeOptions' 'http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Map/02r3000000v7000000/'}}})</code></td>
+            <td><code>setTimeOptions({{{param 'Object' 'timeOptions' 'https://developers.arcgis.com/rest/services-reference/export-map.htm'}}})</code></td>
             <td><code>this</code></td>
             <td>Sets the current time options being used to render the layer. Corresponds to the <a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Map/02r3000000v7000000/">layerTimeOptions</a> option on the export API.</td>
         </tr>
         <tr>
             <td><code>getDynamicLayers()</code></td>
-            <td><code>Object</code></td>
-            <td>Returns a JSON object representing the modified layer symbology being requested from the map service.</td>
+            <td><code>[Object]</code></td>
+            <td>Returns an array of JSON objects representing the modified layer symbology being requested from the map service.</td>
         </tr>
         <tr>
-            <td><code>setDynamicLayers({{{param 'Object' 'layers'}}})</code></td>
-            <td><code>Object</code></td>
-            <td>Used to insert raw dynamicLayers JSON in situations where you'd like to modify layer symbology defined in the service itself.
+            <td><code>setDynamicLayers({{{param 'Array' 'dynamicLayers' 'https://developers.arcgis.com/rest/services-reference/export-map.htm' }}})</code></td>
+            <td><code>this</code></td>
+            <td>Used to insert raw dynamicLayers JSON in array form in situations where you'd like to modify layer symbology defined in the service itself.
 <pre class="js"><code>dynamicMapLayer.setDynamicLayers([{
   ...
   "drawingInfo": { ... }
