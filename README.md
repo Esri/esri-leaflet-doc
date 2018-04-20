@@ -18,6 +18,7 @@ Find a typo or other problem on the website?  Please let us know by submitting a
 Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/Esri/esri-leaflet/blob/master/CONTRIBUTING.md).
 
 ### Licensing
+
 Copyright 2016 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,6 +34,3 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 A copy of the license is available in the repository's [LICENSE](./LICENSE) file.
-
-[](Esri Tags: ArcGIS Web Mapping Leaflet)
-[](Esri Language: JavaScript)
