@@ -27,6 +27,8 @@ You can create a new empty feature service with a single layer on the [ArcGIS fo
 
 `L.esri.FeatureLayer` divides the current map extent into a grid of individual cells and uses them to fire queries to fetch nearby features. This technique is comparable to [MODE_ONDEMAND](https://developers.arcgis.com/javascript/3/jshelp/best_practices_feature_layers.html) in the ArcGIS API for JavaScript.
 
+If you want your `FeatureLayer` to display the symbology defined in the map or feature service, you need to use the [Esri Leaflet Renderers](https://github.com/Esri/esri-leaflet-renderers) plugin.
+
 ### Constructor
 
 <table>
