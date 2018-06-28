@@ -1,6 +1,6 @@
 ---
 title: Vector Basemaps
-description: Display ArcGIS Online vector basemaps. Notice that the map attribution updates automatically as users pan and zoom in accordance with Esri's <a href='https://github.com/esri/esri-leaflet#terms'>Terms of Use</a>.
+description: Display <a href='https://www.esri.com/arcgis-blog/products/arcgis-living-atlas/mapping/whats-new-in-esri-vector-basemaps-december-2017/'>v1</a> ArcGIS Online vector basemaps using an <a href='https://github.com/Esri/esri-leaflet-vector'>experimental</a> plugin.
 layout: example.hbs
 ---
 
@@ -44,6 +44,7 @@ layout: example.hbs
   var map = L.map('map').setView([40, -4], 6);
   var layer = L.esri.Vector.basemap('Newspaper').addTo(map);
 
+  // v1 basemaps stopped receiving updates in Dec 2017
   function setBasemap(basemap) {
     if (layer) {
       map.removeLayer(layer);
