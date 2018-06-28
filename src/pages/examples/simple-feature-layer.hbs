@@ -1,8 +1,6 @@
 ---
 title: Simple FeatureLayer
 description: Display a feature layer from ArcGIS Online or ArcGIS server. More information about Feature Layers can be found in the <a href="../api-reference/layers/feature-layer.html">L.esri.FeatureLayer</a> documentation.
-
-If you want the features to retain the symbology from the published Map or Feature Service, you must use the <a href="https://github.com/Esri/esri-leaflet-renderers">Esri Leaflet Renderers</a> plugin.
 layout: example.hbs
 ---
 
@@ -12,6 +10,8 @@ layout: example.hbs
   var map = L.map('map').setView([45.526, -122.667], 13);
 
   L.esri.basemapLayer('Streets').addTo(map);
+
+  // a Leaflet marker is used by default to symbolize point features.
   L.esri.featureLayer({
     url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'
   }).addTo(map);
