@@ -39,11 +39,11 @@ These maps have worldwide coverage at a variety of zoom levels.
 * `DarkGray`
 * `Imagery`
 * `ImageryClarity` (added in 2.1.3)
-* `ImageryFirefly` (added in 2.x.x)
+* `ImageryFirefly` (added in 2.2.0)
 * `ShadedRelief`
 * `Terrain`
 * `USATopo` (added in 2.0.0)
-* `Physical` (added in 2.x.x)
+* `Physical` (added in 2.2.0)
 
 ##### Optional Labels
 
@@ -52,8 +52,8 @@ These are optional layers that add extra text labels to the basemaps.
 * `OceansLabels` - Labels to pair with the `Oceans` basemap
 * `GrayLabels` - Labels to pair with the `Gray` basemap
 * `DarkGrayLabels` - Labels to pair with the `DarkGray` basemap
-* `ImageryLabels` - Labels including political boundaries to pair with the `Imagery`, `ImageryClarity`, or `ImageryFirefly` basemap
-* `ImageryTransportation` - Street map labels for pairing with the `Imagery`, `ImageryClarity`, or `ImageryFirefly` basemap
+* `ImageryLabels` - Labels including political boundaries to pair with any `Imagery` basemap
+* `ImageryTransportation` - Street map labels for pairing with any `Imagery` basemap
 * `ShadedReliefLabels` - Labels for pairing with the `ShadedRelief` basemap
 * `TerrainLabels` - Labels for pairing with the `Terrain` or `Physical` basemap
 
