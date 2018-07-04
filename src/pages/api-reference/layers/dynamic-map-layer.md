@@ -11,6 +11,16 @@ Render and visualize Map Services from ArcGIS Online and ArcGIS Server. L.esri.D
 
 Map Services are used when its preferable to ask the server to draw layers at a particular location and scale and pass back the image which was generated on the fly.  They also expose capabilities for querying and identifying individual features.
 
+`L.esri.DynamicMapLayer` references the parent [Map Service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Map_Service/02r3000000w2000000/) that can contain multiple layers.  It is possible to include only specific layers within the Map Service using the **layers** option.
+
+You can see a sample Map Service URL below:
+
+```
+http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer
+```
+
+**Dynamic Map Layer URLs do *not* end in a number (ex: `/MapServer/`).**
+
 ### Constructor
 
 <table>
