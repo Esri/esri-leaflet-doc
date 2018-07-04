@@ -18,6 +18,8 @@ Option | Type | Default | Description
 `position` | `String` | `'front'` | Position of the layer relative to other overlays.
 `maxZoom` | `Number` | | Closest zoom level the layer will be displayed on the map.
 `minZoom` | `Number` | | Furthest zoom level the layer will be displayed on the map.
+`to` | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) |  | Used to filter what is drawn from the service based on a time range.
+`from` | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) |  | Used to filter what is drawn from the service based on a time range.
 
 ### Methods
 
