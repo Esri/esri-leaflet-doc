@@ -7,9 +7,15 @@ layout: documentation.hbs
 
 Extends [`L.esri.RasterLayer`]({{assets}}api-reference/layers/raster-layer.html)
 
-Render and visualize Map Services from ArcGIS Online and ArcGIS Server. L.esri.DynamicMapLayer also supports custom popups and identification of features.
+Render and visualize [Map Services](https://developers.arcgis.com/rest/services-reference/map-service.htm) from ArcGIS Enterprise. `L.esri.DynamicMapLayer` also supports custom popups and identification of features.
 
-Map Services are used when its preferable to ask the server to draw layers at a particular location and scale and pass back the image which was generated on the fly.  They also expose capabilities for querying and identifying individual features.
+Map Services are used when its preferable to ask the server to draw layers and pass back the image which was generated on the fly instead of attempting to render client-side graphics. It is possible to control which specific layers from the Map Service are displayed using the `layers` constructor option.
+
+Map Service urls do _not_ end in a number.
+
+```
+http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/
+```
 
 ### Constructor
 
@@ -48,7 +54,9 @@ Option | Type | Default | Description
 `token` | `String` |   | If you pass a token in your options it will be included in all requests to the service.
 `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) to use for proxying POST requests.
 `useCors` | `Boolean` | `true` | If this service should use CORS when making GET requests.
-`popup` | `Object` |  | Instance of [IdentifyFeatures]({{assets}}api-reference/tasks/identify-features.html) to allow for more fine-grained control over the `/identify` request triggered by 'bindPopup()'. 
+`popup` | `Object` |  | Instance of [IdentifyFeatures]({{assets}}api-reference/tasks/identify-features.html) to allow for more fine-grained control over the `/identify` request triggered by 'bindPopup()'.
+`to` | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) |  | Used to filter the features displayed in the service based on a time range.
+`from` | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) |  | Used to filter the features displayed in the service based on a time range.
 
 ### Methods
 
@@ -137,7 +145,7 @@ dynamicMapLayer.bindPopup(
         <tr>
             <td><code>setTimeOptions({{{param 'Object' 'timeOptions' 'https://developers.arcgis.com/rest/services-reference/export-map.htm'}}})</code></td>
             <td><code>this</code></td>
-            <td>Sets the current time options being used to render the layer. Corresponds to the <a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Map/02r3000000v7000000/">layerTimeOptions</a> option on the export API.</td>
+            <td>Sets the current time options being used to render individual layers. Corresponds to the <a href="https://developers.arcgis.com/rest/services-reference/export-map.htm">layerTimeOptions</a> option on the export API.</td>
         </tr>
         <tr>
             <td><code>getDynamicLayers()</code></td>
