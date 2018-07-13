@@ -36,7 +36,7 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 `url` | `String` | | *Required* URL of the [Image Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Image_Service/02r3000000q8000000/).
 `format` | `String` | `'jpegpng'` | Output format of the image.
-`f` | `String` | `'image'` | Server response content type.
+`f` | `String` | `'image'` | Server response content type [`"json"` &#124; `"image"`](https://developers.arcgis.com/rest/services-reference/export-image.htm).
 `opacity` | `Number` | `1` | Opacity of the layer. Should be a value between 0 and 1.
 `position` | `String` | `'front'` | Position of the layer relative to other overlays.
 `maxZoom` | `Number` | | Closest zoom level the layer will be displayed on the map.

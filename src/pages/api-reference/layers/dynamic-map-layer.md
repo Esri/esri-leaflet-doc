@@ -41,7 +41,7 @@ Option | Type | Default | Description
 `url` | `String` | | *Required* URL of the [Map Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Map_Service/02r3000000w2000000/).
 `format` | `String` | `'png24'` | Output format of the image.
 `transparent` | `Boolean` | `true` | Allow the server to produce transparent images.
-`f` | `String` | `'json'` |  Server response content type.
+`f` | `String` | `'json'` |  Server response content type [`"json"` &#124; `"image"`](https://developers.arcgis.com/rest/services-reference/export-map.htm).
 `attribution` | `String` |  |  Attribution from service metadata [copyright text](https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer) is automatically displayed in Leaflet's default control.  This property can be used for customization.
 `layers` | `Array` |  | An array of Layer IDs like `[3,4,5]` to show from the service.
 `layerDefs` | `Object` |  | SQL filters to define what features will be included in the image rendered by the service. An object is used with keys that map each query to its respective layer. <br> `{ 3: "STATE_NAME='Kansas'", 9: "POP2007>25000" }`
