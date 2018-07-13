@@ -10,9 +10,9 @@
   "description": "Esri Leaflet documentation, api reference and tutorials.",
   "devDependencies": {
     "assemble": "^0.4.42",
-    "esri-leaflet": "2.1.4",
+    "esri-leaflet": "2.2.1",
     "esri-leaflet-cluster": "2.0.0",
-    "esri-leaflet-geocoder": "2.2.12",
+    "esri-leaflet-geocoder": "2.2.13",
     "esri-leaflet-gp": "2.0.3",
     "esri-leaflet-heatmap": "2.0.0",
     "esri-leaflet-renderers": "2.0.6",
