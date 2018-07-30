@@ -9,6 +9,14 @@
 3. `npm install`
 4. `npm start`
 
+In order to update the version of Leaflet, Esri Leaflet or any other plugin displayed in the documentation site:
+
+1. find/update the appropriate `package.json` [devDependency](https://github.com/Esri/esri-leaflet-doc/blob/8aef72d93fe17366e9753894901ec3924e643141/package.json#L11-L34)
+2. rerun `npm install`
+3. run `npm run integrity` (to generate a corresponding [Subresource Integrity](https://w3c.github.io/webappsec-subresource-integrity/) hash).
+4. run `npm start` to confirm locally that this achieved the desired effect.
+5. send a Pull Request!
+
 ### Issues
 
 Find a typo or other problem on the website?  Please let us know by submitting an [issue](https://github.com/Esri/esri-leaflet-doc/issues).
@@ -19,7 +27,7 @@ Esri welcomes contributions from anyone and everyone. Please see our [guidelines
 
 ### Licensing
 
-Copyright 2016 Esri
+Copyright &copy; 2015-2018 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
