@@ -219,10 +219,14 @@ In addition to the events above, `L.esri.FeatureLayer` also fires the following 
             <td><code>this</code></td>
             <td>
                 Calls the passed function against every feature. The function will be passed the layer that represents the feature.
-<pre class="js"><code>featureLayer.eachFeature(function(layer){
-  console.log(
-    layer.feature.properties.NAME);
-});</code></pre>
+<pre class="js"><code>
+fl.on('load', iterateFeatures);
+function iterateFeatures () {
+  fl.eachFeature(function(layer) {
+    console.log(layer.feature);
+  });
+}
+</code></pre>
             </td>
         </tr>
         <tr>
