@@ -38,7 +38,9 @@ Option | Type | Default | Description
 `format` | `String` | `'jpegpng'` | Output format of the image.
 `f` | `String` | `'image'` | Server response content type [`"json"` &#124; `"image"`](https://developers.arcgis.com/rest/services-reference/export-image.htm).
 `opacity` | `Number` | `1` | Opacity of the layer. Should be a value between 0 and 1.
-`position` | `String` | `'front'` | Position of the layer relative to other overlays.
+`pane` | `String` | `overlayPane` | The [map pane](https://leafletjs.com/reference.html#map-pane) to render on. This is the preferred technique to control draw order in Leaflet 1.x.
+`zIndex` | `Number` | | Used to refine draw order further (within a [map pane](https://leafletjs.com/reference.html#map-pane)).
+`position` | `String` | `'front'` | Legacy option to control draw order. For best results, use `pane`.
 `maxZoom` | `Number` | | Closest zoom level the layer will be displayed on the map.
 `minZoom` | `Number` | | Furthest zoom level the layer will be displayed on the map.
 `bandIds` | `String` |   | If there are multiple bands, you can specify which bands to export.
@@ -47,7 +49,6 @@ Option | Type | Default | Description
 `pixelType` | `String` |   | Leave `pixelType` as unspecified, or `UNKNOWN`, in most exportImage use cases, unless such `pixelType` is desired. Possible values: `C128`, `C64`, `F32`, `F64`, `S16`, `S32`, `S8`, `U1`, `U16`, `U2`, `U32`, `U4`, `U8`, `UNKNOWN`.
 `renderingRule` | `Object` |   | A JSON representation of a [raster function](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Raster_function_objects/02r3000000rv000000/)
 `mosaicRule` | `Object` |  | A JSON representation of a [mosaic rule](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Mosaic_rule_objects/02r3000000s4000000/)
-`pane` | `String` | `overlayPane` | The map pane to render on.
 `token` | `String` |   | If you pass a token in your options it will be included in all requests to the service.
 `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxies](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxies](https://github.com/Esri/resource-proxy) to use for proxying POST requests.
 `useCors` | `Boolean` | `true` | If this service should use CORS when making GET requests.

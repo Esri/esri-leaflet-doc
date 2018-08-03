@@ -46,7 +46,9 @@ Option | Type | Default | Description
 `layers` | `Array` |  | An array of Layer IDs like `[3,4,5]` to show from the service.
 `layerDefs` | `Object` |  | SQL filters to define what features will be included in the image rendered by the service. An object is used with keys that map each query to its respective layer. <br> `{ 3: "STATE_NAME='Kansas'", 9: "POP2007>25000" }`
 `opacity` | `Number` | `1` | Opacity of the layer. Should be a value between 0 (completely transparent) and 1 (completely opaque).
-`position` | `String` | `'front'` | Position of the layer relative to other overlays.
+`pane` | `String` | `overlayPane` | The [map pane](https://leafletjs.com/reference.html#map-pane) to render on. This is the preferred technique to control draw order in Leaflet 1.x.
+`zIndex` | `Number` | | Used to refine draw order further (within a [map pane](https://leafletjs.com/reference.html#map-pane)).
+`position` | `String` | `'front'` | Legacy option to control draw order. For best results, use `pane`.
 `maxZoom` | `Number` |  | Closest zoom level the layer will be displayed on the map.
 `minZoom` | `Number` |  | Furthest zoom level the layer will be displayed on the map.
 `dynamicLayers` | `[Object]` |   | Array of one or more JSON objects used to override the layer symbology defined by the service.  Requires a 10.1+ map service which supports [dynamicLayers](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Map/02r3000000v7000000/) requests.

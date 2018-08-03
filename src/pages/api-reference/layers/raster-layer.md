@@ -15,7 +15,9 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 `f` | `String` | `'image'` |  Server response content type `"json"` &#124; `"image"`.
 `opacity` | `Number` | `1` | Opacity of the layer. Should be a value between 0 and 1.
-`position` | `String` | `'front'` | Position of the layer relative to other overlays.
+`pane` | `String` | `overlayPane` | The [map pane](https://leafletjs.com/reference.html#map-pane) to render on. This is the preferred technique to control draw order in Leaflet 1.x.
+`zIndex` | `Number` | | Used to refine draw order further (within a [map pane](https://leafletjs.com/reference.html#map-pane)).
+`position` | `String` | `'front'` | Legacy option to control draw order. For best results, use `pane`.
 `maxZoom` | `Number` | | Closest zoom level the layer will be displayed on the map.
 `minZoom` | `Number` | | Furthest zoom level the layer will be displayed on the map.
 `to` | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) |  | Used to filter what is drawn from the service based on a time range.
