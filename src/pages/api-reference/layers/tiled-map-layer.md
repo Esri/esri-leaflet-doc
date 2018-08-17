@@ -44,7 +44,7 @@ If you have published a Feature Service in ArcGIS Online, it can be used to crea
 
 ### Methods
 
-`L.esri.BasemapLayer` inherits all methods from [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer).
+`L.esri.TiledMapLayer` inherits all methods from [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer).
 
 <table>
     <thead>
