@@ -11,7 +11,7 @@ layout: tutorials.hbs
 > Note: Copyright text from ArcGIS services are added to map attribution automatically. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
 
 ## Feature Layers
-A [Feature Layer](http://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html) involves requesting feature attributes and geometry from ArcGIS Online or ArcGIS Server to display in your web app. Individual features are exposed to the developer as GeoJSON, whether the service fulfilling the request emits the format natively or not.
+A [Feature Layer](https://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html) involves requesting feature attributes and geometry from ArcGIS Online or ArcGIS Server to display in your web app. Individual features are exposed to the developer as GeoJSON, whether the service fulfilling the request emits the format natively or not.
 
 Feature Layers are great because they contain all the attribute information, this makes things like creating popups really snappy because the client app already has all the information it needs. 
 
@@ -51,11 +51,11 @@ When you request a feature layer from an ArcGIS Server the response will look so
 You can see in the above sample that we have some location information in the `coordinates` array as well as the feature properties in the `properties` object.
 
 ## Dynamic Map Layers
-A [Dynamic Map Layer](http://esri.github.io/esri-leaflet/api-reference/layers/dynamic-map-layer.html) involves pulling down a representation of your data from an ArcGIS Server instance to your web app, this means an image such as a jpg or a png. Esri-Leaflet then takes care of placing the image on the correct part of the map for you.
+A [Dynamic Map Layer](https://esri.github.io/esri-leaflet/api-reference/layers/dynamic-map-layer.html) involves pulling down a representation of your data from an ArcGIS Server instance to your web app, this means an image such as a jpg or a png. Esri-Leaflet then takes care of placing the image on the correct part of the map for you.
 
 The benefit of a Dynamic Map Layer is that only the final representation of the data is sent to the client in the form of an image, this is hugely beneficial when dealing with large datasets with complex geometries. Rather than sending megabytes of data, an image can be sent instead. Dynamic Map Layers are also handy as images are rendered on the fly by the server, this is beneficial if your dataset is constantly changing. 
 
-The downside of a Dynamic Map Layer is that if you require additional information about a feature (such as attribute information to generate a popup) then you're app will request additional information from the server which can be time-consuming. Esri-Leaflet does cover most of the common use cases for these additional requests (such as [generating popups](http://esri.github.io/esri-leaflet/examples/customizing-popups.html)) however you will notice that popups are not as responsive as with a Feature Layer.
+The downside of a Dynamic Map Layer is that if you require additional information about a feature (such as attribute information to generate a popup) then you're app will request additional information from the server which can be time-consuming. Esri-Leaflet does cover most of the common use cases for these additional requests (such as [generating popups](https://esri.github.io/esri-leaflet/examples/customizing-popups.html)) however you will notice that popups are not as responsive as with a Feature Layer.
 
 ### How to consume Dynamic Map Layers from ArcGIS Server
 Dynamic Map Layers can be created in Esri-Leaflet from a `MapServer` service published by ArcGIS Server. 
@@ -75,7 +75,7 @@ As you can see, it is simply an image!
 
 
 ## Tiled Map Layers
-A [Tiled Map Layer](http://esri.github.io/esri-leaflet/api-reference/layers/tiled-map-layer.html) is similar to a Dynamic Map Layer however it involves pulling down a pre-rendered representation of your data from a tile cache in ArcGIS Server.
+A [Tiled Map Layer](https://esri.github.io/esri-leaflet/api-reference/layers/tiled-map-layer.html) is similar to a Dynamic Map Layer however it involves pulling down a pre-rendered representation of your data from a tile cache in ArcGIS Server.
 
 The benefit of a Tiled Map Layer is that it can respond more quickly than a Dynamic Map Layer as an image has already been rendered and is available on the server. Tile Map Layers are typically used for basemaps.
 
@@ -94,5 +94,5 @@ L.esri.tiledMapLayer({
 ### What does the data look like?
 You can see an example Tiled Map Layer response from ArcGIS Server below. It is simply an image!
 
-![Map tile](http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyBasemap/MapServer/tile/6/146/267)
+![Map tile](https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyBasemap/MapServer/tile/6/146/267)
 
