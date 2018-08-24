@@ -42,11 +42,17 @@ The easiest option is to point to a CDN where the libraries are already hosted. 
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- lets load Leaflet's .js and .css from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
+    integrity="{{siteData.latest_leaflet_css_integrity}}"
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
+    integrity="{{siteData.latest_leaflet_integrity}}"
+    crossorigin=""></script>  
 
   <!-- Load Esri Leaflet from CDN.  it has no .css stylesheet of its own, only .js -->
-  <script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+    integrity="{{siteData.latest_esri_leaflet_integrity}}"
+    crossorigin=""></script>    
 </head>
 <body>
 </body>
@@ -68,11 +74,17 @@ For our map to display, we must set the height and width for this element.  Sinc
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
+    integrity="{{siteData.latest_leaflet_css_integrity}}"
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
+    integrity="{{siteData.latest_leaflet_integrity}}"
+    crossorigin=""></script>  
 
   <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+    integrity="{{siteData.latest_esri_leaflet_integrity}}"
+    crossorigin=""></script>   
 
   <style>
     html,
@@ -97,7 +109,7 @@ Now its time to write some JavaScript!  This belongs inside a `<script>` tag ins
 
 Our first step is to create a map object. In our constructor we must provide the `id` of the element containing the map.  In order to set the initial location, we'll specify the latitude and longitude coordinates for the center of the map and the zoom level.
 
-> Its helpful to cross reference help documents to double-check syntax and learn more about what is possible.  Check out the [Leaflet.js documentation](http://leafletjs.com/reference.html#map-usage "Leaflet Map Object") for more information about additional map constructor options.
+> Its helpful to cross reference help documents to double-check syntax and learn more about what is possible.  Check out the [Leaflet.js documentation](https://leafletjs.com/reference.html#map-usage "Leaflet Map Object") for more information about additional map constructor options.
 
 ```xml
 <!doctype html>
@@ -108,11 +120,17 @@ Our first step is to create a map object. In our constructor we must provide the
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
+    integrity="{{siteData.latest_leaflet_css_integrity}}"
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
+    integrity="{{siteData.latest_leaflet_integrity}}"
+    crossorigin=""></script>  
 
   <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+    integrity="{{siteData.latest_esri_leaflet_integrity}}"
+    crossorigin=""></script>   
 
   <style>
 
@@ -131,7 +149,7 @@ Our first step is to create a map object. In our constructor we must provide the
 <body>
     <div id="map"></div>
     <script>
-        var map = L.map('map', {
+        const map = L.map('map', {
           center: [37.75, -122.23],
           zoom: 10
         });
@@ -144,7 +162,7 @@ If we save and refresh our page after this step, we should see a gray background
 
 ##### Adding a Basemap from ArcGIS Online
 
-Now it is time to add an ArcGIS Online basemap to our map.  For this we will use the  `L.esri.basemapLayer`  class from the Esri Leaflet plugin.  Please refer to the [API Reference](http://esri.github.io/esri-leaflet/api-reference/layers/basemap-layer.html "ESRI Leaflet Reference") for more information on this class.
+Now it is time to add an ArcGIS Online basemap to our map.  For this we will use the  `L.esri.basemapLayer`  class from the Esri Leaflet plugin.  Please refer to the [API Reference](https://esri.github.io/esri-leaflet/api-reference/layers/basemap-layer.html "ESRI Leaflet Reference") for more information on this class.
 
 > The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
 
@@ -173,11 +191,17 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
+    integrity="{{siteData.latest_leaflet_css_integrity}}"
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
+    integrity="{{siteData.latest_leaflet_integrity}}"
+    crossorigin=""></script>  
 
   <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+    integrity="{{siteData.latest_esri_leaflet_integrity}}"
+    crossorigin=""></script>   
 
   <style>
     html,
@@ -194,11 +218,11 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
 <body>
     <div id="map"></div>
     <script>
-        var map = L.map('map', {
+        const map = L.map('map', {
           center: [37.75, -122.23],
           zoom: 10
         });
-        var esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+        let esriStreets = L.esri.basemapLayer('Streets').addTo(map);
     </script>
 </body>
 </html>
