@@ -222,7 +222,7 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
           center: [37.75, -122.23],
           zoom: 10
         });
-        let esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+        const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
     </script>
 </body>
 </html>

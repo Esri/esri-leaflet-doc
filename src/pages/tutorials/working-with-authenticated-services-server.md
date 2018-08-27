@@ -154,7 +154,7 @@ Next we'll create a `<script>` tag and start writing JavaScript to create a map 
 const map = L.map('map').setView([34.089, -116.865], 9);
 
 // set basemap to Esri Streets
-let esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
 ```
 
 Then we will create a function that executes when the **submit** button of the form is clicked.
@@ -215,7 +215,7 @@ submitBtn.addEventListener('click', addServicesFromServer);
 const map = L.map('map').setView([34.089, -116.865], 9);
 
 // set basemap to Esri Streets
-let esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
 
 const tokenUrl = 'https://sampleserver6.arcgisonline.com/arcgis/tokens/generateToken';
 
@@ -243,7 +243,7 @@ function addServicesFromServer(e) {
     // generate token from server and add service from callback function
     serverAuth(tokenUrl, username, password, function(error, response) {
         // add layer to map
-        let dl = L.esri.dynamicMapLayer({
+        const dl = L.esri.dynamicMapLayer({
             url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Wildfire_secure_ac/MapServer',
             opacity: 1,
             token:  response.token
@@ -336,7 +336,7 @@ We have now built a basic Esri Leaflet web map that retrieves an authenticated s
         // create map and set zoom level and center coordinates
         const map = L.map('map').setView([34.089, -116.865], 9);
         // set basemap to Esri Streets
-        let esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+        const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
 
         const tokenUrl = 'https://sampleserver6.arcgisonline.com/arcgis/tokens/generateToken';
 
@@ -364,7 +364,7 @@ We have now built a basic Esri Leaflet web map that retrieves an authenticated s
             // generate token from server and add service from callback function
             serverAuth(tokenUrl,username,password,function(error, response) {
                 // add layer to map
-                let dl = L.esri.dynamicMapLayer({
+                const dl = L.esri.dynamicMapLayer({
                     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Wildfire_secure_ac/MapServer',
                     opacity: 1,
                     token:  response.token

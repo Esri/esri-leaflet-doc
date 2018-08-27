@@ -55,7 +55,7 @@ Start by copying this skeleton code which outlines the structure of a single pag
           zoom: 13
         });
         
-        let esriStreets = L.esri.basemapLayer('Streets').addTo(map);    
+        const esriStreets = L.esri.basemapLayer('Streets').addTo(map);    
     </script>    
 </body>
 </html>
@@ -68,15 +68,15 @@ We will add a REST service using the `L.esri.featureLayer` class from the Esri L
 Below is an example for creating a Feature Layer using both types of services:
 
 ```JavaScript
-let portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'});
+const portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'});
 
-let worldCities =  L.esri.featureLayer({url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0'});
+const worldCities =  L.esri.featureLayer({url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0'});
 ```
 
 In order to display our new layer, we need to add it to our map using Leaflet's `addTo()` method.  We can chain this method directly to the object constructor, or call it in a separate line.  In our sample, we'll use the chaining approach.
 
 ```JavaScript
-let portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'}).addTo(map);
+const portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'}).addTo(map);
 ```
 
 If we save and refresh our map, we should see many blue markers on the map, which are the features from the service.  Leaflet is applying a default style to the features.  It is up to you to define the styles for the data tha that is drawn. See the links below for examples of doing this:
@@ -168,9 +168,9 @@ Here is what the final `html` file should look like for this tutorial:
           zoom: 13
         });
         
-        let esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+        const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
         
-        let portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'}).addTo(map);
+        const portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'}).addTo(map);
         
         portlandHeritageTrees.bindPopup(function(evt) {
             return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
