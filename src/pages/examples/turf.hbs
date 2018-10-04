@@ -21,7 +21,7 @@ layout: example.hbs
 <div id="map"></div>
 <div id="info-pane" class="leaflet-bar">
   <label>
-  Census block points that intersect both bounding boxes and are shown in red.
+  Census block points that intersect both bounding boxes are red.
   </label>
 </div>
 
@@ -99,7 +99,7 @@ layout: example.hbs
             }
           }).addTo(map);
         } else {
-          // if its outside (or not contained) by the bigger box, make it less opaque.
+          // if it is not contained by the bigger box, make it gray and partially transparent.
           L.geoJSON(features[i], {
             pointToLayer: function(geoJsonPoint, latlng) {
               return L.circleMarker(latlng, {

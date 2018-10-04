@@ -5,7 +5,8 @@
   "author": "Patrick Arlt <parlt@esri.com> (http://patrickarlt.com)",
   "contributors": [
     "Patrick Arlt <parlt@esri.com> (http://patrickarlt.com)",
-    "John Gravois <jgravois@esri.com> (http://johngravois.com)"
+    "John Gravois <jgravois@esri.com> (http://johngravois.com)",
+    "Gavin Rehkemper <grehkemper@esri.com>"
   ],
   "description": "Esri Leaflet documentation, api reference and tutorials.",
   "devDependencies": {
