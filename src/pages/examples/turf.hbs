@@ -4,7 +4,7 @@ description: Esri Leaflet pairs nicely with clientside libraries that can perfor
 layout: example.hbs
 ---
 
-<script src="https://unpkg.com/@turf/turf@3.5.1/turf.min.js"></script>
+<script src="https://unpkg.com/@turf/turf@5.1.6/turf.min.js"></script>
 
 <style>
   #info-pane {
@@ -82,7 +82,7 @@ layout: example.hbs
 
     // query for census block points that intersect the smaller box
     var query = L.esri.query({
-      url: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/0'
+      url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/0'
     })
     query.intersects(boundingBoxes.features[0])
     query.run(function (err, censusCollection, raw) {
