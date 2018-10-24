@@ -230,7 +230,9 @@ var url = "https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/World/MOD
 
 L.esri.imageMapLayer({
   url: url,
-  opacity : 0.25
+  opacity : 0.25,
+  // only necessary for old versions of ArcGIS Server
+  useCors: false
 }).addTo(map);
 
 ```
