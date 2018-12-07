@@ -1,8 +1,11 @@
 ---
 title: Dynamic feature charting with Chart.js
-description: Plot feature attributes on a dynamic chart that updates automatically as users pan and zoom. This demo relies on <a href="https://www.chartjs.org/">Chart.js</a> to render an interactive scatterplot.
+description: Plot feature attributes on a dynamic chart that updates as users pan and zoom. This demo relies on <a href="https://www.chartjs.org/">Chart.js</a> to render an interactive scatterplot.
 layout: example.hbs
 ---
+<!-- Load Chart.js from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
 <style>
   .chart-container {
     height: 275px;
@@ -12,17 +15,21 @@ layout: example.hbs
     margin: 10px auto;
     outline: 1px solid #00ADA7;
   }
+
+  #info-pane {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 400;
+    padding: 1em;
+    background: white;
+  }
 </style>
 
 <div id="map"></div>
-
-<!-- Chart.js scatterplot location -->
-<div class="chart-container">
+<div id="info-pane" class="leaflet-bar chart-container">
   <canvas id="chartCanvas"></canvas>
 </div>
-
-<!-- Load Chart.js from CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
 <script>
   // STEP 1: MAKE A MAP AND ADD LAYERS
