@@ -8,16 +8,16 @@ legacyEsriLeaflet: 1.0.4
 ---
 
 <!-- Include Leaflet Indoor package (https://github.com/cbaines/leaflet-indoor) -->
-<script src="https://rawgit.com/cbaines/leaflet-indoor/master/leaflet-indoor.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/cbaines/leaflet-indoor/leaflet-indoor.js"></script>
 
 <div id="map"></div>
 
 <script>
-  var map = L.map('map').setView([28.470, -82.444], 18);
+  var map = L.map('map').setView([38.6391, -90.294], 18);
 
-  L.esri.basemapLayer('Streets').addTo(map);
+  L.esri.basemapLayer('Imagery').addTo(map);
   var featureLayer = L.esri.featureLayer({
-    url: 'https://www25.swfwmd.state.fl.us/arcgis/rest/services/Internal/FacilitiesSearch/MapServer/0'
+    url: 'https://services1.arcgis.com/g2TonOxuRkIqSOFx/arcgis/rest/services/StLouisArtMuseumFloorPlan/FeatureServer/0'
   });
   
   // Run a query against our Feature Layer (that we have not added to the map) 
@@ -29,12 +29,12 @@ legacyEsriLeaflet: 1.0.4
       }
     });
     // set the initial level to show
-    indoorLayer.setLevel("1");
+    indoorLayer.setLevel(2);
     indoorLayer.addTo(map);
 
     // Add Level Control (code from https://github.com/cbaines/leaflet-indoor)
     var levelControl = new L.Control.Level({
-        level: "1",
+        level: 2,
         levels: indoorLayer.getLevels()
     });
 
