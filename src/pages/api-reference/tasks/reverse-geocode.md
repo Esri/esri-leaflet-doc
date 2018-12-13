@@ -61,6 +61,12 @@ You can pass any options you can pass to [L.esri.Task](task.html). The `url` wil
             </td>
         </tr>
         <tr>
+            <td><code>intersection({{{param 'Boolean' 'returnIntersection '}}})</code></td>
+            <td><code>this</code></td>
+            <td>Set this value to `true` if you'd like the nearest intersection to be returned (Default value is `false`).
+            </td>
+        </tr>
+        <tr>
             <td><code>run({{{param 'Function' 'callback' }}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>`XMLHttpRequest`</code></td>
             <td>Executes the request chain and accepts the response callback.
