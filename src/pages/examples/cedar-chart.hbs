@@ -102,7 +102,6 @@ layout: example.hbs
     layer.eachActiveFeature(function(e) {
       scatterPlotDataArray.push({
         attributes: {
-          featureId: e.feature.id,
           HEIGHT: e.feature.properties.HEIGHT,
           DIAMETER: e.feature.properties.DIAMETER,
         },
