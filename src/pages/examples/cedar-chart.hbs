@@ -10,7 +10,6 @@ layout: example.hbs
 <script src="https://www.amcharts.com/lib/3/xy.js"></script>
 <!-- load the arcgis-rest-js scripts -->
 <script src="https://unpkg.com/@esri/arcgis-rest-request"></script>
-<script src="https://unpkg.com/@esri/arcgis-rest-feature-service"></script>
 <!-- optionally load an amcharts theme; cedar provides a calcite theme -->
 {{!-- <script src="https://unpkg.com/@esri/cedar/dist/umd/themes/amCharts/calcite.js"></script> --}}
 <!-- load cedar -->
@@ -51,7 +50,7 @@ layout: example.hbs
   L.esri.basemapLayer('Topographic').addTo(map);
 
   // create and add a feature layer
-  // features from this layer will appear in the Chart.js scatterplot
+  // features from this layer will appear in the Cedar scatterplot
   var treesFeatureLayer = L.esri.featureLayer({
     url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0',
   });
@@ -60,7 +59,7 @@ layout: example.hbs
 
   // STEP 2: DEFINE A CHART
   var chart;
-  treesFeatureLayer.on('load', function() {
+  treesFeatureLayer.once('load', function() {
 
     var datasets = [getDataset(treesFeatureLayer)];
 
@@ -85,9 +84,6 @@ layout: example.hbs
 
     // render the chart
     chart.show();
-
-    // only run this "createChart" function once - so remove the event listener:
-    treesFeatureLayer.off('load');
   });
 
   // STEP 3: MAKE THE CHART DYNAMIC BY ESTABLISHING MAP-TO-CHART COMMUNICATION
