@@ -17,7 +17,7 @@
     "esri-leaflet-gp": "2.0.3",
     "esri-leaflet-heatmap": "2.0.0",
     "esri-leaflet-renderers": "2.0.6",
-    "esri-leaflet-vector": "2.0.1",
+    "esri-leaflet-vector": "2.0.2",
     "grunt": "^1.0.3",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-connect": "^2.0.0",
