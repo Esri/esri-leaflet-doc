@@ -7,7 +7,7 @@ layout: documentation.hbs
 
 Extends [`L.Layer`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#layer)
 
-`L.esri.Vector.Basemap` uses an [experimental plugin](https://github.com/Esri/esri-leaflet-vector) to display [`v1`](https://www.esri.com/arcgis-blog/products/arcgis-living-atlas/mapping/whats-new-in-esri-vector-basemaps-december-2017/) Esri hosted vector basemaps and attribute data providers appropriately. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
+`L.esri.Vector.Basemap` uses an [experimental plugin](https://github.com/Esri/esri-leaflet-vector) to display Esri hosted vector basemaps and attribute data providers appropriately. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
 
 ### Constructor
 
@@ -31,24 +31,25 @@ Extends [`L.Layer`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.h
 
 Worldwide coverage at a variety of zoom levels.
 
+* `ChartedTerritory` (added in `2.0.2`)
 * `OpenStreetMap` (added in `2.0.0`)
+* `Nova` (added in `2.0.0`)
+* `ColoredPencil` (added in `2.0.0`)
+* `Newspaper` (added in `1.0.2`)
+* `MidCentury` (added in `1.0.2`)
+* `Topographic`
+* `Navigation`
 * `Streets`
 * `StreetsRelief`
 * `StreetsNight`
-* `Topographic`
-* `Navigation`
-* `Gray` (no labels)
-* `DarkGray` (no labels)
-* `Nova`
-* `Hybrid`
-* `ChartedTerritory` (added in `2.0.2`)
-* `ColoredPencil`
-* `Newspaper` (added in `1.0.2`)
-* `MidCentury` (added in `1.0.2`)
-* `HumanGeography` (no labels)
-* `HumanGeographyDetail` (no labels)
-* `DarkHumanGeography` (no labels)
-* `DarkHumanGeographyDetail` (no labels; added in `2.0.2`)
+
+The basemaps below have no labels
+* `Gray`
+* `DarkGray`
+* `HumanGeography`
+* `HumanGeographyDetail`
+* `DarkHumanGeography`
+* `DarkHumanGeographyDetail`
 
 ### Options
 
