@@ -42,9 +42,6 @@ Worldwide coverage at a variety of zoom levels.
 * `Streets`
 * `StreetsRelief`
 * `StreetsNight`
-* `Topographic`
-* `Navigation`
-* `Hybrid`
 
 The basemaps below have no labels
 * `Gray`
