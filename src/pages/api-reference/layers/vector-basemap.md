@@ -31,16 +31,24 @@ Extends [`L.Layer`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.h
 
 Worldwide coverage at a variety of zoom levels.
 
-* `Newspaper` (added in `1.0.2`)
-* `MidCentury` (added in `1.0.2`)
-* `Spring` (added in `1.0.2`)
-* `Gray`
-* `DarkGray`
+* `OpenStreetMap` (added in `2.0.0`)
+* `Streets`
+* `StreetsRelief`
+* `StreetsNight`
 * `Topographic`
 * `Navigation`
-* `Streets`
-* `StreetsNight`
-* `StreetsRelief`
+* `Gray` (no labels)
+* `DarkGray` (no labels)
+* `Nova`
+* `Hybrid`
+* `ChartedTerritory` (added in `2.0.2`)
+* `ColoredPencil`
+* `Newspaper` (added in `1.0.2`)
+* `MidCentury` (added in `1.0.2`)
+* `HumanGeography` (no labels)
+* `HumanGeographyDetail` (no labels)
+* `DarkHumanGeography` (no labels)
+* `DarkHumanGeographyDetail` (no labels; added in `2.0.2`)
 
 ### Options
 
