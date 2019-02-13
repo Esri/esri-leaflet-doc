@@ -21,7 +21,7 @@ layout: example.hbs
     // draw neighborhood on the map
     var hollywood = L.geoJSON(neighborhoods).addTo(map);
 
-    // fit map to boundry
+    // fit map to boundary
     map.fitBounds(hollywood.getBounds().pad(0.5));
 
     // query all bike parking where BPSTYLE='STAPLE' inside our boundary
