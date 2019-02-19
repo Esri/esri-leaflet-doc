@@ -1,9 +1,9 @@
 module.exports.register = function (Handlebars, options)  {
   Handlebars.registerHelper('param', function (type, name, link)  {
     if(typeof link === 'string'){
-      return '<nobr class="param"><span>&lt;<a href="'+link+'">'+ type +'</a>&gt;</span> <code>' + name + '</code></nobr>';
+      return '<span>&lt;<a href="'+link+'">'+ type +'</a>&gt;</span> <code>' + name + '</code>';
     } else {
-      return '<nobr class="param"><span>&lt;'+ type +'&gt;</span> <code>' + name + '</code></nobr>';
+      return '<span>&lt;'+ type +'&gt;</span> <code>' + name + '</code>';
     }
   });
 };
