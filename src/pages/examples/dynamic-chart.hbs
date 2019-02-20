@@ -1,0 +1,165 @@
+---
+title: Dynamic feature charting with Chart.js
+description: Plot feature attributes on a dynamic chart that updates as users pan and zoom, and respond to chart interactions by modifying feature layer contents. This demo relies on <a href="https://www.chartjs.org/">Chart.js</a> to render an interactive scatterplot.
+layout: example.hbs
+---
+<!-- Load Chart.js from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+<style>
+  .chart-container {
+    height: 245px;
+    width: 245px;
+  }
+
+  #info-pane {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 400;
+    padding: 1em;
+    background: white;
+  }
+</style>
+
+<div id="map"></div>
+<div id="info-pane" class="leaflet-bar chart-container">
+  <canvas id="chartCanvas"></canvas>
+</div>
+
+<script>
+  // STEP 1: MAKE A MAP AND ADD LAYERS
+  var map = L.map('map').setView([45.526, -122.667], 13);
+
+  L.esri.basemapLayer('Topographic').addTo(map);
+
+  // create and add a feature layer
+  // features from this layer will appear in the Chart.js scatterplot
+  var treesFeatureLayer = L.esri.featureLayer({
+    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0',
+  });
+
+  treesFeatureLayer.addTo(map);
+
+  // STEP 2: DEFINE A CHART
+  // this is a static scatterplot chart definition for now, but it will
+  // soon become dynamic by responding to map and feature layer events
+  var initialChartData = {
+    datasets: [{
+      label: 'Portland Heritage Trees',
+      // the data values are empty at this moment
+      // and will be updated dynamically below
+      data: []
+    }]
+  };
+
+  var chartOptions = {
+    scales: {
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'tree diameter'
+        },
+        ticks: {
+          beginAtZero: true,
+          max: 250,
+          stepSize: 50
+        }
+      }],
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'tree height'
+        },
+        ticks: {
+          beginAtZero: true,
+          max: 250,
+          stepSize: 50
+        }
+      }]
+    },
+    maintainAspectRatio: false,
+    // turn off animations during chart data updates
+    animation: {
+      duration: 0,
+    },
+    // see STEP 4 below
+    onHover: handleChartHover
+  };
+
+  var chart = new Chart('chartCanvas', {
+    type: 'scatter',
+    data: initialChartData,
+    options: chartOptions
+  });
+
+  // STEP 3: MAKE THE CHART DYNAMIC BY ESTABLISHING MAP-TO-CHART COMMUNICATION
+  // show in the scatterplot only the features in the map's current extent
+  // by handling several events from both the map and feature layer
+  map.on('zoom move', updateChart);
+  treesFeatureLayer.on('load', updateChart);
+
+  function updateChart() {
+    // reformat the features' attributes of interest into
+    // the data array format required by the Chart.js scatterplot
+    var scatterPlotDataArray = [];
+
+    treesFeatureLayer.eachActiveFeature(function(e) {
+      // loop over each active feature in the map extent and
+      // push an object into the scatterPlotDataArray in this format:
+
+      // {
+      //   x: diameter attribute value,
+      //   y: height attribute value,
+      //   featureId: unique ID for chart-to-map communication in STEP 4
+      // }
+
+      scatterPlotDataArray.push({
+        x: e.feature.properties.DIAMETER,
+        y: e.feature.properties.HEIGHT,
+        featureId: e.feature.id
+      });
+    });
+
+    // assign the new scatterPlotDataArray to the chart's data property
+    chart.data.datasets[0].data = scatterPlotDataArray;
+
+    // finally, instruct the chart to re-draw itself with the new data
+    chart.update();
+  }
+
+  // STEP 4 (OPTIONAL): ESTABLISH CHART-TO-MAP COMMUNICATION
+  // up until now the map and feature layer inform the chart what to render,
+  // but interactions with the chart can also influence the map contents
+  function handleChartHover(e) {
+    var chartHoverData = chart.getElementsAtEvent(e);
+
+    if (!chartHoverData.length) {
+      // if there were no data elements found when hovering over the chart,
+      // reset any previous styling overrides and return
+      treesFeatureLayer.eachFeature(function(e) {
+        e.setOpacity(1);
+        e.setZIndexOffset(0);
+      });
+
+      return;
+    }
+
+    // otherwise, bring attention to the features on the map
+    // that are currently being hovered over in the chart
+    var hoverFeatureIds = chartHoverData.map(function(datum) {
+      return chart.data.datasets[0].data[datum._index].featureId;
+    });
+
+    treesFeatureLayer.eachFeature(function(e, idx) {
+      if (
+        hoverFeatureIds.indexOf(e.feature.id) > -1
+      ) {
+        e.setOpacity(1);
+        e.setZIndexOffset(10000);
+      } else {
+        e.setOpacity(0.1);
+      }
+    });
+  }
+</script>

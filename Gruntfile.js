@@ -1,3 +1,5 @@
+var sass = require('node-sass');
+
 module.exports = function (grunt) {
 
   // Project configuration
@@ -100,6 +102,10 @@ module.exports = function (grunt) {
     },
 
     sass: {
+      options: {
+        implementation: sass,
+        sourceMap: true
+      },
       site: {
         files: {
           'built/css/style.css': 'src/scss/style.scss'

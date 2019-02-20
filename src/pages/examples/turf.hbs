@@ -4,7 +4,7 @@ description: Esri Leaflet pairs nicely with clientside libraries that can perfor
 layout: example.hbs
 ---
 
-<script src="https://unpkg.com/@turf/turf@3.5.1/turf.min.js"></script>
+<script src="https://unpkg.com/@turf/turf@5.1.6/turf.min.js"></script>
 
 <style>
   #info-pane {
@@ -21,7 +21,7 @@ layout: example.hbs
 <div id="map"></div>
 <div id="info-pane" class="leaflet-bar">
   <label>
-  Census block points that intersect both bounding boxes and are shown in red.
+  Census block points that intersect both bounding boxes are red.
   </label>
 </div>
 
@@ -82,7 +82,7 @@ layout: example.hbs
 
     // query for census block points that intersect the smaller box
     var query = L.esri.query({
-      url: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/0'
+      url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/0'
     })
     query.intersects(boundingBoxes.features[0])
     query.run(function (err, censusCollection, raw) {
@@ -99,7 +99,7 @@ layout: example.hbs
             }
           }).addTo(map);
         } else {
-          // if its outside (or not contained) by the bigger box, make it less opaque.
+          // if it is not contained by the bigger box, make it gray and partially transparent.
           L.geoJSON(features[i], {
             pointToLayer: function(geoJsonPoint, latlng) {
               return L.circleMarker(latlng, {

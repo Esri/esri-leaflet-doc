@@ -1,11 +1,14 @@
 ---
 title: Vector Basemaps
-description: Display <a href='https://www.esri.com/arcgis-blog/products/arcgis-living-atlas/mapping/whats-new-in-esri-vector-basemaps-december-2017/'>v1</a> ArcGIS Online vector basemaps using an <a href='https://github.com/Esri/esri-leaflet-vector'>experimental</a> plugin.
+description: Display ArcGIS Online vector basemaps using an <a href='https://github.com/Esri/esri-leaflet-vector'>experimental</a> plugin.
 layout: example.hbs
 ---
 
+<link rel="stylesheet" href="https://unpkg.com/mapbox-gl/dist/mapbox-gl.css"/>
+<script src="https://unpkg.com/mapbox-gl/dist/mapbox-gl.js"></script>
+
 <!-- load the latest release from the cdn automatically -->
-<script src="https://unpkg.com/esri-leaflet-vector"></script>
+<script src="https://unpkg.com/esri-leaflet-vector/dist/esri-leaflet-vector-debug.js"></script>
 
 <style>
   #basemaps-wrapper {
@@ -25,14 +28,9 @@ layout: example.hbs
 
 <div id="basemaps-wrapper" class="leaflet-bar">
   <select name="basemaps" id="basemaps" onChange="changeBasemap(basemaps)">
+    <option value="OpenStreetMap">OpenStreetMap</option>
     <option value="Newspaper">Newspaper</option>
-    <option value="ModernAntique">ModernAntique</option>
-    <option value="BlackAndWhite">BlackAndWhite</option>
-    <option value="Spring">Spring</option>
-    <option value="MidCentury">Mid-Century</option>
     <option value="Topographic">Topographic</option>
-    <option value="Gray">Gray</option>
-    <option value="DarkGray">Dark Gray</option>
     <option value="Navigation">Navigation</option>
     <option value="Streets">Streets</option>
     <option value="StreetsNight">Streets Night</option>
@@ -42,9 +40,8 @@ layout: example.hbs
 
 <script>
   var map = L.map('map').setView([40, -4], 6);
-  var layer = L.esri.Vector.basemap('Newspaper').addTo(map);
+  var layer = L.esri.Vector.basemap('OpenStreetMap').addTo(map);
 
-  // v1 basemaps stopped receiving updates in Dec 2017
   function setBasemap(basemap) {
     if (layer) {
       map.removeLayer(layer);

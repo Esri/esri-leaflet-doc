@@ -7,7 +7,7 @@ layout: documentation.hbs
 
 Extends [`L.Layer`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#layer)
 
-`L.esri.Vector.Layer` uses an [experimental plugin](https://github.com/Esri/esri-leaflet-vector) to display [`v1`](https://www.esri.com/arcgis-blog/products/arcgis-living-atlas/mapping/whats-new-in-esri-vector-basemaps-december-2017/) vector tile services and attribute data providers appropriately. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
+`L.esri.Vector.Layer` uses an [experimental plugin](https://github.com/Esri/esri-leaflet-vector) to display vector tile services and attribute data providers appropriately. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
 
 ### Constructor
 

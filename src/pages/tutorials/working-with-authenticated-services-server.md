@@ -12,12 +12,12 @@ layout: tutorials.hbs
 
 In this tutorial, you will learn how to display authenticated services from ArcGIS Server in Leaflet.
 
-Authenticated services published on ArcGIS Server require a username and password to be accessed. During the authentication process, credentials are exchanged for a token.  To add one of these secure services in Leaflet, we'll use `L.esri.post` to ask the server to generate a token. You can find an example of the raw `generateToken` REST operation we'll be calling [here](https://sampleserver6.arcgisonline.com/arcgis/tokens/).  You can learn more about making generic requests with Esri Leaflet by visiting the [documentation site](/api-reference/request.html).
+Authenticated services published on ArcGIS Server require a username and password to be accessed. During the authentication process, credentials are exchanged for a token.  To add one of these secure services in Leaflet, we'll use `L.esri.post` to ask the server to generate a token. You can find an example of the raw `generateToken` REST operation we'll be calling [here](https://sampleserver6.arcgisonline.com/arcgis/tokens/).  You can learn more about making generic requests with Esri Leaflet by visiting the [documentation site](esri-leaflet/api-reference/request.html).
 
 Here is an outline of the process:
 
 1. Create an empty `html` file and add the Leaflet and Esri Leaflet libraries via CDN
-2. Create DOM nodes for the map, including the form that will execute a function to request a token.
+2. Create DOM nodes for the map, and the form that will execute a function to request a token.
 3. Create a function that will be tied to the click event of the submit button of the form. This will call the function created in the previous step.
 
 #### Create an `html` file and reference Leaflet and Esri Leaflet Via CDN
@@ -29,20 +29,21 @@ Here is an outline of the process:
     <meta charset="utf-8">
     <title>Esri Leaflet Authenticated Services</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <!-- Load Leaflet stylesheet from CDN -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
-    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+    
+    <!-- Load Leaflet from CDN-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
+    integrity="{{siteData.latest_leaflet_css_integrity}}"
     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
+    integrity="{{siteData.latest_leaflet_integrity}}"
+    crossorigin=""></script>  
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+    integrity="{{siteData.latest_esri_leaflet_integrity}}"
+    crossorigin=""></script>   
 </head>
-<body>
-    <!-- Load Leaflet script from CDN -->
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
-    integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
-    crossorigin=""></script>
-    <!-- Load Esri Leaflet script from CDN -->
-    <script src="https://unpkg.com/esri-leaflet@2.1.1/dist/esri-leaflet.js"
-    integrity="sha512-ECQqaYZke9cSdqlFG08zSkudgrdF6I1d8ViSa7I3VIszJyVqw4ng1G8sehEXlumdMnFYfzY0tMgdQa4WCs9IUw=="
-    crossorigin=""></script>
+<body>    
 </body>
 </html>
 ```
@@ -83,10 +84,19 @@ We'll need to define a few rules to control the style of the elements we have cr
     <meta charset="utf-8">
     <title>Esri Leaflet Authenticated Services</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <!-- Load Leaflet stylesheet from CDN -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
-    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+    
+    <!-- Load Leaflet from CDN-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
+    integrity="{{siteData.latest_leaflet_css_integrity}}"
     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
+    integrity="{{siteData.latest_leaflet_integrity}}"
+    crossorigin=""></script>  
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+    integrity="{{siteData.latest_esri_leaflet_integrity}}"
+    crossorigin=""></script>       
 
     <style>
         html,
@@ -131,16 +141,7 @@ We'll need to define a few rules to control the style of the elements we have cr
                 <button id="formSubmit" type="submit">Add Services</button>
             </form>
         </div>
-    </section>
-
-    <!-- Load Leaflet script from CDN -->
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
-    integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
-    crossorigin=""></script>
-    <!-- Load Esri Leaflet script from CDN -->
-    <script src="https://unpkg.com/esri-leaflet@2.1.1/dist/esri-leaflet.js"
-    integrity="sha512-ECQqaYZke9cSdqlFG08zSkudgrdF6I1d8ViSa7I3VIszJyVqw4ng1G8sehEXlumdMnFYfzY0tMgdQa4WCs9IUw=="
-    crossorigin=""></script>
+    </section>    
 </body>
 </html>
 ```
@@ -150,10 +151,10 @@ Next we'll create a `<script>` tag and start writing JavaScript to create a map 
 
 ```javascript
 // create map and set zoom level and center coordinates
-var map = L.map('map').setView([34.089, -116.865], 9);
+const map = L.map('map').setView([34.089, -116.865], 9);
 
 // set basemap to Esri Streets
-var esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
 ```
 
 Then we will create a function that executes when the **submit** button of the form is clicked.
@@ -163,7 +164,7 @@ Then we will create a function that executes when the **submit** button of the f
 function addServicesFromServer() {}
 
 // submit element of form
-var submitBtn = document.getElementById('formSubmit');
+const submitBtn = document.getElementById('formSubmit');
 
 // add event listener to form
 submitBtn.addEventListener('click', addServicesFromServer);
@@ -177,8 +178,8 @@ function addServicesFromServer(e) {
     e.preventDefault();
 
     // get values from form
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
     // call function to handle server request
 }
@@ -205,18 +206,18 @@ Here is what our `<script>` tag looks like now.
 'use strict';
 
 // submit element of form
-var submitBtn = document.getElementById('formSubmit');
+const submitBtn = document.getElementById('formSubmit');
 
 // add event listener to form
 submitBtn.addEventListener('click', addServicesFromServer);
 
 // create map and set zoom level and center coordinates
-var map = L.map('map').setView([34.089, -116.865], 9);
+const map = L.map('map').setView([34.089, -116.865], 9);
 
 // set basemap to Esri Streets
-var esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
 
-var tokenUrl = 'https://sampleserver6.arcgisonline.com/arcgis/tokens/generateToken';
+const tokenUrl = 'https://sampleserver6.arcgisonline.com/arcgis/tokens/generateToken';
 
 // function to make request to server
 function serverAuth(server, username, password, callback) {
@@ -236,13 +237,13 @@ function addServicesFromServer(e) {
     e.preventDefault();
 
     // get values from form
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
     // generate token from server and add service from callback function
     serverAuth(tokenUrl, username, password, function(error, response) {
         // add layer to map
-        var dl = L.esri.dynamicMapLayer({
+        const dl = L.esri.dynamicMapLayer({
             url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Wildfire_secure_ac/MapServer',
             opacity: 1,
             token:  response.token
@@ -264,10 +265,19 @@ We have now built a basic Esri Leaflet web map that retrieves an authenticated s
     <meta charset="utf-8">
     <title>Esri Leaflet Authenticated Services</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <!-- Load Leaflet stylesheet from CDN -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
-    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+    
+    <!-- Load Leaflet from CDN-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
+    integrity="{{siteData.latest_leaflet_css_integrity}}"
     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
+    integrity="{{siteData.latest_leaflet_integrity}}"
+    crossorigin=""></script>  
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+    integrity="{{siteData.latest_esri_leaflet_integrity}}"
+    crossorigin=""></script>     
 
     <style>
         html,
@@ -312,32 +322,23 @@ We have now built a basic Esri Leaflet web map that retrieves an authenticated s
                 <button id="formSubmit" type="submit">Add Services</button>
             </form>
         </section>
-    </section>
-
-    <!-- Load Leaflet script from CDN -->
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
-    integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
-    crossorigin=""></script>
-    <!-- Load Esri Leaflet script from CDN -->
-    <script src="https://unpkg.com/esri-leaflet@2.1.1/dist/esri-leaflet.js"
-    integrity="sha512-ECQqaYZke9cSdqlFG08zSkudgrdF6I1d8ViSa7I3VIszJyVqw4ng1G8sehEXlumdMnFYfzY0tMgdQa4WCs9IUw=="
-    crossorigin=""></script>
+    </section>    
 
     <!-- script to create map and load secured services -->
     <script>
         'use strict';
 
         // submit element of form
-        var submitBtn = document.getElementById('formSubmit');
+        const submitBtn = document.getElementById('formSubmit');
         // add event listener to form
         submitBtn.addEventListener('click', addServicesFromServer);
 
         // create map and set zoom level and center coordinates
-        var map = L.map('map').setView([34.089, -116.865], 9);
+        const map = L.map('map').setView([34.089, -116.865], 9);
         // set basemap to Esri Streets
-        var esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+        const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
 
-        var tokenUrl = 'https://sampleserver6.arcgisonline.com/arcgis/tokens/generateToken';
+        const tokenUrl = 'https://sampleserver6.arcgisonline.com/arcgis/tokens/generateToken';
 
         // function to make request to server
         function serverAuth(server, username, password, callback) {
@@ -357,13 +358,13 @@ We have now built a basic Esri Leaflet web map that retrieves an authenticated s
             e.preventDefault();
 
             // get values from form
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
             // generate token from server and add service from callback function
             serverAuth(tokenUrl,username,password,function(error, response) {
                 // add layer to map
-                var dl = L.esri.dynamicMapLayer({
+                const dl = L.esri.dynamicMapLayer({
                     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Wildfire_secure_ac/MapServer',
                     opacity: 1,
                     token:  response.token

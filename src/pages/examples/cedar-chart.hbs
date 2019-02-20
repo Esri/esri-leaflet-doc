@@ -1,0 +1,121 @@
+---
+title: Dynamic feature charting with Cedar
+description: Plot feature attributes on a dynamic chart that updates as users pan and zoom. This demo relies on <a href="https://github.com/Esri/cedar">Esri Cedar</a> to render an interactive scatterplot.
+layout: example.hbs
+---
+<!-- Load Cedar files from CDN -->
+<!-- load the amCharts base library -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<!-- for scatter and bubble charts -->
+<script src="https://www.amcharts.com/lib/3/xy.js"></script>
+<!-- load the arcgis-rest-js scripts -->
+<script src="https://unpkg.com/@esri/arcgis-rest-request"></script>
+<!-- optionally load an amcharts theme; cedar provides a calcite theme -->
+{{!-- <script src="https://unpkg.com/@esri/cedar/dist/umd/themes/amCharts/calcite.js"></script> --}}
+<!-- load cedar -->
+<script src="https://unpkg.com/@esri/cedar/dist/umd/cedar.js"></script>
+
+<style>
+  .chart-container {
+    height: 245px;
+    width: 245px;
+  }
+
+  #info-pane {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 400;
+    background: white;
+  }
+
+  .amcharts-chart-div > a {
+    display: none !important;
+  }
+
+  #chart {
+    height: 100%;
+  }
+</style>
+
+<div id="map"></div>
+<div id="info-pane" class="leaflet-bar chart-container">
+  <div id="chart" ></div>
+</div>
+
+<script>
+  // STEP 1: MAKE A MAP AND ADD LAYERS
+  var map = L.map('map').setView([45.526, -122.667], 13);
+
+  L.esri.basemapLayer('Topographic').addTo(map);
+
+  // create and add a feature layer
+  // features from this layer will appear in the Cedar scatterplot
+  var treesFeatureLayer = L.esri.featureLayer({
+    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0',
+  });
+
+  treesFeatureLayer.addTo(map);
+
+  // STEP 2: DEFINE A CHART
+  var chart;
+  treesFeatureLayer.once('load', function() {
+
+    var datasets = [getDataset(treesFeatureLayer)];
+
+    // designate a one or more series to show the data on the chart
+    var series = [{
+      "value": {"field": "HEIGHT", "label": "tree height"},
+      "category": {"field": "DIAMETER", "label": "tree diameter"},
+    }];
+
+    // optionally override any of the cart type's default styles
+    var overrides = {
+      "hideXScrollbar": true,
+      "hideYScrollbar": true,
+    }
+
+    //create a cedar chart using the known 'scatter' type
+    var elementId = 'chart';
+    chart = new cedar.Chart(elementId, {"type": "scatter"})
+      .datasets(datasets)
+      .series(series)
+      .overrides(overrides);
+
+    // render the chart
+    chart.show();
+  });
+
+  // STEP 3: MAKE THE CHART DYNAMIC BY ESTABLISHING MAP-TO-CHART COMMUNICATION
+  // show in the scatterplot only the features in the map's current extent
+  map.on('zoom move', function () {
+    var datasets = [getDataset(treesFeatureLayer)];
+    chart.datasets(datasets);
+    chart.show();
+  });
+
+  // Helper function, used by both createChart() and updateChart(), 
+  // to get the data from the leaflet map (current extent) and return it 
+  // in the proper format for Cedar to use.
+  function getDataset(layer) {
+    var scatterPlotDataArray = [];
+    layer.eachActiveFeature(function(e) {
+      scatterPlotDataArray.push({
+        attributes: {
+          HEIGHT: e.feature.properties.HEIGHT,
+          DIAMETER: e.feature.properties.DIAMETER,
+        },
+        geometry: {
+          x: e.feature.geometry.coordinates[0],
+          y: e.feature.geometry.coordinates[1],
+        }
+      });
+    });
+    return {
+      data: {
+        features: scatterPlotDataArray
+      }
+    };
+  }
+
+</script>
