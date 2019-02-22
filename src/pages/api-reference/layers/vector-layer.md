@@ -36,7 +36,7 @@ The basemaps provide a mix of content, and can be grouped accordingly:
 - Only map features
 - Only labels
 
-It may be possible to mix standard [basemaps](https://esri.github.io/esri-leaflet/api-reference/layers/basemap-layer.html) with label-only vector basemaps.
+If you are interested in customizing one of the existing vector basemaps, then please check out [ArcGIS Vector Tile Style Editor](https://developers.arcgis.com/vector-tile-style-editor/).  This tool allows you to select an existing Esri vector basemap, and customize layer colors and labels.  Please check out this [article](https://www.esri.com/arcgis-blog/products/developers/mapping/design-custom-basemaps-with-the-new-arcgis-vector-tile-style-editor/) describing the tool.   
 
 ##### Custom Vector Tile Services
 
@@ -62,7 +62,8 @@ Whether you've made a small tweak to one of Esri's hosted vector basemaps or pub
 var map = L.map('map').setView([37.75,-122.45], 12);
 L.esri.Vector.layer('bd505ce3efff479bb4e87b182f180159').addTo(map);
 
-// Item page for Light Gray Canvas Reference (Local Language) is https://www.arcgis.com/home/item.html?id=3ffec1551cd14606a286622c634b0bb4
-// You can pass in the item id to add this vector basemap
-L.esri.Vector.layer('3ffec1551cd14606a286622c634b0bb4').addTo(map);
+// Item page for World Navigation Map (Local Language) is https://www.arcgis.com/home/item.html?id=72be31d1fa6a42fc895d9a3c0fd8aeef
+// The item id for this vector basemap is "72be31d1fa6a42fc895d9a3c0fd8aeef"
+// You can pass the item id into the layer constructor
+L.esri.Vector.layer('72be31d1fa6a42fc895d9a3c0fd8aeef').addTo(map);
 ```
