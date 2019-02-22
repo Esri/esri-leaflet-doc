@@ -123,6 +123,9 @@ td pre {
 
 .nobr {
   white-space:nowrap;
+  @include respond-to($tablet-mid) {
+    white-space: pre-line;
+  }
 }
 
 #map-wrapper {

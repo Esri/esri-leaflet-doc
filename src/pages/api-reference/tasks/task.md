@@ -48,12 +48,12 @@ Extends [`L.Class`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.h
     </thead>
     <tbody>
         <tr>
-            <td><code>request(<nobr class="param"><span>&lt;String&gt;</span> <code>url</code></nobr>, <nobr class="param"><span>&lt;Object&gt;</span> <code>params</code></nobr>, <nobr class="param"><span>&lt;Function&gt;</span> <code>callback</code></nobr>, <nobr class="param"><span>&lt;Object&gt;</span> <code>context</code></nobr>)</code></td>
+            <td><code>request(<span>&lt;String&gt;</span> <code>url</code>, <span>&lt;Object&gt;</span> <code>params</code>, <span>&lt;Function&gt;</span> <code>callback</code>, <span>&lt;Object&gt;</span> <code>context</code>)</code></td>
             <td><code>this</code></td>
             <td>Makes a request to the associated service. The service's URL will be combined with the <code>path</code> option and parameters will be serialized. Accepts an optional function context for the callback.</td>
         </tr>
         <tr>
-            <td><code>token(<nobr class="param"><span>&lt;String&gt;</span> <code>token</code></nobr>)</code></td>
+            <td><code>token(<span>&lt;String&gt;</span> <code>token</code>)</code></td>
             <td><code>this</code></td>
             <td>Adds a token to this request if the service requires authentication. Will be added automatically if used with a service.</td>
         </tr>
