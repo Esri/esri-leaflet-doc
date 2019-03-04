@@ -27,22 +27,15 @@ Extends [`L.Layer`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.h
 </table>
 
 
-##### Esri Vector Basemaps Group
+##### Hosted Vector Basemaps
 
-Esri has developed many vector basemaps.  A complete listing of these is available on [ArcGIS Online](https://www.arcgis.com/home/group.html?id=30de8da907d240a0bccd5ad3ff25ef4a&view=list&start=1&focus=layers#content). Many of these basemaps provide support for local languages at large scales.  These have "Local Language" included in the item name. 
+Esri has designed and shared many vector basemaps in [ArcGIS Online](https://www.arcgis.com/home/group.html?id=30de8da907d240a0bccd5ad3ff25ef4a&view=list&start=1&focus=layers#content). Basemaps with "Local Language" in the name provide support for local languages at large scales.
 
-The basemaps provide a mix of content, and can be grouped accordingly:
-- Map features and labels
-- Only map features
-- Only labels
+> Disclaimer: In Esri Leaflet, only [one vector tile source](https://github.com/esri/esri-leaflet-vector#disclaimer) can be drawn at a time.
 
-If you are interested in customizing one of the existing vector basemaps, then please check out [ArcGIS Vector Tile Style Editor](https://developers.arcgis.com/vector-tile-style-editor/).  This tool allows you to select an existing Esri vector basemap, and customize layer colors and labels.  Please check out this [article](https://www.esri.com/arcgis-blog/products/developers/mapping/design-custom-basemaps-with-the-new-arcgis-vector-tile-style-editor/) describing the tool.   
+##### Custom Vector Tiles
 
-##### Custom Vector Tile Services
-
-Whether you've made a small tweak to one of Esri's hosted vector basemaps or published your own vector tile service from scratch you can draw the layer in Esri Leaflet by referencing the item's [`id`](http://www.arcgis.com/home/item.html?id=bd505ce3efff479bb4e87b182f180159).
-
-> See this blog for more information: https://blogs.esri.com/esri/arcgis/2015/11/19/how-to-customize-esri-vector-basemaps/
+The [ArcGIS Vector Tile Style Editor](https://developers.arcgis.com/vector-tile-style-editor/) can be used to customize any of Esri's hosted vector basemaps without duplicating the data behind it. Whether you've made a [small tweak](https://www.esri.com/arcgis-blog/products/developers/mapping/design-custom-basemaps-with-the-new-arcgis-vector-tile-style-editor/) to a hosted vector basemap or used ArcGIS Pro to publish a vector tile service with your own data from scratch, you can draw the layer in Esri Leaflet by referencing the item's [`id`](http://www.arcgis.com/home/item.html?id=bd505ce3efff479bb4e87b182f180159).
 
 ### Options
 
@@ -62,8 +55,7 @@ Whether you've made a small tweak to one of Esri's hosted vector basemaps or pub
 var map = L.map('map').setView([37.75,-122.45], 12);
 L.esri.Vector.layer('bd505ce3efff479bb4e87b182f180159').addTo(map);
 
-// Item page for World Navigation Map (Local Language) is https://www.arcgis.com/home/item.html?id=72be31d1fa6a42fc895d9a3c0fd8aeef
-// The item id for this vector basemap is "72be31d1fa6a42fc895d9a3c0fd8aeef"
-// You can pass the item id into the layer constructor
+// World Navigation Map (Local Language)
+// https://www.arcgis.com/home/item.html?id=72be31d1fa6a42fc895d9a3c0fd8aeef
 L.esri.Vector.layer('72be31d1fa6a42fc895d9a3c0fd8aeef').addTo(map);
 ```
