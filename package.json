@@ -13,7 +13,7 @@
     "assemble": "^0.4.42",
     "esri-leaflet": "2.2.4",
     "esri-leaflet-cluster": "2.0.0",
-    "esri-leaflet-geocoder": "2.2.13",
+    "esri-leaflet-geocoder": "2.2.14",
     "esri-leaflet-gp": "2.0.3",
     "esri-leaflet-heatmap": "2.0.0",
     "esri-leaflet-renderers": "2.0.6",
