@@ -32,7 +32,7 @@ Extends [`L.Control`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}
 
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
-| `position` | `String` | `'topleft'` | Expects a valid Leaflet [control position](http://leafletjs.com/reference.html#control-positions).|
+| `position` | `String` | `'topleft'` | Expects a valid Leaflet [control position](http://leafletjs.com/reference.html#control-position).|
 | `zoomToResult` | `Boolean` | `true` | Determines whether or not the map will zoom to the result after geocoding is complete. |
 | `useMapBounds` | `Boolean` or `Integer` | `12` | Determines if and when the geocoder should use the bounds of the map to filter search results. If `true` the geocoder will always return results in the current map bounds. If `false` it will always search the world. If an integer (like `11`) is passed, the geocoder will use the bounds of the map for searching only if the map is currently zoomed in far enough. |
 | `collapseAfterResult` | `Boolean` | `true` | Determines whether or not the geocoder should collapse after a result is found. |
