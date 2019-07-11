@@ -18,14 +18,19 @@ layout: example.hbs
 <div id="map"></div>
 <div id="info" class="leaflet-bar"></div>
 <script>
-  var map = L.map('map').setView([45.526, -122.667], 13);
+  var map = L.map('map').setView([37.837, -122.479], 8);
 
   L.esri.basemapLayer('Streets').addTo(map);
-  var stops = L.esri.featureLayer({
-    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'
+
+  var earthquakes = L.esri.featureLayer({
+    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Earthquakes_Since1970/MapServer/0'
   }).addTo(map);
 
-  stops.metadata(function (error, metadata) {
-    document.getElementById('info').innerHTML = metadata.name;
+  earthquakes.metadata(function (error, metadata) {
+    var htmlContent = '<ul>';
+    htmlContent += '<li>Name: ' + metadata.name + '</li>';
+    htmlContent += '<li>Geometry Type: ' + metadata.geometryType + '</li>';htmlContent += '<li>Supported Query Formats: ' + metadata.supportedQueryFormats + '</li>';  
+    
+    document.getElementById('info').innerHTML = htmlContent;
   });
 </script>
