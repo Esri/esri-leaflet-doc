@@ -15,6 +15,7 @@ layout: example.hbs
   .label div {
     position: relative;
     left: -50%;
+    top: 10px;
     text-shadow: 0px 2px 1px rgba(255,255,255,0.85);
   }
 </style>
@@ -22,44 +23,38 @@ layout: example.hbs
 <div id="map"></div>
 
 <script>
-  var map = L.map('map').setView([45.526, -122.667], 15);
+  var map = L.map('map').setView([37.428, -121.978], 9);
 
   L.esri.basemapLayer('Gray').addTo(map);
 
-  var neighborhoods = L.esri.featureLayer({
-    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Neighborhoods_pdx/FeatureServer/0',
-    style: function() {
-      return {
-        color: '#5B7CBA',
-        weight: 2
-      };
-    }
+  var earthquakes = L.esri.featureLayer({
+    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Earthquakes_Since1970/MapServer/0'    
   }).addTo(map);
 
   var labels = {};
 
-  neighborhoods.on('createfeature', function(e){
+  earthquakes.on('createfeature', function(e){
     var id = e.feature.id;
-    var feature = neighborhoods.getFeature(id);
-    var center = feature.getBounds().getCenter();
+    var feature = earthquakes.getFeature(id);
+    var center = feature.getLatLng();
     var label = L.marker(center, {
       icon: L.divIcon({
         iconSize: null,
         className: 'label',
-        html: '<div>' + e.feature.properties.NAME + '</div>'
+        html: '<div>' + e.feature.properties.name + '</div>'
       })
     }).addTo(map);
     labels[id] = label;
   });
 
-  neighborhoods.on('addfeature', function(e){
+  earthquakes.on('addfeature', function(e){
     var label = labels[e.feature.id];
     if(label){
       label.addTo(map);
     }
   });
 
-  neighborhoods.on('removefeature', function(e){
+  earthquakes.on('removefeature', function(e){
     var label = labels[e.feature.id];
     if(label){
       map.removeLayer(label);
