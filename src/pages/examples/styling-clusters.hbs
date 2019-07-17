@@ -94,14 +94,7 @@ layout: example.hbs
   var map = L.map('map').setView([0, 0], 2);
 
   // Add ArcGIS Online basemap
-  L.esri.basemapLayer('Gray').addTo(map);
-
-  // colors
-  var colors = {
-    "small": '#FFA500',
-    "medium": '#FFFF00',
-    "large": '#FF0000'
-  }
+  L.esri.basemapLayer('Gray').addTo(map);  
 
   // create a new cluster layer (new syntax at 2.0.0)
   var earthquakes = L.esri.Cluster.featureLayer({
