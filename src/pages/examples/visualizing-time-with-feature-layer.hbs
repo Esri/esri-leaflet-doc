@@ -1,14 +1,8 @@
 ---
 title: Visualizing time on a feature layer
-description: Filtering a feature layer within a certain time range. Try dates between October 2010 and August 2011. More information about Feature Layers can be found in the <a href="../api-reference/layers/feature-layer.html">L.esri.FeatureLayer</a> documentation.
+description: Filtering a feature layer within a certain time range. Try dates between January 3, 1998, and January 25, 1998. More information about Feature Layers can be found in the <a href="../api-reference/layers/feature-layer.html">L.esri.FeatureLayer</a> documentation.
 layout: example.hbs
 ---
-
-<!-- Include Leaflet.heat from CDN -->
-<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
-
-<!-- Load Heatmap Feature Layer from CDN -->
-<script src="https://cdn.jsdelivr.net/leaflet.esri.heatmap-feature-layer/2.0.0-beta.1/esri-leaflet-heatmap-feature-layer.js"></script>
 
 <style>
   #time-ranges {
@@ -43,11 +37,11 @@ layout: example.hbs
   <form action="#" id="form">
     <label for="from">
       From
-      <input id='from' type="date" value='2011-01-01' name='from'>
+      <input id='from' type="date" value='1998-01-10' name='from'>
     </label>
     <label for="to">
       To
-      <input  id='to' type="date" value='2011-03-31' name='to'>
+      <input  id='to' type="date" value='1998-01-15' name='to'>
     </label>
     <input type="submit" value="Update">
   </form>
@@ -58,21 +52,20 @@ layout: example.hbs
   var startTimeInput = document.getElementById('from');
   var endTimeInput = document.getElementById('to');
 
-  var map = L.map('map').setView([ 40.706, -73.926], 12);
+  var map = L.map('map').setView([45.48, -122.80], 12);
 
   L.esri.basemapLayer('Gray').addTo(map);
   L.esri.basemapLayer('GrayLabels').addTo(map);
 
-  var reports = L.esri.Heat.heatmapFeatureLayer({
-    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/ArcGIS/rest/services/Graffiti_Reports/FeatureServer/0',
-    timeField: 'CreatedDate',
+  var emergencyCalls = L.esri.featureLayer({
+    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/911CallsHotspot/MapServer/1',
+    timeField: 'Date',
     from: new Date(startTimeInput.value),
-    to: new Date(endTimeInput.value),
-    radius: 12
+    to: new Date(endTimeInput.value)    
   }).addTo(map);
 
   timeForm.addEventListener('submit', function updateTimeRange(e){
-    reports.setTimeRange(new Date(startTimeInput.value), new Date(endTimeInput.value));
+    emergencyCalls.setTimeRange(new Date(startTimeInput.value), new Date(endTimeInput.value));
     e.preventDefault();
   });
 </script>

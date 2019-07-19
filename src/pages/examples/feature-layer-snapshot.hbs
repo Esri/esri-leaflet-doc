@@ -7,28 +7,28 @@ layout: example.hbs
 <div id="map"></div>
 
 <script>
-  var map = L.map("map").setView([45.5252, -122.6284], 11);
+  var map = L.map("map").setView([41.004, -77.618], 7);
 
   L.esri.basemapLayer("Topographic").addTo(map);
 
-  var neighborhoodsUrl = "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Neighborhoods_pdx/FeatureServer/0";
-  var bikeParkingUrl = "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Portland_Bicycle_Parking/FeatureServer/0";
+  var statesUrl = "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2";
+  var citiesUrl = "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/0";
 
-  // query a feature service for a neighborhood
+  // query a feature service for a state
   L.esri.query({
-    url: neighborhoodsUrl
-  }).where("NAME='HOLLYWOOD'").run(function(error, neighborhoods){
-    // draw neighborhood on the map
-    var hollywood = L.geoJSON(neighborhoods).addTo(map);
+    url: statesUrl
+  }).where("state_name='Pennsylvania'").run(function(error, states){
+    // draw state on the map
+    var pennsylvania = L.geoJSON(states).addTo(map);
 
     // fit map to boundary
-    map.fitBounds(hollywood.getBounds().pad(0.5));
+    map.fitBounds(pennsylvania.getBounds());
 
-    // query all bike parking where BPSTYLE='STAPLE' inside our boundary
+    // query all cities with a population greater than 30,000 (pop2000 > 30000) inside our boundary
     L.esri.query({
-      url: bikeParkingUrl
-    }).where("BPSTYLE='STAPLE'").within(hollywood).run(function(error, bikeParking){
-      L.geoJSON(bikeParking).addTo(map);
-    });
-  });
+      url: citiesUrl
+    }).where("pop2000 > 30000").within(pennsylvania).run(function(error, cities){
+      L.geoJSON(cities).addTo(map);
+    });    
+  });  
 </script>
