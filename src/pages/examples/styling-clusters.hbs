@@ -127,13 +127,13 @@ layout: example.hbs
       var earthquakeSymbol = '';
 
       if (!magnitude) {
-        earthquakeSymbol = '../../img/earthquake-icon.png';
+        earthquakeSymbol = 'https://esri.github.io/esri-leaflet/img/earthquake-icon.png';
       } else if (magnitude <= 4.999) {
-        earthquakeSymbol = '../../img/yellow-triangle.png';
+        earthquakeSymbol = 'https://esri.github.io/esri-leaflet/img/yellow-triangle.png';
       } else if (magnitude >= 5 && magnitude <= 6.999) {
-        earthquakeSymbol = '../../img/orange-triangle.png';
+        earthquakeSymbol = 'https://esri.github.io/esri-leaflet/img/orange-triangle.png';
       } else if (magnitude >= 7) {
-        earthquakeSymbol = '../../img/red-triangle.png';
+        earthquakeSymbol = 'https://esri.github.io/esri-leaflet/img/red-triangle.png';
       }
 
       var mapIcon = L.icon({
