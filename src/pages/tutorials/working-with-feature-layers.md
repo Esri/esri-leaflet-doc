@@ -46,17 +46,17 @@ Start by copying this skeleton code which outlines the structure of a single pag
     }
   </style>
 </head>
-<body>    
-    <div id="map"></div>
-    
-    <script>
-        const map = L.map('map', {
-          center: [45.526, -122.667],
-          zoom: 13
-        });
-        
-        const esriStreets = L.esri.basemapLayer('Streets').addTo(map);    
-    </script>    
+<body>
+  <div id="map"></div>
+
+  <script>
+    const map = L.map('map', {
+      center: [45.526, -122.667],
+      zoom: 13
+    });
+
+    const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+  </script>
 </body>
 </html>
 ```
@@ -67,16 +67,18 @@ We will add a REST service using the `L.esri.featureLayer` class from the Esri L
 
 Below is an example for creating a Feature Layer using both types of services:
 
-```JavaScript
-const portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'});
+```js
+const portlandHeritageTrees = L.esri.featureLayer({url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/'});
 
 const worldCities =  L.esri.featureLayer({url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0'});
 ```
 
 In order to display our new layer, we need to add it to our map using Leaflet's `addTo()` method.  We can chain this method directly to the object constructor, or call it in a separate line.  In our sample, we'll use the chaining approach.
 
-```JavaScript
-const portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'}).addTo(map);
+```js
+const portlandHeritageTrees = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/'
+}).addTo(map);
 ```
 
 If we save and refresh our map, we should see many blue markers on the map, which are the features from the service.  Leaflet is applying a default style to the features.  It is up to you to define the styles for the data tha that is drawn. See the links below for examples of doing this:
@@ -97,9 +99,8 @@ If we want to use the symbology set when a service was published, we'll need to 
 ```xml
 <!-- Load Esri Leaflet Renderers from CDN -->
 <script src="https://unpkg.com/esri-leaflet-renderers@{{siteData.latest_esri_leaflet_renderers}}/dist/esri-leaflet-renderers.js"
-    integrity="{{siteData.latest_esri_leaflet_renderers_integrity}}"
-    crossorigin=""></script>
-
+  integrity="{{siteData.latest_esri_leaflet_renderers_integrity}}"
+  crossorigin=""></script>
 ```  
 
 If we save and refresh our map, we'll now see the trees displayed as red circles.  
@@ -110,10 +111,10 @@ Now we will add a popup to our feature layer.  The popup can contain both static
 
 We will create the content for the popup using Leaflet's [Utility Template](https://leafletjs.com/reference.html#util-template 'Leaflet Utility Template').  We place the name of fields from the service in  curly brackets **{ }**, and add `feature.properties` at the end of the `L.Util.template` to access the fields. 
 
-```JavaScript
+```js
 portlandHeritageTrees.bindPopup(function(evt) {
-    return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
-});         
+  return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
+});
 ```
 
 If we save and refresh our map, we are able to click on the features and a popup will open.
@@ -159,23 +160,25 @@ Here is what the final `html` file should look like for this tutorial:
     }
   </style>
 </head>
-<body>    
-    <div id="map"></div>
-    
-    <script>
-        const map = L.map('map', {
-          center: [45.526, -122.667],
-          zoom: 13
-        });
-        
-        const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
-        
-        const portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'}).addTo(map);
-        
-        portlandHeritageTrees.bindPopup(function(evt) {
-            return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
-        });          
-    </script>    
+<body>
+  <div id="map"></div>
+
+  <script>
+    const map = L.map('map', {
+      center: [45.526, -122.667],
+      zoom: 13
+    });
+
+    const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+
+    const portlandHeritageTrees = L.esri.featureLayer({
+      url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/'
+    }).addTo(map);
+
+    portlandHeritageTrees.bindPopup(function(evt) {
+      return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
+    });
+  </script>
 </body>
 </html>
 ```
