@@ -68,7 +68,7 @@ We will add a REST service using the `L.esri.featureLayer` class from the Esri L
 Below is an example for creating a Feature Layer using both types of services:
 
 ```js
-const portlandHeritageTrees = L.esri.featureLayer({url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'});
+const portlandHeritageTrees = L.esri.featureLayer({url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/'});
 
 const worldCities =  L.esri.featureLayer({url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0'});
 ```
@@ -77,7 +77,7 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
 
 ```js
 const portlandHeritageTrees = L.esri.featureLayer({
-  url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/'
 }).addTo(map);
 ```
 
@@ -172,7 +172,7 @@ Here is what the final `html` file should look like for this tutorial:
     const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
 
     const portlandHeritageTrees = L.esri.featureLayer({
-      url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'
+      url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/'
     }).addTo(map);
 
     portlandHeritageTrees.bindPopup(function(evt) {
