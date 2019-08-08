@@ -6,13 +6,13 @@ layout: example.hbs
 
 <style>
   #panel {
-    position: absolute;
+    position: absolute; 
     top: 10px;
-    right: 10px;
+    right: 10px;  
     z-index: 1000;
     background: white;
     padding: 10px;
-  }
+  }  
 </style>
 
 <div id="map"></div>
@@ -31,7 +31,9 @@ layout: example.hbs
     <option value="line">Line<options>
     <option value="polygon">Polygon<options>
   </select>
+  <button id="executeQuery">Run Query</button>
 </div>
+
 <script>
   var map = L.map("map").setView([45.525, -122.628], 11);
 
@@ -39,9 +41,9 @@ layout: example.hbs
 
   // create our layer
   neighborhoods = L.esri.featureLayer({
-    url: "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Neighborhoods_pdx/FeatureServer/0",
+    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Zoning/MapServer/32",
     style: {
-      color: 'gray',
+      color: '#000',
       weight: 1,
       opacity: 0.4
     }
@@ -74,14 +76,10 @@ layout: example.hbs
 
   // create a polygon to query against
   var polygon = L.polygon([
-    [45.489261, -122.737198],
-    [45.486373, -122.688446],
-    [45.462539, -122.682266],
-    [45.441104, -122.693596],
-    [45.444717, -122.722435],
-    [45.461094, -122.738228],
-    [45.482521, -122.734108],
-    [45.489261, -122.737198]
+    [45.484894, -122.493696],
+    [45.512025, -122.492199],
+    [45.517669, -122.561457],
+    [45.487343, -122.558573]
   ], {
     color: 'blue',
     weight: 2
@@ -97,7 +95,8 @@ layout: example.hbs
 
   // get references to our <select> elements
   var relationship = document.getElementById('relationSelect');
-  var geometry = document.getElementById('geometrySelect');
+  var geometry = document.getElementById('geometrySelect');  
+  var runQueryButton = document.getElementById('executeQuery');
 
   var previousIds = [];
 
@@ -105,28 +104,31 @@ layout: example.hbs
   function reset(){
     for (var i = previousIds.length - 1; i >= 0; i--) {
       neighborhoods.resetStyle(previousIds[i]);
-    };
+    };   
   }
 
   // query the API and highlight features
   function query(){
-    reset();
+    reset();    
 
     // lookup our input geometry
     var inputGeometry = geometries[geometry.value];
 
     // query the service executing the selected relation with the selected input geometry
     neighborhoods.query()[relationship.value](inputGeometry).ids(function(error, ids){
-      previousIds = ids;
-      for (var i = ids.length - 1; i >= 0; i--) {
-        neighborhoods.setFeatureStyle(ids[i], { color: 'red', weight: 2 });
-      };
+      if (error) {
+        console.log('Error with query: ' + error);
+      } else {
+        previousIds = ids;
+        for (var i = ids.length - 1; i >= 0; i--) {
+          neighborhoods.setFeatureStyle(ids[i], { color: 'red', weight: 2 });
+        };
+      }      
     });
   }
 
-  // query when an input changes
-  geometry.addEventListener('change', query);
-  relationship.addEventListener('change', query);
+  // query when "Run Query" button is clicked
+  runQueryButton.addEventListener('click', query);
 
   // once all neighborhoods have loaded run the default query
   neighborhoods.once('load', function(){
