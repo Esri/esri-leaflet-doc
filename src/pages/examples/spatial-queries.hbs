@@ -6,13 +6,13 @@ layout: example.hbs
 
 <style>
   #panel {
-    position: absolute; 
+    position: absolute;
     top: 10px;
-    right: 10px;  
+    right: 10px;
     z-index: 1000;
     background: white;
     padding: 10px;
-  }  
+  }
 </style>
 
 <div id="map"></div>
@@ -101,29 +101,30 @@ layout: example.hbs
   var previousIds = [];
 
   // reset all features back to their regularly defined styles
-  function reset(){
+  function reset() {
     for (var i = previousIds.length - 1; i >= 0; i--) {
       neighborhoods.resetStyle(previousIds[i]);
-    };   
+    };
   }
-
+  
   // query the API and highlight features
   function query(){
-    reset();    
-
+    reset();
+    
     // lookup our input geometry
     var inputGeometry = geometries[geometry.value];
 
     // query the service executing the selected relation with the selected input geometry
     neighborhoods.query()[relationship.value](inputGeometry).ids(function(error, ids){
+      // if there is an error with the query, you can handle it here
       if (error) {
         console.log('Error with query: ' + error);
-      } else {
+      } else if (ids) {
         previousIds = ids;
         for (var i = ids.length - 1; i >= 0; i--) {
           neighborhoods.setFeatureStyle(ids[i], { color: 'red', weight: 2 });
         };
-      }      
+      }
     });
   }
 
