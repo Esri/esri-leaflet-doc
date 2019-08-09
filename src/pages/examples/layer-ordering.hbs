@@ -11,8 +11,8 @@ layout: example.hbs
 
   L.esri.basemapLayer("Topographic").addTo(map);
 
-  var neighborhoodsUrl = "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Neighborhoods_pdx/FeatureServer/0";
-  var eliotFootprintsUrl = "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Eliot%20Building%20Footprints/FeatureServer/0";
+  var neighborhoodsUrl = "https://www.portlandmaps.com/arcgis/rest/services/Public/Zoning/MapServer/32";
+  var buildingFootprintsUrl = "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Buildings/MapServer/0";
   var blockPointsUrl = "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/0";
 
   // create a map pane for neighborhoods
@@ -28,7 +28,7 @@ layout: example.hbs
   map.createPane('footprints');
 
   L.esri.featureLayer({
-    url: eliotFootprintsUrl,
+    url: buildingFootprintsUrl,
     pane: 'footprints',
     style: function (feature) {
       return {  color: 'white', weight: 0, fillOpacity: 1  };
