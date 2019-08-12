@@ -1,13 +1,10 @@
 ---
 title: Editing feature layers
 description: This sample uses the Leaflet <a href="//github.com/Leaflet/Leaflet.Editable">Editable plugin</a> to help users manipulate the geometry of features from a hosted feature service and pass the edits back to the server.
-
 layout: example.hbs
-legacyLeaflet: 1.0.3
-
 ---
 <script src="https://unpkg.com/leaflet.path.drag@0.0.5"></script>
-<script src="https://unpkg.com/leaflet-editable@1.0.0"></script>
+<script src="https://unpkg.com/leaflet-editable@1.2.0/src/Leaflet.Editable.js"></script>
 
 <div id='map'></div>
 
@@ -16,13 +13,13 @@ legacyLeaflet: 1.0.3
     var map = L.map('map', {
       editable: true,
       doubleClickZoom: false
-    }).setView([45.512, -122.619], 12);
+    }).setView([37.345, -110.875], 5);
 
     var tilelayer = L.esri.basemapLayer("Topographic").addTo(map);
 
     // create a feature layer and add it to the map
-    var pedestrianDistricts = L.esri.featureLayer({
-      url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/PDX_Pedestrian_Districts/FeatureServer/0'
+    var wildfireDistricts = L.esri.featureLayer({
+      url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Wildfire/FeatureServer/2'
     }).addTo(map);
 
     // create a generic control to invoke editing
@@ -73,26 +70,26 @@ legacyLeaflet: 1.0.3
     map.addControl(new L.NewRectangleControl());
 
     // when users CMD/CTRL click an editable feature, remove it from the map and delete it from the service
-    pedestrianDistricts.on('click', function (e) {
+    wildfireDistricts.on('click', function (e) {
       if ((e.originalEvent.ctrlKey || e.originalEvent.metaKey) && e.layer.editEnabled()) {
         e.layer.editor.deleteShapeAt(e.latlng);
         // delete expects an id, not the whole geojson object
-        pedestrianDistricts.deleteFeature(e.layer.feature.id);
+        wildfireDistricts.deleteFeature(e.layer.feature.id);
       }
     });
 
     // when users double click a graphic toggle its editable status
     // when deselecting, pass the geometry update to the service
-    pedestrianDistricts.on('dblclick', function (e) {
+    wildfireDistricts.on('dblclick', function (e) {
       e.layer.toggleEdit();
       if (!e.layer.editEnabled()) {
-        pedestrianDistricts.updateFeature(e.layer.toGeoJSON());
+        wildfireDistricts.updateFeature(e.layer.toGeoJSON());
       }
     });
 
     // when a new feature is drawn using one of the custom controls, pass the edit to the service
     map.on('editable:drawing:commit', function (e) {
-      pedestrianDistricts.addFeature(e.layer.toGeoJSON());
+      wildfireDistricts.addFeature(e.layer.toGeoJSON());
       e.layer.toggleEdit();
     });
 </script>
