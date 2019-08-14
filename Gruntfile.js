@@ -15,7 +15,7 @@ module.exports = function (grunt) {
       },
       'docs-js': {
         files: ['src/**/*.js'],
-        tasks: ['eslint', 'copy:assemble'],
+        tasks: ['copy:assemble', 'eslint'],
         options: {
           nospawn: true
         }
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
       },
       'docs-assemble': {
         files: ['src/**/*.md', 'src/**/*.hbs'],
-        tasks: ['eslint', 'assemble:dev'],
+        tasks: ['assemble:dev', 'eslint'],
         options: {
           nospawn: true,
           livereload: true
