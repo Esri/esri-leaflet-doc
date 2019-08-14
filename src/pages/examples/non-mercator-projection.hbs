@@ -52,18 +52,18 @@ layout: example.hbs
   L.esri.tiledMapLayer({
     url: 'https://tiles.arcgis.com/tiles/qHLhLQrcvEnxjtPr/arcgis/rest/services/OS_Open_Background_2/MapServer',
     maxZoom: 19,
-    minZoom: 6,
+    minZoom: 6
   }).addTo(map);
 
   // feature layers will be requested in WGS84 (4326) and reprojected
-  var cities = L.esri.featureLayer({
+  L.esri.featureLayer({
     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer/0',
     where: 'POP_RANK < 5',
     pointToLayer (geojson, latlng) {
       return L.shapeMarkers.diamondMarker(latlng, 5, {
         color: '#0099FF',
         weight: 2
-      })
+      });
     }
   }).addTo(map);
 </script>

@@ -15,7 +15,7 @@ layout: example.hbs
   }).addTo(map);
 
   wildfireRisk.bindPopup(function (error, featureCollection) {
-    if(error || featureCollection.features.length === 0) {
+    if (error || featureCollection.features.length === 0) {
       return false;
     } else {
       return 'Risk Level: ' + featureCollection.features[0].properties.CLASS_DESC;

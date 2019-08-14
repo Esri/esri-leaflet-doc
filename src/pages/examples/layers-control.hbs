@@ -10,29 +10,29 @@ layout: example.hbs
   var gray = L.layerGroup();
 
   // more than one service can be grouped together and passed to the control together
-  L.esri.basemapLayer("DarkGray").addTo(gray);
-  L.esri.basemapLayer("GrayLabels").addTo(gray);
+  L.esri.basemapLayer('DarkGray').addTo(gray);
+  L.esri.basemapLayer('GrayLabels').addTo(gray);
 
   var states = L.esri.featureLayer({
-      url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3",
-      style: function (feature) {
-          return {color: '#bada55', weight: 2 };
-      }
+    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3',
+    style: function (feature) {
+      return { color: '#bada55', weight: 2 };
+    }
   });
 
   var map = L.map('map', {
-      center: [39, -97.5],
-      zoom: 4,
-      layers: [gray, states]
+    center: [39, -97.5],
+    zoom: 4,
+    layers: [gray, states]
   });
 
   var baseLayers = {
-      "Grayscale": gray,
-      "Streetmap": L.esri.basemapLayer("Streets")
+    Grayscale: gray,
+    Streetmap: L.esri.basemapLayer('Streets')
   };
 
   var overlays = {
-      "U.S. States": states
+    'U.S. States': states
   };
 
   // http://leafletjs.com/reference-1.0.3.html#control-layers

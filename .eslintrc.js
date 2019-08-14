@@ -11,7 +11,10 @@ module.exports = {
     'eslint-plugin-html'
   ],
   globals: {
-    L: false
+    L: false,
+    turf: false,
+    cedar: false,
+    Chart: false
   },
   parserOptions: {
     ecmaVersion: 2018

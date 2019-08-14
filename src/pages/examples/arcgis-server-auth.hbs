@@ -9,13 +9,13 @@ layout: example.hbs
 <script>
   // workaround for old ie
   if (!window.location.origin) {
-    window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+    window.location.origin = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
   }
 
   var map = L.map('map').setView([34.089, -116.865], 9);
   L.esri.basemapLayer('Topographic').addTo(map);
 
-  function serverAuth(callback){
+  function serverAuth (callback) {
     L.esri.post('https://sampleserver6.arcgisonline.com/arcgis/tokens/generateToken', {
       username: 'user1',
       password: 'user1',
@@ -26,15 +26,23 @@ layout: example.hbs
     }, callback);
   }
 
-  serverAuth(function(error, response){
+  serverAuth(function (error, response) {
+    if (error) {
+      return;
+    }
+
     var dl = L.esri.dynamicMapLayer({
       url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Wildfire_secure_ac/MapServer',
       opacity: 1,
-      token:  response.token
+      token: response.token
     }).addTo(map);
 
     dl.on('authenticationrequired', function (e) {
-      serverAuth(function(error, response){
+      serverAuth(function (error, response) {
+        if (error) {
+          return;
+        }
+
         e.authenticate(response.token);
       });
     });

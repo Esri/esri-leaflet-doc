@@ -35,13 +35,13 @@ layout: example.hbs
 </div>
 
 <script>
-  var map = L.map("map").setView([45.525, -122.628], 11);
+  var map = L.map('map').setView([45.525, -122.628], 11);
 
-  L.esri.basemapLayer("Topographic").addTo(map);
+  L.esri.basemapLayer('Topographic').addTo(map);
 
   // create our layer
-  neighborhoods = L.esri.featureLayer({
-    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Zoning/MapServer/32",
+  var neighborhoods = L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Zoning/MapServer/32',
     style: {
       color: '#000',
       weight: 1,
@@ -49,17 +49,17 @@ layout: example.hbs
     }
   }).addTo(map);
 
+  // create a marker object to query against
+  var marker = L.marker([45.571034, -122.686386]).addTo(map);
+
   // create a bounds object to query against
   var bounds = L.latLngBounds([
     [45.494556, -122.691536],
     [45.538100, -122.608452]
   ]);
 
-  // create a marker object to query against
-  var marker = L.marker([45.571034, -122.686386]).addTo(map);
-
   // create a rectangle to visualize the bounds
-  var rect = L.rectangle(bounds, {
+  L.rectangle(bounds, {
     color: 'blue',
     weight: 2
   }).addTo(map);
@@ -95,25 +95,25 @@ layout: example.hbs
 
   // get references to our <select> elements
   var relationship = document.getElementById('relationSelect');
-  var geometry = document.getElementById('geometrySelect');  
+  var geometry = document.getElementById('geometrySelect');
   var runQueryButton = document.getElementById('executeQuery');
 
   var previousIds = [];
 
   // reset all features back to their regularly defined styles
-  function reset() {
+  function reset () {
     for (var i = previousIds.length - 1; i >= 0; i--) {
       neighborhoods.resetStyle(previousIds[i]);
-    };
-  }
+    }
+}
   // query the API and highlight features
-  function query(){
+  function query () {
     reset();
     // lookup our input geometry
     var inputGeometry = geometries[geometry.value];
 
     // query the service executing the selected relation with the selected input geometry
-    neighborhoods.query()[relationship.value](inputGeometry).ids(function(error, ids){
+    neighborhoods.query()[relationship.value](inputGeometry).ids(function (error, ids) {
       // if there is an error with the query, you can handle it here
       if (error) {
         console.log('Error with query: ' + error);
@@ -121,7 +121,7 @@ layout: example.hbs
         previousIds = ids;
         for (var i = ids.length - 1; i >= 0; i--) {
           neighborhoods.setFeatureStyle(ids[i], { color: 'red', weight: 2 });
-        };
+        }
       }
     });
   }
@@ -130,8 +130,7 @@ layout: example.hbs
   runQueryButton.addEventListener('click', query);
 
   // once all neighborhoods have loaded run the default query
-  neighborhoods.once('load', function(){
+  neighborhoods.once('load', function () {
     query();
   });
-
 </script>

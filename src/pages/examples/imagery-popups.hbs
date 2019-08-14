@@ -16,7 +16,7 @@ layout: example.hbs
   }).addTo(map);
 
   landsatImagery.bindPopup(function (error, identifyResults) {
-    if(error || !identifyResults.pixel) {
+    if (error || !identifyResults.pixel) {
       return false;
     } else {
       return 'Pixel values: ' + identifyResults.pixel.properties.value + ' (R, G, B, IR)';

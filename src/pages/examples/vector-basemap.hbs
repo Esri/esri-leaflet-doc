@@ -27,7 +27,7 @@ layout: example.hbs
 <div id="map"></div>
 
 <div id="basemaps-wrapper" class="leaflet-bar">
-  <select name="basemaps" id="basemaps" onChange="changeBasemap(basemaps)">
+  <select id="basemaps">
     <option value="OpenStreetMap">OpenStreetMap</option>
     <option value="Newspaper">Newspaper</option>
     <option value="Topographic">Topographic</option>
@@ -42,7 +42,7 @@ layout: example.hbs
   var map = L.map('map').setView([40, -4], 6);
   var layer = L.esri.Vector.basemap('OpenStreetMap').addTo(map);
 
-  function setBasemap(basemap) {
+  function setBasemap (basemap) {
     if (layer) {
       map.removeLayer(layer);
     }
@@ -51,8 +51,10 @@ layout: example.hbs
     map.addLayer(layer);
   }
 
-  function changeBasemap(basemaps){
-    var basemap = basemaps.value;
-    setBasemap(basemap);
-  }
+  document
+    .querySelector('#basemaps')
+    .addEventListener('change', function (e) {
+      var basemap = e.target.value;
+      setBasemap(basemap);
+    });
 </script>

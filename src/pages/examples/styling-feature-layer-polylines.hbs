@@ -18,7 +18,7 @@ layout: example.hbs
 <div id="map"></div>
 <div id="info-pane" class="leaflet-bar">Hover to inspect</div>
 
-<script type='text/javascript'>
+<script>
   var map = L.map('map').setView([45.5275, -122.6717], 14);
 
   L.esri.basemapLayer('Streets').addTo(map);
@@ -26,7 +26,8 @@ layout: example.hbs
   var bikePaths = L.esri.featureLayer({
     url: 'https://services.arcgis.com/uCXeTVveQzP4IIcx/ArcGIS/rest/services/Bike_Routes/FeatureServer/0',
     style: function (feature) {
-      var c,o = 0.75;
+      var c;
+      var o = 0.75;
       switch (feature.properties.BIKEMODE) {
         case 'Low traffic through street':
           c = '#007D7D';
@@ -63,15 +64,15 @@ layout: example.hbs
         default:
           c = '#C0C0C0';
       }
-      return {color: c, opacity: o, weight: 5};
+      return { color: c, opacity: o, weight: 5 };
     }
   }).addTo(map);
 
-  bikePaths.on('mouseout', function(e){
+  bikePaths.on('mouseout', function (e) {
     document.getElementById('info-pane').innerHTML = 'Hover to Inspect';
   });
 
-  bikePaths.on('mouseover', function(e){
+  bikePaths.on('mouseover', function (e) {
     document.getElementById('info-pane').innerHTML = e.layer.feature.properties.BIKEMODE;
   });
 </script>

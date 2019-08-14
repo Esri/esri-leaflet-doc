@@ -29,7 +29,7 @@ layout: example.hbs
     Zoning District:
     <select id="district">
       <!-- make sure to encase string values in single quotes for valid sql -->
-      <option value='1=1'>Any</option>
+      <option value="1=1">Any</option>
       <option value="ZONE_SMRY='OPEN SPACE'">Open Space</option>
       <option value="ZONE_SMRY='AGRICULTURE'">Agriculture</option>
       <option value="ZONE_SMRY='RESIDENTIAL'">Residential</option>
@@ -42,7 +42,6 @@ layout: example.hbs
 </div>
 
 <script>
-
   var map = L.map('map').setView([34.19, -118.53], 15);
 
   L.esri.basemapLayer('Gray').addTo(map);
@@ -50,13 +49,12 @@ layout: example.hbs
   var zoning = L.esri.featureLayer({
     url: 'https://services5.arcgis.com/7nsPwEMP38bSkCjy/arcgis/rest/services/TEST_PYTHON_ZONING/FeatureServer/0',
     simplifyFactor: 0.5,
-    precision: 4      
+    precision: 4
   }).addTo(map);
 
   var zoningDistrict = document.getElementById('district');
 
-  zoningDistrict.addEventListener('change', function(){
-    zoning.setWhere(district.value);
+  zoningDistrict.addEventListener('change', function () {
+    zoning.setWhere(zoningDistrict.value);
   });
-
 </script>

@@ -19,37 +19,41 @@ layout: example.hbs
 <div id="pixelValue" class="leaflet-bar">Click map for elevation</div>
 
 <script>
-    var renderingRule = {
-        "rasterFunction":"Hillshade",
-        "rasterFunctionArguments": {
-            "Azimuth":215,
-            "Altitude":60,
-            "ZFactor":1
-        },"variableName":"DEM"
-    };
+  var renderingRule = {
+    rasterFunction: 'Hillshade',
+    rasterFunctionArguments: {
+      Azimuth: 215,
+      Altitude: 60,
+      ZFactor: 1
+    },
+    variableName: 'DEM'
+  };
 
-    // sample server in this example is not CORS enabled, so use JSONP
-    L.esri.get = L.esri.get.JSONP;
+  // sample server in this example is not CORS enabled, so use JSONP
+  L.esri.get = L.esri.get.JSONP;
 
-    var map = L.map('map').setView([36.230577, -118.253147], 10);
+  var map = L.map('map').setView([36.230577, -118.253147], 10);
 
-    var hillshade = L.esri.imageMapLayer({
-      url: 'https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Earthquakes/CaliforniaDEM/ImageServer',
-      renderingRule: renderingRule,
-      useCors: false
-    }).addTo(map);
+  var hillshade = L.esri.imageMapLayer({
+    url: 'https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Earthquakes/CaliforniaDEM/ImageServer',
+    renderingRule: renderingRule,
+    useCors: false
+  }).addTo(map);
 
-    var identifiedPixel;
-    var pane = document.getElementById('pixelValue');
+  var identifiedPixel;
+  var pane = document.getElementById('pixelValue');
 
-    map.on('click', function (e) {
-        if(identifiedPixel){
-            pane.innerHTML = 'Loading';
-        }
-        hillshade.identify().at(e.latlng).run(function(error, results){
-            identifiedPixel = results.pixel;
-            pane.innerHTML = identifiedPixel.properties.value + 'm';
-        });
+  map.on('click', function (e) {
+    if (identifiedPixel) {
+      pane.innerHTML = 'Loading';
+    }
+    hillshade.identify().at(e.latlng).run(function (error, results) {
+      if (error) {
+        return;
+      }
+
+      identifiedPixel = results.pixel;
+      pane.innerHTML = identifiedPixel.properties.value + 'm';
     });
-
+  });
 </script>

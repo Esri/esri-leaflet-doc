@@ -20,11 +20,15 @@ legacyEsriLeaflet: 1.0.4
     url: 'https://services1.arcgis.com/g2TonOxuRkIqSOFx/arcgis/rest/services/StLouisArtMuseumFloorPlan/FeatureServer/0'
   });
   
-  // Run a query against our Feature Layer (that we have not added to the map) 
+  // Run a query against our Feature Layer (that we have not added to the map)
   // to get a FeatureCollection (https://tools.ietf.org/html/rfc7946#section-3.3)
-  featureLayer.query().run(function(error, featureCollection) {
-    indoorLayer = new L.Indoor(featureCollection, {
-      getLevel: function(feature) {
+  featureLayer.query().run(function (error, featureCollection) {
+    if (error) {
+      return;
+    }
+
+    var indoorLayer = new L.Indoor(featureCollection, {
+      getLevel: function (feature) {
         return feature.properties.FLOOR;
       }
     });
@@ -34,14 +38,13 @@ legacyEsriLeaflet: 1.0.4
 
     // Add Level Control (code from https://github.com/cbaines/leaflet-indoor)
     var levelControl = new L.Control.Level({
-        level: 2,
-        levels: indoorLayer.getLevels()
+      level: 2,
+      levels: indoorLayer.getLevels()
     });
 
     // Connect the level control to the indoor layer
-    levelControl.addEventListener("levelchange", indoorLayer.setLevel, indoorLayer);
+    levelControl.addEventListener('levelchange', indoorLayer.setLevel, indoorLayer);
 
     levelControl.addTo(map);
   });
-
 </script>

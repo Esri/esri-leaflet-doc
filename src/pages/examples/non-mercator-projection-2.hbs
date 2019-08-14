@@ -49,12 +49,12 @@ layout: example.hbs
   L.esri.tiledMapLayer({
     url: 'https://tiles.arcgis.com/tiles/qHLhLQrcvEnxjtPr/arcgis/rest/services/OS_Open_Background_2/MapServer',
     maxZoom: 19,
-    minZoom: 6,
+    minZoom: 6
   }).addTo(map);
 
   // Dynamic map layers are projected by ArcGIS Server itself before the image is retrieved
   L.esri.dynamicMapLayer({
-    url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer",
+    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer',
     layers: [0],
     opacity: 0.4
   }).addTo(map);

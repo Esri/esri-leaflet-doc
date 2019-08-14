@@ -16,6 +16,10 @@ layout: example.hbs
   }).addTo(map);
 
   trails.query().bounds(function (error, latlngbounds) {
+    if (error) {
+      return;
+    }
+
     map.fitBounds(latlngbounds);
   });
 </script>

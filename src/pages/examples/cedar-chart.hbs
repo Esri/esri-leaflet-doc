@@ -52,32 +52,31 @@ layout: example.hbs
   // create and add a feature layer
   // features from this layer will appear in the Cedar scatterplot
   var treesFeatureLayer = L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/'
   });
 
   treesFeatureLayer.addTo(map);
 
   // STEP 2: DEFINE A CHART
   var chart;
-  treesFeatureLayer.once('load', function() {
-
+  treesFeatureLayer.once('load', function () {
     var datasets = [getDataset(treesFeatureLayer)];
 
     // designate a one or more series to show the data on the chart
     var series = [{
-      "value": {"field": "HEIGHT", "label": "tree height"},
-      "category": {"field": "DIAMETER", "label": "tree diameter"},
+      value: { field: 'HEIGHT', label: 'tree height' },
+      category: { field: 'DIAMETER', label: 'tree diameter' }
     }];
 
     // optionally override any of the cart type's default styles
     var overrides = {
-      "hideXScrollbar": true,
-      "hideYScrollbar": true,
-    }
+      hideXScrollbar: true,
+      hideYScrollbar: true
+    };
 
-    //create a cedar chart using the known 'scatter' type
+    // create a cedar chart using the known 'scatter' type
     var elementId = 'chart';
-    chart = new cedar.Chart(elementId, {"type": "scatter"})
+    chart = new cedar.Chart(elementId, { type: 'scatter' })
       .datasets(datasets)
       .series(series)
       .overrides(overrides);
@@ -94,20 +93,20 @@ layout: example.hbs
     chart.show();
   });
 
-  // Helper function, used by both createChart() and updateChart(), 
-  // to get the data from the leaflet map (current extent) and return it 
+  // Helper function, used by both createChart() and updateChart(),
+  // to get the data from the leaflet map (current extent) and return it
   // in the proper format for Cedar to use.
-  function getDataset(layer) {
+  function getDataset (layer) {
     var scatterPlotDataArray = [];
-    layer.eachActiveFeature(function(e) {
+    layer.eachActiveFeature(function (e) {
       scatterPlotDataArray.push({
         attributes: {
           HEIGHT: e.feature.properties.HEIGHT,
-          DIAMETER: e.feature.properties.DIAMETER,
+          DIAMETER: e.feature.properties.DIAMETER
         },
         geometry: {
           x: e.feature.geometry.coordinates[0],
-          y: e.feature.geometry.coordinates[1],
+          y: e.feature.geometry.coordinates[1]
         }
       });
     });
@@ -117,5 +116,4 @@ layout: example.hbs
       }
     };
   }
-
 </script>

@@ -16,7 +16,7 @@ layout: example.hbs
     pointToLayer: function (geojson, latlng) {
       return L.circleMarker(latlng);
     },
-    style:{
+    style: {
       color: '#5B7CBA',
       weight: 2,
       opacity: 0.85,
@@ -26,10 +26,19 @@ layout: example.hbs
 
   var previousIds = [];
 
-  map.on('click', function(e){
-    streetLights.query().nearby(e.latlng, 250).ids(function(error, ids){
+  map.on('click', function (e) {
+    streetLights.query().nearby(e.latlng, 250).ids(function (error, ids) {
+      if (error) {
+        return;
+      }
+  
       for (var j = 0; j < previousIds.length; j++) {
         streetLights.resetStyle(previousIds[j]);
+      }
+
+      if (!ids) {
+        previousIds = [];
+        return;
       }
 
       previousIds = ids;

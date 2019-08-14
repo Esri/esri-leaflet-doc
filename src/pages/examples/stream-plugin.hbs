@@ -13,20 +13,19 @@ layout: example.hbs
 
   L.esri.basemapLayer('Gray').addTo(map);
 
-  function createRandomFill(){
-    return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+  function createRandomFill () {
+    return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
   }
 
-  var buses = L.esri.streamFeatureLayer({
+  L.esri.streamFeatureLayer({
     url: 'https://geoeventsample1.esri.com:6443/arcgis/rest/services/LABus/StreamServer',
     pointToLayer: function (geojson, latlng) {
       return L.circleMarker(latlng, {
         fillColor: createRandomFill(),
         fillOpacity: 0.8,
-        color: "#cccccc",
+        color: '#cccccc',
         weight: 2
       });
-    },
+    }
   }).addTo(map);
-
 </script>

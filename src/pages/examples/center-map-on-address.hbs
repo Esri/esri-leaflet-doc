@@ -19,6 +19,10 @@ layout: example.hbs
   }).addTo(map);
 
   geocoder.geocode().text('New York City').run(function (error, response) {
+    if (error) {
+      return;
+    }
+
     map.fitBounds(response.results[0].bounds);
   });
 </script>
