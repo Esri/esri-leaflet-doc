@@ -25,19 +25,19 @@ Feature Layers can be created in Esri Leaflet from both `MapServer` or `FeatureS
 So for example both of these are valid:
 ```js
 L.esri.featureLayer({
-	url: '.../ArcGIS/rest/services/BloomfieldHillsMichigan/LandusePlanning/FeatureServer/0'
-})
+  url: '.../ArcGIS/rest/services/BloomfieldHillsMichigan/LandusePlanning/FeatureServer/0'
+});
 
 L.esri.featureLayer({
-	url: '.../ArcGIS/rest/services/Demographics/ESRI_Population_World/MapServer/0'
-})
+  url: '.../ArcGIS/rest/services/Demographics/ESRI_Population_World/MapServer/0'
+});
 ```
 
 If you want to edit data in the browser then you will need to consume a `FeatureServer` service.
 
 ### What does the data look like?
 When you request a feature layer from an ArcGIS Server the response will look something like 
-```js
+```json
 {"type":"FeatureCollection","crs":{"type":"name","properties":{"name":"EPSG:4326"}},
  "features":[
      {"type":"Feature",
@@ -62,8 +62,8 @@ Dynamic Map Layers can be created in Esri-Leaflet from a `MapServer` service pub
 ```js
 // NOTE - The url contains 'MapServer'
 L.esri.dynamicMapLayer({
-	url: 'https://services.arcgisonline.com/arcgis/rest/services/Specialty/Soil_Survey_Map/MapServer'
-})
+  url: 'https://services.arcgisonline.com/arcgis/rest/services/Specialty/Soil_Survey_Map/MapServer'
+});
 ```
 
 ### What does the data look like?
@@ -87,12 +87,11 @@ Tiled Map Layers can be created in Esri-Leaflet from a `MapServer` service publi
 ```js
 // NOTE - When you visit the url you will see information relating to the tile cache
 L.esri.tiledMapLayer({
-	url: 'https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer'
-})
+  url: 'https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer'
+});
 ```
 
 ### What does the data look like?
 You can see an example Tiled Map Layer response from ArcGIS Server below. It is simply an image!
 
 ![Map tile](https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyBasemap/MapServer/tile/6/146/267)
-

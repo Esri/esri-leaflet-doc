@@ -18,7 +18,7 @@ Start by copying this skeleton code which outlines the structure of a single pag
 <head>
   <meta charset="utf-8">
   <title>Leaflet Map with a Basemap</title>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 </head>
 <body>
 </body>
@@ -39,7 +39,7 @@ The easiest option is to point to a CDN where the libraries are already hosted. 
 <head>
   <meta charset="utf-8">
   <title>Leaflet Map with a Basemap</title>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 
   <!-- lets load Leaflet's .js and .css from CDN-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
@@ -52,7 +52,7 @@ The easiest option is to point to a CDN where the libraries are already hosted. 
   <!-- Load Esri Leaflet from CDN.  it has no .css stylesheet of its own, only .js -->
   <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
     integrity="{{siteData.latest_esri_leaflet_integrity}}"
-    crossorigin=""></script>    
+    crossorigin=""></script>
 </head>
 <body>
 </body>
@@ -71,7 +71,7 @@ For our map to display, we must set the height and width for this element.  Sinc
 <head>
   <meta charset="utf-8">
   <title>Leaflet Map with a Basemap</title>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 
   <!-- Load Leaflet from CDN-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
@@ -84,7 +84,7 @@ For our map to display, we must set the height and width for this element.  Sinc
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
     integrity="{{siteData.latest_esri_leaflet_integrity}}"
-    crossorigin=""></script>   
+    crossorigin=""></script>
 
   <style>
     html,
@@ -98,7 +98,7 @@ For our map to display, we must set the height and width for this element.  Sinc
   </style>
 </head>
 <body>
-    <div id="map"></div>
+  <div id="map"></div>
 </body>
 </html>
 ```
@@ -117,7 +117,7 @@ Our first step is to create a map object. In our constructor we must provide the
 <head>
   <meta charset="utf-8">
   <title>Leaflet Map with a Basemap</title>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 
   <!-- Load Leaflet from CDN-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
@@ -130,10 +130,9 @@ Our first step is to create a map object. In our constructor we must provide the
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
     integrity="{{siteData.latest_esri_leaflet_integrity}}"
-    crossorigin=""></script>   
+    crossorigin=""></script>
 
   <style>
-
     html,
     body,
     #map {
@@ -142,18 +141,17 @@ Our first step is to create a map object. In our constructor we must provide the
       margin: 0;
       padding: 0;
     }
-
   </style>
 
 </head>
 <body>
-    <div id="map"></div>
-    <script>
-        const map = L.map('map', {
-          center: [37.75, -122.23],
-          zoom: 10
-        });
-    </script>
+  <div id="map"></div>
+  <script>
+    const map = L.map('map', {
+      center: [37.75, -122.23],
+      zoom: 10
+    });
+  </script>
 </body>
 </html>
 ```
@@ -188,7 +186,7 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
 <head>
   <meta charset="utf-8">
   <title>Leaflet Map with a Basemap</title>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 
   <!-- Load Leaflet from CDN-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
@@ -201,7 +199,7 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
     integrity="{{siteData.latest_esri_leaflet_integrity}}"
-    crossorigin=""></script>   
+    crossorigin=""></script>
 
   <style>
     html,
@@ -216,14 +214,14 @@ In order to display our new layer, we need to add it to our map using Leaflet's 
 
 </head>
 <body>
-    <div id="map"></div>
-    <script>
-        const map = L.map('map', {
-          center: [37.75, -122.23],
-          zoom: 10
-        });
-        const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
-    </script>
+  <div id="map"></div>
+  <script>
+    const map = L.map('map', {
+      center: [37.75, -122.23],
+      zoom: 10
+    });
+    L.esri.basemapLayer('Streets').addTo(map);
+  </script>
 </body>
 </html>
 ```
