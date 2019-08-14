@@ -1,7 +1,6 @@
 var sass = require('node-sass');
 
 module.exports = function (grunt) {
-
   // Project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -16,7 +15,7 @@ module.exports = function (grunt) {
       },
       'docs-js': {
         files: ['src/**/*.js'],
-        tasks: ['copy:assemble'],
+        tasks: ['eslint', 'copy:assemble'],
         options: {
           nospawn: true
         }
@@ -30,12 +29,16 @@ module.exports = function (grunt) {
       },
       'docs-assemble': {
         files: ['src/**/*.md', 'src/**/*.hbs'],
-        tasks: ['assemble:dev'],
+        tasks: ['eslint', 'assemble:dev'],
         options: {
           nospawn: true,
           livereload: true
         }
       }
+    },
+
+    eslint: {
+      target: ['src/**/*.js', 'src/**/*.md', 'src/**/*.hbs']
     },
 
     connect: {
@@ -54,7 +57,7 @@ module.exports = function (grunt) {
         layout: 'layout.hbs',
         layoutdir: 'src/layouts/',
         partials: 'src/partials/**/*.hbs',
-        helpers: ['src/helpers/**/*.js' ]
+        helpers: ['src/helpers/**/*.js']
       },
       dev: {
         options: {
@@ -85,7 +88,7 @@ module.exports = function (grunt) {
     copy: {
       assemble: {
         files: [
-          { src: 'src/js/script.js', dest: 'built/js/script.js'}
+          { src: 'src/js/script.js', dest: 'built/js/script.js' }
         ]
       }
     },
@@ -135,5 +138,5 @@ module.exports = function (grunt) {
   grunt.registerTask('docs:deploy', ['docs:build', 'gh-pages']);
 
   // Require all grunt modules
-  require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', 'assemble']});
+  require('load-grunt-tasks')(grunt, { pattern: ['grunt-*', 'assemble'] });
 };
