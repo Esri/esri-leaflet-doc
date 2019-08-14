@@ -26,22 +26,22 @@ Here is an outline of the process:
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Esri Leaflet Authenticated Services</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    
-    <!-- Load Leaflet from CDN-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
-    integrity="{{siteData.latest_leaflet_css_integrity}}"
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
-    integrity="{{siteData.latest_leaflet_integrity}}"
-    crossorigin=""></script>
+  <meta charset="utf-8">
+  <title>Esri Leaflet Authenticated Services</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
-    <!-- Load Esri Leaflet from CDN -->
-    <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
-    integrity="{{siteData.latest_esri_leaflet_integrity}}"
-    crossorigin=""></script>
+  <!-- Load Leaflet from CDN-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
+  integrity="{{siteData.latest_leaflet_css_integrity}}"
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
+  integrity="{{siteData.latest_leaflet_integrity}}"
+  crossorigin=""></script>
+
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
+  integrity="{{siteData.latest_esri_leaflet_integrity}}"
+  crossorigin=""></script>
 </head>
 <body>
 </body>
@@ -56,18 +56,18 @@ Within the `<form>`, we'll add text inputs and labels to capture the username an
 
 ```xml
 <form id="securedServicesForm">
-    <div class="form-component">
-        <label for="username">User Name</label>
-        <!-- this will be the username for the service -->
-        <input type="text" id="username" />
-    </div>
-    <div class="form-component">
-        <label for="password">Password</label>
-        <!-- this will be the password for the service -->
-        <input type="password" id="password">
-    </div>
-    <!-- a click event handler will be placed on this element to run our function -->
-    <button id="formSubmit" type="submit">Add Service</button>
+  <div class="form-component">
+    <label for="username">User Name</label>
+    <!-- this will be the username for the service -->
+    <input type="text" id="username" />
+  </div>
+  <div class="form-component">
+    <label for="password">Password</label>
+    <!-- this will be the password for the service -->
+    <input type="password" id="password">
+  </div>
+  <!-- a click event handler will be placed on this element to run our function -->
+  <button id="formSubmit" type="submit">Add Service</button>
 </form>
 ```
 
