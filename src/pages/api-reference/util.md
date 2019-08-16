@@ -48,4 +48,3 @@ Utility methods used internally by Esri Leaflet. These methods are useful for co
         </tr>
     </tbody>
 </table>
-

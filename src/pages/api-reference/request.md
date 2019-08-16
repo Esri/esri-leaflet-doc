@@ -31,8 +31,8 @@ Executes a GET or POST via `XMLHttpRequest` or JSONP request depending on the ca
 #### Example
 
 ```js
-L.esri.request('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function(error, response){
-  if(error){
+L.esri.request('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function (error, response) {
+  if (error) {
     console.log(error);
   } else {
     console.log(response.name);
@@ -58,8 +58,8 @@ Execute a GET request via `XMLHttpRequest' (via CORS) or JSON depending on what 
 #### Example
 
 ```js
-L.esri.get('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function(error, response){
-  if(error){
+L.esri.get('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function (error, response) {
+  if (error) {
     console.log(error);
   } else {
     console.log(response.name);
@@ -83,8 +83,8 @@ This request is made via `XMLHttpRequest` which cannot make cross domain request
 #### Example
 
 ```js
-L.esri.post('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function(error, response){
-  if(error){
+L.esri.post('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function (error, response) {
+  if (error) {
     console.log(error);
   } else {
     console.log(response.name);

@@ -139,10 +139,14 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
 var find = L.esri.find('https://services.nationalmap.gov/arcgis/rest/services/govunits/MapServer');
 
 find.layers('18')
-    .text('Colorado');
+  .text('Colorado');
 
-find.run(function(error, featureCollection, response){
-    console.log('GNIS Name: ' + featureCollection.features[0].properties.GNIS_NAME);
+find.run(function (error, featureCollection, response) {
+  if (error) {
+    console.log(error);
+    return;
+  }
+  console.log('GNIS Name: ' + featureCollection.features[0].properties.GNIS_NAME);
 });
 ```
 
@@ -150,15 +154,19 @@ find.run(function(error, featureCollection, response){
 
 ```js
 var find = L.esri.find({
-    url: 'https://services.nationalmap.gov/arcgis/rest/services/govunits/MapServer'
+  url: 'https://services.nationalmap.gov/arcgis/rest/services/govunits/MapServer'
 });
 
 find.layers('13')
-    .text('198133')
-    .fields('GNIS_ID');
+  .text('198133')
+  .fields('GNIS_ID');
 
-find.run(function(error, featureCollection, response){
-    console.log('Found ' + featureCollection.features.length + ' feature(s)');
-    console.log('Found ' + featureCollection.features[0].properties.GNIS_NAME + ' in ' + featureCollection.features[0].properties.STATE_NAME);
+find.run(function (error, featureCollection, response) {
+  if (error) {
+    console.log(error);
+    return;
+  }
+  console.log('Found ' + featureCollection.features.length + ' feature(s)');
+  console.log('Found ' + featureCollection.features[0].properties.GNIS_NAME + ' in ' + featureCollection.features[0].properties.STATE_NAME);
 });
 ```

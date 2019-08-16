@@ -18,5 +18,6 @@ This namespace provides a location for application configuration settings that a
 ```js
 // pass in a larger value to make space for a scale bar too
 L.esri.options.attributionWidthOffset = 200;
-var map = L.map('map').setView([37.79, -122.45], 13);
+
+L.map('map').setView([37.79, -122.45], 13);
 ```

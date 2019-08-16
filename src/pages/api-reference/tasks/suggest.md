@@ -84,8 +84,8 @@ You can pass any options you can pass to [L.esri.Task](task.html). The `url` wil
 ```js
 L.esri.Geocoding.suggest()
   .text('trea')
-  .nearby([45,-121], 5000)
-  .run(function(error, response){
+  .nearby([45, -121], 5000)
+  .run(function (error, response) {
     /* response syntax is documented here:
     https://developers.arcgis.com/rest/geocode/api-reference/geocoding-suggest.htm#ESRI_SECTION1_FC3884A45AD24E62BD11C9888F1392DB
     */

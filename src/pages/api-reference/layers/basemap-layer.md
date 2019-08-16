@@ -76,7 +76,7 @@ These are optional layers that add extra text labels to the basemaps.
 ### Example
 
 ```js
-var map = L.map('map').setView([37.75,-122.45], 12);
+var map = L.map('map').setView([37.75, -122.45], 12);
 
-L.esri.basemapLayer("Topographic").addTo(map);
+L.esri.basemapLayer('Topographic').addTo(map);
 ```

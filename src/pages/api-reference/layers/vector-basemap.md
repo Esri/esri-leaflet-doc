@@ -66,6 +66,7 @@ The basemaps below have no labels
 ```
 
 ```js
-var map = L.map('map').setView([37.75,-122.45], 12);
-L.esri.Vector.basemap("Newspaper").addTo(map);
+var map = L.map('map').setView([37.75, -122.45], 12);
+
+L.esri.Vector.basemap('Newspaper').addTo(map);
 ```

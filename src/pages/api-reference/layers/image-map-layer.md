@@ -222,19 +222,18 @@ imageService.query()
 #### Simple Image Layer
 
 ```js
-var map = L.map('map').setView([ 38.83,-98.5], 7);
+var map = L.map('map').setView([38.83, -98.5], 7);
 
 L.esri.basemapLayer('Gray').addTo(map);
 
-var url = "https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/World/MODIS/ImageServer";
+var url = 'https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/World/MODIS/ImageServer';
 
 L.esri.imageMapLayer({
   url: url,
-  opacity : 0.25,
+  opacity: 0.25,
   // only necessary for old versions of ArcGIS Server
   useCors: false
 }).addTo(map);
-
 ```
 
 #### Infrared image layer using bandIds property

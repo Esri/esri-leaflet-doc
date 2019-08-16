@@ -277,21 +277,21 @@ Live sample [here](http://esri.github.io/esri-leaflet/examples/clustering-featur
 ```
 
 ```js
-var map = L.map('map').setView([45.53,-122.64], 16);
-L.esri.basemapLayer("Streets").addTo(map);
+var map = L.map('map').setView([45.53, -122.64], 16);
+L.esri.basemapLayer('Streets').addTo(map);
 
-var url = "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0";
+var url = 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0';
 
-var busStops = L.esri.Cluster.featureLayer({
+L.esri.Cluster.featureLayer({
   url: url,
   // Cluster Options
   polygonOptions: {
-    color: "#2d84c8"
+    color: '#2d84c8'
   },
   // Feature Layer Options
   pointToLayer: function (geojson, latlng) {
     return L.circleMarker(latlng, 10, {
-      color: "#2D84C8"
+      color: '#2D84C8'
     });
   }
 }).addTo(map);

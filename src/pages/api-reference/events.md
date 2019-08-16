@@ -24,7 +24,7 @@ Event types common across components of Esri Leaflet are documented here.
 ```js
 var layer = new L.esri.FeatureLayer(url, options);
 
-layer.on('load', function(e){
+layer.on('load', function (e) {
   // do something on load
 });
 

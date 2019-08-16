@@ -116,15 +116,19 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
 ### Example
 
 ```js
-var map = new L.Map('map').setView([ 45.543, -122.621 ], 5);
+var map = new L.Map('map').setView([45.543, -122.621], 5);
 
 L.esri.identifyFeatures({
-    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer'
+  url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer'
 })
-.on(map)
-.at([45.543, -122.621])
-.layers('visible:1')
-.run(function(error, featureCollection, response){
-    console.log("UTC Offset: " + featureCollection.features[0].properties.ZONE);
-});
+  .on(map)
+  .at([45.543, -122.621])
+  .layers('visible:1')
+  .run(function (error, featureCollection, response) {
+    if (error) {
+      console.log(error);
+      return;
+    }
+    console.log('UTC Offset: ' + featureCollection.features[0].properties.ZONE);
+  });
 ```

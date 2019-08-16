@@ -23,13 +23,13 @@ The GP.task 'initialized' event is intended to help with this timing.
 
 ```js
 var myService = L.esri.GP.service({
-    url: "https://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer/Profile"
-  });
+  url: 'https://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer/Profile'
+});
 var myTask = myService.createTask();
 
-myTask.on('initialized', function(){
-  myTask.setParam("inputFeature", polyline.toGeoJSON());
-  myTask.run(function(error, geojson, response){
+myTask.on('initialized', function () {
+  myTask.setParam('inputFeature', polyline.toGeoJSON());
+  myTask.run(function (error, geojson, response) {
     ...
   });
 });
@@ -88,11 +88,11 @@ GP results conform to the following format
     // actual parameter name and data type are dependent on the service itself
     outputParamName: <L.GeoJSON> || <string> || <boolean>,
     outputGPFileParamName: {
-        url: "https://server/arcgis/rest/directories/arcgisoutput/./_ags_856aed6eb_.png"
+        url: 'https://server/arcgis/rest/directories/arcgisoutput/./_ags_856aed6eb_.png'
       }
     },
-    jobId: "j7123be34ccfe45b4b47a51e867e0084b",
-    mapService: "https://server/arcgis/rest/services/GPServiceName/MapServer/jobs/j7123be34ccfe45b4b47a51e867e0084b/"
+    jobId: 'j7123be34ccfe45b4b47a51e867e0084b',
+    mapService: 'https://server/arcgis/rest/services/GPServiceName/MapServer/jobs/j7123be34ccfe45b4b47a51e867e0084b/'
   }
 ]
 ```

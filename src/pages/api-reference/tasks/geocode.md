@@ -125,33 +125,49 @@ You can pass any options you can pass to [L.esri.Task](task.html). The `url` wil
 ```
 
 ```js
-L.esri.Geocoding.geocode().text('380 New York St, Redlands, California, 92373').run(function(err, results, response){
+L.esri.Geocoding.geocode().text('380 New York St, Redlands, California, 92373').run(function (err, results, response) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(results);
 });
 ```
 
 ```js
-L.esri.Geocoding.geocode().address('380 New York St').city('Redlands').region('California').postal(92373).run(function(err, results, response){
+L.esri.Geocoding.geocode().address('380 New York St').city('Redlands').region('California').postal(92373).run(function (err, results, response) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(results);
 });
 ```
 
 ```js
-//Using .within()
-var southWest = L.latLng(37.712, -108.227),
-    northEast = L.latLng(41.774, -102.125),
-    bounds = L.latLngBounds(southWest, northEast); // Colorado
+// Using .within()
+var southWest = L.latLng(37.712, -108.227);
+var northEast = L.latLng(41.774, -102.125);
+var bounds = L.latLngBounds(southWest, northEast); // Colorado
 
-L.esri.Geocoding.geocode().text("Denver").within(bounds).run(function(err, response){
+L.esri.Geocoding.geocode().text('Denver').within(bounds).run(function (err, response) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(response);
 });
 ```
 
 ```js
-//Using .nearby()
+// Using .nearby()
 var denver = L.latLng(37.712, -108.227);
 
-L.esri.Geocoding.geocode().text("Highlands Ranch").nearby(denver, 20000).run(function(err, response){
+L.esri.Geocoding.geocode().text('Highlands Ranch').nearby(denver, 20000).run(function (err, response) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(response);
 });
 ```

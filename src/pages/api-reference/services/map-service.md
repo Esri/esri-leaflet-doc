@@ -53,7 +53,7 @@ Extends [`L.esri.Service`]({{assets}}api-reference/services/service.html)
 <pre class="js"><code>mapService.query()
         .layer(0)
         .within(latlngbounds)
-        .run(function(error, featureCollection, response){
+        .run(function (error, featureCollection, response) {
           console.log(featureCollection);
         });</code></pre>
             </td>
@@ -66,7 +66,7 @@ Extends [`L.esri.Service`]({{assets}}api-reference/services/service.html)
 <pre class="js"><code>mapService.identify()
         .on(map)
         .at(latlng)
-        .run(function(error, featureCollection, response){
+        .run(function (error, featureCollection, response) {
             console.log(featureCollection)
         });</code></pre>
             </td>
@@ -80,7 +80,7 @@ Extends [`L.esri.Service`]({{assets}}api-reference/services/service.html)
         .layers('18')
         .text('Colorado')
         .fields('name')
-        .run(function(error, featureCollection, response){
+        .run(function (error, featureCollection, response) {
             console.log(featureCollection)
         });</code></pre>
             </td>
@@ -93,33 +93,41 @@ Extends [`L.esri.Service`]({{assets}}api-reference/services/service.html)
 
 #### Identify task
 ```js
-var map = new L.Map('map').setView([ 45.543, -122.621 ], 5);
+var map = new L.Map('map').setView([45.543, -122.621], 5);
 
 var service = L.esri.mapService({
-    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer'
+  url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer'
 });
 
 service.identify()
-    .on(map)
-    .at([45.543, -122.621])
-    .layers('visible:1')
-    .run(function(error, featureCollection, response){
-        console.log("UTC Offset: " + featureCollection.features[0].properties.ZONE);
-    });
+  .on(map)
+  .at([45.543, -122.621])
+  .layers('visible:1')
+  .run(function (error, featureCollection, response) {
+    if (error) {
+      console.log(error);
+      return;
+    }
+    console.log('UTC Offset: ' + featureCollection.features[0].properties.ZONE);
+  });
 ```
 
 #### Find task
 
 ```js
 var service = L.esri.mapService({
-    url: 'https://services.nationalmap.gov/arcgis/rest/services/govunits/MapServer'
+  url: 'https://services.nationalmap.gov/arcgis/rest/services/govunits/MapServer'
 });
 
 service.find()
-    .layers('18')
-    .text('Colorado')
-    .searchFields('GNIS_NAME')
-    .run(function(error, featureCollection, response){
-        console.log('Found GNIS ID: ' + featureCollection.features[0].properties.GNIS_ID + ' for the state of ' + featureCollection.features[0].properties.STATE_NAME);
-    });
+  .layers('18')
+  .text('Colorado')
+  .searchFields('GNIS_NAME')
+  .run(function (error, featureCollection, response) {
+    if (error) {
+      console.log(error);
+      return;
+    }
+    console.log('Found GNIS ID: ' + featureCollection.features[0].properties.GNIS_ID + ' for the state of ' + featureCollection.features[0].properties.STATE_NAME);
+  });
 ```

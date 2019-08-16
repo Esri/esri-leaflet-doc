@@ -355,11 +355,11 @@ featureLayer.query()
 ### Example
 
 ```js
-var map = L.map('map').setView([45.53,-122.64], 14);
+var map = L.map('map').setView([45.53, -122.64], 14);
 
-L.esri.basemapLayer("Streets").addTo(map);
+L.esri.basemapLayer('Streets').addTo(map);
 
-var busStops = L.esri.featureLayer({
+L.esri.featureLayer({
   url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0/'
 }).addTo(map);
 ```

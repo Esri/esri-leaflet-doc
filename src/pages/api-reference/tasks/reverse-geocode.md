@@ -84,10 +84,10 @@ You can pass any options you can pass to [L.esri.Task](task.html). The `url` wil
 
 ```js
 L.esri.Geocoding.reverseGeocode()
-  .latlng([48.8583,  2.2945])
-  .run(function(error, result, response){
-      // callback is called with error, result, and raw response.
-      // result.latlng contains the coordinates of the located address
-      // result.address contains information about the match
+  .latlng([48.8583, 2.2945])
+  .run(function (error, result, response) {
+    // callback is called with error, result, and raw response
+    // result.latlng contains the coordinates of the located address
+    // result.address contains information about the match
   });
 ```

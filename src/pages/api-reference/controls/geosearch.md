@@ -113,7 +113,7 @@ var gisDay = L.esri.Geocoding.featureLayerProvider({
   url: 'https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/GIS_Day_Final/FeatureServer/0',
   searchFields: ['Name', 'Organization'], // Search these fields for text matches
   label: 'GIS Day Events', // Group suggestions under this header
-  formatSuggestion: function(feature){
+  formatSuggestion: function (feature) {
     return feature.properties.Name + ' - ' + feature.properties.Organization; // format suggestions like this.
   }
 });

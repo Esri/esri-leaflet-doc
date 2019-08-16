@@ -238,15 +238,14 @@ dynamicMapLayer.bindPopup(
 ### Example
 
 ```js
-var map = L.map('map').setView([ 38.83,-98.5], 7);
+var map = L.map('map').setView([38.83, -98.5], 7);
 L.esri.basemapLayer('Gray').addTo(map);
 
-var url = "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Petroleum/KGS_OilGasFields_Kansas/MapServer";
+var url = 'https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Petroleum/KGS_OilGasFields_Kansas/MapServer';
 
 L.esri.dynamicMapLayer({
   url: url,
-  opacity : 0.25,
+  opacity: 0.25,
   useCors: false
 }).addTo(map);
-
 ```

@@ -113,14 +113,18 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
 ### Example
 
 ```js
-var map = L.map('map').setView([36.230577, -118.253147], 10);
+L.map('map').setView([36.230577, -118.253147], 10);
 
 L.esri.identifyImage({
-    url: 'https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Earthquakes/CaliforniaDEM/ImageServer'
+  url: 'https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Earthquakes/CaliforniaDEM/ImageServer'
 })
-.at([36.230577, -118.253147])
-.pixelSize([30,30])
-.run(function(error, identifyImageResponse, rawResponse){
+  .at([36.230577, -118.253147])
+  .pixelSize([30, 30])
+  .run(function (error, identifyImageResponse, rawResponse) {
+    if (error) {
+      console.log(error);
+      return;
+    }
     console.log(identifyImageResponse.pixel.properties.value);
-});
+  });
 ```

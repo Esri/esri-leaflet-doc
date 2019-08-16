@@ -52,7 +52,8 @@ The [ArcGIS Vector Tile Style Editor](https://developers.arcgis.com/vector-tile-
 ```
 
 ```js
-var map = L.map('map').setView([37.75,-122.45], 12);
+var map = L.map('map').setView([37.75, -122.45], 12);
+
 L.esri.Vector.layer('bd505ce3efff479bb4e87b182f180159').addTo(map);
 
 // World Navigation Map (Local Language)
