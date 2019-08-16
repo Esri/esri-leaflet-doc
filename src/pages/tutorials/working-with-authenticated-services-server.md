@@ -358,7 +358,7 @@ We have now built a basic Esri Leaflet web map that retrieves an authenticated s
     }
 
     // function to run when form submitted
-    function addServicesFromServer(e) {
+    function addServicesFromServer (e) {
       // prevent page from refreshing
       e.preventDefault();
 
