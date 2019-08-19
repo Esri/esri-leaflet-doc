@@ -53,7 +53,8 @@
     "build": "grunt docs:build",
     "deploy": "grunt docs:deploy",
     "integrity": "node ./data/integrity.js",
-    "start": "grunt"
+    "start": "grunt",
+    "test": "grunt lint"
   },
   "dependencies": {},
   "engines": {

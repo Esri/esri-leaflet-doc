@@ -15,7 +15,7 @@ module.exports = function (grunt) {
       },
       'docs-js': {
         files: ['src/**/*.js'],
-        tasks: ['copy:assemble', 'eslint'],
+        tasks: ['copy:assemble', 'eslint:default'],
         options: {
           nospawn: true
         }
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
       },
       'docs-assemble': {
         files: ['src/**/*.md', 'src/**/*.hbs'],
-        tasks: ['assemble:dev', 'eslint'],
+        tasks: ['assemble:dev', 'eslint:default'],
         options: {
           nospawn: true,
           livereload: true
@@ -38,7 +38,12 @@ module.exports = function (grunt) {
     },
 
     eslint: {
-      target: ['src/**/*.js', 'src/**/*.md', 'src/**/*.hbs']
+      default: {
+        src: ['src/**/*.js', 'src/**/*.hbs']
+      },
+      all: {
+        src: ['src/**/*.js', 'src/**/*.md', 'src/**/*.hbs']
+      }
     },
 
     connect: {
@@ -136,6 +141,12 @@ module.exports = function (grunt) {
 
   // Documentation Site Tasks
   grunt.registerTask('docs:deploy', ['docs:build', 'gh-pages']);
+
+  // Linting
+  // Since the JS files inline in our HTML files is a bit weird, the default should be not running it over the HTML
+  // files, but you can still run "grunt eslint:all" if you're specifically working on those files and you want a test.
+  grunt.registerTask('lint', ['eslint:default']);
+  grunt.registerTask('lint:all', ['eslint:all']);
 
   // Require all grunt modules
   require('load-grunt-tasks')(grunt, { pattern: ['grunt-*', 'assemble'] });
