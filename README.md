@@ -17,6 +17,22 @@ In order to update the version of Leaflet, Esri Leaflet or any other plugin disp
 4. run `npm start` to confirm locally that this achieved the desired effect.
 5. send a Pull Request!
 
+#### Development Tips
+
+Before committing, run `npm test`, which will run [ESLint](https://eslint.org/) (enforcing the [Semistandard style](https://github.com/standard/semistandard)) on all our sample code to ensure the samples are consistently formatted.
+
+If you're using [VS Code](https://code.visualstudio.com/) and the [ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), you can create a new file at `.vscode/settings.json` with the following contents to enable live linting on the HBS files:
+
+```
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "handlebars"
+  ]
+}
+```
+
 ### Issues
 
 Find a typo or other problem on the website?  Please let us know by submitting an [issue](https://github.com/Esri/esri-leaflet-doc/issues).
