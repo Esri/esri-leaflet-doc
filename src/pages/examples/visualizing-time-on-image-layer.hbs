@@ -5,57 +5,56 @@ layout: example.hbs
 ---
 
 <style>
-    #time-ranges {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 1000;
-        padding: 1em;
-        background: white;
-    }
-    #time-ranges input, #time-ranges select {
-        display: inline-block;
-        border: 1px solid #999;
-        font-size: 14px;
-        border-radius: 4px;
-        height: 28px;
-        line-height: 28px;
-    }
+  #time-ranges {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    padding: 1em;
+    background: white;
+  }
+  #time-ranges input, #time-ranges select {
+    display: inline-block;
+    border: 1px solid #999;
+    font-size: 14px;
+    border-radius: 4px;
+    height: 28px;
+    line-height: 28px;
+  }
 </style>
 
 <div id="map"></div>
 
 <div id="time-ranges" class="leaflet-bar">
-    <form action="#" id="timeForm">
-        <label for="timeInput">
-            Year:
-            <select id='timeInput' type="date" name='date'>
-                <option>1990</option>
-                <option>2000</option>
-                <option>2005</option>
-                <option>2010</option>
-            </select>
-        </label>
-    </form>
+  <form action="#" id="timeForm">
+    <label for="timeInput">
+      Year:
+      <select id="timeInput" type="date" name="date">
+        <option>1990</option>
+        <option>2000</option>
+        <option>2005</option>
+        <option>2010</option>
+      </select>
+    </label>
+  </form>
 </div>
 
 <script>
-    var timeForm = document.getElementById('timeForm');
-    var timeInput = document.getElementById('timeInput');
+  var timeInput = document.getElementById('timeInput');
 
-    var map = L.map('map').setView([-12.604858, -55.947675], 9);
+  var map = L.map('map').setView([-12.604858, -55.947675], 9);
 
-    var vegetation = L.esri.imageMapLayer({
-        url: 'https://landsat.arcgis.com/arcgis/rest/services/LandsatGLS/MS/ImageServer',
-        attribution: 'United States Geological Survey (USGS), National Aeronautics and Space Administration (NASA)',
-        bandIds: "4,3,2",
-        // renderingRule: { "rasterFunction":"NDVI Colorized" },
-        from: new Date(timeInput.value),
-        to: new Date(timeInput.value)
-    }).addTo(map);
+  var vegetation = L.esri.imageMapLayer({
+    url: 'https://landsat.arcgis.com/arcgis/rest/services/LandsatGLS/MS/ImageServer',
+    attribution: 'United States Geological Survey (USGS), National Aeronautics and Space Administration (NASA)',
+    bandIds: '4,3,2',
+    // renderingRule: { "rasterFunction": "NDVI Colorized" },
+    from: new Date(timeInput.value),
+    to: new Date(timeInput.value)
+  }).addTo(map);
 
-    timeInput.addEventListener('change', function updateTimeRange(e){
-        vegetation.setTimeRange(new Date(timeInput.value), new Date(timeInput.value));
-        e.preventDefault();
-    });
+  timeInput.addEventListener('change', function updateTimeRange (e) {
+    vegetation.setTimeRange(new Date(timeInput.value), new Date(timeInput.value));
+    e.preventDefault();
+  });
 </script>

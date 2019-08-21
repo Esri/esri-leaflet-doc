@@ -15,7 +15,7 @@ layout: example.hbs
 
 <script>
   /* create new Proj4Leaflet CRS:
-  1. Proj4 and WKT definitions can be found at sites like http://epsg.io, http://spatialreference.org/ or by using gdalsrsinfo http://www.gdal.org/gdalsrsinfo.html
+  1. Proj4 and WKT definitions can be found at sites like https://epsg.io, https://spatialreference.org/ or by using gdalsrsinfo https://www.gdal.org/gdalsrsinfo.html
   2. Appropriate values to supply to the resolution and origin constructor options can be found in the ArcGIS Server tile server REST endpoint (ex: https://tiles.arcgis.com/tiles/qHLhLQrcvEnxjtPr/arcgis/rest/services/OS_Open_Background_2/MapServer).
   3. The numeric code within the first parameter (ex: `27700`) will be used to project the dynamic map layer on the fly
   */
@@ -52,18 +52,18 @@ layout: example.hbs
   L.esri.tiledMapLayer({
     url: 'https://tiles.arcgis.com/tiles/qHLhLQrcvEnxjtPr/arcgis/rest/services/OS_Open_Background_2/MapServer',
     maxZoom: 19,
-    minZoom: 6,
+    minZoom: 6
   }).addTo(map);
 
   // feature layers will be requested in WGS84 (4326) and reprojected
-  var cities = L.esri.featureLayer({
+  L.esri.featureLayer({
     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer/0',
     where: 'POP_RANK < 5',
     pointToLayer (geojson, latlng) {
       return L.shapeMarkers.diamondMarker(latlng, 5, {
         color: '#0099FF',
         weight: 2
-      })
+      });
     }
   }).addTo(map);
 </script>

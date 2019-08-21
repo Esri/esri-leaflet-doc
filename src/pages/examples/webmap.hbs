@@ -34,25 +34,25 @@ layout: example.hbs
   var webmapId = 'd143b33f1a02421d86b6a4ca1d7b7cd0'; // Default WebMap ID
   getIdfromUrl();
 
-  var webmap = L.esri.webMap(webmapId, { map: L.map("map") });
+  var webmap = L.esri.webMap(webmapId, { map: L.map('map') });
 
-  webmap.on('load', function() {
-      var overlayMaps = {};
-      webmap.layers.map(function(l) {
-          overlayMaps[l.title] = l.layer;
-      });
-      L.control.layers({}, overlayMaps, {
-          position: 'bottomleft'
-      }).addTo(webmap._map);
+  webmap.on('load', function () {
+    var overlayMaps = {};
+    webmap.layers.map(function (l) {
+      overlayMaps[l.title] = l.layer;
+    });
+    L.control.layers({}, overlayMaps, {
+      position: 'bottomleft'
+    }).addTo(webmap._map);
   });
 
-  function getIdfromUrl() {
+  function getIdfromUrl () {
     var urlParams = location.search.substring(1).split('&');
-    for (var i=0; urlParams[i]; i++) {
-        var param = urlParams[i].split('=');
-        if(param[0] === 'id') {
-            webmapId = param[1]
-        }
+    for (var i = 0; urlParams[i]; i++) {
+      var param = urlParams[i].split('=');
+      if (param[0] === 'id') {
+        webmapId = param[1];
+      }
     }
   }
 </script>

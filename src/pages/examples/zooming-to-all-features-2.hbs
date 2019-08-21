@@ -7,7 +7,6 @@ layout: example.hbs
 <div id="map"></div>
 
 <script>
-
   // create a map and add Esri's Dark Gray basemap
   var map = L.map('map').setView([40, -100], 5);
   L.esri.basemapLayer('DarkGray').addTo(map);
@@ -19,11 +18,11 @@ layout: example.hbs
   }).addTo(map);
 
   // listen for when all features have been retrieved from the server
-  fl.once("load", function(evt) {
+  fl.once('load', function (evt) {
     // create a new empty Leaflet bounds object
     var bounds = L.latLngBounds([]);
     // loop through the features returned by the server
-    fl.eachFeature(function(layer) {
+    fl.eachFeature(function (layer) {
       // get the bounds of an individual feature
       var layerBounds = layer.getBounds();
       // extend the bounds of the collection to fit the bounds of the new feature
@@ -33,5 +32,4 @@ layout: example.hbs
     // once we've looped through all the features, zoom the map to the extent of the collection
     map.fitBounds(bounds);
   });
-
 </script>

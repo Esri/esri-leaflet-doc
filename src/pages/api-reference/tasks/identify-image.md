@@ -48,9 +48,9 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
     </thead>
     <tbody>
         <tr>
-            <td><code>at({{{param 'LatLng' 'latlng' 'http://leafletjs.com/reference.html#latlng'}}})</code></td>
+            <td><code>at({{{param 'LatLng' 'latlng' 'https://leafletjs.com/reference.html#latlng'}}})</code></td>
             <td><code>this</code></td>
-            <td>Identifie the pixel value at a given [LatLng](http://leafletjs.com/reference.html#latlng)</td>
+            <td>Identifie the pixel value at a given [LatLng](https://leafletjs.com/reference.html#latlng)</td>
         </tr>
         <tr>
             <td><code>between({{{param 'Date' 'from'}}}, {{{param 'Date' 'to'}}})</code></td>
@@ -105,7 +105,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
         <tr>
             <td><code>run({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
-            <td>Executes the identify request with the current parameters, identified pixel value will be passed to <code>callback</code> as a <a href="http://wiki.geojson.org/GeoJSON_draft_version_5#Point">GeoJSON Point</a>. Accepts an optional function context</td>
+            <td>Executes the identify request with the current parameters, identified pixel value will be passed to <code>callback</code> as a <a href="https://tools.ietf.org/html/rfc7946#appendix-A.1">GeoJSON Point</a>. Accepts an optional function context</td>
         </tr>
     </tbody>
 </table>
@@ -113,14 +113,18 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
 ### Example
 
 ```js
-var map = L.map('map').setView([36.230577, -118.253147], 10);
+L.map('map').setView([36.230577, -118.253147], 10);
 
 L.esri.identifyImage({
-    url: 'https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Earthquakes/CaliforniaDEM/ImageServer'
+  url: 'https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Earthquakes/CaliforniaDEM/ImageServer'
 })
-.at([36.230577, -118.253147])
-.pixelSize([30,30])
-.run(function(error, identifyImageResponse, rawResponse){
+  .at([36.230577, -118.253147])
+  .pixelSize([30, 30])
+  .run(function (error, identifyImageResponse, rawResponse) {
+    if (error) {
+      console.log(error);
+      return;
+    }
     console.log(identifyImageResponse.pixel.properties.value);
-});
+  });
 ```

@@ -25,9 +25,9 @@ layout: example.hbs
   }
 </style>
 
-<div id='map'></div>
-<div id='info-pane' class='leaflet-bar'>
-  <label id='greeting'>
+<div id="map"></div>
+<div id="info-pane" class="leaflet-bar">
+  <label>
     Click on the map to post an edit.<br>
     Click on a marker to remove it.
     <select id="symbols">
@@ -37,6 +37,7 @@ layout: example.hbs
     </select>
   </label>
 </div>
+
 <script>
   // create the map
   var map = L.map('map').setView([65, -18.5], 6);
@@ -47,21 +48,31 @@ layout: example.hbs
     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Military/FeatureServer/3'
   }).addTo(map);
 
+  var symbols = document.querySelector('#symbols');
+
   // when the map is clicked, add a new feature
-  map.on('click', function(e) {
+  map.on('click', function (e) {
     // convert to GeoJSON
-    let feat = L.marker(e.latlng).toGeoJSON();
+    const feat = L.marker(e.latlng).toGeoJSON();
     // set the attribute value that controls the feature service symbology
     feat.properties.symbolname = symbols.value;
     // make a request to add the new feature to the feature service.
     militaryOps.addFeature(feat, function (err, response) {
+      if (err) {
+        return;
+      }
+
       console.log(response);
     });
   });
 
   // when a marker is clicked, remove the feature from the service, using its id
-  militaryOps.on('click', function(e) {
+  militaryOps.on('click', function (e) {
     militaryOps.deleteFeature(e.layer.feature.id, function (err, response) {
+      if (err) {
+        return;
+      }
+
       console.log(response);
     });
     // make sure map click event isn't fired.

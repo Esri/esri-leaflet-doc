@@ -23,13 +23,13 @@ The GP.task 'initialized' event is intended to help with this timing.
 
 ```js
 var myService = L.esri.GP.service({
-    url: "https://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer/Profile"
-  });
+  url: 'https://elevation.arcgis.com/arcgis/rest/services/Tools/ElevationSync/GPServer/Profile'
+});
 var myTask = myService.createTask();
 
-myTask.on('initialized', function(){
-  myTask.setParam("inputFeature", polyline.toGeoJSON());
-  myTask.run(function(error, geojson, response){
+myTask.on('initialized', function () {
+  myTask.setParam('inputFeature', polyline.toGeoJSON());
+  myTask.run(function (error, geojson, response) {
     ...
   });
 });
@@ -49,7 +49,7 @@ myTask.on('initialized', function(){
         <tr>
             <td><code>setParam({{{param 'String' 'inputParamName'}}}, {{{param 'String||Boolean||Geometry' 'value'}}})</code></td>
             <td><code>`this`</code></td>
-            <td>Sets an input parameter named by the service itself. [L.LatLng](http://leafletjs.com/reference.html#latlng), [L.Marker](http://leafletjs.com/reference.html#marker), [L.LatLngBounds](http://leafletjs.com/reference.html#latlngbounds), and [L.GeoJSON](http://leafletjs.com/reference.html#geojson) (both Features and Geometries) will be converted to GeoServices JSON to be passed in the request automatically.</td>
+            <td>Sets an input parameter named by the service itself. [L.LatLng](https://leafletjs.com/reference.html#latlng), [L.Marker](https://leafletjs.com/reference.html#marker), [L.LatLngBounds](https://leafletjs.com/reference.html#latlngbounds), and [L.GeoJSON](https://leafletjs.com/reference.html#geojson) (both Features and Geometries) will be converted to GeoServices JSON to be passed in the request automatically.</td>
         </tr>
         <tr>
             <td><code>run({{{param 'Function' 'callback'}}})</code></td>
@@ -88,11 +88,11 @@ GP results conform to the following format
     // actual parameter name and data type are dependent on the service itself
     outputParamName: <L.GeoJSON> || <string> || <boolean>,
     outputGPFileParamName: {
-        url: "https://server/arcgis/rest/directories/arcgisoutput/./_ags_856aed6eb_.png"
+        url: 'https://server/arcgis/rest/directories/arcgisoutput/./_ags_856aed6eb_.png'
       }
     },
-    jobId: "j7123be34ccfe45b4b47a51e867e0084b",
-    mapService: "https://server/arcgis/rest/services/GPServiceName/MapServer/jobs/j7123be34ccfe45b4b47a51e867e0084b/"
+    jobId: 'j7123be34ccfe45b4b47a51e867e0084b',
+    mapService: 'https://server/arcgis/rest/services/GPServiceName/MapServer/jobs/j7123be34ccfe45b4b47a51e867e0084b/'
   }
 ]
 ```

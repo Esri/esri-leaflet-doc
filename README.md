@@ -1,8 +1,8 @@
 # Esri Leaflet Documentation Site
 
-> This repository contains the source code for the [Esri Leaflet](https://github.com/Esri/esri-leaflet) API Reference, sample code and tutorials found at http://esri.github.io/esri-leaflet.
+> This repository contains the source code for the [Esri Leaflet](https://github.com/Esri/esri-leaflet) API Reference, sample code and tutorials found at <https://esri.github.io/esri-leaflet>.
 
-### Instructions
+## Instructions
 
 1. clone this repository
 2. `npm install -g grunt-cli`
@@ -17,17 +17,35 @@ In order to update the version of Leaflet, Esri Leaflet or any other plugin disp
 4. run `npm start` to confirm locally that this achieved the desired effect.
 5. send a Pull Request!
 
-### Issues
+### Development Tips
+
+Before committing, run `npm test`, which will run [ESLint](https://eslint.org/) (enforcing the [Semistandard style](https://github.com/standard/semistandard)) on all our sample code to ensure the samples are consistently formatted.
+
+File changes will be watched and also linted with ESLint if you have run `npm start` prior to editing the samples.
+
+If you're using [VS Code](https://code.visualstudio.com/) and the [ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), you can create a new file at `.vscode/settings.json` with the following contents to enable live linting on the HBS files:
+
+```json
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "handlebars"
+  ]
+}
+```
+
+## Issues
 
 Find a typo or other problem on the website?  Please let us know by submitting an [issue](https://github.com/Esri/esri-leaflet-doc/issues).
 
-### Contributing
+## Contributing
 
 Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/Esri/esri-leaflet/blob/master/CONTRIBUTING.md).
 
-### Licensing
+## Licensing
 
-Copyright &copy; 2015-2018 Esri
+Copyright &copy; 2015-2019 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

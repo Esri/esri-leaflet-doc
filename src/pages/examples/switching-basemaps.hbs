@@ -21,7 +21,7 @@ layout: example.hbs
 <div id="map"></div>
 
 <div id="basemaps-wrapper" class="leaflet-bar">
-  <select name="basemaps" id="basemaps" onChange="changeBasemap(basemaps)">
+  <select id="basemaps">
     <option value="Topographic">Topographic</option>
     <option value="Streets">Streets</option>
     <option value="NationalGeographic">National Geographic</option>
@@ -41,7 +41,7 @@ layout: example.hbs
   var layer = L.esri.basemapLayer('Topographic').addTo(map);
   var layerLabels;
 
-  function setBasemap(basemap) {
+  function setBasemap (basemap) {
     if (layer) {
       map.removeLayer(layer);
     }
@@ -54,12 +54,13 @@ layout: example.hbs
       map.removeLayer(layerLabels);
     }
 
-    if (basemap === 'ShadedRelief'
-     || basemap === 'Oceans'
-     || basemap === 'Gray'
-     || basemap === 'DarkGray'
-     || basemap === 'Terrain'
-   ) {
+    if (
+      basemap === 'ShadedRelief' ||
+      basemap === 'Oceans' ||
+      basemap === 'Gray' ||
+      basemap === 'DarkGray' ||
+      basemap === 'Terrain'
+    ) {
       layerLabels = L.esri.basemapLayer(basemap + 'Labels');
       map.addLayer(layerLabels);
     } else if (basemap.includes('Imagery')) {
@@ -68,8 +69,10 @@ layout: example.hbs
     }
   }
 
-  function changeBasemap(basemaps){
-    var basemap = basemaps.value;
-    setBasemap(basemap);
-  }
+  document
+    .querySelector('#basemaps')
+    .addEventListener('change', function (e) {
+      var basemap = e.target.value;
+      setBasemap(basemap);
+    });
 </script>

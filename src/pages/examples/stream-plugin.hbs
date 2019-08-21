@@ -1,6 +1,6 @@
 ---
 title: Add a Stream Service
-description: This demo displays a real-time data feed from a service published using the <a href="http://server.arcgis.com/en/geoevent-extension/latest/process-event-data/stream-services.htm">GeoEvent extension</a> for ArcGIS Server using a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSocket</a>.  In addition to Esri Leaflet, it relies on <a href="https://github.com/rowanwins/esri-leaflet-stream">Esri Leaflet Stream.</a>
+description: This demo displays a real-time data feed from a service published using the <a href="https://server.arcgis.com/en/geoevent-extension/latest/process-event-data/stream-services.htm">GeoEvent extension</a> for ArcGIS Server using a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSocket</a>.  In addition to Esri Leaflet, it relies on <a href="https://github.com/rowanwins/esri-leaflet-stream">Esri Leaflet Stream.</a>
 layout: example.hbs
 ---
 
@@ -13,20 +13,19 @@ layout: example.hbs
 
   L.esri.basemapLayer('Gray').addTo(map);
 
-  function createRandomFill(){
-    return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+  function createRandomFill () {
+    return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
   }
 
-  var buses = L.esri.streamFeatureLayer({
+  L.esri.streamFeatureLayer({
     url: 'https://geoeventsample1.esri.com:6443/arcgis/rest/services/LABus/StreamServer',
     pointToLayer: function (geojson, latlng) {
       return L.circleMarker(latlng, {
         fillColor: createRandomFill(),
         fillOpacity: 0.8,
-        color: "#cccccc",
+        color: '#cccccc',
         weight: 2
       });
-    },
+    }
   }).addTo(map);
-
 </script>

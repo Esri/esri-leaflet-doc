@@ -11,20 +11,20 @@ Event types common across components of Esri Leaflet are documented here.
 
 | Data | Value | Description |
 | --- | --- | --- |
-| `bounds` | [`LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds) | The  bounds that are currently being loaded. |
+| `bounds` | [`LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) | The  bounds that are currently being loaded. |
 
 ### Load Event
 
 | Data | Value | Description |
 | --- | --- | --- |
-| `bounds` | [`LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds) | The bounds that were loaded. |
+| `bounds` | [`LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) | The bounds that were loaded. |
 
 **NOTE**: The `load` event will not fire if you add the layer to the map before adding the event listener. You must add the listener first and then add the layer to the map as follows.
 
 ```js
 var layer = new L.esri.FeatureLayer(url, options);
 
-layer.on('load', function(e){
+layer.on('load', function (e) {
   // do something on load
 });
 
@@ -37,7 +37,7 @@ layer.addTo(map);
 
 | Data | Value | Description |
 | --- | --- | --- |
-| `feature` | [`GeoJSON Feature`](http://geojson.org/geojson-spec.html#feature-objects) | GeoJSON respresentation of the feature that was created. |
+| `feature` | [`GeoJSON Feature`](https://tools.ietf.org/html/rfc7946#section-3.2) | GeoJSON respresentation of the feature that was created. |
 
 ### Feature Remove
 
@@ -45,7 +45,7 @@ layer.addTo(map);
 
 | Data | Value | Description |
 | --- | --- | --- |
-| `feature` | [`GeoJSON Feature`](http://geojson.org/geojson-spec.html#feature-objects) | GeoJSON respresentation of the feature that was created. |
+| `feature` | [`GeoJSON Feature`](https://tools.ietf.org/html/rfc7946#section-3.2) | GeoJSON respresentation of the feature that was created. |
 | `permanent` | `Boolean` | `true` if the feature was permanently deleted from the service or `false` if the feature was removed as the result of a filter operation.
 
 ### Feature Add
@@ -54,7 +54,7 @@ layer.addTo(map);
 
 | Data | Value | Description |
 | --- | --- | --- |
-| `feature` | [`GeoJSON Feature`](http://geojson.org/geojson-spec.html#feature-objects) | GeoJSON respresentation of the feature that was added. |
+| `feature` | [`GeoJSON Feature`](https://tools.ietf.org/html/rfc7946#section-3.2) | GeoJSON respresentation of the feature that was added. |
 
 ### Request Event
 

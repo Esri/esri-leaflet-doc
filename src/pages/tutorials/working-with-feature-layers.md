@@ -20,7 +20,7 @@ Start by copying this skeleton code which outlines the structure of a single pag
 <head>  
   <meta charset="utf-8">
   <title>Leaflet Map with a Feature Layer</title>  
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 
   <!-- Load Leaflet from CDN-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
@@ -55,7 +55,7 @@ Start by copying this skeleton code which outlines the structure of a single pag
       zoom: 13
     });
 
-    const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+    L.esri.basemapLayer('Streets').addTo(map);
   </script>
 </body>
 </html>
@@ -68,9 +68,9 @@ We will add a REST service using the `L.esri.featureLayer` class from the Esri L
 Below is an example for creating a Feature Layer using both types of services:
 
 ```js
-const portlandHeritageTrees = L.esri.featureLayer({url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/'});
+const portlandHeritageTrees = L.esri.featureLayer({ url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/' });
 
-const worldCities =  L.esri.featureLayer({url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0'});
+const worldCities = L.esri.featureLayer({ url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0' });
 ```
 
 In order to display our new layer, we need to add it to our map using Leaflet's `addTo()` method.  We can chain this method directly to the object constructor, or call it in a separate line.  In our sample, we'll use the chaining approach.
@@ -109,10 +109,10 @@ If we save and refresh our map, we'll now see the trees displayed as red circles
 
 Now we will add a popup to our feature layer.  The popup can contain both static text and dynamic text from the fields in the service.  We'll use the `bindPopup` method to create the popup.  You can learn more about popups in Leaflet by visting the [documentation](https://leafletjs.com/reference.html#popup "Leaflet Popup Documentation").
 
-We will create the content for the popup using Leaflet's [Utility Template](https://leafletjs.com/reference.html#util-template 'Leaflet Utility Template').  We place the name of fields from the service in  curly brackets **{ }**, and add `feature.properties` at the end of the `L.Util.template` to access the fields. 
+We will create the content for the popup using Leaflet's [Utility Template](https://leafletjs.com/reference.html#util-template 'Leaflet Utility Template').  We place the name of fields from the service in  curly brackets **{ }**, and add `feature.properties` at the end of the `L.Util.template` to access the fields.
 
 ```js
-portlandHeritageTrees.bindPopup(function(evt) {
+portlandHeritageTrees.bindPopup(function (evt) {
   return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
 });
 ```
@@ -129,7 +129,7 @@ Here is what the final `html` file should look like for this tutorial:
 <head>
   <meta charset="utf-8">
   <title>Leaflet Map with a Feature Layer</title>  
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 
   <!-- Load Leaflet from CDN-->
    <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
@@ -169,13 +169,13 @@ Here is what the final `html` file should look like for this tutorial:
       zoom: 13
     });
 
-    const esriStreets = L.esri.basemapLayer('Streets').addTo(map);
+    L.esri.basemapLayer('Streets').addTo(map);
 
     const portlandHeritageTrees = L.esri.featureLayer({
       url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/'
     }).addTo(map);
 
-    portlandHeritageTrees.bindPopup(function(evt) {
+    portlandHeritageTrees.bindPopup(function (evt) {
       return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
     });
   </script>

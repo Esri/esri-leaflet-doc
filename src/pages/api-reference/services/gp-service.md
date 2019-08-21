@@ -31,7 +31,7 @@ A basic wrapper for speaking to ArcGIS Online and ArcGIS Server Geoprocessing se
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
 | `url` | `String` | `null` | The url of the gp service you'd like to leverage. |
-| `path` | `String` | `'execute'` | (Optional) The class is able to sniff out execute/submitJob operations from typical [geoprocessing services](http://server.arcgis.com/en/server/latest/publish-services/windows/a-quick-tour-of-authoring-geoprocessing-services.htm), but setting 'path' can be helpful for [SOEs](http://resources.arcgis.com/en/help/main/10.2/index.html#//0154000004s5000000) and Network Analyst Services with custom operation names. |
+| `path` | `String` | `'execute'` | (Optional) The class is able to sniff out execute/submitJob operations from typical [geoprocessing services](https://enterprise.arcgis.com/en/server/latest/publish-services/windows/a-quick-tour-of-authoring-geoprocessing-services.htm), but setting 'path' can be helpful for [SOEs](https://enterprise.arcgis.com/en/server/latest/develop/windows/about-extending-services.htm) and Network Analyst Services with custom operation names. |
 | `async` | `Boolean` | `false` | (Optional) Set 'async' to indicate whether a GP service with a custom operation name is synchronous or asynchronous. |
 | `asyncInterval` | `Integer` | `1` | (Optional) Determines how often the application should check on jobs in progress. |
 

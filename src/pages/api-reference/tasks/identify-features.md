@@ -21,7 +21,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
     <tbody>
         <tr>
             <td>
-            <code>L.esri.identifyFeatures({{{param 'ImageService' 'endpoint' '../../api-reference/services/map-service.html'}}})</code><br><br>
+            <code>L.esri.identifyFeatures({{{param 'MapService' 'endpoint' '../../api-reference/services/map-service.html'}}})</code><br><br>
             <code>L.esri.identifyFeatures({{{param 'Object' 'options'}}})</code><br></td>
             <td>Accepts either an `options` object or an instance of <a href="{{assets}}/api-reference/services/image-service.html"></a>.</td>
         </tr>
@@ -48,14 +48,14 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
     </thead>
     <tbody>
         <tr>
-            <td><code>on({{{param 'Map' 'map' 'http://leafletjs.com/reference.html#map'}}})</code></td>
+            <td><code>on({{{param 'Map' 'map' 'https://leafletjs.com/reference.html#map'}}})</code></td>
             <td><code>this</code></td>
             <td>The map to identify features on.</td>
         </tr>
         <tr>
             <td><code>at({{{param 'Geometry' 'geometry'}}})</code></td>
             <td><code>this</code></td>
-            <td>Identifies features at a given [LatLng](http://leafletjs.com/reference.html#latlng). `geometry` can also be an instance of [`L.Marker`](http://leafletjs.com/reference.html#marker), [`L.Polygon`](http://leafletjs.com/reference.html#polygon), [`L.Polyline`](http://leafletjs.com/reference.html#polyline), [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds), [`L.GeoJSON`](http://leafletjs.com/reference.html#geojson) or a valid [GeoJSON](http://geojson.org/geojson-spec.html) object literal.</td>
+            <td>Identifies features at a given [LatLng](https://leafletjs.com/reference.html#latlng). `geometry` can also be an instance of [`L.Marker`](https://leafletjs.com/reference.html#marker), [`L.Polygon`](https://leafletjs.com/reference.html#polygon), [`L.Polyline`](https://leafletjs.com/reference.html#polyline), [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds), [`L.GeoJSON`](https://leafletjs.com/reference.html#geojson) or a valid [GeoJSON](https://tools.ietf.org/html/rfc7946) object literal.</td>
         </tr>
         <tr>
             <td><code>layerDef({{{param 'Integer' 'id'}}}, {{{param 'String' 'where'}}})</code></td>
@@ -71,7 +71,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
             <td><code>layers({{{param 'String' 'layers'}}})</code></td>
             <td><code>this</code></td>
             <td>
-              By default, all features will be identified, but it is possible to specify both an alternative strategy and array of individual layers.  See the REST API [documentation](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Identify_Map_Service/02r300000113000000/) for more information about valid combinations.<br>
+              By default, all features will be identified, but it is possible to specify both an alternative strategy and array of individual layers.  See the REST API [documentation](https://developers.arcgis.com/rest/services-reference/identify-map-service-.htm) for more information about valid combinations.<br>
               ex: `.layers('all:0')`.
             </td>
         </tr>
@@ -91,7 +91,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
             <td>Return geometry with results. Default is `true`.</td>
         </tr>
         <tr>
-            <td><code>simplify({{{param 'Map' 'map' 'http://leafletjs.com/reference.html#map'}}},  {{{param 'Number' 'factor'}}})</code></td>
+            <td><code>simplify({{{param 'Map' 'map' 'https://leafletjs.com/reference.html#map'}}},  {{{param 'Number' 'factor'}}})</code></td>
             <td><code>this</code></td>
             <td>Simplify the geometries of the output features for the current map view. the <code>factor</code> parameter controls the amount of simplification between 0 (no simplification) and 1 (the most basic shape possible).</td>
         </tr>
@@ -108,7 +108,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
         <tr>
             <td><code>run({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
-            <td>Executes the identify request with the current parameters, identified features will be passed to <code>callback</code> as a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a>. Accepts an optional function context</td>
+            <td>Executes the identify request with the current parameters, identified features will be passed to <code>callback</code> as a <a href="https://tools.ietf.org/html/rfc7946#section-3.3">GeoJSON FeatureCollection</a>. Accepts an optional function context</td>
         </tr>
     </tbody>
 </table>
@@ -116,15 +116,19 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
 ### Example
 
 ```js
-var map = new L.Map('map').setView([ 45.543, -122.621 ], 5);
+var map = new L.Map('map').setView([45.543, -122.621], 5);
 
 L.esri.identifyFeatures({
-    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer'
+  url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer'
 })
-.on(map)
-.at([45.543, -122.621])
-.layers('visible:1')
-.run(function(error, featureCollection, response){
-    console.log("UTC Offset: " + featureCollection.features[0].properties.ZONE);
-});
+  .on(map)
+  .at([45.543, -122.621])
+  .layers('visible:1')
+  .run(function (error, featureCollection, response) {
+    if (error) {
+      console.log(error);
+      return;
+    }
+    console.log('UTC Offset: ' + featureCollection.features[0].properties.ZONE);
+  });
 ```

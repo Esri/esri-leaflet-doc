@@ -7,17 +7,21 @@ layout: example.hbs
 <div id="map"></div>
 
 <script>
-  var map = L.map("map").setView([41.004, -77.618], 7);
+  var map = L.map('map').setView([41.004, -77.618], 7);
 
-  L.esri.basemapLayer("Topographic").addTo(map);
+  L.esri.basemapLayer('Topographic').addTo(map);
 
-  var statesUrl = "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2";
-  var citiesUrl = "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/0";
+  var statesUrl = 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2';
+  var citiesUrl = 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/0';
 
   // query a feature service for a state
   L.esri.query({
     url: statesUrl
-  }).where("state_name='Pennsylvania'").run(function(error, states){
+  }).where("state_name='Pennsylvania'").run(function (error, states) {
+    if (error) {
+      return;
+    }
+
     // draw state on the map
     var pennsylvania = L.geoJSON(states).addTo(map);
 
@@ -27,8 +31,12 @@ layout: example.hbs
     // query all cities with a population greater than 30,000 (pop2000 > 30000) inside our boundary
     L.esri.query({
       url: citiesUrl
-    }).where("pop2000 > 30000").within(pennsylvania).run(function(error, cities){
+    }).where('pop2000 > 30000').within(pennsylvania).run(function (error, cities) {
+      if (error) {
+        return;
+      }
+
       L.geoJSON(cities).addTo(map);
-    });    
-  });  
+    });
+  });
 </script>

@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Extends [L.ImageOverlay](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#imageoverlay)
+Extends [L.ImageOverlay](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#imageoverlay)
 
 A generic class representing an image layer. This class can be extended to provide support for making export requests from ArcGIS REST services.
 

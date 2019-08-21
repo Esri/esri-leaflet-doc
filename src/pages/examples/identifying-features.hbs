@@ -20,8 +20,10 @@ layout: example.hbs
 </style>
 
 <div id="map"></div>
-<div id="selectedFeatures" class="leaflet-bar map-text">Click on the map for Soil <a href="https://services.arcgisonline.com/arcgis/rest/services/Specialty/Soil_Survey_Map/MapServer">Order/ Sub-Order</a>
+<div id="selectedFeatures" class="leaflet-bar map-text">
+  Click on the map for Soil <a href="https://services.arcgisonline.com/arcgis/rest/services/Specialty/Soil_Survey_Map/MapServer">Order/ Sub-Order</a>
 </div>
+
 <script>
   var map = L.map('map', {
     minZoom: 5
@@ -38,10 +40,14 @@ layout: example.hbs
 
   map.on('click', function (e) {
     pane.innerHTML = 'Loading';
-    if (identifiedFeature){
+    if (identifiedFeature) {
       map.removeLayer(identifiedFeature);
     }
-    soil.identify().on(map).at(e.latlng).run(function(error, featureCollection){
+    soil.identify().on(map).at(e.latlng).run(function (error, featureCollection) {
+      if (error) {
+        return;
+      }
+
       // make sure at least one feature was identified.
       if (featureCollection.features.length > 0) {
         identifiedFeature = L.geoJSON(featureCollection.features[0]).addTo(map);
@@ -50,8 +56,7 @@ layout: example.hbs
           ' - ' +
           featureCollection.features[0].properties['Dominant Sub-Order'];
         pane.innerHTML = soilDescription;
-      }
-      else {
+      } else {
         pane.innerHTML = 'No features identified.';
       }
     });

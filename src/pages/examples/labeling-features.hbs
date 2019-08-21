@@ -28,12 +28,12 @@ layout: example.hbs
   L.esri.basemapLayer('Gray').addTo(map);
 
   var earthquakes = L.esri.featureLayer({
-    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Earthquakes_Since1970/MapServer/0'    
+    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Earthquakes_Since1970/MapServer/0'
   }).addTo(map);
 
   var labels = {};
 
-  earthquakes.on('createfeature', function(e){
+  earthquakes.on('createfeature', function (e) {
     var id = e.feature.id;
     var feature = earthquakes.getFeature(id);
     var center = feature.getLatLng();
@@ -47,16 +47,16 @@ layout: example.hbs
     labels[id] = label;
   });
 
-  earthquakes.on('addfeature', function(e){
+  earthquakes.on('addfeature', function (e) {
     var label = labels[e.feature.id];
-    if(label){
+    if (label) {
       label.addTo(map);
     }
   });
 
-  earthquakes.on('removefeature', function(e){
+  earthquakes.on('removefeature', function (e) {
     var label = labels[e.feature.id];
-    if(label){
+    if (label) {
       map.removeLayer(label);
     }
   });

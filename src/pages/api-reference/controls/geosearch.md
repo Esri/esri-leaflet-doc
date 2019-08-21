@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Extends [`L.Control`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#control)
+Extends [`L.Control`](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#control)
 
 `L.esri.Geocoding.Geosearch` is a control for auto-complete enabled search.  You can find more information and the source code for this plugin [here](https://github.com/Esri/esri-leaflet-geocoder).
 
@@ -32,7 +32,7 @@ Extends [`L.Control`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}
 
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
-| `position` | `String` | `'topleft'` | Expects a valid Leaflet [control position](http://leafletjs.com/reference.html#control-position).|
+| `position` | `String` | `'topleft'` | Expects a valid Leaflet [control position](https://leafletjs.com/reference.html#control-position).|
 | `zoomToResult` | `Boolean` | `true` | Determines whether or not the map will zoom to the result after geocoding is complete. |
 | `useMapBounds` | `Boolean` or `Integer` | `12` | Determines if and when the geocoder should use the bounds of the map to filter search results. If `true` the geocoder will always return results in the current map bounds. If `false` it will always search the world. If an integer (like `11`) is passed, the geocoder will use the bounds of the map for searching only if the map is currently zoomed in far enough. |
 | `collapseAfterResult` | `Boolean` | `true` | Determines whether or not the geocoder should collapse after a result is found. |
@@ -113,7 +113,7 @@ var gisDay = L.esri.Geocoding.featureLayerProvider({
   url: 'https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/GIS_Day_Final/FeatureServer/0',
   searchFields: ['Name', 'Organization'], // Search these fields for text matches
   label: 'GIS Day Events', // Group suggestions under this header
-  formatSuggestion: function(feature){
+  formatSuggestion: function (feature) {
     return feature.properties.Name + ' - ' + feature.properties.Organization; // format suggestions like this.
   }
 });
@@ -189,7 +189,7 @@ Option | Type | Default | Description
     </tbody>
 </table>
 
-Results from the `featureLayerProvider` will have an additional `properties` key which will contain all the information for the feature and a `geojson` key that will contain a [GeoJSON](http://geojson.org/) representation of the feature.
+Results from the `featureLayerProvider` will have an additional `properties` key which will contain all the information for the feature and a `geojson` key that will contain a [GeoJSON](https://tools.ietf.org/html/rfc7946) representation of the feature.
 
 ##### mapServiceProvider
 
@@ -201,7 +201,7 @@ Option | Type | Default | Description
 `formatSuggestion`| `Function` | See Description | Formatting function for the suggestion text. Receives feature information and returns a string.
 `bufferRadius` | `Integer` `Array[Integers]`| Buffer point results by this radius to create bounds.
 
-Results from the `mapServiceProvider` will have an additional `properties` key which will contain all the information for the feature and a `geojson` key that will contain a [GeoJSON](http://geojson.org/) representation of the feature.
+Results from the `mapServiceProvider` will have an additional `properties` key which will contain all the information for the feature and a `geojson` key that will contain a [GeoJSON](https://tools.ietf.org/html/rfc7946) representation of the feature.
 
 Events from each provider will match the events fired by [`L.esri.Service`](../services/service.html).
 
@@ -209,8 +209,8 @@ Events from each provider will match the events fired by [`L.esri.Service`](../s
 
 Property | Type | Description
 --- | --- | ---
-`bounds` | [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds)| The bounds around this suggestion. Helpful for zooming to results like cities and states.
-`latlng` | [`L.LatLng`](http://leafletjs.com/reference.html#latlng)| The center of the results.
+`bounds` | [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds)| The bounds around this suggestion. Helpful for zooming to results like cities and states.
+`latlng` | [`L.LatLng`](https://leafletjs.com/reference.html#latlng)| The center of the results.
 `results` | [`[<ResultObject>]`](#result-object) | An array of [result objects](#result-object).
 
 #### Result Object
@@ -220,7 +220,7 @@ A single result from a provider. You should not rely on all these properties bei
 Property | Type | Description
 --- | --- | ---
 `text` | `String` | The text that was passed to the provider.
-`bounds` | [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds)| The bounds around this result. Helpful for zooming to results like cities and states.
-`latlng` | [`L.LatLng`](http://leafletjs.com/reference.html#latlng)| The center of the result.
+`bounds` | [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds)| The bounds around this result. Helpful for zooming to results like cities and states.
+`latlng` | [`L.LatLng`](https://leafletjs.com/reference.html#latlng)| The center of the result.
 
 The result object will also contain any additional properties from the provider. See the [available providers](#available-providers) for more information.

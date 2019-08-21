@@ -16,7 +16,7 @@ layout: example.hbs
 </style>
 
 <div id="map"></div>
-<div id="info-pane" class="leaflet-bar"></div>
+<div id="info-pane" class="leaflet-bar">Hover to Inspect</div>
 
 <script>
   var map = L.map('map').setView([37.75, -122.23], 9);
@@ -36,12 +36,12 @@ layout: example.hbs
 
   var oldId;
 
-  zipcodes.on('mouseout', function(e){
+  zipcodes.on('mouseout', function (e) {
     document.getElementById('info-pane').innerHTML = 'Hover to Inspect';
     zipcodes.resetFeatureStyle(oldId);
   });
 
-  zipcodes.on('mouseover', function(e){
+  zipcodes.on('mouseover', function (e) {
     oldId = e.layer.feature.id;
     document.getElementById('info-pane').innerHTML = e.layer.feature.properties.ZIP + ' ' + e.layer.feature.properties.PO_NAME;
     zipcodes.setFeatureStyle(e.layer.feature.id, {

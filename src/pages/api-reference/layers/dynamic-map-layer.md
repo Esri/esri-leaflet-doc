@@ -14,7 +14,7 @@ Map Services are used when its preferable to ask the server to draw layers and p
 Map Service urls do _not_ end in a number.
 
 ```
-http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/
+https://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/
 ```
 
 ### Constructor
@@ -29,7 +29,7 @@ http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/
     <tbody>
         <tr>
             <td>L.esri.dynamicMapLayer({{{param 'Object' 'options'}}})</code></td>
-            <td>The <code>options</code> parameter can accept the same options as <a href="http://leafletjs.com/reference.html#imageoverlay"><code>L.ImageOverlay</code></a>.<br>Passing a <code>url</code> is mandatory.</td>
+            <td>The <code>options</code> parameter can accept the same options as <a href="https://leafletjs.com/reference.html#imageoverlay"><code>L.ImageOverlay</code></a>.<br>Passing a <code>url</code> is mandatory.</td>
         </tr>
     </tbody>
 </table>
@@ -38,7 +38,7 @@ http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-`url` | `String` | | *Required* URL of the [Map Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Map_Service/02r3000000w2000000/).
+`url` | `String` | | *Required* URL of the [Map Service](https://developers.arcgis.com/rest/services-reference/map-service.htm).
 `format` | `String` | `'png24'` | Output format of the image.
 `transparent` | `Boolean` | `true` | Allow the server to produce transparent images.
 `f` | `String` | `'json'` |  Server response content type [`"json"` &#124; `"image"`](https://developers.arcgis.com/rest/services-reference/export-map.htm).
@@ -51,7 +51,7 @@ Option | Type | Default | Description
 `position` | `String` | `'front'` | Legacy option to control draw order. For best results, use `pane`.
 `maxZoom` | `Number` |  | Closest zoom level the layer will be displayed on the map.
 `minZoom` | `Number` |  | Furthest zoom level the layer will be displayed on the map.
-`dynamicLayers` | `[Object]` |   | Array of one or more JSON objects used to override the layer symbology defined by the service.  Requires a 10.1+ map service which supports [dynamicLayers](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Export_Map/02r3000000v7000000/) requests.
+`dynamicLayers` | `[Object]` |   | Array of one or more JSON objects used to override the layer symbology defined by the service.  Requires a 10.1+ map service which supports [dynamicLayers](https://developers.arcgis.com/rest/services-reference/export-map.htm) requests.
 `disableCache` | `Boolean` |  | If enabled, appends a timestamp to each request to ensure a fresh image is created server-side.
 `token` | `String` |   | If you pass a token in your options it will be included in all requests to the service.
 `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) to use for proxying POST requests.
@@ -82,10 +82,10 @@ Option | Type | Default | Description
             <td>Redraws this layer above all other overlay layers.</td>
         </tr>
         <tr>
-            <td><code>bindPopup({{{param 'Function' 'fn'}}}, {{{param 'PopupOptions' 'popupOptions' 'http://leafletjs.com/reference.html#popup-options'}}})</code></td>
+            <td><code>bindPopup({{{param 'Function' 'fn'}}}, {{{param 'PopupOptions' 'popupOptions' 'https://leafletjs.com/reference.html#popup-options'}}})</code></td>
             <td><code>this</code></td>
             <td>
-                Uses the provided function to create a popup that will identify features whenever the map is clicked. Your function will be passed a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a> of the features at the clicked location and should return the appropriate HTML. If you do not want to open the popup when there are no results, return <code>false</code>.
+                Uses the provided function to create a popup that will identify features whenever the map is clicked. Your function will be passed a <a href="https://tools.ietf.org/html/rfc7946#section-3.3">GeoJSON FeatureCollection</a> of the features at the clicked location and should return the appropriate HTML. If you do not want to open the popup when there are no results, return <code>false</code>.
 <pre class="js"><code>
 dynamicMapLayer.bindPopup(
   function(err, featureCollection, response){
@@ -125,9 +125,9 @@ dynamicMapLayer.bindPopup(
             <td>Returns the current layer definition(s) being used for rendering.</td>
         </tr>
         <tr>
-            <td><code>setLayerDefs({{{param 'Object' 'layerDefs' 'http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Map/02r3000000v7000000/'}}})</code></td>
+            <td><code>setLayerDefs({{{param 'Object' 'layerDefs' 'https://developers.arcgis.com/rest/services-reference/export-map.htm'}}})</code></td>
             <td><code>this</code></td>
-            <td>Redraws the layer with the new layer definitions. Corresponds to the <a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Map/02r3000000v7000000/">layerDefs</a> option on the export API.</td>
+            <td>Redraws the layer with the new layer definitions. Corresponds to the <a href="https://developers.arcgis.com/rest/services-reference/export-map.htm">layerDefs</a> option on the export API.</td>
         </tr>
         <tr>
             <td><code>getTimeRange()</code></td>
@@ -184,7 +184,7 @@ dynamicMapLayer.bindPopup(
             <td><code>identify()</code></td>
             <td><code>this</code></td>
             <td>
-                Returns a new <a href="{{assets}}/api-reference/tasks/identify-features.html"><code>L.esri.services.IdentifyFeatures</code></a> object that can be used to identify features on this layer. Your callback function will be passed a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a> with the results or an error.
+                Returns a new <a href="{{assets}}/api-reference/tasks/identify-features.html"><code>L.esri.services.IdentifyFeatures</code></a> object that can be used to identify features on this layer. Your callback function will be passed a <a href="https://tools.ietf.org/html/rfc7946#section-3.3">GeoJSON FeatureCollection</a> with the results or an error.
 <pre class="js"><code>dynamicMapLayer.identify()
   .at(latlng)
   .run(function(error, featureCollection){
@@ -196,7 +196,7 @@ dynamicMapLayer.bindPopup(
             <td><code>find()</code></td>
             <td><code>this</code></td>
             <td>
-                Returns a new <a href="{{assets}}/api-reference/tasks/find.html"><code>L.esri.services.Find</code></a> object that can be used to find features. Your callback function will be passed a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a> with the results or an error.
+                Returns a new <a href="{{assets}}/api-reference/tasks/find.html"><code>L.esri.services.Find</code></a> object that can be used to find features. Your callback function will be passed a <a href="https://tools.ietf.org/html/rfc7946#section-3.3">GeoJSON FeatureCollection</a> with the results or an error.
 <pre class="js"><code>dynamicMapLayer.find()
   .layers('18')
   .text('Colorado')
@@ -238,15 +238,14 @@ dynamicMapLayer.bindPopup(
 ### Example
 
 ```js
-var map = L.map('map').setView([ 38.83,-98.5], 7);
+var map = L.map('map').setView([38.83, -98.5], 7);
 L.esri.basemapLayer('Gray').addTo(map);
 
-var url = "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Petroleum/KGS_OilGasFields_Kansas/MapServer";
+var url = 'https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Petroleum/KGS_OilGasFields_Kansas/MapServer';
 
 L.esri.dynamicMapLayer({
   url: url,
-  opacity : 0.25,
+  opacity: 0.25,
   useCors: false
 }).addTo(map);
-
 ```

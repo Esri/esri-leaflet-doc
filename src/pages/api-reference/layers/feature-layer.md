@@ -5,25 +5,25 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Extends [L.Layer](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#layer)
+Extends [L.Layer](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#layer)
 
 `L.esri.FeatureLayer` is used to visualize, style, query and edit vector geographic data hosted in both ArcGIS Online and published using ArcGIS Server.  Copyright text from the service is added to map attribution automatically.
 
-Feature Layers reference an individual data source in either a parent [Map Service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Map_Service/02r3000000w2000000/) or [Feature Service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Feature_Service/02r3000000z2000000/) that can contain multiple layers.  You can see a sample Map Service URL below:
+Feature Layers reference an individual data source in either a parent [Map Service](https://developers.arcgis.com/rest/services-reference/map-service.htm) or [Feature Service](https://developers.arcgis.com/rest/services-reference/feature-service.htm) that can contain multiple layers.  You can see a sample Map Service URL below:
 
 ```
-http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer
+https://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer
 ```
 
 This particular service includes two different data sources.  The URL for the 'Hurricane Tracks' feature layer will end in a number (representing its position among the other layers).
 
 ```
-http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/1
+https://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/1
 ```
 
 **Feature Layer URLs always end in a number (ex: `/FeatureServer/{LAYER_ID}` or `/MapServer/{LAYER_ID}`).**
 
-You can create a new empty feature service with a single layer on the [ArcGIS for Developers website](https://developers.arcgis.com/en/hosted-data/#/new) or you can use ArcGIS Online to [create a Feature Service from a CSV or Shapefile](https://doc.arcgis.com/en/arcgis-online/share-maps/publish-features.htm).
+You can create a new empty feature service with a single layer on the [ArcGIS for Developers website](https://developers.arcgis.com/layers/) or you can use ArcGIS Online to [create a Feature Service from a CSV or Shapefile](https://doc.arcgis.com/en/arcgis-online/manage-data/publish-features.htm).
 
 `L.esri.FeatureLayer` divides the current map extent into a grid of individual cells and uses them to fire queries to fetch nearby features. This technique is comparable to [MODE_ONDEMAND](https://developers.arcgis.com/javascript/3/jshelp/best_practices_feature_layers.html) in the ArcGIS API for JavaScript.
 
@@ -41,7 +41,7 @@ If you want your `FeatureLayer` to display the symbology defined in the map or f
     <tbody>
         <tr>
             <td><code class="nobr">L.esri.featureLayer({{{param 'Object' 'options'}}})</code></td>
-            <td>You must pass a <code>url</code> to a [Feature Layer](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Layer/02r3000000w6000000/) in your <code>options</code></td>
+            <td>You must pass a <code>url</code> to a [Feature Layer](https://developers.arcgis.com/rest/services-reference/layer-feature-service-.htm) in your <code>options</code></td>
         </tr>
     </tbody>
 </table>
@@ -60,27 +60,27 @@ If you want your `FeatureLayer` to display the symbology defined in the map or f
         <tr>
           <td><code>url</code></td>
           <td><code>String</code></td>
-          <td><strong>Required</strong> The URL to the [Feature Layer](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Layer/02r3000000w6000000/).</td>
+          <td><strong>Required</strong> The URL to the [Feature Layer](https://developers.arcgis.com/rest/services-reference/layer-feature-service-.htm).</td>
         </tr>
         <tr>
-            <td><code>pointToLayer({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'LatLng' 'latlng' 'http://leafletjs.com/reference.html#latlng'}}})</code></td>
+            <td><code>pointToLayer({{{param 'GeoJSON Feature' 'feature' 'https://tools.ietf.org/html/rfc7946#section-3.2'}}}, {{{param 'LatLng' 'latlng' 'https://leafletjs.com/reference.html#latlng'}}})</code></td>
             <td><code>Function</code></td>
             <td>Function that will be used for creating layers for GeoJSON points.  If the option is not specified, simple markers will be created).  For point layers, custom panes should be passed through pointToLayer (example [here](../../examples/layer-ordering.html)).</td>
         </tr>
         <tr>
-            <td><code>style({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'ILayer' 'layer' 'http://leafletjs.com/reference.html#ilayer'}}})</code></td>
+            <td><code>style({{{param 'GeoJSON Feature' 'feature' 'https://tools.ietf.org/html/rfc7946#section-3.2'}}}, {{{param 'ILayer' 'layer' 'https://leafletjs.com/reference.html#ilayer'}}})</code></td>
             <td><code>Function</code></td>
-            <td>Function that will be used to get [style options](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#path-option) for vector layers created for GeoJSON features.</td>
+            <td>Function that will be used to get [style options](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#path-option) for vector layers created for GeoJSON features.</td>
         </tr>
         <tr>
-            <td><code>onEachFeature({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'ILayer' 'layer' 'http://leafletjs.com/reference.html#ilayer'}}})</code></td>
+            <td><code>onEachFeature({{{param 'GeoJSON Feature' 'feature' 'https://tools.ietf.org/html/rfc7946#section-3.2'}}}, {{{param 'ILayer' 'layer' 'https://leafletjs.com/reference.html#ilayer'}}})</code></td>
             <td><code>Function</code></td>
             <td>Provides an opportunity to introspect individual GeoJSON features in the layer.</td>
         </tr>
         <tr>
             <td><code>where</code></td>
             <td><code>String</code></td>
-            <td>An optional expression to filter features server side. String values should be denoted using single quotes ie: `where: "FIELDNAME = 'field value'";` More information about valid SQL syntax can be found <a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/SQL_reference_for_query_expressions_used_in_ArcGIS/00s500000033000000/">here</a>.</td>
+            <td>An optional expression to filter features server side. String values should be denoted using single quotes ie: `where: "FIELDNAME = 'field value'";` More information about valid SQL syntax can be found <a href="https://desktop.arcgis.com/en/arcmap/latest/map/working-with-layers/sql-reference-for-query-expressions-used-in-arcgis.htm">here</a>.</td>
         </tr>
         <tr>
             <td><code>maxZoom</code></td>
@@ -130,7 +130,7 @@ If you want your `FeatureLayer` to display the symbology defined in the map or f
         <tr>
             <td><code>precision</code></td>
             <td><code>Integer</code></td>
-            <td>How many digits of precision to request from the server. <a href="http://en.wikipedia.org/wiki/Decimal_degrees">Wikipedia</a> has a great reference of digit precision to meters.</td>
+            <td>How many digits of precision to request from the server. <a href="https://en.wikipedia.org/wiki/Decimal_degrees">Wikipedia</a> has a great reference of digit precision to meters.</td>
         </tr>
         <tr>
             <td><code>token</code></td>
@@ -155,7 +155,7 @@ If you want your `FeatureLayer` to display the symbology defined in the map or f
         <tr>
             <td><code>isModern</code></td>
             <td><code>Boolean</code></td>
-            <td>Set this to `false` if your own service supports GeoJSON as an output format but you'd like to ask for [Geoservices JSON](http://geoservices.github.io/) instead.</td>
+            <td>Set this to `false` if your own service supports GeoJSON as an output format but you'd like to ask for [Geoservices JSON](https://geoservices.github.io/) instead.</td>
         </tr>
         <tr>
             <td><code>ignoreRenderer</code></td>
@@ -177,7 +177,7 @@ If you want your `FeatureLayer` to display the symbology defined in the map or f
 
 `L.esri.FeatureLayer` also fires all  [`L.esri.FeatureLayerService`]({{assets}}api-reference/services/feature-layer-service.html) events.
 
-In addition to the events above, `L.esri.FeatureLayer` also fires the following [Mouse Events](http://leafletjs.com/reference.html#event-objects) `click`, `dblclick`, `mouseover`, `mouseout`, `mousemove`, and `contextmenu` and the following the [Popup Events](http://leafletjs.com/reference.html#event-objects) `popupopen` and `popupclose`
+In addition to the events above, `L.esri.FeatureLayer` also fires the following [Mouse Events](https://leafletjs.com/reference.html#event-objects) `click`, `dblclick`, `mouseover`, `mouseout`, `mousemove`, and `contextmenu` and the following the [Popup Events](https://leafletjs.com/reference.html#event-objects) `popupopen` and `popupclose`
 
 ### Methods
 
@@ -191,9 +191,9 @@ In addition to the events above, `L.esri.FeatureLayer` also fires the following 
     </thead>
     <tbody>
         <tr>
-            <td><code>setStyle({{{param 'PathOptions' 'style' 'http://leafletjs.com/reference.html#path-options'}}})</code><br><br><code>setStyle({{{param 'Function' 'style'}}})</code></td>
+            <td><code>setStyle({{{param 'PathOptions' 'style' 'https://leafletjs.com/reference.html#path-options'}}})</code><br><br><code>setStyle({{{param 'Function' 'style'}}})</code></td>
             <td><code>this</code></td>
-            <td>Sets the given path options to each layer that has a <code>setStyle</code> method. Can also be a <code>Function</code> that will receive a <code>feature</code> argument and should return <a href="http://leafletjs.com/reference.html#path-options">Path Options</a>
+            <td>Sets the given path options to each layer that has a <code>setStyle</code> method. Can also be a <code>Function</code> that will receive a <code>feature</code> argument and should return <a href="https://leafletjs.com/reference.html#path-options">Path Options</a>
             <pre><code class="language-javascript">featureLayer.setStyle({
   color: 'white'
 })</code></pre>
@@ -205,7 +205,7 @@ In addition to the events above, `L.esri.FeatureLayer` also fires the following 
             </td>
         </tr>
         <tr>
-            <td><code>setFeatureStyle({{{param 'String or Integer' 'id'}}}, {{{param 'Function or <a href="http://leafletjs.com/reference.html#path-options">Path Options</a>a>'}}})</code></td>
+            <td><code>setFeatureStyle({{{param 'String or Integer' 'id'}}}, {{{param 'Function or <a href="https://leafletjs.com/reference.html#path-options">Path Options</a>a>'}}})</code></td>
             <td><code>this</code></td>
             <td>Changes the style on a specfic feature.</td>
         </tr>
@@ -239,7 +239,7 @@ function iterateFeatures () {
         <tr>
             <td><code>getFeature({{{param 'String or Integer' id}}} id)</code></td>
             <td><code>Layer</code></td>
-            <td>Given the id of a Feature return the layer on the map that represents it. This will usually be a Leaflet vector layer like <a href="http://leafletjs.com/reference.html#polyline">Polyline</a> or <a href="http://leafletjs.com/reference.html#polygon">Polygon</a>, or a Leaflet <a href="http://leafletjs.com/reference.html#marker">Marker</a>.</td>
+            <td>Given the id of a Feature return the layer on the map that represents it. This will usually be a Leaflet vector layer like <a href="https://leafletjs.com/reference.html#polyline">Polyline</a> or <a href="https://leafletjs.com/reference.html#polygon">Polygon</a>, or a Leaflet <a href="https://leafletjs.com/reference.html#marker">Marker</a>.</td>
         </tr>
         <tr>
             <td><code>getWhere()</code></td>
@@ -270,7 +270,7 @@ function iterateFeatures () {
             <td><code>query()</code></td>
             <td><code>this</code></td>
             <td>
-                Returns a new <a href="../tasks/query.html"><code>L.esri.Query</code></a> object that can be used to query this layer. Your callback function will be passed a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a> with the results or an error.
+                Returns a new <a href="../tasks/query.html"><code>L.esri.Query</code></a> object that can be used to query this layer. Your callback function will be passed a <a href="https://tools.ietf.org/html/rfc7946#section-3.3">GeoJSON FeatureCollection</a> with the results or an error.
 <pre class="js"><code>
 featureLayer.query()
   .within(latlngbounds)
@@ -292,7 +292,7 @@ featureLayer.query()
             </td>
         </tr>
  <tr>
-            <td><code>addFeature({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
+            <td><code>addFeature({{{param 'GeoJSON Feature' 'feature' 'https://tools.ietf.org/html/rfc7946#section-3.2'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
             <td>
                 Adds a new feature to the feature layer. this also adds the feature to the map if creation is successful.
@@ -303,7 +303,7 @@ featureLayer.query()
             </td>
         </tr>
         <tr>
-            <td><code>updateFeature({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
+            <td><code>updateFeature({{{param 'GeoJSON Feature' 'feature' 'https://tools.ietf.org/html/rfc7946#section-3.2'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
             <td>
                 Update the provided feature on the Feature Layer. This also updates the feature on the map.
@@ -355,11 +355,11 @@ featureLayer.query()
 ### Example
 
 ```js
-var map = L.map('map').setView([45.53,-122.64], 14);
+var map = L.map('map').setView([45.53, -122.64], 14);
 
-L.esri.basemapLayer("Streets").addTo(map);
+L.esri.basemapLayer('Streets').addTo(map);
 
-var busStops = L.esri.featureLayer({
+L.esri.featureLayer({
   url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0/'
 }).addTo(map);
 ```

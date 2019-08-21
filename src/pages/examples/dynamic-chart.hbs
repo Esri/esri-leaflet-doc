@@ -36,7 +36,7 @@ layout: example.hbs
   // create and add a feature layer
   // features from this layer will appear in the Chart.js scatterplot
   var treesFeatureLayer = L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/'
   });
 
   treesFeatureLayer.addTo(map);
@@ -81,7 +81,7 @@ layout: example.hbs
     maintainAspectRatio: false,
     // turn off animations during chart data updates
     animation: {
-      duration: 0,
+      duration: 0
     },
     // see STEP 4 below
     onHover: handleChartHover
@@ -99,12 +99,12 @@ layout: example.hbs
   map.on('zoom move', updateChart);
   treesFeatureLayer.on('load', updateChart);
 
-  function updateChart() {
+  function updateChart () {
     // reformat the features' attributes of interest into
     // the data array format required by the Chart.js scatterplot
     var scatterPlotDataArray = [];
 
-    treesFeatureLayer.eachActiveFeature(function(e) {
+    treesFeatureLayer.eachActiveFeature(function (e) {
       // loop over each active feature in the map extent and
       // push an object into the scatterPlotDataArray in this format:
 
@@ -131,13 +131,13 @@ layout: example.hbs
   // STEP 4 (OPTIONAL): ESTABLISH CHART-TO-MAP COMMUNICATION
   // up until now the map and feature layer inform the chart what to render,
   // but interactions with the chart can also influence the map contents
-  function handleChartHover(e) {
+  function handleChartHover (e) {
     var chartHoverData = chart.getElementsAtEvent(e);
 
     if (!chartHoverData.length) {
       // if there were no data elements found when hovering over the chart,
       // reset any previous styling overrides and return
-      treesFeatureLayer.eachFeature(function(e) {
+      treesFeatureLayer.eachFeature(function (e) {
         e.setOpacity(1);
         e.setZIndexOffset(0);
       });
@@ -147,11 +147,11 @@ layout: example.hbs
 
     // otherwise, bring attention to the features on the map
     // that are currently being hovered over in the chart
-    var hoverFeatureIds = chartHoverData.map(function(datum) {
+    var hoverFeatureIds = chartHoverData.map(function (datum) {
       return chart.data.datasets[0].data[datum._index].featureId;
     });
 
-    treesFeatureLayer.eachFeature(function(e, idx) {
+    treesFeatureLayer.eachFeature(function (e, idx) {
       if (
         hoverFeatureIds.indexOf(e.feature.id) > -1
       ) {

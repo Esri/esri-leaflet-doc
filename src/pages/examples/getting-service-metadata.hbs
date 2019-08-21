@@ -27,10 +27,15 @@ layout: example.hbs
   }).addTo(map);
 
   earthquakes.metadata(function (error, metadata) {
+    if (error) {
+      return;
+    }
+
     var htmlContent = '<ul>';
     htmlContent += '<li>Name: ' + metadata.name + '</li>';
-    htmlContent += '<li>Geometry Type: ' + metadata.geometryType + '</li>';htmlContent += '<li>Supported Query Formats: ' + metadata.supportedQueryFormats + '</li>';  
-    
+    htmlContent += '<li>Geometry Type: ' + metadata.geometryType + '</li>';
+    htmlContent += '<li>Supported Query Formats: ' + metadata.supportedQueryFormats + '</li>';
+  
     document.getElementById('info').innerHTML = htmlContent;
   });
 </script>

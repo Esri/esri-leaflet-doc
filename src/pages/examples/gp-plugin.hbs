@@ -1,6 +1,6 @@
 ---
 title: Leverage a Geoprocessing Service
-description: This demo relies on the <a href="https://github.com/jgravois/esri-leaflet-gp/">Esri Leaflet GP</a> plugin.<br>More information about Geoprocessing Services can be found in the <a href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/GP_Service/02r3000000rq000000/">ArcGIS REST</a> documentation.
+description: This demo relies on the <a href="https://github.com/jgravois/esri-leaflet-gp/">Esri Leaflet GP</a> plugin.<br>More information about Geoprocessing Services can be found in the <a href="https://developers.arcgis.com/rest/services-reference/gp-service.htm">ArcGIS REST</a> documentation.
 layout: example.hbs
 ---
 
@@ -21,7 +21,7 @@ layout: example.hbs
 <div id="map"></div>
 <div id="info-pane" class="leaflet-bar">
   <label>
-  click on the map to calculate<br>1 and 2 minute drivetime polygons
+    click on the map to calculate<br>1 and 2 minute drivetime polygons
   </label>
 </div>
 
@@ -31,26 +31,33 @@ layout: example.hbs
   L.esri.basemapLayer('Gray').addTo(map);
 
   var gpService = L.esri.GP.service({
-    url: "https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Network/ESRI_DriveTime_US/GPServer/CreateDriveTimePolygons",
-    useCors:false
+    url: 'https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Network/ESRI_DriveTime_US/GPServer/CreateDriveTimePolygons',
+    useCors: false
   });
 
   var gpTask = gpService.createTask();
 
-  gpTask.setParam("Drive_Times", "1 2");
+  gpTask.setParam('Drive_Times', '1 2');
 
   var driveTimes = L.featureGroup();
   map.addLayer(driveTimes);
 
-  map.on('click', function(evt){
-    document.getElementById('info-pane').innerHTML = 'working...';
+  var infoPane = document.getElementById('info-pane');
+
+  map.on('click', function (evt) {
+    infoPane.innerHTML = 'working...';
     driveTimes.clearLayers();
-    gpTask.setParam("Input_Location", evt.latlng)
+    gpTask.setParam('Input_Location', evt.latlng);
     gpTask.run(driveTimeCallback);
   });
 
-  function driveTimeCallback(error, response, raw){
-    document.getElementById('info-pane').innerHTML = 'click on the map to calculate 1 and 2 minute drivetimes';
+  function driveTimeCallback (error, response, raw) {
+    infoPane.innerHTML = 'click on the map to calculate<br>1 and 2 minute drivetimes';
+
+    if (error) {
+      return;
+    }
+
     driveTimes.addLayer(L.geoJSON(response.Output_Drive_Time_Polygons));
   }
 </script>

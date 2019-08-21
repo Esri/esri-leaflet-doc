@@ -9,7 +9,7 @@ Generic methods to make GET and POST requests to ArcGIS Online and ArcGIS Enterp
 
 GET requests will be made with `XMLHttpRequest` (via CORS) if the browser supports it and will fallback to JSONP. POST requests will always be made with `XMLHttpRequest` (via CORS). The [ArcGIS Resource Proxy](https://github.com/Esri/resource-proxy) or something similar must be configured to support cross domain requests via [`L.esri.Service`]({{assets}}api-reference/services/service.html) if CORS cannot be leveraged.
 
-If you are using a version of ArcGIS Server older than 10.1, CORS is not enabled by default but can be configured using the documentation available at http://enable-cors.org/. If you cannot enable CORS, the following line of code will force all requests to be made using JSONP instead.
+If you are using a version of ArcGIS Server older than 10.1, CORS is not enabled by default but can be configured using the documentation available at https://enable-cors.org/. If you cannot enable CORS, the following line of code will force all requests to be made using JSONP instead.
 
 ```js
 L.esri.Support.cors = false;
@@ -31,8 +31,8 @@ Executes a GET or POST via `XMLHttpRequest` or JSONP request depending on the ca
 #### Example
 
 ```js
-L.esri.request('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function(error, response){
-  if(error){
+L.esri.request('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function (error, response) {
+  if (error) {
     console.log(error);
   } else {
     console.log(response.name);
@@ -58,8 +58,8 @@ Execute a GET request via `XMLHttpRequest' (via CORS) or JSON depending on what 
 #### Example
 
 ```js
-L.esri.get('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function(error, response){
-  if(error){
+L.esri.get('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function (error, response) {
+  if (error) {
     console.log(error);
   } else {
     console.log(response.name);
@@ -83,8 +83,8 @@ This request is made via `XMLHttpRequest` which cannot make cross domain request
 #### Example
 
 ```js
-L.esri.post('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function(error, response){
-  if(error){
+L.esri.post('https://www.portlandmaps.com/arcgis/rest/services/Public/Parks_Misc/MapServer/21/', {}, function (error, response) {
+  if (error) {
     console.log(error);
   } else {
     console.log(response.name);

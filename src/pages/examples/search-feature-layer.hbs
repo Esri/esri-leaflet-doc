@@ -16,7 +16,7 @@ geocoder: true
 
   var arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider();
 
-  var searchControl = L.esri.Geocoding.geosearch({
+  L.esri.Geocoding.geosearch({
     providers: [
       arcgisOnline,
       L.esri.Geocoding.featureLayerProvider({
@@ -24,7 +24,7 @@ geocoder: true
         searchFields: ['Name', 'Organization'],
         label: 'GIS Day Events',
         bufferRadius: 5000,
-        formatSuggestion: function(feature){
+        formatSuggestion: function (feature) {
           return feature.properties.Name + ' - ' + feature.properties.Organization;
         }
       })

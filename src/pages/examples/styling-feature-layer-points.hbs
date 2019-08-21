@@ -12,18 +12,18 @@ layout: example.hbs
   L.esri.basemapLayer('Streets').addTo(map);
 
   var icon = L.icon({
-      iconUrl: 'https://esri.github.io/esri-leaflet/img/earthquake-icon.png',
-      iconSize: [27, 31],
-      iconAnchor: [13.5, 17.5],
-      popupAnchor: [0, -11]
+    iconUrl: 'https://esri.github.io/esri-leaflet/img/earthquake-icon.png',
+    iconSize: [27, 31],
+    iconAnchor: [13.5, 17.5],
+    popupAnchor: [0, -11]
   });
 
-  var earthquakes = L.esri.featureLayer({
+  L.esri.featureLayer({
     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Earthquakes_Since1970/MapServer/0',
     pointToLayer: function (geojson, latlng) {
       return L.marker(latlng, {
         icon: icon
       });
     }
-  }).addTo(map);  
+  }).addTo(map);
 </script>

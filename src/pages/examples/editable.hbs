@@ -15,7 +15,7 @@ layout: example.hbs
       doubleClickZoom: false
     }).setView([37.345, -110.875], 5);
 
-    var tilelayer = L.esri.basemapLayer("Topographic").addTo(map);
+    L.esri.basemapLayer('Topographic').addTo(map);
 
     // create a feature layer and add it to the map
     var wildfireDistricts = L.esri.featureLayer({
@@ -24,45 +24,46 @@ layout: example.hbs
 
     // create a generic control to invoke editing
     L.EditControl = L.Control.extend({
-        options: {
-            position: 'topleft',
-            callback: null,
-            kind: '',
-            html: ''
-        },
-        // when the control is added to the map, wire up its DOM dynamically and add a click listener
-        onAdd: function (map) {
-            var container = L.DomUtil.create('div', 'leaflet-control leaflet-bar'),
-                link = L.DomUtil.create('a', '', container);
-            link.href = '#';
-            link.title = 'Create a new ' + this.options.kind;
-            link.innerHTML = this.options.html;
-            L.DomEvent.on(link, 'click', L.DomEvent.stop)
-                      .on(link, 'click', function () {
-                        window.LAYER = this.options.callback.call(map.editTools);
-                      }, this);
-            return container;
-        }
+      options: {
+        position: 'topleft',
+        callback: null,
+        kind: '',
+        html: ''
+      },
+      // when the control is added to the map, wire up its DOM dynamically and add a click listener
+      onAdd: function (map) {
+        var container = L.DomUtil.create('div', 'leaflet-control leaflet-bar');
+        var link = L.DomUtil.create('a', '', container);
+        link.href = '#';
+        link.title = 'Create a new ' + this.options.kind;
+        link.innerHTML = this.options.html;
+        L.DomEvent
+          .on(link, 'click', L.DomEvent.stop)
+          .on(link, 'click', function () {
+            window.LAYER = this.options.callback.call(map.editTools);
+          }, this);
+        return container;
+      }
     });
 
     // extend the control to draw polygons
     L.NewPolygonControl = L.EditControl.extend({
-        options: {
-            position: 'topleft',
-            callback: map.editTools.startPolygon,
-            kind: 'polygon',
-            html: '▰'
-        }
+      options: {
+        position: 'topleft',
+        callback: map.editTools.startPolygon,
+        kind: 'polygon',
+        html: '▰'
+      }
     });
 
     // extend the control to draw rectangles
     L.NewRectangleControl = L.EditControl.extend({
-        options: {
-            position: 'topleft',
-            callback: map.editTools.startRectangle,
-            kind: 'rectangle',
-            html: '⬛'
-        }
+      options: {
+        position: 'topleft',
+        callback: map.editTools.startRectangle,
+        kind: 'rectangle',
+        html: '⬛'
+      }
     });
 
     // add the two new controls to the map

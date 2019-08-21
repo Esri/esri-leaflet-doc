@@ -23,7 +23,7 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
     <tbody>
         <tr>
             <td><code class="nobr">L.esri.Heat.featureLayer({{{param 'Object' 'options'}}})</code></td>
-            <td>You must pass a <code>url</code> to a [Feature Layer](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Layer/02r3000000w6000000/) in your <code>options</code></td>
+            <td>You must pass a <code>url</code> to a [Feature Layer](https://developers.arcgis.com/rest/services-reference/layer-feature-service-.htm) in your <code>options</code></td>
         </tr>
     </tbody>
 </table>
@@ -41,7 +41,7 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
         <tr>
           <td><code>url</code></td>
           <td><code>String</code></td>
-          <td><strong>Required</strong> The URL to the [Feature Layer](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Layer/02r3000000w6000000/).</td>
+          <td><strong>Required</strong> The URL to the [Feature Layer](https://developers.arcgis.com/rest/services-reference/layer-feature-service-.htm).</td>
         </tr>
         <tr>
             <td><code>where</code></td>
@@ -76,7 +76,7 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
         <tr>
             <td><code>precision</code></td>
             <td><code>Integer</code></td>
-            <td>How many digits of geometry precision to request from the server. <a href="http://en.wikipedia.org/wiki/Decimal_degrees">Wikipedia</a> has a great reference of digit precision to meters.</td>
+            <td>How many digits of geometry precision to request from the server. <a href="https://en.wikipedia.org/wiki/Decimal_degrees">Wikipedia</a> has a great reference of digit precision to meters.</td>
         </tr>
         <tr>
             <td><code>token</code></td>
@@ -147,7 +147,7 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
             <td><code>query()</code></td>
             <td><code>this</code></td>
             <td>
-                Returns a new <a href="../tasks/query.html"><code>L.esri.Query</code></a> object that can be used to query this layer. Your callback function will be passed a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a> with the results or an error.
+                Returns a new <a href="../tasks/query.html"><code>L.esri.Query</code></a> object that can be used to query this layer. Your callback function will be passed a <a href="https://tools.ietf.org/html/rfc7946#section-3.3">GeoJSON FeatureCollection</a> with the results or an error.
 <pre class="js"><code>featureLayer.query()
             .within(latlngbounds)
             .where("Direction = 'WEST'")
@@ -167,7 +167,7 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
             </td>
         </tr>
  <tr>
-            <td><code>addFeature({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
+            <td><code>addFeature({{{param 'GeoJSON Feature' 'feature' 'https://tools.ietf.org/html/rfc7946#section-3.2'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
             <td>
                 Adds a new feature to the feature layer. this also adds the feature to the map if creation is successful.
@@ -178,7 +178,7 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
             </td>
         </tr>
         <tr>
-            <td><code>updateFeature({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
+            <td><code>updateFeature({{{param 'GeoJSON Feature' 'feature' 'https://tools.ietf.org/html/rfc7946#section-3.2'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
             <td>
                 Update the provided feature on the Feature Layer. This also updates the feature on the map.
@@ -204,18 +204,20 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
 
 ### Example
 
-Live sample [here](http://esri.github.io/esri-leaflet/examples/visualize-points-as-a-heatmap.html).
+Live sample [here](https://esri.github.io/esri-leaflet/examples/visualize-points-as-a-heatmap.html).
 
 ```xml
 <script src="./leaflet-heat.js"></script>
 <script src="./esri-leaflet-heatmap.js"></script>
 ```
+
 ```js
-var map = new L.Map('map').setView([40.722868115037,-73.92142295837404], 14);
+var map = new L.Map('map').setView([40.722868115037, -73.92142295837404], 14);
+
 L.esri.basemapLayer('Gray').addTo(map);
 
-var heatmap = L.esri.Heat.featureLayer({
-  url : "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Graffiti_Locations3/FeatureServer/0",
+L.esri.Heat.featureLayer({
+  url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Graffiti_Locations3/FeatureServer/0',
   radius: 12
 }).addTo(map);
 ```

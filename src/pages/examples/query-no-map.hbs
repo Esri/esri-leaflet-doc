@@ -1,11 +1,13 @@
 ---
 title: Query without a map
-description: It is not necessary to add a layer to a map in order to execute a spatial query.  More information about Queries can be found in the <a href="../api-reference/tasks/query.html">L.esri.Query</a> documentation.
+description: It is not necessary to add a layer to a map in order to execute a spatial query. More information about Queries can be found in the <a href="../api-reference/tasks/query.html">L.esri.Query</a> documentation.
 layout: example.hbs
 ---
 
 <style>
-  #message { margin: 10px }
+  #message {
+    margin: 10px
+  }
 </style>
 
 <div id="map">
@@ -15,33 +17,41 @@ layout: example.hbs
 
 <script>
   // html5 geolocation requires a secure connection
-  if (window.location.host == 'esri.github.io' && window.location.protocol != "https:") {
-    window.location.protocol = "https";
+  if (window.location.host === 'esri.github.io' && window.location.protocol !== 'https:') {
+    window.location.protocol = 'https';
   }
 
   document.getElementById('map').style.height = '100px';
 
+  var message = document.getElementById('message');
+
   // its not necessary to instaniate a map in order to execute a spatial query,
- //  we do it here because it provides a convenient way to ask the user for their HTML5 location
+  //  we do it here because it provides a convenient way to ask the user for their HTML5 location
   var map = L.map('invisibleMap');
   map.locate();
 
-  map.on("locationfound", function(e) {
-    // use location to find out which census block they are inside.
+  map.on('locationfound', function (e) {
+    // use location to find out which census block they are inside
     L.esri.query({
-	  url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/1"
-	}).intersects(e.latlng).run(function(error, censusBlocks){
-	    // if we find a match dig into the feature attributes to retrive median age
-	    if (censusBlocks.features.length > 0) {
-	      document.getElementById('message').innerHTML =
-	        'the median age of the census block where you are currently located is <b>' + censusBlocks.features[0].properties.MED_AGE +
-	        '</b> years old';
-	    }
-	    // otherwise, fail gracefully
-	    else {
-	      document.getElementById('message').innerHTML =
-	        'either you arent currently in the United States or you prefer not to say.';
-	    }
-	  });
+      url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/1'
+    }).intersects(e.latlng).run(function (error, censusBlocks) {
+      if (error) {
+        message.innerHTML =
+          'there may have been an error querying your location';
+
+        return;
+      }
+
+      if (censusBlocks.features.length > 0) {
+      // if we find a match dig into the feature attributes to retrive median age
+        message.innerHTML =
+          'the median age of the census block where you are currently located is <b>' + censusBlocks.features[0].properties.MED_AGE +
+          '</b> years old';
+      } else {
+      // otherwise, fail gracefully
+        message.innerHTML =
+          'either you aren\'t currently in the United States or you prefer not to say';
+      }
+    });
   });
 </script>

@@ -7,13 +7,13 @@ layout: example.hbs
 <div id="map"></div>
 
 <script>
-  var map = L.map("map").setView([45.5384, -122.6695], 16);
+  var map = L.map('map').setView([45.5384, -122.6695], 16);
 
-  L.esri.basemapLayer("Topographic").addTo(map);
+  L.esri.basemapLayer('Topographic').addTo(map);
 
-  var neighborhoodsUrl = "https://www.portlandmaps.com/arcgis/rest/services/Public/Zoning/MapServer/32";
-  var buildingFootprintsUrl = "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Buildings/MapServer/0";
-  var blockPointsUrl = "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/0";
+  var neighborhoodsUrl = 'https://www.portlandmaps.com/arcgis/rest/services/Public/Zoning/MapServer/32';
+  var buildingFootprintsUrl = 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Buildings/MapServer/0';
+  var blockPointsUrl = 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/0';
 
   // create a map pane for neighborhoods
   map.createPane('neighborhoods');
@@ -21,7 +21,7 @@ layout: example.hbs
   // Define the created pane when creating the feature layer
   L.esri.featureLayer({
     url: neighborhoodsUrl,
-    pane: 'neighborhoods',
+    pane: 'neighborhoods'
   }).addTo(map);
 
   // Panes are added to the map in order - this pane will be sit on top of 'neighborhoods'
@@ -31,7 +31,7 @@ layout: example.hbs
     url: buildingFootprintsUrl,
     pane: 'footprints',
     style: function (feature) {
-      return {  color: 'white', weight: 0, fillOpacity: 1  };
+      return { color: 'white', weight: 0, fillOpacity: 1 };
     }
   }).addTo(map);
 
@@ -47,5 +47,4 @@ layout: example.hbs
       });
     }
   }).addTo(map);
-
 </script>

@@ -37,11 +37,11 @@ layout: example.hbs
   <form action="#" id="form">
     <label for="from">
       From
-      <input id='from' type="date" value='1998-01-10' name='from'>
+      <input id="from" type="date" value="1998-01-10" name="from">
     </label>
     <label for="to">
       To
-      <input  id='to' type="date" value='1998-01-15' name='to'>
+      <input  id="to" type="date" value="1998-01-15" name="to">
     </label>
     <input type="submit" value="Update">
   </form>
@@ -61,10 +61,10 @@ layout: example.hbs
     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/911CallsHotspot/MapServer/1',
     timeField: 'Date',
     from: new Date(startTimeInput.value),
-    to: new Date(endTimeInput.value)    
+    to: new Date(endTimeInput.value)
   }).addTo(map);
 
-  timeForm.addEventListener('submit', function updateTimeRange(e){
+  timeForm.addEventListener('submit', function updateTimeRange (e) {
     emergencyCalls.setTimeRange(new Date(startTimeInput.value), new Date(endTimeInput.value));
     e.preventDefault();
   });

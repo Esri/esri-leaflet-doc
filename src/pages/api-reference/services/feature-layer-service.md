@@ -52,14 +52,14 @@ Extends [`L.esri.Service`]({{assets}}api-reference/services/service.html)
                 Returns a new <a href="{{assets}}api-reference/tasks/query.html"><code>L.esri.Query</code></a> object that can be used to query this layer.<pre class="js"><code>featureLayer.query()
   .within(latlngbounds)
   .where("Direction = 'WEST'")
-  .run(function(error, featureCollection, response){
+  .run(function (error, featureCollection, response) {
     console.log(featureCollection);
   });
 </code></pre>
             </td>
         </tr>
         <tr>
-            <td><code>addFeature({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
+            <td><code>addFeature({{{param 'GeoJSON Feature' 'feature' 'https://tools.ietf.org/html/rfc7946#section-3.2'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
             <td>
                 Adds a new feature to the feature layer. this also adds the feature to the map if creation is successful.
@@ -70,7 +70,7 @@ Extends [`L.esri.Service`]({{assets}}api-reference/services/service.html)
             </td>
         </tr>
         <tr>
-            <td><code>updateFeature({{{param 'GeoJSON Feature' 'feature' 'http://geojson.org/geojson-spec.html#feature-objects'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
+            <td><code>updateFeature({{{param 'GeoJSON Feature' 'feature' 'https://tools.ietf.org/html/rfc7946#section-3.2'}}}, {{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
             <td>
                 Update the provided feature on the Feature Layer. This also updates the feature on the map.
@@ -112,26 +112,26 @@ Extends [`L.esri.Service`]({{assets}}api-reference/services/service.html)
 ##### Adding Features
 ```js
 var service = L.esri.featureLayerService({
-    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
+  url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
 });
 
 var feature = {
-    type: 'Feature',
-    geometry: {
-        type: 'Point',
-        coordinates: [-122, 45]
-    },
-    properties: {
-        name: 'Hello World'
-    }
+  type: 'Feature',
+  geometry: {
+    type: 'Point',
+    coordinates: [-122, 45]
+  },
+  properties: {
+    name: 'Hello World'
+  }
 };
 
-service.addFeature(feature, function(error, response){
-    if(error){
-      console.log('error creating feature' + error.message);
-    } else {
-      console.log('Successfully created feature with id ' + response.objectId);
-    }
+service.addFeature(feature, function (error, response) {
+  if (error) {
+    console.log('error creating feature' + error.message);
+  } else {
+    console.log('Successfully created feature with id ' + response.objectId);
+  }
 });
 ```
 
@@ -139,27 +139,27 @@ service.addFeature(feature, function(error, response){
 
 ```js
 var service = L.esri.featureLayerService({
-    url:'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
+  url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
 });
 
 var feature = {
-    type: 'Feature',
-    id: 2,
-    geometry: {
-        type: 'Point',
-        coordinates: [-122, 45]
-    },
-    properties: {
-        name: 'Hi I\'m Feature 2'
-    }
+  type: 'Feature',
+  id: 2,
+  geometry: {
+    type: 'Point',
+    coordinates: [-122, 45]
+  },
+  properties: {
+    name: 'Hi I\'m Feature 2'
+  }
 };
 
-service.updateFeature(feature, function(error, response){
-    if(error){
-      console.log('error updating feature' + error.message);
-    } else {
-      console.log('Successfully updated feature ' + feature.id);
-    }
+service.updateFeature(feature, function (error, response) {
+  if (error) {
+    console.log('error updating feature' + error.message);
+  } else {
+    console.log('Successfully updated feature ' + feature.id);
+  }
 });
 ```
 
@@ -167,15 +167,15 @@ service.updateFeature(feature, function(error, response){
 
 ```js
 var service = L.esri.featureLayerService({
-    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
+  url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
 });
 
-service.deleteFeature(2, function(error, response){
-    if(error){
-      console.log('error deleting feature' + error.message);
-    } else {
-      console.log('Successfully deleted feature ' + response.objectId);
-    }
+service.deleteFeature(2, function (error, response) {
+  if (error) {
+    console.log('error deleting feature' + error.message);
+  } else {
+    console.log('Successfully deleted feature ' + response.objectId);
+  }
 });
 ```
 
@@ -183,10 +183,14 @@ service.deleteFeature(2, function(error, response){
 
 ```js
 var service = L.esri.featureLayerService({
-    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
+  url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Pubic_Feature_Service/FeatureServer/0'
 });
 
-service.query().where("name='Hello World'").run(function(error, featureCollection, response){
-    console.log(featureCollection.features[0].properties.name);
+service.query().where("name='Hello World'").run(function (error, featureCollection, response) {
+  if (error) {
+    console.log(error);
+    return;
+  }
+  console.log(featureCollection.features[0].properties.name);
 });
 ```
