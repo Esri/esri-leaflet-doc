@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Extends [`L.Layer`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#layer)
+Extends [`L.Layer`](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#layer)
 
 `L.esri.Vector.Basemap` uses an [experimental plugin](https://github.com/Esri/esri-leaflet-vector) to display Esri hosted vector basemaps and attribute data providers appropriately. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
 
@@ -53,12 +53,12 @@ The basemaps below have no labels
 
 ### Options
 
-`L.esri.Vector.Basemap` accepts all [`L.Layer`](http://leafletjs.com/reference-1.0.0.html#layer) options.
+`L.esri.Vector.Basemap` accepts all [`L.Layer`](https://leafletjs.com/reference-1.0.0.html#layer) options.
 
 
 ### Methods
 
-`L.esri.Vector.Basemap` inherits all methods from [`L.Layer`](http://leafletjs.com/reference-1.0.0.html#layer).
+`L.esri.Vector.Basemap` inherits all methods from [`L.Layer`](https://leafletjs.com/reference-1.0.0.html#layer).
 
 ### Example
 ```xml

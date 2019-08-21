@@ -11,7 +11,7 @@ This namespace provides a location for application configuration settings that a
 
 | Property | Value | Default | Description |
 | --- | --- | --- | --- |
-| `attributionWidthOffset` | `Number`| `55` | This plugin automatically truncates text in [Leaflet.Control.Attribution](http://leafletjs.com/reference-1.0.0.html#control-attribution) so that it doesn't overflow into multiple lines.  This value dicates how much horizontal space (in pixels) will be set aside for other controls.
+| `attributionWidthOffset` | `Number`| `55` | This plugin automatically truncates text in [Leaflet.Control.Attribution](https://leafletjs.com/reference-1.0.0.html#control-attribution) so that it doesn't overflow into multiple lines.  This value dicates how much horizontal space (in pixels) will be set aside for other controls.
 
 #### Example
 

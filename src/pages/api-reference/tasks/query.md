@@ -55,37 +55,37 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
         <tr>
             <td><code>within({{{param 'Geometry' 'geometry'}}})</code></td>
             <td><code>this</code></td>
-            <td>Queries features from the service within (fully contained by) the passed geometry object. `geometry` can be an instance of [`L.Marker`](http://leafletjs.com/reference.html#marker), [`L.Polygon`](http://leafletjs.com/reference.html#polygon), [`L.Polyline`](http://leafletjs.com/reference.html#polyline), [`L.LatLng`](http://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](http://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](http://geojson.org/geojson-spec.html#point), [Polyline](http://geojson.org/geojson-spec.html#polyline), [Polygon](http://geojson.org/geojson-spec.html#polygon) objects and GeoJSON [Feature objects](http://geojson.org/geojson-spec.html#feature-objects) containing Point, Polyline, Polygon.</td>
+            <td>Queries features from the service within (fully contained by) the passed geometry object. `geometry` can be an instance of [`L.Marker`](https://leafletjs.com/reference.html#marker), [`L.Polygon`](https://leafletjs.com/reference.html#polygon), [`L.Polyline`](https://leafletjs.com/reference.html#polyline), [`L.LatLng`](https://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](https://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](https://tools.ietf.org/html/rfc7946#section-3.1.2), [Polyline](https://tools.ietf.org/html/rfc7946#section-3.1.4), [Polygon](https://tools.ietf.org/html/rfc7946#section-3.1.6) objects and GeoJSON [Feature objects](https://tools.ietf.org/html/rfc7946#section-3.2) containing Point, Polyline, Polygon.</td>
         </tr>
         <tr>
             <td><code>contains({{{param 'Geometry' 'geometry'}}})</code></td>
             <td><code>this</code></td>
-            <td>Queries features from the service that fully contain the passed geometry object. `geometry` can be an instance of [`L.Marker`](http://leafletjs.com/reference.html#marker), [`L.Polygon`](http://leafletjs.com/reference.html#polygon), [`L.Polyline`](http://leafletjs.com/reference.html#polyline), [`L.LatLng`](http://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](http://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](http://geojson.org/geojson-spec.html#point), [Polyline](http://geojson.org/geojson-spec.html#polyline), [Polygon](http://geojson.org/geojson-spec.html#polygon) objects and GeoJSON [Feature objects](http://geojson.org/geojson-spec.html#feature-objects) containing Point, Polyline, Polygon.</td>
+            <td>Queries features from the service that fully contain the passed geometry object. `geometry` can be an instance of [`L.Marker`](https://leafletjs.com/reference.html#marker), [`L.Polygon`](https://leafletjs.com/reference.html#polygon), [`L.Polyline`](https://leafletjs.com/reference.html#polyline), [`L.LatLng`](https://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](https://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](https://tools.ietf.org/html/rfc7946#section-3.1.2), [Polyline](https://tools.ietf.org/html/rfc7946#section-3.1.4), [Polygon](https://tools.ietf.org/html/rfc7946#section-3.1.6) objects and GeoJSON [Feature objects](https://tools.ietf.org/html/rfc7946#section-3.2) containing Point, Polyline, Polygon.</td>
         </tr>
         <tr>
             <td><code>intersects({{{param 'Geometry' 'geometry'}}})</code></td>
             <td><code>this</code></td>
-            <td>Queries features from the service that intersect (touch anywhere) the passed geometry object. `geometry` can be an instance of [`L.Marker`](http://leafletjs.com/reference.html#marker), [`L.Polygon`](http://leafletjs.com/reference.html#polygon), [`L.Polyline`](http://leafletjs.com/reference.html#polyline), [`L.LatLng`](http://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](http://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](http://geojson.org/geojson-spec.html#point), [Polyline](http://geojson.org/geojson-spec.html#polyline), [Polygon](http://geojson.org/geojson-spec.html#polygon) objects and GeoJSON [Feature objects](http://geojson.org/geojson-spec.html#feature-objects) containing Point, Polyline, Polygon.</td>
+            <td>Queries features from the service that intersect (touch anywhere) the passed geometry object. `geometry` can be an instance of [`L.Marker`](https://leafletjs.com/reference.html#marker), [`L.Polygon`](https://leafletjs.com/reference.html#polygon), [`L.Polyline`](https://leafletjs.com/reference.html#polyline), [`L.LatLng`](https://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](https://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](https://tools.ietf.org/html/rfc7946#section-3.1.2), [Polyline](https://tools.ietf.org/html/rfc7946#section-3.1.4), [Polygon](https://tools.ietf.org/html/rfc7946#section-3.1.6) objects and GeoJSON [Feature objects](https://tools.ietf.org/html/rfc7946#section-3.2) containing Point, Polyline, Polygon.</td>
         </tr>
         <tr>
             <td><code>bboxIntersects({{{param 'Geometry' 'geometry'}}})</code></td>
             <td><code>this</code></td>
-            <td>Queries features from the service that have a bounding box that intersects the bounding box of the passed geometry object. `geometry` can be an instance of [`L.Marker`](http://leafletjs.com/reference.html#marker), [`L.Polygon`](http://leafletjs.com/reference.html#polygon), [`L.Polyline`](http://leafletjs.com/reference.html#polyline), [`L.LatLng`](http://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](http://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](http://geojson.org/geojson-spec.html#point), [Polyline](http://geojson.org/geojson-spec.html#polyline), [Polygon](http://geojson.org/geojson-spec.html#polygon) objects and GeoJSON [Feature objects](http://geojson.org/geojson-spec.html#feature-objects) containing Point, Polyline, Polygon.</td>
+            <td>Queries features from the service that have a bounding box that intersects the bounding box of the passed geometry object. `geometry` can be an instance of [`L.Marker`](https://leafletjs.com/reference.html#marker), [`L.Polygon`](https://leafletjs.com/reference.html#polygon), [`L.Polyline`](https://leafletjs.com/reference.html#polyline), [`L.LatLng`](https://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](https://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](https://tools.ietf.org/html/rfc7946#section-3.1.2), [Polyline](https://tools.ietf.org/html/rfc7946#section-3.1.4), [Polygon](https://tools.ietf.org/html/rfc7946#section-3.1.6) objects and GeoJSON [Feature objects](https://tools.ietf.org/html/rfc7946#section-3.2) containing Point, Polyline, Polygon.</td>
         </tr>
         <tr>
             <td><code>overlap({{{param 'Geometry' 'geometry'}}})</code></td>
             <td><code>this</code></td>
-            <td>Queries features from the service that overlap (touch but are not fully contained by) the passed geometry object. `geometry` can be an instance of [`L.Marker`](http://leafletjs.com/reference.html#marker), [`L.Polygon`](http://leafletjs.com/reference.html#polygon), [`L.Polyline`](http://leafletjs.com/reference.html#polyline), [`L.LatLng`](http://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](http://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](http://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](http://geojson.org/geojson-spec.html#point), [Polyline](http://geojson.org/geojson-spec.html#polyline), [Polygon](http://geojson.org/geojson-spec.html#polygon) objects and GeoJSON [Feature objects](http://geojson.org/geojson-spec.html#feature-objects) containing Point, Polyline, Polygon.</td>
+            <td>Queries features from the service that overlap (touch but are not fully contained by) the passed geometry object. `geometry` can be an instance of [`L.Marker`](https://leafletjs.com/reference.html#marker), [`L.Polygon`](https://leafletjs.com/reference.html#polygon), [`L.Polyline`](https://leafletjs.com/reference.html#polyline), [`L.LatLng`](https://leafletjs.com/reference.html#latlng), [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds) and [`L.GeoJSON`](https://leafletjs.com/reference.html#geojson). It can also accept valid GeoJSON [Point](https://tools.ietf.org/html/rfc7946#section-3.1.2), [Polyline](https://tools.ietf.org/html/rfc7946#section-3.1.4), [Polygon](https://tools.ietf.org/html/rfc7946#section-3.1.6) objects and GeoJSON [Feature objects](https://tools.ietf.org/html/rfc7946#section-3.2) containing Point, Polyline, Polygon.</td>
         </tr>
         <tr>
-            <td><code>nearby({{{param 'LatLng' 'latlng' 'http://leafletjs.com/reference.html#latlng'}}}, {{{param 'Integer' 'distance'}}})</code></td>
+            <td><code>nearby({{{param 'LatLng' 'latlng' 'https://leafletjs.com/reference.html#latlng'}}}, {{{param 'Integer' 'distance'}}})</code></td>
             <td><code>this</code></td>
-            <td>Queries features a given distance in meters around a <a href="http://leafletjs.com/reference.html#latlng">LatLng</a>. <br><small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3+ that include the capability <code>supportsQueryWithDistance</code>.</small></td>
+            <td>Queries features a given distance in meters around a <a href="https://leafletjs.com/reference.html#latlng">LatLng</a>. <br><small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3+ that include the capability <code>supportsQueryWithDistance</code>.</small></td>
         </tr>
         <tr>
             <td><code>where({{{param 'String' 'where'}}})</code></td>
             <td><code>this</code></td>
-            <td>Adds a `where` clause to the query.  String values should be denoted using single quotes ie: `query.where("FIELDNAME = 'field value'");` More info about valid SQL can be found <a href="http://resources.arcgis.com/en/help/main/10.2/index.html#/SQL_reference_for_query_expressions_used_in_ArcGIS/00s500000033000000/">here</a>.</td>
+            <td>Adds a `where` clause to the query.  String values should be denoted using single quotes ie: `query.where("FIELDNAME = 'field value'");` More info about valid SQL can be found <a href="https://desktop.arcgis.com/en/arcmap/latest/map/working-with-layers/sql-reference-for-query-expressions-used-in-arcgis.htm">here</a>.</td>
         </tr>
         <tr>
             <td><code>offset({{{param 'Integer' 'offset'}}})</code></td>
@@ -113,7 +113,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
             <td>Return geometry with results. Default is `true`.</td>
         </tr>
         <tr>
-            <td><code>simplify({{{param 'Map' 'map' 'http://leafletjs.com/reference.html#map'}}},  {{{param 'Number' 'factor'}}})</code></td>
+            <td><code>simplify({{{param 'Map' 'map' 'https://leafletjs.com/reference.html#map'}}},  {{{param 'Number' 'factor'}}})</code></td>
             <td><code>this</code></td>
             <td>Simplify the geometries of the output features for the current map view. the <code>factor</code> parameter controls the amount of simplification between 0 (no simplification) and 1 (the most basic shape possible).</td>
         </tr>
@@ -143,14 +143,14 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
             <td>Used to select which layer inside a Map Service to perform the query on. <br><small>Only available for Map Services.</small></td>
         </tr>
         <tr>
-            <td><code>pixelSize({{{param 'Point' 'point' 'http://leafletjs.com/reference.html#point'}}})</code></td>
+            <td><code>pixelSize({{{param 'Point' 'point' 'https://leafletjs.com/reference.html#point'}}})</code></td>
             <td><code>this</code></td>
             <td>Override the default pixelSize when querying an Image Service. <br><small>Only available for Image Services.</small></td>
         </tr>
         <tr>
             <td><code>transform({{{param 'Number' 'Number'}}})</code></td>
             <td><code>this</code></td>
-            <td>The WKID of a [datum transformation](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Datum_transformations/02r3000000r8000000/) for the server to apply when reprojecting output features.<br><small>Only available for ArcGIS Server 10.5+.</small></td>
+            <td>The WKID of a [datum transformation](https://developers.arcgis.com/rest/services-reference/datum-transformations.htm) for the server to apply when reprojecting output features.<br><small>Only available for ArcGIS Server 10.5+.</small></td>
         </tr>
         <tr>
             <td><code>distinct()</code></td>
@@ -165,7 +165,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
         <tr>
             <td><code>run({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
-            <td>Executes the query request with the current parameters, features will be passed to <code>callback</code> as a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a>. Accepts an optional function context.</td>
+            <td>Executes the query request with the current parameters, features will be passed to <code>callback</code> as a <a href="https://tools.ietf.org/html/rfc7946#section-3.3">GeoJSON FeatureCollection</a>. Accepts an optional function context.</td>
         </tr>
         <tr>
             <td><code>count({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
@@ -180,7 +180,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
         <tr>
             <td><code>bounds({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
-            <td>Executes the query request with the current parameters, passing only the <a href="http://leafletjs.com/reference.html#latlngbounds"><code>LatLngBounds</code></a> of all features matching the query in the <code>callback</code>. Accepts an optional function context.  <small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3.1.</small></td>
+            <td>Executes the query request with the current parameters, passing only the <a href="https://leafletjs.com/reference.html#latlngbounds"><code>LatLngBounds</code></a> of all features matching the query in the <code>callback</code>. Accepts an optional function context.  <small>Only available for Feature Layers hosted on ArcGIS Online or ArcGIS Server 10.3.1.</small></td>
         </tr>
     </tbody>
 </table>

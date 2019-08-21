@@ -109,7 +109,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
             <td>Property used for adding new layers or modifying the data source of existing ones in the current map service.</td>
         </tr>
         <tr>
-            <td><code>simplify({{{param 'Map' 'map' 'http://leafletjs.com/reference.html#map'}}},  {{{param 'Integer' 'factor'}}})</code></td>
+            <td><code>simplify({{{param 'Map' 'map' 'https://leafletjs.com/reference.html#map'}}},  {{{param 'Integer' 'factor'}}})</code></td>
             <td><code>this</code></td>
             <td>Simplify the geometries of the output features for the current map view. the <code>factor</code> parameter controls the amount of simplification between 0 (no simplification) and 1 (simplify to the most basic shape possible).</td>
         </tr>
@@ -126,7 +126,7 @@ Extends [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
         <tr>
             <td><code>run({{{param 'Function' 'callback'}}}, {{{param 'Object' 'context'}}})</code></td>
             <td><code>this</code></td>
-            <td>Exectues the find request with the current parameters, features will be passed to <code>callback</code> as a <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">GeoJSON FeatureCollection</a>. Accepts an optional function context.</td>
+            <td>Exectues the find request with the current parameters, features will be passed to <code>callback</code> as a <a href="https://tools.ietf.org/html/rfc7946#section-3.3">GeoJSON FeatureCollection</a>. Accepts an optional function context.</td>
         </tr>
     </tbody>
 </table>

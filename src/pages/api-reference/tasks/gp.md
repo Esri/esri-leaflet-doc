@@ -49,7 +49,7 @@ myTask.on('initialized', function () {
         <tr>
             <td><code>setParam({{{param 'String' 'inputParamName'}}}, {{{param 'String||Boolean||Geometry' 'value'}}})</code></td>
             <td><code>`this`</code></td>
-            <td>Sets an input parameter named by the service itself. [L.LatLng](http://leafletjs.com/reference.html#latlng), [L.Marker](http://leafletjs.com/reference.html#marker), [L.LatLngBounds](http://leafletjs.com/reference.html#latlngbounds), and [L.GeoJSON](http://leafletjs.com/reference.html#geojson) (both Features and Geometries) will be converted to GeoServices JSON to be passed in the request automatically.</td>
+            <td>Sets an input parameter named by the service itself. [L.LatLng](https://leafletjs.com/reference.html#latlng), [L.Marker](https://leafletjs.com/reference.html#marker), [L.LatLngBounds](https://leafletjs.com/reference.html#latlngbounds), and [L.GeoJSON](https://leafletjs.com/reference.html#geojson) (both Features and Geometries) will be converted to GeoServices JSON to be passed in the request automatically.</td>
         </tr>
         <tr>
             <td><code>run({{{param 'Function' 'callback'}}})</code></td>

@@ -97,7 +97,7 @@ Accepts all [`L.esri.Task`](task.html#options) options. When used, the `url` opt
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `features` | `[<L.geoJSON>]`| The result of a valid request will be composed of an array of [L.geoJSON](http://leafletjs.com/reference.html#geojson) features. |
+| `features` | `[<L.geoJSON>]`| The result of a valid request will be composed of an array of [L.geoJSON](https://leafletjs.com/reference.html#geojson) features. |
 
 Example
 

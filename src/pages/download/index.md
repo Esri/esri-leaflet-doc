@@ -67,7 +67,7 @@ npm install esri-leaflet --save
 
 # Bower
 
-Esri Leaflet is available from [Bower](http://bower.io/search/?q=esri-leaflet) as well.
+Esri Leaflet is available from [Bower](https://bower.io/search/?q=esri-leaflet) as well.
 
 ```bash
 bower install esri-leaflet
@@ -84,5 +84,5 @@ Version `1.0.5` of esri-leaflet is the one for you.
 Legacy versions of the API prior to `1.0.0-rc.6` can be found on the Amazon Web Server below.
 ```xml
 <!-- 1.0.0-rc.6 and prior -->
-<script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.6/esri-leaflet.js"></script>
+<script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.6/esri-leaflet.js"></script>
 ```

@@ -23,18 +23,18 @@ Image Services provide access to raster data through a web service.
     <tbody>
         <tr>
             <td><code class="nobr">L.esri.imageMapLayer({{{param 'Object' 'options'}}})</code></td>
-            <td>The <code>options</code> parameter can accept the same options as <a href="http://leafletjs.com/reference.html#imageoverlay"><code>L.ImageOverlay</code></a>. You also must pass a <code>url</code> key in your <code>options</code>.</td>
+            <td>The <code>options</code> parameter can accept the same options as <a href="https://leafletjs.com/reference.html#imageoverlay"><code>L.ImageOverlay</code></a>. You also must pass a <code>url</code> key in your <code>options</code>.</td>
         </tr>
     </tbody>
 </table>
 
 ### Options
 
-`L.esri.ImageMapLayer` also accepts all the options you can pass to [`L.ImageOverlay`](http://leafletjs.com/reference.html#imageoverlay).
+`L.esri.ImageMapLayer` also accepts all the options you can pass to [`L.ImageOverlay`](https://leafletjs.com/reference.html#imageoverlay).
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-`url` | `String` | | *Required* URL of the [Image Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Image_Service/02r3000000q8000000/).
+`url` | `String` | | *Required* URL of the [Image Service](https://developers.arcgis.com/rest/services-reference/image-service.htm).
 `format` | `String` | `'jpegpng'` | Output format of the image.
 `f` | `String` | `'image'` | Server response content type [`"json"` &#124; `"image"`](https://developers.arcgis.com/rest/services-reference/export-image.htm).
 `opacity` | `Number` | `1` | Opacity of the layer. Should be a value between 0 and 1.
@@ -47,8 +47,8 @@ Option | Type | Default | Description
 `noData` | `Number` |   | The pixel value representing no information.
 `noDataInterpretation` | `String` |   | Interpretation of the `noData` setting.
 `pixelType` | `String` |   | Leave `pixelType` as unspecified, or `UNKNOWN`, in most exportImage use cases, unless such `pixelType` is desired. Possible values: `C128`, `C64`, `F32`, `F64`, `S16`, `S32`, `S8`, `U1`, `U16`, `U2`, `U32`, `U4`, `U8`, `UNKNOWN`.
-`renderingRule` | `Object` |   | A JSON representation of a [raster function](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Raster_function_objects/02r3000000rv000000/)
-`mosaicRule` | `Object` |  | A JSON representation of a [mosaic rule](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Mosaic_rule_objects/02r3000000s4000000/)
+`renderingRule` | `Object` |   | A JSON representation of a [raster function](https://developers.arcgis.com/documentation/common-data-types/raster-function-objects.htm)
+`mosaicRule` | `Object` |  | A JSON representation of a [mosaic rule](https://developers.arcgis.com/documentation/common-data-types/mosaic-rules.htm)
 `token` | `String` |   | If you pass a token in your options it will be included in all requests to the service.
 `proxy` | `String` | `false` | URL of an [ArcGIS API for JavaScript proxies](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) or [ArcGIS Resource Proxies](https://github.com/Esri/resource-proxy) to use for proxying POST requests.
 `useCors` | `Boolean` | `true` | If this service should use CORS when making GET requests.
@@ -77,10 +77,10 @@ Option | Type | Default | Description
             <td>Redraws this layer above all other overlay layers.</td>
         </tr>
         <tr>
-            <td><code>bindPopup({{{param 'Function' 'fn'}}}, {{{param 'PopupOptions' 'popupOptions' 'http://leafletjs.com/reference.html#popup-options'}}})</code></td>
+            <td><code>bindPopup({{{param 'Function' 'fn'}}}, {{{param 'PopupOptions' 'popupOptions' 'https://leafletjs.com/reference.html#popup-options'}}})</code></td>
             <td><code>this</code></td>
             <td>
-                Uses the provided function to create a popup that will identify pixel value(s) whenever the map is clicked. Your function will be passed an object with a `pixel` property that is a <a href="http://geojson.org/geojson-spec.html#point">GeoJSON Point</a> with the pixel value(s) at the clicked location and should return the appropriate HTML. If you do not want to open the popup when there are no results, return <code>false</code>.
+                Uses the provided function to create a popup that will identify pixel value(s) whenever the map is clicked. Your function will be passed an object with a `pixel` property that is a <a href="https://tools.ietf.org/html/rfc7946#section-3.1.2">GeoJSON Point</a> with the pixel value(s) at the clicked location and should return the appropriate HTML. If you do not want to open the popup when there are no results, return <code>false</code>.
 
 <pre class="js"><code>
 imageMapLayer.bindPopup(
@@ -135,7 +135,7 @@ imageMapLayer.bindPopup(
         <tr>
             <td><code>setNoData({{{param 'Array' 'noData'}}} or {{{param 'Number' 'noData'}}}, {{{param 'String' 'noDataInterpretation'}}})</code></td>
             <td><code>this</code></td>
-            <td>Specify a single value, or an array of values to treat as no data. No data will values will be rendered transparent.<br />The optional `noDataInterpretation` can be either `esriNoDataMatchAny` | `esriNoDataMatchAll`. The default is `esriNoDataMatchAny` when `noData` is a number, and `esriNoDataMatchAll` when noData is an array. See <a href="http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Image/02r3000000wm000000/">Image Service Export Image documentation</a> for more details</td>
+            <td>Specify a single value, or an array of values to treat as no data. No data will values will be rendered transparent.<br />The optional `noDataInterpretation` can be either `esriNoDataMatchAny` | `esriNoDataMatchAll`. The default is `esriNoDataMatchAny` when `noData` is a number, and `esriNoDataMatchAll` when noData is an array. See <a href="https://developers.arcgis.com/rest/services-reference/export-image.htm">Image Service Export Image documentation</a> for more details</td>
         </tr>
         <tr>
             <td><code>getNoDataInterpretation()</code></td>
@@ -244,7 +244,7 @@ var map = L.map('map').setView([43.50, -120.23], 7);
 L.esri.basemapLayer('Imagery').addTo(map);
 
 L.esri.imageMapLayer({
-  url: 'http://imagery.oregonexplorer.info/arcgis/rest/services/NAIP_2011/NAIP_2011_Dynamic/ImageServer'
+  url: 'https://ihttmagery.oregonexplorer.info/arcgis/rest/services/NAIP_2011/NAIP_2011_Dynamic/ImageServer'
 })
   .setBandIds('3,0,1')
   .addTo(map);

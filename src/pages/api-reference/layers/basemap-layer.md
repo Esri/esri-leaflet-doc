@@ -5,7 +5,7 @@ layout: documentation.hbs
 
 # {{page.data.title}}
 
-Extends [`L.TileLayer`](http://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#tilelayer)
+Extends [`L.TileLayer`](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#tilelayer)
 
 `L.esri.basemapLayer` is used to display Esri hosted basemaps and attributes data providers appropriately. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
 
@@ -21,7 +21,7 @@ Extends [`L.TileLayer`](http://leafletjs.com/reference-{{siteData.latest_leaflet
     <tbody>
         <tr>
             <td><code class="nobr">L.esri.basemapLayer({{{param 'String' 'key'}}}, {{{param 'Object' 'options'}}})</code></td>
-            <td><code>key</code> refers to the specific basemap you'd like to add. The <code>options</code> parameter can accept the same [options](http://leafletjs.com/reference.html#tilelayer) as `L.TileLayer`.</td>
+            <td><code>key</code> refers to the specific basemap you'd like to add. The <code>options</code> parameter can accept the same [options](https://leafletjs.com/reference.html#tilelayer) as `L.TileLayer`.</td>
         </tr>
     </tbody>
 </table>
@@ -59,7 +59,7 @@ These are optional layers that add extra text labels to the basemaps.
 
 ### Options
 
-`L.esri.basemapLayer` also accepts all [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer-options) options.
+`L.esri.basemapLayer` also accepts all [`L.TileLayer`](https://leafletjs.com/reference.html#tilelayer-options) options.
 
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -67,11 +67,11 @@ These are optional layers that add extra text labels to the basemaps.
 
 ### Methods
 
-`L.esri.BasemapLayer` inherits all methods from [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer).
+`L.esri.BasemapLayer` inherits all methods from [`L.TileLayer`](https://leafletjs.com/reference.html#tilelayer).
 
 ### Events
 
-`L.esri.TiledMapLayer` fires all  [`L.TileLayer`](http://leafletjs.com/reference.html#tilelayer) events.
+`L.esri.TiledMapLayer` fires all  [`L.TileLayer`](https://leafletjs.com/reference.html#tilelayer) events.
 
 ### Example
 
