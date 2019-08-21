@@ -137,7 +137,7 @@ module.exports = function (grunt) {
   grunt.registerTask('docs', ['newer:assemble:dev', 'sass', 'copy', 'imagemin', 'connect:docs', 'watch']);
 
   // Documentation Site Tasks
-  grunt.registerTask('docs:build', ['newer:assemble:dist', 'sass', 'copy', 'imagemin', 'sass']);
+  grunt.registerTask('docs:build', ['eslint:default', 'newer:assemble:dist', 'sass', 'copy', 'imagemin', 'sass']);
 
   // Documentation Site Tasks
   grunt.registerTask('docs:deploy', ['docs:build', 'gh-pages']);

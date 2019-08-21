@@ -21,6 +21,8 @@ In order to update the version of Leaflet, Esri Leaflet or any other plugin disp
 
 Before committing, run `npm test`, which will run [ESLint](https://eslint.org/) (enforcing the [Semistandard style](https://github.com/standard/semistandard)) on all our sample code to ensure the samples are consistently formatted.
 
+File changes will be watched and also linted with ESLint if you have run `npm start` prior to editing the samples.
+
 If you're using [VS Code](https://code.visualstudio.com/) and the [ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), you can create a new file at `.vscode/settings.json` with the following contents to enable live linting on the HBS files:
 
 ```json
