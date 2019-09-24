@@ -15,7 +15,7 @@ layout: example.hbs
   var map = L.map('map');
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="//osm.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
   geocoder.geocode().text('New York City').run(function (error, response) {
