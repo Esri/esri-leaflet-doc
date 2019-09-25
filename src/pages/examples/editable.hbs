@@ -1,12 +1,12 @@
 ---
 title: Editing feature layers
-description: This sample uses the Leaflet <a href="//github.com/Leaflet/Leaflet.Editable">Editable plugin</a> to help users manipulate the geometry of features from a hosted feature service and pass the edits back to the server.
+description: This sample uses the Leaflet <a href="https://github.com/Leaflet/Leaflet.Editable">Editable plugin</a> (coupled with the <a href="https://github.com/w8r/Leaflet.Path.Drag">Leaflet.Path.Drag plugin</a>) to help users manipulate the geometry of features from a hosted feature service and pass the edits back to the server.
 layout: example.hbs
 ---
-<script src="https://unpkg.com/leaflet.path.drag@0.0.5"></script>
+<script src="https://unpkg.com/leaflet.path.drag@0.0.6/src/Path.Drag.js"></script>
 <script src="https://unpkg.com/leaflet-editable@1.2.0/src/Leaflet.Editable.js"></script>
 
-<div id='map'></div>
+<div id="map"></div>
 
 <script type="text/javascript">
     // make sure double clicking the map *only* triggers the editing workflow
@@ -70,17 +70,17 @@ layout: example.hbs
     map.addControl(new L.NewPolygonControl());
     map.addControl(new L.NewRectangleControl());
 
-    // when users CMD/CTRL click an editable feature, remove it from the map and delete it from the service
+    // when users CMD/CTRL click an active editable feature,
+    // remove it from the map and delete it from the service
     wildfireDistricts.on('click', function (e) {
       if ((e.originalEvent.ctrlKey || e.originalEvent.metaKey) && e.layer.editEnabled()) {
-        e.layer.editor.deleteShapeAt(e.latlng);
         // delete expects an id, not the whole geojson object
         wildfireDistricts.deleteFeature(e.layer.feature.id);
       }
     });
 
-    // when users double click a graphic toggle its editable status
-    // when deselecting, pass the geometry update to the service
+    // when users double click a graphic, toggle its editable status
+    // but when deselecting via double click, pass the geometry update to the service
     wildfireDistricts.on('dblclick', function (e) {
       e.layer.toggleEdit();
       if (!e.layer.editEnabled()) {
@@ -88,9 +88,20 @@ layout: example.hbs
       }
     });
 
-    // when a new feature is drawn using one of the custom controls, pass the edit to the service
+    // when a new feature is drawn using one of the custom controls,
+    // pass the edit to the featureLayer service
     map.on('editable:drawing:commit', function (e) {
-      wildfireDistricts.addFeature(e.layer.toGeoJSON());
+      wildfireDistricts.addFeature(e.layer.toGeoJSON(), function (error, response) {
+        if (error || !response.success) {
+          console.log(error, response);
+        }
+
+        // now that the L.esri.featureLayer instance will manage this new feature,
+        // remove any temporary features from the map that were created by the Editable plugin
+        map.editTools.featuresLayer.clearLayers();
+      });
+
+      // disable editing
       e.layer.toggleEdit();
     });
 </script>

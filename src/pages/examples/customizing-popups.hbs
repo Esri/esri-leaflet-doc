@@ -11,7 +11,9 @@ layout: example.hbs
   L.esri.basemapLayer('Gray').addTo(map);
 
   var wildfireRisk = L.esri.dynamicMapLayer({
-    url: 'https://maps7.arcgisonline.com/arcgis/rest/services/USDA_USFS_2014_Wildfire_Hazard_Potential/MapServer'
+    url: 'https://maps7.arcgisonline.com/arcgis/rest/services/USDA_USFS_2014_Wildfire_Hazard_Potential/MapServer',
+    // server response content type can be either 'json' (default) or 'image'
+    f: 'image'
   }).addTo(map);
 
   wildfireRisk.bindPopup(function (error, featureCollection) {
