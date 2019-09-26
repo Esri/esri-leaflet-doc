@@ -7,12 +7,12 @@ when you'd like to bump one (or more) plugin versions used on the doc site
 */
 
 var ssri = require('ssri');
-var fs   = require('fs');
+var fs = require('fs');
 
 const leafletIntegrity = ssri.fromData(fs.readFileSync('node_modules/leaflet/dist/leaflet.js'));
 const leafletCssIntegrity = ssri.fromData(fs.readFileSync('node_modules/leaflet/dist/leaflet.css'));
 
-const dependencyVersions = JSON.parse(fs.readFileSync('package.json'))
+const dependencyVersions = JSON.parse(fs.readFileSync('package.json'));
 
 const esriLeafletIntegrity = ssri.fromData(fs.readFileSync('node_modules/esri-leaflet/dist/esri-leaflet.js'));
 
