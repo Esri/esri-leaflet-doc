@@ -47,8 +47,8 @@ docConfig = docConfig.
   replace(/"latest_esri_leaflet_renderers":.*/, '"latest_esri_leaflet_renderers": "' + dependencyVersions.devDependencies['esri-leaflet-renderers'] + '",').
   replace(/"latest_esri_leaflet_renderers_integrity":.*/, '"latest_esri_leaflet_renderers_integrity": "' + renderersIntegrity.toString() + '",').
   replace(/"latest_esri_leaflet_cluster":.*/, '"latest_esri_leaflet_cluster": "' + dependencyVersions.devDependencies['esri-leaflet-cluster'] + '",').
-  replace(/"latest_esri_leaflet_cluster_integrity":.*/, '"latest_esri_leaflet_cluster_integrity": "' + renderersIntegrity.toString() + '",').
+  replace(/"latest_esri_leaflet_cluster_integrity":.*/, '"latest_esri_leaflet_cluster_integrity": "' + clusterIntegrity.toString() + '",').
   replace(/"latest_esri_leaflet_heatmap":.*/, '"latest_esri_leaflet_heatmap": "' + dependencyVersions.devDependencies['esri-leaflet-heatmap'] + '",').
-  replace(/"latest_esri_leaflet_heatmap_integrity":.*/, '"latest_esri_leaflet_heatmap_integrity": "' + renderersIntegrity.toString() + '"');
+  replace(/"latest_esri_leaflet_heatmap_integrity":.*/, '"latest_esri_leaflet_heatmap_integrity": "' + heatmapIntegrity.toString() + '"');
 
 fs.writeFileSync('data/siteData.json', docConfig);
