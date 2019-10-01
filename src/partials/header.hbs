@@ -15,9 +15,10 @@
 
   {{#if page.data.description}}
     <meta name="description" content="{{page.data.description}}">
+  {{ else }}
+    <meta name="description" content="A lightweight set of tools for using ArcGIS services with Leaflet.">
   {{/if}}
 
-  <meta name="description" content="Esri Leaflet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!--[if lt IE 9]>
