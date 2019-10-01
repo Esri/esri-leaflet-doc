@@ -7,12 +7,12 @@ when you'd like to bump one (or more) plugin versions used on the doc site
 */
 
 var ssri = require('ssri');
-var fs   = require('fs');
+var fs = require('fs');
 
 const leafletIntegrity = ssri.fromData(fs.readFileSync('node_modules/leaflet/dist/leaflet.js'));
 const leafletCssIntegrity = ssri.fromData(fs.readFileSync('node_modules/leaflet/dist/leaflet.css'));
 
-const dependencyVersions = JSON.parse(fs.readFileSync('package.json'))
+const dependencyVersions = JSON.parse(fs.readFileSync('package.json'));
 
 const esriLeafletIntegrity = ssri.fromData(fs.readFileSync('node_modules/esri-leaflet/dist/esri-leaflet.js'));
 
@@ -47,8 +47,8 @@ docConfig = docConfig.
   replace(/"latest_esri_leaflet_renderers":.*/, '"latest_esri_leaflet_renderers": "' + dependencyVersions.devDependencies['esri-leaflet-renderers'] + '",').
   replace(/"latest_esri_leaflet_renderers_integrity":.*/, '"latest_esri_leaflet_renderers_integrity": "' + renderersIntegrity.toString() + '",').
   replace(/"latest_esri_leaflet_cluster":.*/, '"latest_esri_leaflet_cluster": "' + dependencyVersions.devDependencies['esri-leaflet-cluster'] + '",').
-  replace(/"latest_esri_leaflet_cluster_integrity":.*/, '"latest_esri_leaflet_cluster_integrity": "' + renderersIntegrity.toString() + '",').
+  replace(/"latest_esri_leaflet_cluster_integrity":.*/, '"latest_esri_leaflet_cluster_integrity": "' + clusterIntegrity.toString() + '",').
   replace(/"latest_esri_leaflet_heatmap":.*/, '"latest_esri_leaflet_heatmap": "' + dependencyVersions.devDependencies['esri-leaflet-heatmap'] + '",').
-  replace(/"latest_esri_leaflet_heatmap_integrity":.*/, '"latest_esri_leaflet_heatmap_integrity": "' + renderersIntegrity.toString() + '"');
+  replace(/"latest_esri_leaflet_heatmap_integrity":.*/, '"latest_esri_leaflet_heatmap_integrity": "' + heatmapIntegrity.toString() + '"');
 
 fs.writeFileSync('data/siteData.json', docConfig);
