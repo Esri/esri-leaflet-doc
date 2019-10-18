@@ -50,6 +50,23 @@ layout: page.hbs
     integrity="{{siteData.latest_esri_leaflet_geocoder_integrity}}"
     crossorigin=""></script>
   {{/if}}
+
+  {{#if page.data.markerCluster}}
+  <!-- Load Leaflet MarkerCluster and Esri Leaflet Cluster from CDN -->
+  <link rel="stylesheet" type="text/css"
+    href="https://unpkg.com/leaflet.markercluster@{{siteData.latest_leaflet_markercluster}}/dist/MarkerCluster.Default.css"
+    integrity="{{siteData.latest_leaflet_markercluster_defaultcss_integrity}}"
+    crossorigin="">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@{{siteData.latest_leaflet_markercluster}}/dist/MarkerCluster.css"
+    integrity="{{siteData.latest_leaflet_markercluster_css_integrity}}"
+    crossorigin="">
+  <script src="https://unpkg.com/leaflet.markercluster@{{siteData.latest_leaflet_markercluster}}/dist/leaflet.markercluster.js"
+    integrity="{{siteData.latest_leaflet_markercluster_integrity}}"
+    crossorigin=""></script>
+  <script src="https://unpkg.com/esri-leaflet-cluster@{{siteData.latest_esri_leaflet_cluster}}/dist/esri-leaflet-cluster.js"
+    integrity="{{siteData.latest_esri_leaflet_cluster_integrity}}"
+    crossorigin=""></script>
+  {{/if}}
   <style>
     body { margin:0; padding:0; }
     #map { position: absolute; top:0; bottom:0; right:0; left:0; }

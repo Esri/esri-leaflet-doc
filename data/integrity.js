@@ -25,7 +25,10 @@ const gpIntegrity = ssri.fromData(fs.readFileSync('node_modules/esri-leaflet-gp/
 
 const renderersIntegrity = ssri.fromData(fs.readFileSync('node_modules/esri-leaflet-renderers/dist/esri-leaflet-renderers.js'));
 
-const clusterIntegrity = ssri.fromData(fs.readFileSync('node_modules/esri-leaflet-cluster/dist/esri-leaflet-cluster.js'));
+const leafletMarkerClusterIntegrity = ssri.fromData(fs.readFileSync('node_modules/leaflet.markercluster/dist/leaflet.markercluster.js'));
+const leafletMarkerClusterCssIntegrity = ssri.fromData(fs.readFileSync('node_modules/leaflet.markercluster/dist/MarkerCluster.css'));
+const leafletMarkerClusterDefaultCssIntegrity = ssri.fromData(fs.readFileSync('node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css'));
+const esriLeafletClusterIntegrity = ssri.fromData(fs.readFileSync('node_modules/esri-leaflet-cluster/dist/esri-leaflet-cluster.js'));
 
 const heatmapIntegrity = ssri.fromData(fs.readFileSync('node_modules/esri-leaflet-heatmap/dist/esri-leaflet-heatmap.js'));
 
@@ -46,8 +49,12 @@ docConfig = docConfig.
   replace(/"latest_esri_leaflet_gp_integrity":.*/, '"latest_esri_leaflet_gp_integrity": "' + gpIntegrity.toString() + '",').
   replace(/"latest_esri_leaflet_renderers":.*/, '"latest_esri_leaflet_renderers": "' + dependencyVersions.devDependencies['esri-leaflet-renderers'] + '",').
   replace(/"latest_esri_leaflet_renderers_integrity":.*/, '"latest_esri_leaflet_renderers_integrity": "' + renderersIntegrity.toString() + '",').
+  replace(/"latest_leaflet_markercluster":.*/, '"latest_leaflet_markercluster": "' + dependencyVersions.devDependencies['leaflet.markercluster'] + '",').
+  replace(/"latest_leaflet_markercluster_integrity":.*/, '"latest_leaflet_markercluster_integrity": "' + leafletMarkerClusterIntegrity.toString() + '",').
+  replace(/"latest_leaflet_markercluster_css_integrity":.*/, '"latest_leaflet_markercluster_css_integrity": "' + leafletMarkerClusterCssIntegrity.toString() + '",').
+  replace(/"latest_leaflet_markercluster_defaultcss_integrity":.*/, '"latest_leaflet_markercluster_defaultcss_integrity": "' + leafletMarkerClusterDefaultCssIntegrity.toString() + '",').
   replace(/"latest_esri_leaflet_cluster":.*/, '"latest_esri_leaflet_cluster": "' + dependencyVersions.devDependencies['esri-leaflet-cluster'] + '",').
-  replace(/"latest_esri_leaflet_cluster_integrity":.*/, '"latest_esri_leaflet_cluster_integrity": "' + clusterIntegrity.toString() + '",').
+  replace(/"latest_esri_leaflet_cluster_integrity":.*/, '"latest_esri_leaflet_cluster_integrity": "' + esriLeafletClusterIntegrity.toString() + '",').
   replace(/"latest_esri_leaflet_heatmap":.*/, '"latest_esri_leaflet_heatmap": "' + dependencyVersions.devDependencies['esri-leaflet-heatmap'] + '",').
   replace(/"latest_esri_leaflet_heatmap_integrity":.*/, '"latest_esri_leaflet_heatmap_integrity": "' + heatmapIntegrity.toString() + '"');
 
