@@ -9,7 +9,7 @@ Extends [`L.esri.Layers.FeatureLayer`]({{assets}}api-reference/layers-feature-la
 
 `L.esri.Cluster.FeatureLayer` provides integration for Feature Layers with the [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) plugin. Because of the extra dependency on Leaflet.markercluster we do not include `L.esri.Cluster.FeatureLayer` in the default build of Esri Leaflet.  You will also need to include your own copy of the [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) plugin.
 
-More information about Feature Layers can be found in the [`L.esri.FeatureLayer`]({{assets}}api-reference/layers/feature-layer.html) documentation.
+More information about Feature Layers can be found in the [`L.esri.FeatureLayer`]({{assets}}api-reference/layers/feature-layer.html) documentation. More information and the source code for this plugin can be found [here](https://github.com/Esri/esri-leaflet-cluster).
 
 ### Constructor
 
