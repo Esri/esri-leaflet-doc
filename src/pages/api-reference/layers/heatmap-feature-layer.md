@@ -9,7 +9,7 @@ Extends [`L.esri.Layers.FeatureLayer`]({{assets}}api-reference/layers-feature-la
 
 `L.esri.Heat.FeatureLayer` provides integration for Feature Layers with the [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) plugin. Because of the extra dependency on Leaflet.heat we do not include `L.esri.Heat.FeatureLayer` in the default build of Esri Leaflet. You will need to include your own copy of the [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) plugin in your application as well.
 
-More information about Feature Layers can be found in the [`L.esri.FeatureLayer`]({{assets}}api-reference/layers/feature-layer.html) documentation.
+More information about Feature Layers can be found in the [`L.esri.FeatureLayer`]({{assets}}api-reference/layers/feature-layer.html) documentation.  You can find more information and the source code for this plugin [here](https://github.com/Esri/esri-leaflet-heatmap).
 
 ### Constructor
 
@@ -27,6 +27,7 @@ More information about Feature Layers can be found in the [`L.esri.FeatureLayer`
         </tr>
     </tbody>
 </table>
+
 ### Options
 
 <table>
