@@ -211,7 +211,7 @@ Property | Type | Description
 --- | --- | ---
 `bounds` | [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds)| The bounds around this suggestion. Helpful for zooming to results like cities and states.
 `latlng` | [`L.LatLng`](https://leafletjs.com/reference.html#latlng)| The center of the results.
-`text` | `string` | The entered search text.
+`text` | `String` | The entered search text.
 `results` | [`[<ResultObject>]`](#result-object) | An array of [result objects](#result-object).
 
 #### Result Object
