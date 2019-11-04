@@ -47,7 +47,7 @@ Extends [`L.Control`](https://leafletjs.com/reference-{{siteData.latest_leaflet}
 
 | Event | Data | Description |
 | --- | --- | --- |
-| results | [`<ResultsEvent>`](#Results) | Fired when results are returned from the geocoder. |
+| results | [`<ResultsEvent>`](#results) | Fired when results are returned from the geocoder. |
 
 Events from each provider will match the events fired by [`L.esri.Service`](../services/service.html).
 
@@ -211,6 +211,7 @@ Property | Type | Description
 --- | --- | ---
 `bounds` | [`L.LatLngBounds`](https://leafletjs.com/reference.html#latlngbounds)| The bounds around this suggestion. Helpful for zooming to results like cities and states.
 `latlng` | [`L.LatLng`](https://leafletjs.com/reference.html#latlng)| The center of the results.
+`text` | `String` | The entered search text.
 `results` | [`[<ResultObject>]`](#result-object) | An array of [result objects](#result-object).
 
 #### Result Object
