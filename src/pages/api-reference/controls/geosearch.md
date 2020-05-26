@@ -168,7 +168,7 @@ Option | Type | Default | Description
 `searchFields` | `String` `Array[Strings]` | None | An array of fields to search for text.
 `formatSuggestion`| `Function` | See Description | Formatting function for the suggestion text. Receives feature information and returns a string.
 `bufferRadius` | `Integer` | 1000 | If a service or layer contains points, buffer points by this radius (in meters) to create bounds.
-`searchMode` | `String` | 'contain' | Sets how the search is performed against features.  It essentially changes where wildcards (`%`) are placed within the query.  Options are `contain`, `startWith`, `endWith`, or `strict`.
+`searchMode` | `String` | 'contain' | Sets how the search is performed against features.  Options are `contain`, `startWith`, `endWith`, or `strict`. Please refer to the [FeatureLayer Provider](https://github.com/Esri/esri-leaflet-geocoder/blob/master/src/Providers/FeatureLayer.js#L103) JavaScript file for how the different searches are structed.
 
 ##### featureLayerProvider Methods
 
