@@ -1,0 +1,64 @@
+---
+title: Search modes for searching within feature layers
+description: Searches features layers for matching text in addition to geocoding. This demo relies on the <a href="https://github.com/Esri/esri-leaflet-geocoder">Esri Leaflet Geocoder</a> plugin.
+layout: example.hbs
+geocoder: true
+---
+
+<style>
+  #selectContainer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background: white;
+    padding: 1em;
+  }
+
+  #selectContainer select {
+    font-size: 16px;
+  }
+</style>
+
+<div id="map"></div>
+
+<div id="selectContainer" class="leaflet-bar">
+  <label>
+    Search Mode:
+    <select id="searchMode">
+      <option value="contain">contain</option>
+      <option value="startWith">startWith</option>
+      <option value="endWith">endWith</option>
+      <option value="strict">strict</option>
+    </select>
+  </label>
+</div>
+
+<script>
+  var map = L.map('map').setView([40.91, -96.63], 4);
+
+  var openStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // searchMode can be 'contain', 'startWith', 'endWith', or 'strict'
+  var gisDayProvider = L.esri.Geocoding.featureLayerProvider({
+    url: 'https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/gisday/FeatureServer/0/',
+    searchFields: ['Name'],
+    label: 'GIS Day Events',
+    formatSuggestion: function (feature) {
+        return feature.properties.Name;
+      },
+    searchMode: 'contain'
+    });
+
+  var searchControl = L.esri.Geocoding.geosearch({
+    providers: [gisDayProvider]
+  }).addTo(map);
+  
+  var searchMode = document.getElementById('searchMode');
+
+  searchMode.addEventListener('change', function () {
+    gisDayProvider.options.searchMode = searchMode.value;
+  });
+</script>
