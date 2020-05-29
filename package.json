@@ -22,7 +22,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "esri-leaflet": "2.4.1",
     "esri-leaflet-cluster": "2.0.1",
-    "esri-leaflet-geocoder": "2.3.2",
+    "esri-leaflet-geocoder": "2.3.3",
     "esri-leaflet-gp": "2.0.3",
     "esri-leaflet-heatmap": "2.0.0",
     "esri-leaflet-renderers": "2.0.6",
