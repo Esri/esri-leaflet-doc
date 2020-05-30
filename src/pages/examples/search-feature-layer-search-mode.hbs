@@ -37,7 +37,7 @@ geocoder: true
 <script>
   var map = L.map('map').setView([40.91, -96.63], 4);
 
-  var openStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
@@ -47,15 +47,15 @@ geocoder: true
     searchFields: ['Name'],
     label: 'GIS Day Events',
     formatSuggestion: function (feature) {
-        return feature.properties.Name;
-      },
+      return feature.properties.Name;
+    },
     searchMode: 'contain'
-    });
+  });
 
-  var searchControl = L.esri.Geocoding.geosearch({
+  L.esri.Geocoding.geosearch({
     providers: [gisDayProvider]
   }).addTo(map);
-  
+
   var searchMode = document.getElementById('searchMode');
 
   searchMode.addEventListener('change', function () {
