@@ -57,6 +57,7 @@
     "start": "grunt",
     "test": "grunt lint"
   },
+  "dependencies": {},
   "engines": {
     "node": ">=8"
   }
