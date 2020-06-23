@@ -67,6 +67,12 @@ layout: page.hbs
     integrity="{{siteData.latest_esri_leaflet_cluster_integrity}}"
     crossorigin=""></script>
   {{/if}}
+  {{#if page.data.esriLeafletRenderers}}
+  <!-- Load Esri Leaflet Renderers plugin to use feature service symbology -->
+  <script src="https://unpkg.com/esri-leaflet-renderers@{{siteData.latest_esri_leaflet_renderers}}" 
+    integrity="{{siteData.latest_esri_leaflet_renderers_integrity}}"
+    crossorigin=""></script>
+  {{/if}}
   <style>
     body { margin:0; padding:0; }
     #map { position: absolute; top:0; bottom:0; right:0; left:0; }

@@ -11,14 +11,14 @@
   "latest_esri_leaflet_vector_integrity": "sha512-keaVwrBxpBNq1XF5XEUvQ8NtoBbGPs/gKJJ3tp1qiudO3mTk9YEa6/uPpxX/G2HIjFrquj/xGg+p/c7nDp0wUg==",
   "latest_esri_leaflet_gp": "2.0.3",
   "latest_esri_leaflet_gp_integrity": "sha512-pYExthzLUD0etGnsvN2vg1LOEBd0nAfIwgZWlxavdBPNc2JT+f9hDQrXJrIhHK5WmuHVAuAb8jDekD36P/pXhg==",
-  "latest_esri_leaflet_renderers": "2.0.6",
-  "latest_esri_leaflet_renderers_integrity": "sha512-mhpdD3igvv7A/84hueuHzV0NIKFHmp2IvWnY5tIdtAHkHF36yySdstEVI11JZCmSY4TCvOkgEoW+zcV/rUfo0A==",
+  "latest_esri_leaflet_renderers": "2.1.1",
+  "latest_esri_leaflet_renderers_integrity": "sha512-MCZGeGZymUePBKC7TI1lkxrchTO7ugFhFiMEyKhwTV7MiUA+NVXtrYMj6GC1Qzkbu55NiiuDx4dOkzPxoPRhpA==",
   "latest_leaflet_markercluster": "1.4.1",
   "latest_leaflet_markercluster_integrity": "sha512-MQlyPV+ol2lp4KodaU/Xmrn+txc1TP15pOBF/2Sfre7MRsA/pB4Vy58bEqe9u7a7DczMLtU5wT8n7OblJepKbg==",
   "latest_leaflet_markercluster_css_integrity": "sha512-RLEjtaFGdC4iQMJDbMzim/dOvAu+8Qp9sw7QE4wIMYcg2goVoivzwgSZq9CsIxp4xKAZPKh5J2f2lOko2Ze6FQ==",
   "latest_leaflet_markercluster_defaultcss_integrity": "sha512-BBToHPBStgMiw0lD4AtkRIZmdndhB6aQbXpX7omcrXeG2PauGBl2lzq2xUZTxaLxYz5IDHlmneCZ1IJ+P3kYtQ==",
-  "latest_esri_leaflet_cluster": "2.0.1",
-  "latest_esri_leaflet_cluster_integrity": "sha512-2/Nwrks+A2omjKeWrF4TKFLIrUbAhSl8EDEm6xunuwXXYqMoJI71PZtlW0/vqt9d3DOyP1md/bzAnNH2KuAhaQ==",
+  "latest_esri_leaflet_cluster": "2.1.0",
+  "latest_esri_leaflet_cluster_integrity": "sha512-fEdNFHisleVtEYdLhW4Z2RsR7TN6hLutE/+O4D+skfTNY2rlHm8HOZARPWkdrFFy/+i2KjFxcZAKTUWaVfbV0g==",
   "latest_esri_leaflet_heatmap": "2.0.0",
   "latest_esri_leaflet_heatmap_integrity": "sha512-fSJJRfO4PK90PN9jKKBzBZmzlNRsR12QA/CqTTWgfUTfLMF1Nrx5ouOqlpzC8LQIP+Qz0/G4BlHSgxHrCLHuMA=="
 }

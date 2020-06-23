@@ -92,6 +92,13 @@
     crossorigin=""></script>
   {{/if}}
 
+  {{#if page.data.esriLeafletRenderers}}
+  <!-- Load Esri Leaflet Renderers plugin to use feature service symbology -->
+  <script src="https://unpkg.com/esri-leaflet-renderers@{{siteData.latest_esri_leaflet_renderers}}" 
+    ></script>
+  
+  {{/if}}
+
   <!-- Google Analytics -->
   <script>
     /* eslint-disable */
