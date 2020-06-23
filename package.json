@@ -42,8 +42,7 @@
     "leaflet.markercluster": "1.4.1",
     "load-grunt-tasks": "^5.0.0",
     "node-sass": "^4.12.0",
-    "ssri": "^6.0.1",
-    "leaflet-shape-markers": "^1.0.6"
+    "ssri": "^6.0.1"
   },
   "license": "Apache-2.0",
   "readmeFilename": "README.md",
