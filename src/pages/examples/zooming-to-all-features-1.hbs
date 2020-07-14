@@ -7,17 +7,17 @@ layout: example.hbs
 <div id="map"></div>
 
 <script>
-  var map = L.map('map').setView([34.33, -118.50], 5);
+  var map = L.map('map').setView([40.34, -76.34], 5);
 
   L.esri.basemapLayer('Streets').addTo(map);
 
   var trails = L.esri.featureLayer({
-    url: 'https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/18'
+    url: 'https://maps.pasda.psu.edu/arcgis/rest/services/pasda/CityPhillyPlanning/MapServer/2'
   }).addTo(map);
 
   trails.query().bounds(function (error, latlngbounds) {
     if (error) {
-      return;
+      console.log('Error running "Query" operation: ' + error);
     }
 
     map.fitBounds(latlngbounds);
