@@ -26,22 +26,24 @@ layout: page.hbs
   {{else}}
   <!-- Load Leaflet from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.css"
-  integrity="{{siteData.latest_leaflet_css_integrity}}"
-  crossorigin=""/>
+    integrity="{{siteData.latest_leaflet_css_integrity}}"
+    crossorigin=""/>
   <script src="https://unpkg.com/leaflet@{{siteData.latest_leaflet}}/dist/leaflet.js"
-  integrity="{{siteData.latest_leaflet_integrity}}"
-  crossorigin=""></script>
+    integrity="{{siteData.latest_leaflet_integrity}}"
+    crossorigin=""></script>
   {{/if}}
-  {{#if page.data.legacyEsriLeaflet}}
+
+  {{~#if page.data.legacyEsriLeaflet}}
   <!-- Load Esri Leaflet (not latest version due to dependencies) -->
   <script src="https://unpkg.com/esri-leaflet@{{page.data.legacyEsriLeaflet}}/dist/esri-leaflet.js"></script>
   {{else}}
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
-  integrity="{{siteData.latest_esri_leaflet_integrity}}"
-  crossorigin=""></script>
+    integrity="{{siteData.latest_esri_leaflet_integrity}}"
+    crossorigin=""></script>
   {{/if}}
-  {{#if page.data.geocoder}}
+
+  {{~#if page.data.geocoder}}
   <!-- Load Esri Leaflet Geocoder from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.latest_esri_leaflet_geocoder}}/dist/esri-leaflet-geocoder.css"
     integrity="{{siteData.latest_esri_leaflet_geocoder_css_integrity}}"
@@ -51,7 +53,7 @@ layout: page.hbs
     crossorigin=""></script>
   {{/if}}
 
-  {{#if page.data.markerCluster}}
+  {{~#if page.data.markerCluster}}
   <!-- Load Leaflet MarkerCluster and Esri Leaflet Cluster from CDN -->
   <link rel="stylesheet" type="text/css"
     href="https://unpkg.com/leaflet.markercluster@{{siteData.latest_leaflet_markercluster}}/dist/MarkerCluster.Default.css"
@@ -67,7 +69,8 @@ layout: page.hbs
     integrity="{{siteData.latest_esri_leaflet_cluster_integrity}}"
     crossorigin=""></script>
   {{/if}}
-  {{#if page.data.esriLeafletRenderers}}
+
+  {{~#if page.data.esriLeafletRenderers}}
   <!-- Load Esri Leaflet Renderers plugin to use feature service symbology -->
   <script src="https://unpkg.com/esri-leaflet-renderers@{{siteData.latest_esri_leaflet_renderers}}" 
     integrity="{{siteData.latest_esri_leaflet_renderers_integrity}}"
