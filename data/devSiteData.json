@@ -1,4 +1,5 @@
 {
   "isDev": true,
-  "localSource": false
+  "localSource": false,
+  "localSourceUrl": "http://localhost:5000/dist/esri-leaflet-debug.js"
 }

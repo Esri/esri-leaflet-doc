@@ -19,9 +19,13 @@ In order to update the version of Leaflet, Esri Leaflet or any other plugin disp
 
 ### Development Tips
 
+#### Testing/Linting
+
 Before committing, run `npm test`, which will run [ESLint](https://eslint.org/) (enforcing the [Semistandard style](https://github.com/standard/semistandard)) on all our sample code to ensure the samples are consistently formatted.
 
 File changes will be watched and also linted with ESLint if you have run `npm start` prior to editing the samples.
+
+#### VS Code
 
 If you're using [VS Code](https://code.visualstudio.com/) and the [ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), you can create a new file at `.vscode/settings.json` with the following contents to enable live linting on the HBS files:
 
@@ -34,6 +38,14 @@ If you're using [VS Code](https://code.visualstudio.com/) and the [ESLint Extens
   ]
 }
 ```
+
+#### Local Esri-Leaflet
+
+If you're working on changes to esri-leaflet locally and want to see those changes within the context of the documentation site:
+
+1. Run `npm start` in the `esri-leaflet` project. This will host the built esri-leaflet file at `http://localhost:5000/dist/esri-leaflet-debug.js` or similar.
+1. In this repository, in `\data\devSiteData.json`, set the `localSource` property to `true` and set the `localSourceUrl` property to the full url of your `esri-leaflet-debug.js` file if it's not the same as above.
+1. Run `npm start` in this project, and the documentation site will be hosted but load the `esri-leaflet` library locally instead of the CDN version.
 
 ## Issues
 
