@@ -113,7 +113,7 @@ We will create the content for the popup using Leaflet's [Utility Template](http
 
 ```js
 portlandHeritageTrees.bindPopup(function (evt) {
-  return L.Util.template('<h3>{COMMON_NAM}</h3><hr /><p>This tree is located at {ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
+  return L.Util.template('<h3>{COMMON}</h3><hr /><p>This tree is located at {SITE_ADDRESS} and its scientific name is {SCIENTIFIC}.', evt.feature.properties);
 });
 ```
 
