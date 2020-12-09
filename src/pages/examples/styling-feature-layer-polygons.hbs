@@ -18,7 +18,7 @@ layout: example.hbs
     precision: 5,
     style: function (feature) {
       if (feature.properties.PARTY === 'Democrat') {
-        return { color: 'blue', weight: 2 };
+        return { fillColor: '#73004C', fillOpacity: '0.5' };
       } else if (feature.properties.PARTY === 'Republican') {
         return { color: 'red', weight: 2 };
       } else {
