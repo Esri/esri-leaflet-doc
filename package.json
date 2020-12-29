@@ -20,7 +20,7 @@
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "esri-leaflet": "2.5.0",
+    "esri-leaflet": "2.5.2",
     "esri-leaflet-cluster": "2.1.0",
     "esri-leaflet-geocoder": "2.3.3",
     "esri-leaflet-gp": "2.0.3",
