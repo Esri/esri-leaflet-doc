@@ -98,6 +98,19 @@ For reference here is the internal DOM structure of the geocoder
   </ul>
 </div>
 ```
+
+By default, ellipses are shown when the text of suggestions is too long.  However, you may want to show the entire suggestions text.
+
+The following `CSS` rule will show the entire suggestions text, broken onto multiple lines.  You will need to add the rule in your own custom stylesheet associated with your project:
+
+```css
+.geocoder-control-suggestions .geocoder-control-suggestion {
+    overflow-wrap: break-word;
+    word-break: break-all;
+    overflow: visible;
+    white-space: break-spaces;
+  }
+```
 ### Providers
 
 The `Geosearch` control can also search for results from a variety of sources including Feature Layers and Map Services. This is done with plain text matching and is not "real" geocoding. But it allows you to mix custom results into a search box.
