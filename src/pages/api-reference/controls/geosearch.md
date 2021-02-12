@@ -105,11 +105,11 @@ The following `CSS` rule will show the entire suggestions text, broken onto mult
 
 ```css
 .geocoder-control-suggestions .geocoder-control-suggestion {
-    overflow-wrap: break-word;
-    word-break: break-all;
-    overflow: visible;
-    white-space: break-spaces;
-  }
+  overflow-wrap: break-word;
+  word-break: break-all;
+  overflow: visible;
+  white-space: break-spaces;
+}
 ```
 ### Providers
 
