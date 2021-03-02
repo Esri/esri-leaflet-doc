@@ -19,52 +19,34 @@ layout: example.hbs
 <div id="info-pane" class="leaflet-bar">Hover to inspect</div>
 
 <script>
-  var map = L.map('map').setView([45.5275, -122.6717], 14);
+  var map = L.map('map').setView([37.81, -85.85], 7);
 
-  L.esri.basemapLayer('Streets').addTo(map);
+  L.esri.basemapLayer('Topographic').addTo(map);
 
   var bikePaths = L.esri.featureLayer({
-    url: 'https://services.arcgis.com/uCXeTVveQzP4IIcx/ArcGIS/rest/services/Bike_Routes/FeatureServer/0',
+    url: 'https://services2.arcgis.com/CcI36Pduqd0OR4W9/ArcGIS/rest/services/Bicycle_Routes_Public/FeatureServer/0',
     style: function (feature) {
       var c;
-      var o = 0.75;
-      switch (feature.properties.BIKEMODE) {
-        case 'Low traffic through street':
-          c = '#007D7D';
+      switch (feature.properties.D_BI_RT_NAME) {
+        case 'Bluegrass Bike Tour':
+          c = '#377EB8';
           break;
-        case 'Bike boulevard':
-          c = '#00FF3C';
+        case 'Cave Country Bike Tour':
+          c = '#E41A1C';
           break;
-        case 'Caution area':
-          c = '#FF0000';
+        case 'Kentucky\'s TransAmerica Bike Trail':
+          c = '#4DAF4A';
           break;
-        case 'Local multi-use path':
-          c = '#00BEFF';
+        case 'Ramblin\' River Tour':
+          c = '#984EA3';
           break;
-        case 'Regional multi-use path':
-          c = '#b1a9d0';
-          break;
-        case 'Moderate traffic through street':
-          c = '#FFEB00';
-          break;
-        case 'Planned multi-use path':
-          c = '#000000';
-          break;
-        case 'Bike lane':
-          c = '#328000';
-          o = '0.70';
-          break;
-        case 'High traffic through street':
-          c = '#FFA500';
-          break;
-        case 'Planned bike lane':
-          c = '#000000';
-          o = '1.0';
+        case 'Underground Railroad':
+          c = '#FF7F00';
           break;
         default:
           c = '#C0C0C0';
       }
-      return { color: c, opacity: o, weight: 5 };
+      return { color: c, opacity: 0.65, weight: 5 };
     }
   }).addTo(map);
 
@@ -73,6 +55,6 @@ layout: example.hbs
   });
 
   bikePaths.on('mouseover', function (e) {
-    document.getElementById('info-pane').innerHTML = e.layer.feature.properties.BIKEMODE;
+    document.getElementById('info-pane').innerHTML = e.layer.feature.properties.D_BI_RT_NAME;
   });
 </script>
