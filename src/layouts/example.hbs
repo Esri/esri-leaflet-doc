@@ -10,6 +10,7 @@ layout: page.hbs
   <p>{{{ description }}}</p>
 </div>
 <div id="map-wrapper">
+  <script>const apiKey = "{{secret.api_key}}";</script>
   {{> body }}
 </div>
 {{#markdown}}
