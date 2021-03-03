@@ -43,11 +43,11 @@ geocoder: true
 
   // searchMode can be 'contain', 'startWith', 'endWith', or 'strict'
   var gisDayProvider = L.esri.Geocoding.featureLayerProvider({
-    url: 'https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/gisday/FeatureServer/0/',
-    searchFields: ['Name'],
-    label: 'GIS Day Events',
+    url: 'https://services.arcgis.com/BG6nSlhZSAWtExvp/ArcGIS/rest/services/GIS_Day_Registration_Form_2019_Hosted_View_Layer/FeatureServer/0',
+    searchFields: ['event_name'],
+    label: 'GIS Day Events 2019',
     formatSuggestion: function (feature) {
-      return feature.properties.Name;
+      return feature.properties.event_name;
     },
     searchMode: 'contain'
   });
