@@ -38,7 +38,7 @@ layout: example.hbs
 
   webmap.on('load', function () {
     var overlayMaps = {};
-    webmap.layers.map(function (l) {
+    webmap.layers.forEach(function (l) {
       overlayMaps[l.title] = l.layer;
     });
     L.control.layers({}, overlayMaps, {
