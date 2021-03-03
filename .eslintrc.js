@@ -11,10 +11,11 @@ module.exports = {
     'eslint-plugin-html'
   ],
   globals: {
-    L: false,
-    turf: false,
-    cedar: false,
-    Chart: false
+    L: 'readonly',
+    turf: 'readonly',
+    cedar: 'readonly',
+    Chart: 'readonly',
+    apiKey: 'readonly'
   },
   parserOptions: {
     ecmaVersion: 2018

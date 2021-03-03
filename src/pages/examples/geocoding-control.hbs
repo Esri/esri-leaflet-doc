@@ -14,17 +14,16 @@ geocoder: true
     attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-
   var searchControl = L.esri.Geocoding.geosearch({
-    position: "topright",
-    placeholder: "Enter an address or place e.g. 1 York St",
+    position: 'topright',
+    placeholder: 'Enter an address or place e.g. 1 York St',
     useMapBounds: false,
     providers: [L.esri.Geocoding.arcgisOnlineProvider({
       apikey: apiKey, // replace with your api key - https://developers.arcgis.com
       nearby: {
         lat: -33.8688,
         lng: 151.2093
-      },
+      }
     })]
   }).addTo(map);
 

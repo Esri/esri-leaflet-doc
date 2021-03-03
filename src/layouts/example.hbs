@@ -10,7 +10,9 @@ layout: page.hbs
   <p>{{{ description }}}</p>
 </div>
 <div id="map-wrapper">
-  <script>const apiKey = "{{secret.api_key}}";</script>
+  <script>
+    const apiKey = '{{secret.api_key}}'; // eslint-disable-line no-unused-vars, eol-last
+  </script>
   {{> body }}
 </div>
 {{#markdown}}
