@@ -30,3 +30,5 @@ working
 built/
 
 .vscode
+
+**/secret.json

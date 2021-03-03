@@ -7,6 +7,12 @@
 1. clone this repository
 2. `npm install -g grunt-cli`
 3. `npm install`
+4. Create a new file, `data/secret.json` to include an API Key:
+   ```
+   {
+     "api_key": "YOUR API KEY HERE"
+   }
+   ```
 4. `npm start`
 
 In order to update the version of Leaflet, Esri Leaflet or any other plugin displayed in the documentation site:
