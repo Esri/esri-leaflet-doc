@@ -54,6 +54,13 @@
       crossorigin=""></script>
   {{/if}}
 
+  {{#if page.data.vector}}
+  <!-- Load Esri Leaflet Vector from CDN -->
+  <script src="https://unpkg.com/esri-leaflet-vector@{{siteData.latest_esri_leaflet_vector}}/dist/esri-leaflet-vector.js"
+    integrity="{{siteData.latest_esri_leaflet_vector_integrity}}"
+    crossorigin=""></script>
+  {{/if}}
+
   {{#if page.data.geocoder}}
   <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.latest_esri_leaflet_geocoder}}/dist/esri-leaflet-geocoder.css"
     integrity="{{siteData.latest_esri_leaflet_geocoder_css_integrity}}"
