@@ -133,6 +133,11 @@ If you want your `FeatureLayer` to display the symbology defined in the map or f
             <td>How many digits of precision to request from the server. <a href="https://en.wikipedia.org/wiki/Decimal_degrees">Wikipedia</a> has a great reference of digit precision to meters.</td>
         </tr>
         <tr>
+            <td><code>apikey</code></td>
+            <td><code>String</code></td>
+            <td>If you pass an api key in your options it will be included in all requests to the service.</td>
+        </tr>
+        <tr>
             <td><code>token</code></td>
             <td><code>String</code></td>
             <td>If you pass a token in your options it will be included in all requests to the service.</td>

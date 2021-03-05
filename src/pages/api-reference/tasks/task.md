@@ -53,6 +53,11 @@ Extends [`L.Class`](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.
             <td>Makes a request to the associated service. The service's URL will be combined with the <code>path</code> option and parameters will be serialized. Accepts an optional function context for the callback.</td>
         </tr>
         <tr>
+            <td><code>apikey(<span>&lt;String&gt;</span> <code>apikey</code>)</code></td>
+            <td><code>this</code></td>
+            <td>Adds an api key to this request if the service requires authentication. Will be added automatically if used with a service.</td>
+        </tr>
+        <tr>
             <td><code>token(<span>&lt;String&gt;</span> <code>token</code>)</code></td>
             <td><code>this</code></td>
             <td>Adds a token to this request if the service requires authentication. Will be added automatically if used with a service.</td>

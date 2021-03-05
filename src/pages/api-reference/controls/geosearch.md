@@ -151,6 +151,7 @@ Option | Type | Default | Description
 `label` | `String` | `'Provider Type'` | Text that will be used to group suggestions (when more than one provider is used).
 `maxResults` | `Integer` | `5` | Maximum number of results to show for the provider.  Hard limit for suggestions from the [ArcGIS World Geocoding Service](https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm) is 15.
 `attribution` | `string` | `Varies by provider` | Adds attribution to the map to credit the source.
+`apikey` | `String` | `null` | Will use this api key to authenticate all calls to the service.
 `token` | `String` | `null` | Will use this token to authenticate all calls to the service.
 
 ##### arcgisOnlineProvider
