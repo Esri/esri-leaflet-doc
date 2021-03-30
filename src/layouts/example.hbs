@@ -10,6 +10,9 @@ layout: page.hbs
   <p>{{{ description }}}</p>
 </div>
 <div id="map-wrapper">
+  <script>
+    const apiKey = '{{secret.api_key}}'; // eslint-disable-line no-unused-vars, eol-last
+  </script>
   {{> body }}
 </div>
 {{#markdown}}
@@ -33,7 +36,12 @@ layout: page.hbs
   <script src="https://unpkg.com/esri-leaflet@{{siteData.latest_esri_leaflet}}/dist/esri-leaflet.js"
     integrity="{{siteData.latest_esri_leaflet_integrity}}"
     crossorigin=""></script>
-  {{#if page.data.geocoder}}
+  {{#if page.data.vector}}
+  <!-- Load Esri Leaflet Vector from CDN -->
+  <script src="https://unpkg.com/esri-leaflet-vector@{{siteData.latest_esri_leaflet_vector}}/dist/esri-leaflet-vector.js"
+    integrity="{{siteData.latest_esri_leaflet_vector_integrity}}"
+    crossorigin=""></script>
+  {{/if}}{{#if page.data.geocoder}}
   <!-- Load Esri Leaflet Geocoder from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@{{siteData.latest_esri_leaflet_geocoder}}/dist/esri-leaflet-geocoder.css"
     integrity="{{siteData.latest_esri_leaflet_geocoder_css_integrity}}"

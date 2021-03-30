@@ -38,7 +38,7 @@ Extends [`L.Control`](https://leafletjs.com/reference-{{siteData.latest_leaflet}
 | `collapseAfterResult` | `Boolean` | `true` | Determines whether or not the geocoder should collapse after a result is found. |
 | `expanded` | `Boolean` | `false` | Determines whether or not the geocoder starts in an expanded state. |
 | `allowMultipleResults` | `Boolean` | `true` | If set to `true` and the user submits the form without a suggestion, the control will geocode the current text in the input. |
-| `providers` | `Array` | See description | An array of [providers](#Providers) to search. |
+| `providers` | `Array` | See description | An array of [providers](#providers) to search. |
 | `placeholder` | `String` | 'Search for places or addresses' | Placeholder text for the search input. |
 | `title` | `String` | 'Location Search' | Title text for the search input. Shows as a tooltip on hover. |
 | `searchBounds` | `L.latLngBounds` | `null` | If set, the geocoder will filter results using the provided static bounding box regardless of the current zoom level of the map, overriding `useMapBounds` entirely.
@@ -111,6 +111,11 @@ The following `CSS` rule will show the entire suggestions text, broken onto mult
   white-space: break-spaces;
 }
 ```
+
+### Example
+
+Live sample [here](https://esri.github.io/esri-leaflet/examples/geocoding-control.html).
+
 ### Providers
 
 The `Geosearch` control can also search for results from a variety of sources including Feature Layers and Map Services. This is done with plain text matching and is not "real" geocoding. But it allows you to mix custom results into a search box.
@@ -121,7 +126,11 @@ The `Geosearch` control can also search for results from a variety of sources in
 ```
 
 ```js
-var arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider();
+var arcgisOnline = L.esri.Geocoding.arcgisOnlineProvider({
+    // API Key to be passed to the ArcGIS Online Geocoding Service - https://developers.arcgis.com
+    apikey: 'YOUR_API_KEY'
+});
+
 var gisDay = L.esri.Geocoding.featureLayerProvider({
   url: 'https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/GIS_Day_Final/FeatureServer/0',
   searchFields: ['Name', 'Organization'], // Search these fields for text matches
@@ -135,6 +144,7 @@ L.esri.Geocoding.Controls.geosearch({
   providers: [arcgisOnline, gisDay] // will geocode via ArcGIS Online and search the GIS Day feature service.
 }).addTo(map);
 ```
+
 #### Available Providers
 * `L.esri.Geocoding.arcgisOnlineProvider`<br>uses the ArcGIS Online World Geocoding service.
 
@@ -151,6 +161,7 @@ Option | Type | Default | Description
 `label` | `String` | `'Provider Type'` | Text that will be used to group suggestions (when more than one provider is used).
 `maxResults` | `Integer` | `5` | Maximum number of results to show for the provider.  Hard limit for suggestions from the [ArcGIS World Geocoding Service](https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm) is 15.
 `attribution` | `string` | `Varies by provider` | Adds attribution to the map to credit the source.
+`apikey` | `String` | `null` | Will use this api key to authenticate all calls to the service.
 `token` | `String` | `null` | Will use this token to authenticate all calls to the service.
 
 ##### arcgisOnlineProvider
@@ -239,3 +250,4 @@ Property | Type | Description
 `latlng` | [`L.LatLng`](https://leafletjs.com/reference.html#latlng)| The center of the result.
 
 The result object will also contain any additional properties from the provider. See the [available providers](#available-providers) for more information.
+

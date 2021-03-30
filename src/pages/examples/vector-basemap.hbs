@@ -1,60 +1,16 @@
 ---
 title: Vector Basemaps
-description: Display ArcGIS Online vector basemaps using an <a href='https://github.com/Esri/esri-leaflet-vector'>experimental</a> plugin.
+description: Display ArcGIS Online vector basemaps using <code>L.esri.Vector.vectorBasemapLayer</code>, available from the <a href="https://github.com/Esri/esri-leaflet-vector">Esri Leaflet Vector</a> plugin. In addition to vector basemaps, custom vector tile layers (<code>L.esri.Vector.vectorTileLayer</code>) can also be added to the map. Learn more at this <a href="https://developers.arcgis.com/esri-leaflet/layers/add-a-vector-tile-layer/">ArcGIS for Developers tutorial</a>.
 layout: example.hbs
+vector: true
 ---
-
-<link rel="stylesheet" href="https://unpkg.com/mapbox-gl@1.13.0/dist/mapbox-gl.css"/>
-<script src="https://unpkg.com/mapbox-gl@1.13.0/dist/mapbox-gl.js"></script>
-
-<!-- load the latest release from the cdn automatically -->
-<script src="https://unpkg.com/esri-leaflet-vector/dist/esri-leaflet-vector-debug.js"></script>
-
-<style>
-  #basemaps-wrapper {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 400;
-    background: white;
-    padding: 10px;
-  }
-  #basemaps {
-    margin-bottom: 5px;
-  }
-</style>
 
 <div id="map"></div>
 
-<div id="basemaps-wrapper" class="leaflet-bar">
-  <select id="basemaps">
-    <option value="OpenStreetMap">OpenStreetMap</option>
-    <option value="Newspaper">Newspaper</option>
-    <option value="Topographic">Topographic</option>
-    <option value="Navigation">Navigation</option>
-    <option value="Streets">Streets</option>
-    <option value="StreetsNight">Streets Night</option>
-    <option value="StreetsRelief">Streets Relief</option>
-  </select>
-</div>
-
 <script>
   var map = L.map('map').setView([40, -4], 6);
-  var layer = L.esri.Vector.basemap('OpenStreetMap').addTo(map);
 
-  function setBasemap (basemap) {
-    if (layer) {
-      map.removeLayer(layer);
-    }
-
-    layer = L.esri.Vector.basemap(basemap);
-    map.addLayer(layer);
-  }
-
-  document
-    .querySelector('#basemaps')
-    .addEventListener('change', function (e) {
-      var basemap = e.target.value;
-      setBasemap(basemap);
-    });
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:Streets', {
+    apiKey: apiKey // replace with your api key - https://developers.arcgis.com
+  }).addTo(map);
 </script>

@@ -14,7 +14,9 @@ geocoder: true
     attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-  var geocodeService = L.esri.Geocoding.geocodeService();
+  var geocodeService = L.esri.Geocoding.geocodeService({
+    apikey: apiKey // replace with your api key - https://developers.arcgis.com
+  });
 
   map.on('click', function (e) {
     geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
