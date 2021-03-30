@@ -10,44 +10,53 @@ layout: documentation.hbs
 `Layers` provide visualization capabilities for data hosted in Feature Services, Map Services and Image Services. See [Introduction to Layer Types]({{assets}}tutorials/introduction-to-layer-types.html) for more information on when to use which type.
 
 * [`L.esri.BasemapLayer`]({{assets}}api-reference/layers/basemap-layer.html)
-* [`L.esri.DynamicMapLayer`]({{assets}}api-reference/layers/dynamic-map-layer.html)
-* [`L.esri.ImageMapLayer`]({{assets}}api-reference/layers/image-map-layer.html)
-* [`L.esri.RasterLayer`]({{assets}}api-reference/layers/raster-layer.html)
-* [`L.esri.TiledMapLayer`]({{assets}}api-reference/layers/tiled-map-layer.html)
-* [`L.esri.FeatureLayer`]({{assets}}api-reference/layers/feature-layer.html)
 * [`L.esri.Cluster.FeatureLayer`]({{assets}}api-reference/layers/cluster-feature-layer.html)
+* [`L.esri.DynamicMapLayer`]({{assets}}api-reference/layers/dynamic-map-layer.html)
+* [`L.esri.FeatureLayer`]({{assets}}api-reference/layers/feature-layer.html)
 * [`L.esri.Heat.FeatureLayer`]({{assets}}api-reference/layers/heatmap-feature-layer.html)
+* [`L.esri.ImageMapLayer`]({{assets}}api-reference/layers/image-map-layer.html)
+* [`L.esri.TiledMapLayer`]({{assets}}api-reference/layers/tiled-map-layer.html)
+* [`L.esri.Vector.vectorBasemapLayer`]({{assets}}api-reference/layers/vector-basemap.html)
+* [`L.esri.Vector.vectorTileLayer`]({{assets}}api-reference/layers/vector-layer.html)
+
+### Controls
+
+`Controls` provide user interface controls (or: components, widgets) for various purposes.
+
+* [`L.esri.Geocoding.geosearch`]({{assets}}api-reference/controls/geosearch.html)
 
 ### Tasks
 
 `Tasks` are wrappers for commonly used API methods on ArcGIS services. They expose commonly used parameters to make them more accessible to Leaflet.
 
-* [`L.esri.Query`]({{assets}}api-reference/tasks/query.html)
-* [`L.esri.IdentifyFeatures`]({{assets}}api-reference/tasks/identify-features.html)
-* [`L.esri.IdentifyImage`]({{assets}}api-reference/tasks/identify-image.html)
 * [`L.esri.Find`]({{assets}}api-reference/tasks/find.html)
 * [`L.esri.Geocoding.Geocode`]({{assets}}api-reference/tasks/geocode.html)
-* [`L.esri.Geocoding.Suggest`]({{assets}}api-reference/tasks/suggest.html)
 * [`L.esri.Geocoding.ReverseGeocode`]({{assets}}api-reference/tasks/reverse-geocode.html)
+* [`L.esri.Geocoding.Suggest`]({{assets}}api-reference/tasks/suggest.html)
 * [`L.esri.GP.Task`]({{assets}}api-reference/tasks/gp.html)
+* [`L.esri.IdentifyFeatures`]({{assets}}api-reference/tasks/identify-features.html)
+* [`L.esri.IdentifyImage`]({{assets}}api-reference/tasks/identify-image.html)
+* [`L.esri.Query`]({{assets}}api-reference/tasks/query.html)
 * [`L.esri.Related.Query`]({{assets}}api-reference/tasks/query-related.html)
-* [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
 
 ### Miscellaneous
 
 Utility classes helpful for making AJAX requests to ArcGIS Server and ArcGIS Online and manipulating responses.
 
-* [`L.esri.Util`]({{assets}}api-reference/util.html)
-* [`L.esri.request`]({{assets}}api-reference/request.html)
-* [`L.esri.options`]({{assets}}api-reference/options.html)
 * [`Events`]({{assets}}api-reference/events.html)
+* [`L.esri.options`]({{assets}}api-reference/options.html)
+* [`L.esri.request`]({{assets}}api-reference/request.html)
+* [`L.esri.Util`]({{assets}}api-reference/util.html)
 
 ### Base Classes
 
 The classes below provide the underpinnings for `Layers` classes which are typically added to maps. Services wrap ArcGIS API endpoints exposing common methods for interacting with the APIs and handling proxying and authentication.
 
-* [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
-* [`L.esri.Service`]({{assets}}api-reference/services/service.html)
-* [`L.esri.MapService`]({{assets}}api-reference/services/map-service.html)
-* [`L.esri.ImageService`]({{assets}}api-reference/services/image-service.html)
 * [`L.esri.FeatureLayerService`]({{assets}}api-reference/services/feature-layer-service.html)
+* [`L.esri.Geocoding.GeocodeService`]({{assets}}api-reference/services/geocode-service.html)
+* [`L.esri.GP.Service`]({{assets}}api-reference/services/gp-service.html)
+* [`L.esri.ImageService`]({{assets}}api-reference/services/image-service.html)
+* [`L.esri.MapService`]({{assets}}api-reference/services/map-service.html)
+* [`L.esri.RasterLayer`]({{assets}}api-reference/layers/raster-layer.html)
+* [`L.esri.Service`]({{assets}}api-reference/services/service.html)
+* [`L.esri.Task`]({{assets}}api-reference/tasks/task.html)
