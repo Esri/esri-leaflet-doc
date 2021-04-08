@@ -10,7 +10,7 @@ layout: tutorials.hbs
 
 #### Introduction
 
-Leaflet and Esri Leaflet can be used with all the modern JavaScript libraries like React, Svelte, Vue, and Angular. In general, you'll use the functionality in your framework to get a reference to a DOM Node. For example, `refs` in React or the `use:` directive in Svelte. Then you can import Leaflet and Esri Leaflet using modern ES6 style imports:
+Leaflet and Esri Leaflet can be used with all the modern JavaScript libraries like React, Svelte, Vue, and Angular. In general, you'll use the functionality in your framework to get a reference to a DOM Node. For example, [`refs` in React](https://reactjs.org/docs/refs-and-the-dom.html) or [the `use:` directive in Svelte](https://svelte.dev/docs#use_action). Then you can import Leaflet and Esri Leaflet using modern ES6 style imports:
 
 ```js
 import { Map as LeafletMap, Icon, Marker } from "leaflet";
