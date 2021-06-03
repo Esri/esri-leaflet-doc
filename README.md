@@ -4,7 +4,7 @@
 
 ## Instructions
 
-1. clone this repository
+1. Clone this repository.
 2. `npm install -g grunt-cli`
 3. `npm install`
 4. Create a new file, `data/secret.json` to include an API Key:
@@ -17,11 +17,11 @@
 
 In order to update the version of Leaflet, Esri Leaflet or any other plugin displayed in the documentation site:
 
-1. find/update the appropriate `package.json` [devDependency](https://github.com/Esri/esri-leaflet-doc/blob/8aef72d93fe17366e9753894901ec3924e643141/package.json#L11-L34)
-2. rerun `npm install`
-3. run `npm run integrity` (to generate a corresponding [Subresource Integrity](https://w3c.github.io/webappsec-subresource-integrity/) hash).
-4. run `npm start` to confirm locally that this achieved the desired effect.
-5. send a Pull Request!
+1. Find and update the appropriate library version listed in `package.json` [devDependency](https://github.com/Esri/esri-leaflet-doc/blob/master/package.json).
+2. Rerun `npm install`.
+3. Run `npm run integrity` (to generate a corresponding [Subresource Integrity](https://w3c.github.io/webappsec-subresource-integrity/) hash).
+4. Run `npm start` to confirm locally that this achieved the desired effect.
+5. Send a Pull Request!
 
 ### Development Tips
 
