@@ -59,9 +59,9 @@ Extends [`L.Layer`](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.
     </thead>
     <tbody>
         <tr>
-            <td><code>apiKey</code></td>
+            <td><code>apikey</code></td>
             <td><code>String</code></td>
-            <td>If you pass an <code>apiKey</code> in your options it will be included in all requests to the service.</td>
+            <td>If you pass an <code>apikey</code> in your options it will be included in all requests to the service.</td>
         </tr>
         <tr>
             <td><code>token</code></td>
@@ -87,7 +87,7 @@ Live sample [here](https://esri.github.io/esri-leaflet/examples/vector-basemap.h
 var map = L.map("map").setView([40.706, -73.926], 14);
 
 L.esri.Vector.vectorBasemapLayer("ArcGIS:Streets", {
-    // provide either apiKey or token
-    apiKey: "YOUR-API-KEY"
+    // provide either apikey or token
+    apikey: "YOUR-API-KEY"
 }).addTo(map);
 ```
