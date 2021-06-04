@@ -35,7 +35,7 @@ L.esri.featureLayer({
 
 If you want to edit data in the browser then you will need to consume a `FeatureServer` service.
 
-### What does the data look like?
+### What does the Feature Layer data look like?
 When you request a feature layer from an ArcGIS Server the response will look something like 
 ```json
 {"type":"FeatureCollection","crs":{"type":"name","properties":{"name":"EPSG:4326"}},
@@ -66,7 +66,7 @@ L.esri.dynamicMapLayer({
 });
 ```
 
-### What does the data look like?
+### What does the Dynamic Map Layer data look like?
 When you request a Dynamic Map Layer from an ArcGIS Server the response might look something like the following:
 
 ![Map tile](https://services.arcgisonline.com/arcgis/rest/services/Specialty/Soil_Survey_Map/MapServer/export?bbox=-15214026.109881485,1868732.467515991,-7337954.715376922,8365268.375529694&size=600,200&dpi=96&format=png24&transparent=true&bboxSR=3857&imageSR=3857&f=image)
@@ -91,7 +91,7 @@ L.esri.tiledMapLayer({
 });
 ```
 
-### What does the data look like?
+### What does the Tiled Map Layer data look like?
 You can see an example Tiled Map Layer response from ArcGIS Server below. It is simply an image!
 
 ![Map tile](https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyBasemap/MapServer/tile/6/146/267)
