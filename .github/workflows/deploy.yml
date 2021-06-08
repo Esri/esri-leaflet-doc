@@ -10,9 +10,6 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Install Grunt
-        run: |
-          npm install -g grunt-cli
       - name: Install Dependencies
         run: |
           npm ci
