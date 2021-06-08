@@ -1,0 +1,21 @@
+name: Deploy
+on: [push] # just for testing
+# TODO: before merging, change to this:
+# push:
+#     branches:
+#       - master
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Install Grunt
+        run: |
+          npm install -g grunt-cli
+      - name: Install Dependencies
+        run: |
+          npm ci
+      - name: Run Build
+        run: |
+          npm run build
