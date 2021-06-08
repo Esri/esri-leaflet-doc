@@ -16,3 +16,9 @@ jobs:
       - name: Run Build
         run: |
           npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-create-ssh-deploy-key
+          publish_dir: ./built
+          external_repository: gavinr/esri-leaflet-doc-test
