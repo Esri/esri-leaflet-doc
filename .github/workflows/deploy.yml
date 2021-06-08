@@ -1,9 +1,7 @@
 name: Deploy
-on: [push] # just for testing
-# TODO: before merging, change to this:
-# push:
-#     branches:
-#       - master
+push:
+    branches:
+      - master
 jobs:
   Deploy:
     runs-on: ubuntu-latest
@@ -21,4 +19,4 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-create-ssh-deploy-key
           publish_dir: ./built
-          external_repository: gavinr/esri-leaflet-doc-test
+          external_repository: esri/esri-leaflet
