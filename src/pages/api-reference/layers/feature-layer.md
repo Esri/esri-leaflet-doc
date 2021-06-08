@@ -167,6 +167,11 @@ If you want your `FeatureLayer` to display the symbology defined in the map or f
             <td><code>Boolean</code></td>
             <td>When utilizing esri-leaflet-renderers ['2.0.2'](https://github.com/Esri/esri-leaflet-renderers/releases/tag/v2.0.1) or above, this option makes it possible to override the symbology defined by the service itself.</td>
         </tr>
+        <tr>
+            <td><code>fetchAllFeatures</code></td>
+            <td><code>Boolean</code></td>
+            <td>When true, the Feature Layer will make multiple requests to get all the data if the query exceeds the transfer limit (paging size). This should be used when working with large numbers of features. Default: false.</td>
+        </tr>
     </tbody>
 </table>
 
