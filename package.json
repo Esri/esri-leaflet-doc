@@ -43,7 +43,7 @@
     "leaflet": "1.7.1",
     "leaflet.markercluster": "1.5.0",
     "load-grunt-tasks": "^5.1.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^6.0.0",
     "ssri": "^8.0.1"
   },
   "license": "Apache-2.0",
