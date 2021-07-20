@@ -14,7 +14,7 @@ jobs:
           npm ci
       - name: Create secrets file
         env:
-+         ARCGIS_API_KEY: ${{ secrets.ARCGIS_API_KEY }}
+          ARCGIS_API_KEY: ${{ secrets.ARCGIS_API_KEY }}
         run: |
           cd data
           printf "{\"api_key\": \"$ARCGIS_API_KEY\"}" > secret.json
