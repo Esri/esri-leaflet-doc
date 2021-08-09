@@ -187,7 +187,7 @@ If you want your `FeatureLayer` to display the symbology defined in the map or f
 
 `L.esri.FeatureLayer` also fires all  [`L.esri.FeatureLayerService`]({{assets}}api-reference/services/feature-layer-service.html) events.
 
-In addition to the events above, `L.esri.FeatureLayer` also fires the following [Mouse Events](https://leafletjs.com/reference.html#event-objects) `click`, `dblclick`, `mouseover`, `mouseout`, `mousemove`, and `contextmenu` and the following the [Popup Events](https://leafletjs.com/reference.html#event-objects) `popupopen` and `popupclose`
+In addition to the events above, `L.esri.FeatureLayer` also fires the following [Mouse Events](https://leafletjs.com/reference.html#event-objects) `click`, `dblclick`, `mouseover`, `mouseout`, `mousemove`, and `contextmenu` and the following [Popup Events](https://leafletjs.com/reference.html#event-objects) `popupopen` and `popupclose`.
 
 ### Methods
 
