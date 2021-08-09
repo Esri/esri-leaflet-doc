@@ -9,6 +9,8 @@ Extends [`L.Layer`](https://leafletjs.com/reference.html#layer)
 
 `L.esri.Vector.vectorTileLayer` uses the [`esri-leaflet-vector` plugin](https://github.com/Esri/esri-leaflet-vector) to display vector tile service layers and their styles published from user data.
 
+> Your vector tile service must be published using the [Web Mercator Auxiliary Sphere tiling scheme (WKID 102100/3857)](https://epsg.io/3857) and the default scale options used by Google Maps, Bing Maps and [ArcGIS Online](https://services.arcgisonline.com/arcgis/rest/services). The `esri-leaflet-vector` plugin will not support any other spatial reference for vector tile layers because it relies directly upon mapbox-gl-js v1.
+
 ### Constructor
 
 **Note:** There are two ways to construct this layer with the required `key` parameter, either with an item ID or service URL of a hosted vector tile layer.
