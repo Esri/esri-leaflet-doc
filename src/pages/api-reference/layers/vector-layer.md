@@ -39,6 +39,7 @@ Extends [`L.Layer`](https://leafletjs.com/reference.html#layer)
         <tr>
             <th>Option</th>
             <th>Type</th>
+            <th>Default</th>
             <th>Description</th>
         </tr>
     </thead>
@@ -46,16 +47,25 @@ Extends [`L.Layer`](https://leafletjs.com/reference.html#layer)
         <tr>
             <td><code>apikey</code></td>
             <td><code>String</code></td>
+            <td></td>
             <td>If you pass an <code>apikey</code> in your options it will be included in all requests to the service.</td>
         </tr>
         <tr>
             <td><code>token</code></td>
             <td><code>String</code></td>
+            <td></td>
             <td>If you pass a <code>token</code> in your options it will be included in all requests to the service.</td>
+        </tr>
+        <tr>
+            <td><code>portalUrl</code></td>
+            <td><code>String</code></td>
+            <td><code>'https://www.arcgis.com'</code></td>
+            <td>Specify the ArcGIS Enterprise base URL if your layer is not hosted on ArcGIS Online.</td>
         </tr>
         <tr>
             <td><code>style</code></td>
             <td><code>Function</code></td>
+            <td></td>
             <td>Function that can be used to customize the style. It gets the default style from the service and returns the new style to be used.
 <pre>function (style) {
   // make changes to the style object
