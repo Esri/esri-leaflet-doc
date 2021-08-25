@@ -1,7 +1,8 @@
 ---
 title: Switching basemaps
-description: Switching between all available basemaps packaged with Esri Leaflet.
+description: Switching between all available basemaps packaged with Esri Leaflet. For additional explanation, see <a href="https://developers.arcgis.com/esri-leaflet/maps/change-the-basemap-layer/">the tutorial</a>.
 layout: example.hbs
+vector: true
 ---
 
 <style>
@@ -20,59 +21,75 @@ layout: example.hbs
 
 <div id="map"></div>
 
-<div id="basemaps-wrapper" class="leaflet-bar">
-  <select id="basemaps">
-    <option value="Topographic">Topographic</option>
-    <option value="Streets">Streets</option>
-    <option value="NationalGeographic">National Geographic</option>
-    <option value="Oceans">Oceans</option>
-    <option value="Gray">Gray</option>
-    <option value="DarkGray">Dark Gray</option>
-    <option value="Imagery">Imagery</option>
-    <option value="ImageryClarity">Imagery (Clarity)</option>
-    <option value="ImageryFirefly">Imagery (Firefly)</option>
-    <option value="ShadedRelief">Shaded Relief</option>
-    <option value="Physical">Physical</option>
-  </select>
-</div>
-
 <script>
-  var map = L.map('map').setView([-33.87, 150.77], 10);
-  var layer = L.esri.basemapLayer('Topographic').addTo(map);
-  var layerLabels;
+  var map = L.map('map').setView([-33.87, 151.2], 10);
 
-  function setBasemap (basemap) {
-    if (layer) {
-      map.removeLayer(layer);
-    }
+  var vectorTiles = {};
+  var allEnums = [
+    'ArcGIS:Imagery',
+    'ArcGIS:Imagery:Standard',
+    'ArcGIS:Imagery:Labels',
+    'ArcGIS:LightGray',
+    'ArcGIS:LightGray:Base',
+    'ArcGIS:LightGray:Labels',
+    'ArcGIS:DarkGray',
+    'ArcGIS:DarkGray:Base',
+    'ArcGIS:DarkGray:Labels',
+    'ArcGIS:Navigation',
+    'ArcGIS:NavigationNight',
+    'ArcGIS:Streets',
+    'ArcGIS:StreetsNight',
+    'ArcGIS:StreetsRelief',
+    'ArcGIS:StreetsRelief:Base',
+    'ArcGIS:Topographic',
+    'ArcGIS:Topographic:Base',
+    'ArcGIS:Oceans',
+    'ArcGIS:Oceans:Base',
+    'ArcGIS:Oceans:Labels',
+    'OSM:Standard',
+    'OSM:StandardRelief',
+    'OSM:StandardRelief:Base',
+    'OSM:Streets',
+    'OSM:StreetsRelief',
+    'OSM:StreetsRelief:Base',
+    'OSM:LightGray',
+    'OSM:LightGray:Base',
+    'OSM:LightGray:Labels',
+    'OSM:DarkGray',
+    'OSM-DarkGray:Base',
+    'OSM-DarkGray:Labels',
+    'ArcGIS:Terrain',
+    'ArcGIS:Terrain:Base',
+    'ArcGIS:Terrain:Detail',
+    'ArcGIS:Community',
+    'ArcGIS:ChartedTerritory',
+    'ArcGIS:ChartedTerritory:Base',
+    'ArcGIS:ColoredPencil',
+    'ArcGIS:Nova',
+    'ArcGIS:ModernAntique',
+    'ArcGIS:ModernAntique:Base',
+    'ArcGIS:Midcentury',
+    'ArcGIS:Newspaper',
+    'ArcGIS:Hillshade:Light',
+    'ArcGIS:Hillshade:Dark'
+  ];
 
-    layer = L.esri.basemapLayer(basemap);
-
-    map.addLayer(layer);
-
-    if (layerLabels) {
-      map.removeLayer(layerLabels);
-    }
-
-    if (
-      basemap === 'ShadedRelief' ||
-      basemap === 'Oceans' ||
-      basemap === 'Gray' ||
-      basemap === 'DarkGray' ||
-      basemap === 'Terrain'
-    ) {
-      layerLabels = L.esri.basemapLayer(basemap + 'Labels');
-      map.addLayer(layerLabels);
-    } else if (basemap.includes('Imagery')) {
-      layerLabels = L.esri.basemapLayer('ImageryLabels');
-      map.addLayer(layerLabels);
-    }
-  }
-
-  document
-    .querySelector('#basemaps')
-    .addEventListener('change', function (e) {
-      var basemap = e.target.value;
-      setBasemap(basemap);
+  vectorTiles.Default = L.esri.Vector.vectorBasemapLayer(null, {
+    apiKey
+  });
+  allEnums.forEach((enumString) => {
+    vectorTiles[
+      enumString
+    ] = L.esri.Vector.vectorBasemapLayer(enumString, {
+      apiKey
     });
+  });
+
+  L.control
+    .layers(vectorTiles, null, {
+      collapsed: false
+    })
+    .addTo(map);
+
+  vectorTiles.Default.addTo(map);
 </script>

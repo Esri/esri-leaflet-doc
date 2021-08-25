@@ -77,7 +77,7 @@ Extends [`L.Layer`](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.
 
 ### Example
 
-Live sample [here](https://esri.github.io/esri-leaflet/examples/vector-basemap.html).
+Live sample [here](../../examples/showing-a-basemap.html).
 
 ```xml
 <script src="./esri-leaflet-vector.js"></script>

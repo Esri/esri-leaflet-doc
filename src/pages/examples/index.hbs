@@ -1,13 +1,16 @@
 ---
 title: Esri Leaflet Quickstart
-description: This is a simple Esri Leaflet application. Notice that the map attribution updates automatically as users pan and zoom in accordance with Esri's <a href='https://github.com/esri/esri-leaflet#terms'>Terms of Use</a>.
+description: This is a simple Esri Leaflet application. Notice that the map attribution updates automatically as users pan and zoom in accordance with Esri's <a href='https://github.com/esri/esri-leaflet#terms'>Terms of Use</a>. For additional explanation, see <a href="https://developers.arcgis.com/esri-leaflet/maps/display-a-map/">the tutorial</a>.
 layout: example.hbs
+vector: true
 ---
 
 <div id="map"></div>
 
 <script>
-  var map = L.map('map').setView([37.75, -122.23], 10);
+  var map = L.map('map').setView([8.913648, -79.544706], 10);
 
-  L.esri.basemapLayer('Topographic').addTo(map);
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:Topographic', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 </script>
