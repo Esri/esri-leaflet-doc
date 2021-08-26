@@ -23,7 +23,7 @@ Extends [`L.Layer`](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.
     <tbody>
         <tr>
             <td><code>L.esri.Vector.vectorBasemapLayer({{{param 'String' 'key'}}}, {{{param 'Object' 'options'}}})</code></td>
-            <td><code>key</code> refers to either with a basemap style enum or an item ID of a custom basemap style that you'd like to add.
+            <td><code>key</code> refers to either with a basemap style enum or an item ID of a custom basemap style that you'd like to add. Defaults to <code>'ArcGIS:Streets'</code>.
         </tr>
     </tbody>
 </table>
@@ -77,7 +77,7 @@ Extends [`L.Layer`](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.
 
 ### Example
 
-Live sample [here](https://esri.github.io/esri-leaflet/examples/vector-basemap.html).
+Live sample [here](../../examples/showing-a-basemap.html).
 
 ```xml
 <script src="./esri-leaflet-vector.js"></script>

@@ -1,13 +1,18 @@
 ---
 title: Showing an ArcGIS basemap
-description: Display an ArcGIS Online basemap.  Notice that the map attribution updates automatically as users pan and zoom in accordance with Esri's <a href='https://github.com/esri/esri-leaflet#terms'>Terms of Use</a>.
+description: Display an ArcGIS Online basemap using the <a href="../../api-reference/layers/vector-basemap.html">Esri Leaflet Vector plugin</a>. Notice that the map attribution updates automatically as users pan and zoom in accordance with Esri's <a href='https://github.com/esri/esri-leaflet#terms'>Terms of Use</a>.
 layout: example.hbs
+vector: true
 ---
 
 <div id="map"></div>
 
 <script>
-  var map = L.map('map').setView([39, -97.5], 4);
+  var map = L.map('map').setView([48.865195, 2.321033], 16);
 
-  L.esri.basemapLayer('Streets').addTo(map);
+  // See here for basemap options:
+  // http://esri.github.io/esri-leaflet/api-reference/layers/vector-basemap.html#vector-basemaps
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:Streets', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 </script>

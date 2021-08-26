@@ -7,7 +7,7 @@ layout: documentation.hbs
 
 Extends [`L.TileLayer`](https://leafletjs.com/reference-{{siteData.latest_leaflet}}.html#tilelayer)
 
-`L.esri.basemapLayer` is used to display Esri hosted basemaps and attributes data providers appropriately. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
+`L.esri.basemapLayer` is used to display classic raster tiled Esri hosted basemaps and attributes data providers appropriately. Please see the [Vector Basemap API documentation](../layers/vector-basemap.html) and [example](../../examples/showing-a-basemap.html) for the primary way to add a basemap. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
 
 ### Constructor
 
