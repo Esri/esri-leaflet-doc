@@ -2,6 +2,7 @@
 title: ArcGIS Server username/password
 description: Example showing authentication with ArcGIS Server via a username and password. In this example a username and password are hardcoded in.
 layout: example.hbs
+vector: true
 ---
 
 <div id="map"></div>
@@ -13,7 +14,10 @@ layout: example.hbs
   }
 
   var map = L.map('map').setView([34.089, -116.865], 9);
-  L.esri.basemapLayer('Topographic').addTo(map);
+
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:Nova', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   function serverAuth (callback) {
     L.esri.post('https://sampleserver6.arcgisonline.com/arcgis/tokens/generateToken', {

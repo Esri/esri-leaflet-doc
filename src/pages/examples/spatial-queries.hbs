@@ -2,6 +2,7 @@
 title: Spatial Queries on a Feature Layer
 description: Create detailed spatial queries like point within polygon or line intersects polygons with Feature Layer queries. Some combinations will not result in any features being highlighted.
 layout: example.hbs
+vector: true
 ---
 
 <style>
@@ -37,7 +38,9 @@ layout: example.hbs
 <script>
   var map = L.map('map').setView([45.525, -122.628], 11);
 
-  L.esri.basemapLayer('Topographic').addTo(map);
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:Topographic', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   // create our layer
   var neighborhoods = L.esri.featureLayer({

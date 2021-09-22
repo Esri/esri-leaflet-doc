@@ -2,6 +2,7 @@
 title: Zoom to all features
 description: Fitting the map to the boundaries of all features in the layer by querying the service. More information about Feature Layers can be found in the <a href="../api-reference/layers/feature-layer.html">L.esri.FeatureLayer</a> documentation.
 layout: example.hbs
+vector: true
 ---
 
 <div id="map"></div>
@@ -9,7 +10,9 @@ layout: example.hbs
 <script>
   var map = L.map('map').setView([40.34, -76.34], 5);
 
-  L.esri.basemapLayer('Streets').addTo(map);
+  L.esri.Vector.vectorBasemapLayer('OSM:DarkGray', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   var trails = L.esri.featureLayer({
     url: 'https://maps.pasda.psu.edu/arcgis/rest/services/pasda/CityPhillyPlanning/MapServer/2'

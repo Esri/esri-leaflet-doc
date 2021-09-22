@@ -2,6 +2,7 @@
 title: Load each and every feature initially
 description: Sometimes it is desirable to load a "snapshot" of a Feature Layer instead of loading it progressively as you pan around the map. The approach is useful for smaller services.
 layout: example.hbs
+vector: true
 ---
 
 <div id="map"></div>
@@ -9,7 +10,9 @@ layout: example.hbs
 <script>
   var map = L.map('map').setView([41.004, -77.618], 7);
 
-  L.esri.basemapLayer('Topographic').addTo(map);
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:ColoredPencil', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   var statesUrl = 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2';
   var citiesUrl = 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/0';

@@ -2,6 +2,7 @@
 title: Visualizing time on a feature layer
 description: Filtering a feature layer within a certain time range. Try dates between January 3, 1998, and January 25, 1998. More information about Feature Layers can be found in the <a href="../api-reference/layers/feature-layer.html">L.esri.FeatureLayer</a> documentation.
 layout: example.hbs
+vector: true
 ---
 
 <style>
@@ -53,9 +54,10 @@ layout: example.hbs
   var endTimeInput = document.getElementById('to');
 
   var map = L.map('map').setView([45.48, -122.80], 12);
-
-  L.esri.basemapLayer('Gray').addTo(map);
-  L.esri.basemapLayer('GrayLabels').addTo(map);
+  
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:LightGray', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   var emergencyCalls = L.esri.featureLayer({
     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/911CallsHotspot/MapServer/1',

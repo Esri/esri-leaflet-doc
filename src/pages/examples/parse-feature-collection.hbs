@@ -2,13 +2,16 @@
 title: Feature Collection Parsing
 description: Parse a feature collection contained in a webmap to GeoJSON.
 layout: example.hbs
+vector: true
 ---
 
 <div id="map"></div>
 
 <script>
   var map = L.map('map');
-  L.esri.basemapLayer('Topographic').addTo(map);
+  L.esri.Vector.vectorBasemapLayer('OSM:StreetsRelief', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   L.esri.get('https://www.arcgis.com/sharing/content/items/62914b2820c24d4e95710ebae77937cb/data', {}, function (error, response) {
     if (error) {

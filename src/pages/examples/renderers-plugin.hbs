@@ -3,13 +3,17 @@ title: Inherit service symbology
 description: This sample demonstrates how to recreate the symbology defined for feature services in the client automatically.  The demo relies on the <a href="https://github.com/Esri/esri-leaflet-renderers/">Esri Leaflet Renderers</a> plugin.
 layout: example.hbs
 esriLeafletRenderers: true
+vector: true
 ---
 
 <div id="map"></div>
 
 <script>
   var map = L.map('map').setView([37.837, -122.479], 6);
-  L.esri.basemapLayer('Gray').addTo(map);
+
+  L.esri.Vector.vectorBasemapLayer('OSM:LightGray:Base', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   // renderer type: unique value
   L.esri.featureLayer({

@@ -3,6 +3,7 @@ title: Querying features
 description: Configuring a query to filter features on a <code>L.esri.FeatureLayer</code>. More information about Feature Layers can be found in the <a href="../api-reference/layers/feature-layer.html">L.esri.FeatureLayer</a> documentation.
 layout: example.hbs
 esriLeafletRenderers: true
+vector: true
 ---
 
 <style>
@@ -42,7 +43,9 @@ esriLeafletRenderers: true
 <script>
   var map = L.map('map').setView([34.19, -118.53], 15);
 
-  L.esri.basemapLayer('Gray').addTo(map);
+  L.esri.Vector.vectorBasemapLayer('OSM:LightGray', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   var zoning = L.esri.featureLayer({
     url: 'https://services5.arcgis.com/7nsPwEMP38bSkCjy/arcgis/rest/services/TEST_PYTHON_ZONING/FeatureServer/0',

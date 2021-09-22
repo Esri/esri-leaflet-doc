@@ -2,13 +2,17 @@
 title: Custom Popup with Image Map Layer
 description: Customizing a popup on a Image Map Layer. Click to render a popup. More information about Image Services can be found in the <a href="/esri-leaflet/api-reference/layers/image-map-layer.html">L.esri.ImageMapLayer</a> documentation.
 layout: example.hbs
+vector: true
 ---
 
 <div id="map"></div>
 
 <script>
   var map = L.map('map').setView([45.358651, -121.691067], 9);
-  L.esri.basemapLayer('Gray').addTo(map);
+
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:LightGray', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   var landsatImagery = L.esri.imageMapLayer({
     url: 'https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Portland/CascadeLandsat/ImageServer',
