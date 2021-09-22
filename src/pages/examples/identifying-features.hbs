@@ -56,9 +56,9 @@ layout: example.hbs
         if (featureCollection.features.length > 0) {
           identifiedFeature = L.geoJSON(featureCollection.features[0]).addTo(map);
           var soilDescription =
-            featureCollection.features[0].properties['NAME'] +
+            featureCollection.features[0].properties.NAME +
             ' County, ' +
-            featureCollection.features[0].properties['STATE_NAME'];
+            featureCollection.features[0].properties.STATE_NAME;
           pane.innerHTML = soilDescription;
         } else {
           pane.innerHTML = 'No features identified.';
