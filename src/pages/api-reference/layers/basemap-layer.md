@@ -1,5 +1,5 @@
 ---
-title: L.esri.BasemapLayer
+title: L.esri.BasemapLayer (Deprecated)
 layout: documentation.hbs
 ---
 

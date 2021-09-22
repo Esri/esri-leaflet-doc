@@ -15,8 +15,9 @@
       margin-bottom: .25em;
       @include clearfix();
     }
-    a.plugin:after {
-      content: 'plugin';
+    a.plugin:after,
+    a.experimental:after,
+    a.deprecated:after {
       display: inline;
       margin-left: .25rem;
       text-transform: uppercase;
@@ -26,16 +27,14 @@
       padding: .25rem;
       letter-spacing: .5px;
     }
+    a.plugin:after {
+      content: 'plugin';
+    }
     a.experimental:after {
       content: 'experimental';
-      display: inline;
-      margin-left: .25rem;
-      text-transform: uppercase;
-      background: $lighter-gray;
-      border-radius: 3px;
-      font-size: .75rem;
-      padding: .25rem;
-      letter-spacing: .5px;
+    }
+    a.deprecated:after {
+      content: 'deprecated';
     }
   }
   h5 {
