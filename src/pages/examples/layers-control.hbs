@@ -1,17 +1,16 @@
 ---
 title: Leaflet Control.Layers
-description: This sample demonstrates how to pass ArcGIS Services to Leaflet's native <a href="https://leafletjs.com/reference.html#control-layers">Control.Layers</a> which allows users to switch between different base layers and switch overlays on/off
+description: This sample demonstrates how to pass ArcGIS Services to Leaflet's native <a href="https://leafletjs.com/reference.html#control-layers">Control.Layers</a> which allows users to switch between different base layers and switch overlays on/off.
 layout: example.hbs
+vector: true
 ---
 
 <div id="map"></div>
 
 <script>
-  var gray = L.layerGroup();
-
-  // more than one service can be grouped together and passed to the control together
-  L.esri.basemapLayer('DarkGray').addTo(gray);
-  L.esri.basemapLayer('GrayLabels').addTo(gray);
+  var gray = L.esri.Vector.vectorBasemapLayer('ArcGIS:LightGray', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  });
 
   var states = L.esri.featureLayer({
     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer/3',
@@ -28,7 +27,9 @@ layout: example.hbs
 
   var baseLayers = {
     Grayscale: gray,
-    Streetmap: L.esri.basemapLayer('Streets')
+    Newspaper: L.esri.Vector.vectorBasemapLayer('ArcGIS:Newspaper', {
+      apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+    })
   };
 
   var overlays = {

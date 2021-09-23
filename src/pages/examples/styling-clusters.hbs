@@ -3,6 +3,7 @@ title: Styling clusters
 description: Customizing the display of clusters and markers with <code>L.DivIcon</code> and <code>L.MarkerClusterGroup</code> options. More information about Feature Layers can be found in the <a href="../api-reference/layers/feature-layer.html">L.esri.FeatureLayer</a> documentation.
 layout: example.hbs
 markerCluster: true
+vector: true
 ---
 
 <style>
@@ -82,10 +83,13 @@ markerCluster: true
 <div id="map"></div>
 
 <script>
-  var map = L.map('map').setView([0, 0], 2);
+  var map = L.map('map', {
+    maxZoom: 18 // the clustering plugin needs some help understanding the map's maxZoom
+  }).setView([0, 0], 2);
 
-  // Add ArcGIS Online basemap
-  L.esri.basemapLayer('Gray').addTo(map);
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:NavigationNight', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   // create a new cluster layer (new syntax at 2.0.0)
   var earthquakes = L.esri.Cluster.featureLayer({

@@ -2,6 +2,7 @@
 title: Styling heatmaps
 description: Custom styling of heatmap gradients with the <code>L.heat</code> options. More information about Feature Layers can be found in the <a href="../api-reference/layers/feature-layer.html">L.esri.FeatureLayer</a> documentation.
 layout: example.hbs
+vector: true
 ---
 
 <!-- Include Leaflet.heat from CDN -->
@@ -13,9 +14,13 @@ layout: example.hbs
 <div id="map"></div>
 
 <script>
-  var map = L.map('map').setView([41.759, -88.157], 12);
+  var map = L.map('map', {
+    maxZoom: 16 // the heatmap plugin needs some help understanding the map's maxZoom
+  }).setView([41.759, -88.157], 12);
 
-  L.esri.basemapLayer('Gray').addTo(map);
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:LightGray', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   // new constructor syntax at 2.0.0
   L.esri.Heat.featureLayer({

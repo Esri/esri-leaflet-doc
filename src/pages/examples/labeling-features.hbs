@@ -2,6 +2,7 @@
 title: Labeling Features
 description: This demo shows how to add static text labels to the center of features. <strong>This is not the same as fitting labels dynamically</strong>, so labels will start to collide as you zoom out.
 layout: example.hbs
+vector: true
 ---
 
 <style>
@@ -25,7 +26,9 @@ layout: example.hbs
 <script>
   var map = L.map('map').setView([37.428, -121.978], 9);
 
-  L.esri.basemapLayer('Gray').addTo(map);
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:Oceans:Base', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   var earthquakes = L.esri.featureLayer({
     url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Earthquakes_Since1970/MapServer/0'

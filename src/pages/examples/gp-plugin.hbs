@@ -2,6 +2,7 @@
 title: Leverage a Geoprocessing Service
 description: This demo relies on the <a href="https://github.com/jgravois/esri-leaflet-gp/">Esri Leaflet GP</a> plugin.<br>More information about Geoprocessing Services can be found in the <a href="https://developers.arcgis.com/rest/services-reference/gp-service.htm">ArcGIS REST</a> documentation.
 layout: example.hbs
+vector: true
 ---
 
 <!-- load the latest release from the cdn automatically -->
@@ -28,7 +29,9 @@ layout: example.hbs
 <script type='text/javascript'>
   var map = L.map('map').setView([37.78, -122.42], 12);
 
-  L.esri.basemapLayer('Gray').addTo(map);
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:ModernAntique', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   var gpService = L.esri.GP.service({
     url: 'https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Network/ESRI_DriveTime_US/GPServer/CreateDriveTimePolygons',

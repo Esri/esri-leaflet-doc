@@ -2,6 +2,7 @@
 title: Editing feature layers
 description: This sample uses the Leaflet <a href="https://github.com/Leaflet/Leaflet.Editable">Editable plugin</a> (coupled with the <a href="https://github.com/w8r/Leaflet.Path.Drag">Leaflet.Path.Drag plugin</a>) to help users manipulate the geometry of features from a hosted feature service and pass the edits back to the server.
 layout: example.hbs
+vector: true
 ---
 <script src="https://unpkg.com/leaflet.path.drag@0.0.6/src/Path.Drag.js"></script>
 <script src="https://unpkg.com/leaflet-editable@1.2.0/src/Leaflet.Editable.js"></script>
@@ -15,7 +16,9 @@ layout: example.hbs
       doubleClickZoom: false
     }).setView([37.345, -110.875], 5);
 
-    L.esri.basemapLayer('Topographic').addTo(map);
+    L.esri.Vector.vectorBasemapLayer('ArcGIS:ChartedTerritory', {
+      apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+    }).addTo(map);
 
     // create a feature layer and add it to the map
     var wildfireDistricts = L.esri.featureLayer({

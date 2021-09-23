@@ -3,6 +3,7 @@ title: Editing feature layers
 description: This sample demonstrates a bare-bones approach for passing edits to a feature service.
 layout: example.hbs
 esriLeafletRenderers: true
+vector: true
 ---
 
 <!-- Leaflet Draw -->
@@ -39,7 +40,10 @@ esriLeafletRenderers: true
 <script>
   // create the map
   var map = L.map('map').setView([65, -18.5], 6);
-  L.esri.basemapLayer('Physical').addTo(map);
+
+  L.esri.Vector.vectorBasemapLayer('ArcGIS:ChartedTerritory', {
+    apikey: apiKey // Replace with your API key - https://developers.arcgis.com
+  }).addTo(map);
 
   // add our feature layer to the map
   const militaryOps = L.esri.featureLayer({
