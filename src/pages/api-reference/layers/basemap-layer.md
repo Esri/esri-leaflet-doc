@@ -9,7 +9,7 @@ Extends [`L.TileLayer`](https://leafletjs.com/reference-{{siteData.latest_leafle
 
 `L.esri.basemapLayer` is used to display classic raster tiled Esri hosted basemaps and attributes data providers appropriately. The [Terms of Use](https://github.com/esri/esri-leaflet#terms) for Esri hosted services apply to *all* Leaflet applications.
 
-**Important note**: This module uses [tiled basemap services that are now in mature support](https://www.esri.com/arcgis-blog/products/arcgis-online/announcements/lifecycle-for-esris-hosted-raster-basemap-services/). Please see the [Vector Basemap API documentation](../layers/vector-basemap.html) and [example](../../examples/showing-a-basemap.html) for the primary way to add a basemap. 
+**DEPRECIATION NOTICE**: This class references the old [ArcGIS tiled basemap services](https://www.esri.com/arcgis-blog/products/arcgis-online/announcements/lifecycle-for-esris-hosted-raster-basemap-services/) that are no longer updated and could be deactivated without notice. Please update your application to use the [Vector Basemap Layer Plugin](../layers/vector-basemap.html) that references the new [ArcGIS Platform basemap layer service](https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/services/basemap-layer-service/). To do so, you will need an [ArcGIS account](https://developers.arcgis.com/sign-up) and an API key. See the following [example](../../examples/showing-a-basemap.html).
 
 ### Constructor
 
