@@ -66,6 +66,7 @@ These are optional layers that add extra text labels to the basemaps.
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
 | `token` | `String` | `null` | Will use this token to authenticate all calls to the service. |
+| `ignoreDeprecationWarning` | `boolean` | `null` | When `true`, will not show the deprecation warning in the developer console. |
 
 ### Methods
 
