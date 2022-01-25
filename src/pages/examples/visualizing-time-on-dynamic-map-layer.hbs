@@ -1,6 +1,6 @@
 ---
 title: Time Ranges
-description: Using time to filter visualized information from a Map Service. Enter dates between 1930 and 1980. More information about Map Services can be found in the <a href="../api-reference/layers/dynamic-map-layer.html">L.esri.DynamicMapLayer</a> documentation.
+description: Using time to filter visualized information from a Map Service. Enter dates between 1970 and 2009. More information about Map Services can be found in the <a href="../api-reference/layers/dynamic-map-layer.html">L.esri.DynamicMapLayer</a> documentation.
 layout: example.hbs
 vector: true
 ---
@@ -38,11 +38,11 @@ vector: true
   <form action="#" id="form">
     <label for="from">
       From
-      <input id="from" type="date" value="1930-01-01" name="from">
+      <input id="from" type="date" value="1970-01-01" name="from">
     </label>
     <label for="to">
       To
-      <input  id="to" type="date" value="1950-12-31" name="to">
+      <input  id="to" type="date" value="1973-12-31" name="to">
     </label>
     <input type="submit" value="Update">
   </form>
@@ -53,14 +53,14 @@ vector: true
   var startTimeInput = document.getElementById('from');
   var endTimeInput = document.getElementById('to');
 
-  var map = L.map('map').setView([37.604, -101.15], 9);
+  var map = L.map('map').setView([39, -96], 3);
 
   L.esri.Vector.vectorBasemapLayer('ArcGIS:LightGray', {
     apikey: apiKey // Replace with your API key - https://developers.arcgis.com
   }).addTo(map);
 
   var oilWells = L.esri.dynamicMapLayer({
-    url: 'https://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Petroleum/KSWells/MapServer',
+    url: 'https://sampleserver6.arcgisonline.com/arcgis/rest/services/Earthquakes_Since1970/MapServer',
     useCors: false,
     layers: [0],
     // for some reason this service in particular sometimes redirects json requests to a bogus IP address
