@@ -5,7 +5,7 @@ layout: example.hbs
 vector: true
 ---
 <!-- Load Chart.js from CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 
 <style>
   .chart-container {
@@ -58,34 +58,32 @@ vector: true
 
   var chartOptions = {
     scales: {
-      xAxes: [{
-        scaleLabel: {
+      x: {
+        title: {
           display: true,
-          labelString: 'tree diameter'
+          text: 'tree diameter'
         },
+        beginAtZero: true,
+        max: 250,
         ticks: {
-          beginAtZero: true,
-          max: 250,
           stepSize: 50
         }
-      }],
-      yAxes: [{
-        scaleLabel: {
+      },
+      y: {
+        title: {
           display: true,
-          labelString: 'tree height'
+          text: 'tree height'
         },
+        beginAtZero: true,
+        max: 250,
         ticks: {
-          beginAtZero: true,
-          max: 250,
           stepSize: 50
         }
-      }]
+      }
     },
     maintainAspectRatio: false,
     // turn off animations during chart data updates
-    animation: {
-      duration: 0
-    },
+    animation: false,
     // see STEP 4 below
     onHover: handleChartHover
   };
@@ -134,10 +132,8 @@ vector: true
   // STEP 4 (OPTIONAL): ESTABLISH CHART-TO-MAP COMMUNICATION
   // up until now the map and feature layer inform the chart what to render,
   // but interactions with the chart can also influence the map contents
-  function handleChartHover (e) {
-    var chartHoverData = chart.getElementsAtEvent(e);
-
-    if (!chartHoverData.length) {
+  function handleChartHover (event, elements, chart) {
+    if (!elements.length) {
       // if there were no data elements found when hovering over the chart,
       // reset any previous styling overrides and return
       treesFeatureLayer.eachFeature(function (e) {
@@ -150,8 +146,8 @@ vector: true
 
     // otherwise, bring attention to the features on the map
     // that are currently being hovered over in the chart
-    var hoverFeatureIds = chartHoverData.map(function (datum) {
-      return chart.data.datasets[0].data[datum._index].featureId;
+    var hoverFeatureIds = elements.map(function (datum) {
+      return chart.data.datasets[datum.datasetIndex].data[datum.index].featureId;
     });
 
     treesFeatureLayer.eachFeature(function (e, idx) {
