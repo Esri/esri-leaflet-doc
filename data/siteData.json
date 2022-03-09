@@ -19,6 +19,6 @@
   "latest_leaflet_markercluster_defaultcss_integrity": "sha512-6ZCLMiYwTeli2rVh3XAPxy3YoR5fVxGdH/pz+KMCzRY2M65Emgkw00Yqmhh8qLGeYQ3LbVZGdmOX9KUjSKr0TA==",
   "latest_esri_leaflet_cluster": "3.0.0",
   "latest_esri_leaflet_cluster_integrity": "sha512-XFCzSxay1bEwLt/pTNuKEw11WbMGlWUqSLMGUtsle2Zbddt2C5uf18w0HeHbc0NP9BTFy1Mzhab7Bkr+nxp34g==",
-  "latest_esri_leaflet_heatmap": "2.0.0",
-  "latest_esri_leaflet_heatmap_integrity": "sha512-fSJJRfO4PK90PN9jKKBzBZmzlNRsR12QA/CqTTWgfUTfLMF1Nrx5ouOqlpzC8LQIP+Qz0/G4BlHSgxHrCLHuMA=="
+  "latest_esri_leaflet_heatmap": "2.0.1",
+  "latest_esri_leaflet_heatmap_integrity": "sha512-lLo+xSNI2/unVl7Diwz+umq6xVFELYCt2kyhTSY5Gc07D62Uag68BZeXiqaN9sfnAwyq27uu912N06sRXweH2w=="
 }
