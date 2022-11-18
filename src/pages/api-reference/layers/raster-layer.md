@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/layers/raster-layer/
 title: L.esri.RasterLayer
 layout: documentation.hbs
 ---

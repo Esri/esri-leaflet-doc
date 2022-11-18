@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/tasks/find/
 title: L.esri.Find
 layout: documentation.hbs
 ---

@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/services/service/
 title: L.esri.Service
 layout: documentation.hbs
 ---

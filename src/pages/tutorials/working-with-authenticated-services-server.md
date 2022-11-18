@@ -2,6 +2,7 @@
 title: Working with Authenticated Services in ArcGIS Server
 description: How to access secure ArcGIS Enterprise services in Esri Leaflet.
 layout: tutorials.hbs
+redirect: https://developers.arcgis.com/esri-leaflet/authentication/apikeys/
 ---
 
 # {{ page.data.title }}

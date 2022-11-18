@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/tasks/identify-image/
 title: L.esri.IdentifyImage
 layout: documentation.hbs
 ---

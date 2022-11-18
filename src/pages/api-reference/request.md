@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/request/
 title: request
 layout: documentation.hbs
 ---

@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/services/gp-service/
 title: L.esri.GP.Service
 layout: documentation.hbs
 ---

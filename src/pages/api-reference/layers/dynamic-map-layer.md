@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/layers/dynamic-map-layer/
 title: L.esri.DynamicMapLayer
 layout: documentation.hbs
 ---

@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/services/geocode-service/
 title: L.esri.Geocoding.GeocodeService
 layout: documentation.hbs
 ---

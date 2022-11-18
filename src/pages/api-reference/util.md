@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/util/
 title: Utilities
 layout: documentation.hbs
 ---

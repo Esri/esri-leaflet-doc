@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/tasks/suggest/
 title: L.esri.Geocoding.Suggest
 layout: documentation.hbs
 ---

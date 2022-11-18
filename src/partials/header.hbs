@@ -19,6 +19,10 @@
     <meta name="description" content="A lightweight set of tools for using ArcGIS services with Leaflet.">
   {{/if}}
 
+  {{#if page.data.redirect}}
+    <meta http-equiv="refresh" content="0;URL='{{page.data.redirect}}'" />
+  {{/if}}
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!--[if lt IE 9]>
