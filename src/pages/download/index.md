@@ -2,6 +2,7 @@
 title: Download
 layout: markdown.hbs
 class: no-sidebar
+redirect: https://developers.arcgis.com/esri-leaflet/install-and-setup/
 ---
 
 # Download

@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/layers/tiled-map-layer/
 title: L.esri.TiledMapLayer
 layout: documentation.hbs
 ---

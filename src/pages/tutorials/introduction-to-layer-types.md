@@ -2,6 +2,7 @@
 title: Introduction to Layer Types
 description: Learn how to differentiate between the layer types that make up the ArcGIS platform.
 layout: tutorials.hbs
+redirect: https://developers.arcgis.com/esri-leaflet/layers/
 ---
 
 # {{ page.data.title }}

@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/tasks/reverse-geocode/
 title: L.esri.Geocoding.ReverseGeocode
 layout: documentation.hbs
 ---

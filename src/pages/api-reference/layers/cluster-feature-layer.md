@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/layers/cluster-feature-layer/
 title: L.esri.Cluster.FeatureLayer
 layout: documentation.hbs
 ---

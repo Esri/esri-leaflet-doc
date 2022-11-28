@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/controls/geosearch/
 title: L.esri.Geocoding.Geosearch
 layout: documentation.hbs
 ---

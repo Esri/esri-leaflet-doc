@@ -2,6 +2,7 @@
 title: JavaScript Libraries
 description: How to use Esri Leaflet with modern JavaScript libraries and frameworks.
 layout: tutorials.hbs
+redirect: https://developers.arcgis.com/esri-leaflet/
 ---
 
 # {{ page.data.title }}

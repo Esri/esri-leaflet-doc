@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/tasks/query/
 title: L.esri.Query
 layout: documentation.hbs
 ---

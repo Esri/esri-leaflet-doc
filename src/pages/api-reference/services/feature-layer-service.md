@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/services/feature-layer-service/
 title: L.esri.FeatureLayerService
 layout: documentation.hbs
 ---

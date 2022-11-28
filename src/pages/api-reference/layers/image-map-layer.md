@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/layers/image-map-layer/
 title: L.esri.ImageMapLayer
 layout: documentation.hbs
 ---

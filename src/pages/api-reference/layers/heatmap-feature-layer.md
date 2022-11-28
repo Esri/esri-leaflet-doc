@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/layers/heatmap-feature-layer/
 title: L.esri.Heat.FeatureLayer
 layout: documentation.hbs
 ---

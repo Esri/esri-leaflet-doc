@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/layers/vector-basemap/
 title: L.esri.Vector.vectorBasemapLayer
 layout: documentation.hbs
 ---

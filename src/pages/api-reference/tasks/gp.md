@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/tasks/gp/
 title: L.esri.GP.Task
 layout: documentation.hbs
 ---

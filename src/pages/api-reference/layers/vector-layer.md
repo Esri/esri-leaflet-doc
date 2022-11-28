@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/layers/vector-layer/
 title: L.esri.Vector.vectorTileLayer
 layout: documentation.hbs
 ---

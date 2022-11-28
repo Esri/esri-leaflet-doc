@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/tasks/identify-features/
 title: L.esri.IdentifyFeatures
 layout: documentation.hbs
 ---

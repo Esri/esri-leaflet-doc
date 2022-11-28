@@ -1,4 +1,5 @@
 ---
+redirect: https://developers.arcgis.com/esri-leaflet/api-reference/services/image-service/
 title: L.esri.ImageService
 layout: documentation.hbs
 ---
