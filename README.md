@@ -1,6 +1,6 @@
-# Esri Leaflet Documentation Site
+> The official Esri Leaflet documentation has moved to [developers.arcgis.com/esri-leaflet](https://developers.arcgis.com/esri-leaflet/), and this repository is archived. If you have any suggestions or contributions for the documentation going forward, please [log an issue in the Esri Leaflet repository](https://github.com/Esri/esri-leaflet/issues/new/choose) (select "Documentation").
 
-> The official Esri Leaflet documentation has moved to [developers.arcgis.com/esri-leaflet](https://developers.arcgis.com/esri-leaflet/), and this repository will soon be archived. If you have any suggestions or contributions for the documentation going forward, please [log an issue in the Esri Leaflet repository](https://github.com/Esri/esri-leaflet/issues/new/choose) (select "Documentation").
+# Esri Leaflet Documentation Site
 
 ## Instructions
 
